@@ -196,6 +196,56 @@
       transition: opacity 0.2s ease;
     }
 
+    /* Ambient cinematic glow in bottom-left */
+    .ambient-glow-left {
+      position: fixed;
+      bottom: -160px;
+      left: -160px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.24) 0%, rgba(217, 119, 6, 0.12) 35%, rgba(180, 83, 9, 0.04) 55%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(50px);
+    }
+
+    /* Giant cinematic glowing logo watermark (Bottom-Left) */
+    .bg-logo-container {
+      position: fixed;
+      bottom: -110px;
+      left: -90px;
+      width: 540px;
+      height: 540px;
+      pointer-events: none;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: ambientFloat 14s ease-in-out infinite alternate;
+    }
+
+    .bg-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0.16;
+      transform: rotate(-10deg);
+      filter: 
+        drop-shadow(0 0 50px rgba(245, 158, 11, 0.45)) 
+        drop-shadow(0 0 110px rgba(217, 119, 6, 0.35))
+        drop-shadow(0 0 180px rgba(180, 83, 9, 0.2));
+      transition: opacity 0.5s ease;
+    }
+
+    @keyframes ambientFloat {
+      0% {
+        transform: translateY(0) rotate(-10deg) scale(1);
+      }
+      100% {
+        transform: translateY(-20px) rotate(-6deg) scale(1.05);
+      }
+    }
+
     /* Top golden glow inside card */
     .hero-card::after {
       content: "";
@@ -208,6 +258,23 @@
     }
 
     /* Brand Header */
+    .brand-badge-icon {
+      margin-bottom: 8px;
+    }
+
+    .brand-mini-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.5));
+      animation: logoGlow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes logoGlow {
+      0% { filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.35)); }
+      100% { filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.75)); }
+    }
+
     .brand-logo {
       font-size: 28px;
       font-weight: 800;
@@ -448,10 +515,28 @@
       .qr-container {
         display: none; /* Hide QR on phones */
       }
+      .bg-logo-container {
+        width: 320px;
+        height: 320px;
+        bottom: -60px;
+        left: -60px;
+      }
+      .ambient-glow-left {
+        width: 440px;
+        height: 440px;
+        bottom: -90px;
+        left: -90px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Ambient cinematic background glow & logo (Bottom Left) -->
+  <div class="ambient-glow-left"></div>
+  <div class="bg-logo-container">
+    <img src="mrkey-logo.png" alt="" class="bg-logo-img">
+  </div>
 
   <main class="container">
     <!-- Top Bar: Status + Language Selector -->
@@ -472,6 +557,9 @@
 
     <!-- Main Hero Card -->
     <div class="hero-card" id="hero-card">
+      <div class="brand-badge-icon">
+        <img src="mrkey-logo.png" alt="Mr. Key" class="brand-mini-logo">
+      </div>
       <div class="brand-logo">MR. KEY</div>
       <div class="brand-sub" id="txt-brand-sub">Buenos Aires • Barras Artesanales</div>
 
