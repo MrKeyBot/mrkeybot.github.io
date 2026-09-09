@@ -656,26 +656,34 @@
     }
 
     @media (max-width: 959px) {
+      body.theme-cover {
+        padding: 16px 12px 32px;
+      }
       body.theme-cover .container {
-        max-width: 580px;
-        padding: 16px 16px 32px;
+        max-width: 520px;
+        width: 100%;
+        padding: 0;
       }
       body.theme-cover .main-layout-split {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
       }
       body.theme-cover .split-col-left {
         display: none;
       }
       body.theme-cover .split-col-right {
         width: 100%;
+        padding-right: 0;
+        justify-content: center;
       }
       body.theme-cover .hero-card {
         max-width: 100%;
+        margin: 0 auto;
       }
       body.theme-cover .fullscreen-bg-photo {
-        background-position: 22% center;
+        background-position: center center;
       }
       body.theme-cover .footer-note {
         text-align: center;
