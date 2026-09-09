@@ -747,7 +747,7 @@
     }
   </style>
 </head>
-<body class="theme-logo">
+<body class="theme-cover">
 
   <!-- Ambient cinematic background glow & logo (Centered) -->
   <div class="ambient-glow-center"></div>
@@ -1021,7 +1021,7 @@
 
       const urlParams = new URLSearchParams(window.location.search);
       const urlTheme = urlParams.get('theme') || urlParams.get('v');
-      const savedTheme = urlTheme || localStorage.getItem('mrkey_theme') || 'logo';
+      const savedTheme = urlTheme || 'cover';
       setTheme(savedTheme);
     });
   </script>
