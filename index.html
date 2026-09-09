@@ -686,11 +686,11 @@
 
       body.theme-cover .main-layout-split {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* 50% left, 50% right! */
+        grid-template-columns: 1.1fr 0.9fr;
         width: 100%;
         flex: 1;
-        align-items: center; /* Vertically centered! */
-        gap: 30px;
+        align-items: center;
+        gap: 32px;
       }
 
       body.theme-cover .split-col-left {
@@ -702,14 +702,16 @@
       body.theme-cover .split-col-right {
         display: flex;
         align-items: center;
-        justify-content: center; /* Exactly centered within the right 50%! */
+        justify-content: flex-end;
         width: 100%;
+        padding-right: 20px;
       }
 
       body.theme-cover .hero-card {
-        max-width: 490px;
+        max-width: 480px;
         width: 100%;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: 0;
         background: rgba(14, 10, 7, 0.74);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
