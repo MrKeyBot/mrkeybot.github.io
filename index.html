@@ -532,50 +532,7 @@
       letter-spacing: 0.03em;
     }
 
-    /* Design Variant Switcher */
-    .theme-switcher {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 9999px;
-      padding: 3px;
-      gap: 2px;
-    }
-
-    .theme-btn {
-      background: transparent;
-      border: none;
-      color: #A8A29E;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      padding: 4px 10px;
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .theme-btn:hover {
-      color: #FFFFFF;
-    }
-
-    .theme-btn.active {
-      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-      color: #000000;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
-    }
-
-    .top-bar-controls {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* Fullscreen Photo Background (Theme 2: Photo on entire screen) */
+    /* Fullscreen Photo Background (Production Version) */
     .fullscreen-bg-photo {
       position: fixed;
       inset: 0;
@@ -586,10 +543,9 @@
       background-position: center center;
       background-repeat: no-repeat;
       z-index: 1;
-      opacity: 0;
-      visibility: hidden;
+      opacity: 1;
+      visibility: visible;
       filter: brightness(0.96) contrast(1.06);
-      transition: opacity 0.5s ease;
       pointer-events: none;
     }
 
@@ -603,38 +559,11 @@
         radial-gradient(ellipse at 78% 50%, rgba(10, 8, 6, 0.45) 0%, rgba(10, 8, 6, 0.2) 60%, rgba(10, 8, 6, 0.75) 100%),
         linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.2) 42%, rgba(10, 8, 6, 0.62) 80%, rgba(10, 8, 6, 0.88) 100%);
       z-index: 2;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.5s ease;
+      opacity: 1;
+      visibility: visible;
       pointer-events: none;
     }
 
-    /* Variant 1: 3D Logo Active */
-    body.theme-logo .bg-logo-container,
-    body.theme-logo .ambient-glow-center {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    body.theme-logo .fullscreen-bg-photo,
-    body.theme-logo .fullscreen-bg-scrim {
-      opacity: 0 !important;
-      visibility: hidden !important;
-    }
-
-    /* Variant 2: Fullscreen Photo Active */
-    body.theme-cover .fullscreen-bg-photo {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    body.theme-cover .fullscreen-bg-scrim {
-      opacity: 1 !important;
-      visibility: visible !important;
-    }
-    body.theme-cover .bg-logo-container,
-    body.theme-cover .ambient-glow-center {
-      opacity: 0 !important;
-      visibility: hidden !important;
-    }
     body.theme-cover .hero-card {
       background: rgba(14, 10, 7, 0.75);
       backdrop-filter: blur(14px);
@@ -757,15 +686,12 @@
     /* Responsive adjustments */
     @media (max-width: 480px) {
       .top-bar {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .top-bar-controls {
-        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 6px;
+        gap: 8px;
       }
-      .theme-btn, .lang-btn {
+      .lang-btn {
         padding: 4px 8px;
         font-size: 10.5px;
       }
@@ -783,34 +709,20 @@
       .qr-container {
         display: none; /* Hide QR on phones */
       }
-      .bg-logo-container {
-        width: 360px;
-        height: 360px;
-      }
-      .ambient-glow-center {
-        width: 480px;
-        height: 480px;
-      }
       .fullscreen-bg-photo {
         background-position: 22% center;
       }
     }
   </style>
 </head>
-<body class="theme-logo">
+<body class="theme-cover">
 
-  <!-- Ambient cinematic background glow & logo (Variant 1: 3D Logo) -->
-  <div class="ambient-glow-center"></div>
-  <div class="bg-logo-container">
-    <img src="mrkey-logo.png" alt="" class="bg-logo-img">
-  </div>
-
-  <!-- Fullscreen cinematic photo background (Variant 2: Photo on entire screen) -->
+  <!-- Fullscreen cinematic photo background (Selected Production Version) -->
   <div class="fullscreen-bg-photo"></div>
   <div class="fullscreen-bg-scrim"></div>
 
   <main class="container">
-    <!-- Top Bar: Status + Variant Switcher + Language Selector -->
+    <!-- Top Bar: Status + Language Selector -->
     <div class="top-bar">
       <!-- 24/7 Status Beacon -->
       <div class="status-badge">
@@ -818,23 +730,11 @@
         <span id="txt-status">24/7 • Retiro en kioscos online</span>
       </div>
 
-      <div class="top-bar-controls">
-        <!-- Variant Switcher (Var 1: 3D Logo vs Var 2: Fullscreen Photo) -->
-        <div class="theme-switcher" aria-label="Design layout selection">
-          <button type="button" class="theme-btn active" id="btn-theme-logo" onclick="setTheme('logo')">
-            <span id="txt-theme-logo">🪙 3D Logo</span>
-          </button>
-          <button type="button" class="theme-btn" id="btn-theme-cover" onclick="setTheme('cover')">
-            <span id="txt-theme-cover">❄️ Foto Fondo</span>
-          </button>
-        </div>
-
-        <!-- Language Switcher -->
-        <div class="lang-switcher" aria-label="Language selection">
-          <button type="button" class="lang-btn active" onclick="setLang('es')">ES</button>
-          <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
-          <button type="button" class="lang-btn" onclick="setLang('en')">EN</button>
-        </div>
+      <!-- Language Switcher -->
+      <div class="lang-switcher" aria-label="Language selection">
+        <button type="button" class="lang-btn active" onclick="setLang('es')">ES</button>
+        <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+        <button type="button" class="lang-btn" onclick="setLang('en')">EN</button>
       </div>
     </div>
 
@@ -922,8 +822,6 @@
         brandSub: "Buenos Aires • Barras Artesanales",
         title: "Barras proteicas artesanales sin azúcar",
         desc: "100% naturales, sin gluten ni conservantes. Pedí por el bot en Telegram y retirá en kioscos seleccionados de Buenos Aires en 2 minutos.",
-        themeLogo: "🪙 3D Logo",
-        themeCover: "❄️ Foto Fondo",
         coverBadge: "❄️ Frescura Glacial Sub-Zero",
         coverTagline: "Edición Artesanal • Buenos Aires",
         coverTitle: "Cacao Negro & Caramelo Salado con Escarcha",
@@ -948,8 +846,6 @@
         brandSub: "Буэнос-Айрес • Авторские ПП-батончики",
         title: "Натуральные ПП-батончики ручной работы",
         desc: "100% натуральный состав, без сахара, глютена и химии. Оформи заказ в боте и забери в проверенных киосках Буэнос-Айреса за 2 минуты.",
-        themeLogo: "🪙 3D Лого",
-        themeCover: "❄️ Фото на весь экран",
         coverBadge: "❄️ Морозная свежесть Sub-Zero",
         coverTagline: "Авторская серия • Буэнос-Айрес",
         coverTitle: "Тёмный шоколад с соленой карамелью и инеем",
@@ -974,8 +870,6 @@
         brandSub: "Buenos Aires • Artisan Protein Bars",
         title: "Handcrafted Sugar-Free Protein Bars",
         desc: "100% natural, gluten-free, zero chemical additives. Order via Telegram and pick up at verified Buenos Aires kiosks within 2 minutes.",
-        themeLogo: "🪙 3D Logo",
-        themeCover: "❄️ Fullscreen Photo",
         coverBadge: "❄️ Sub-Zero Glacial Frost",
         coverTagline: "Artisan Edition • Buenos Aires",
         coverTitle: "Dark Chocolate & Salted Caramel with Frost",
@@ -994,22 +888,6 @@
         footer: "© 2026 Mr. Key • Buenos Aires, Argentina • 24/7 Autonomous System"
       }
     };
-
-    function setTheme(theme) {
-      if (theme !== 'cover' && theme !== 'logo') theme = 'logo';
-      localStorage.setItem('mrkey_theme', theme);
-      if (theme === 'cover') {
-        document.body.classList.remove('theme-logo');
-        document.body.classList.add('theme-cover');
-        document.getElementById('btn-theme-cover')?.classList.add('active');
-        document.getElementById('btn-theme-logo')?.classList.remove('active');
-      } else {
-        document.body.classList.remove('theme-cover');
-        document.body.classList.add('theme-logo');
-        document.getElementById('btn-theme-logo')?.classList.add('active');
-        document.getElementById('btn-theme-cover')?.classList.remove('active');
-      }
-    }
 
     function setLang(lang) {
       if (!I18N[lang]) lang = 'es';
@@ -1030,8 +908,6 @@
         document.getElementById('txt-title').innerText = data.title;
         document.getElementById('txt-desc').innerText = data.desc;
 
-        document.getElementById('txt-theme-logo').innerText = data.themeLogo;
-        document.getElementById('txt-theme-cover').innerText = data.themeCover;
         const covBadge = document.getElementById('txt-cover-badge');
         if (covBadge) covBadge.innerText = data.coverBadge;
         const covTag = document.getElementById('txt-cover-tagline');
@@ -1063,15 +939,10 @@
       }, 100);
     }
 
-    // Default to Spanish ('es') and auto-check saved theme / URL params
+    // Default to Spanish ('es') on load
     document.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('mrkey_lang') || 'es';
       setLang(savedLang);
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const urlTheme = urlParams.get('theme') || urlParams.get('v');
-      const savedTheme = urlTheme || localStorage.getItem('mrkey_theme') || 'logo';
-      setTheme(savedTheme);
     });
   </script>
 
