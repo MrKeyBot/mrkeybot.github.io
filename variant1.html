@@ -752,7 +752,7 @@
     }
   </style>
 
-  <!-- Variant 1 Expanded 50/50 Architecture Styles -->
+  <!-- Premium Catchy Hero + Step Modal Styles -->
   <style>
     /* Variant Switcher Pill */
     .variant-switcher {
@@ -803,111 +803,144 @@
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
     }
 
-    /* --- RIGHT COLUMN OUTSIDE HEADER (NEW) --- */
-    .hero-outside-header {
+    /* --- RIGHT COLUMN MAIN HERO CARD (SEXY & CATCHY) --- */
+    .hero-main-container {
       width: 100%;
+      max-width: 680px;
       display: flex;
       flex-direction: column;
       text-align: left;
-      margin-bottom: 12px;
-    }
-    .hero-brand-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-    .hero-brand-logo-img {
-      width: 26px;
-      height: 26px;
-      object-fit: contain;
-      border-radius: 50%;
-      border: 1.5px solid #F59E0B;
-      background: #000000;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
-    }
-    .hero-brand-name {
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      color: #FCD34D;
-    }
-    .hero-brand-divider {
-      color: #78716C;
-      font-size: 12px;
-    }
-    .hero-brand-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: #A8A29E;
-      text-transform: uppercase;
-    }
-    .hero-main-title {
-      font-size: 26px;
-      font-weight: 900;
-      color: #FFFFFF;
-      line-height: 1.22;
-      margin-bottom: 6px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 0 24px rgba(245, 158, 11, 0.2);
-    }
-    .hero-main-desc {
-      font-size: 13px;
-      color: #D6D3D1;
-      line-height: 1.42;
-      margin-bottom: 10px;
-      max-width: 680px;
     }
 
-    /* Prominent Offer Banner Outside Frame */
-    .hero-offer-banner {
+    .brand-top-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 9999px;
+      padding: 4px 12px 4px 6px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+    .brand-mini-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #000000;
+      border: 1.5px solid #F59E0B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .brand-mini-circle img {
       width: 100%;
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(217, 119, 6, 0.10) 100%);
-      border: 1.5px solid rgba(245, 158, 11, 0.52);
-      border-radius: 14px;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      height: 100%;
+      object-fit: cover;
     }
-    .hero-offer-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .hero-offer-badge {
-      font-size: 10.5px;
-      font-weight: 900;
+    .brand-pill-text {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       color: #FCD34D;
       text-transform: uppercase;
-      background: rgba(245, 158, 11, 0.25);
-      border: 1px solid rgba(245, 158, 11, 0.45);
-      padding: 3px 8px;
-      border-radius: 6px;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
     }
-    .hero-offer-prices {
+
+    .catchy-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.18;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 0 30px rgba(245, 158, 11, 0.25);
+      letter-spacing: -0.01em;
+    }
+    .catchy-subtitle {
+      font-size: 14px;
+      color: #E7E5E4;
+      line-height: 1.48;
+      margin-bottom: 16px;
+      max-width: 640px;
+    }
+
+    /* Highlights Badges Strip */
+    .hero-features-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .feat-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #F5F5F4;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+    .feat-badge span.icon {
+      font-size: 13px;
+    }
+
+    /* --- SPECIAL OFFER HOOK BOX (CLICKABLE TEASER TRIGGER) --- */
+    .offer-hook-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.08) 100%);
+      border: 1.5px solid rgba(245, 158, 11, 0.65);
+      border-radius: 18px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.22), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-hook-card:hover {
+      transform: translateY(-2px);
+      border-color: #FCD34D;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.35);
+    }
+    .offer-hook-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .offer-badge-tag {
+      font-size: 11px;
+      font-weight: 900;
+      color: #000000;
+      background: #FCD34D;
+      padding: 3px 9px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.5);
+    }
+    .offer-price-group {
       display: flex;
       align-items: center;
       gap: 10px;
     }
-    .hero-price-new {
-      font-size: 24px;
+    .price-value-new {
+      font-size: 26px;
       font-weight: 900;
       color: #FFFFFF;
-      text-shadow: 0 0 14px rgba(245, 158, 11, 0.65);
-      white-space: nowrap;
+      text-shadow: 0 0 16px rgba(245, 158, 11, 0.7);
     }
-    .hero-price-old {
-      font-size: 14px;
+    .price-value-old {
+      font-size: 15px;
       color: #EF4444;
       text-decoration: line-through;
       font-weight: 700;
-      white-space: nowrap;
     }
-    .hero-price-save {
+    .price-discount-pill {
       font-size: 12px;
       font-weight: 900;
       background: #10B981;
@@ -915,72 +948,256 @@
       padding: 3px 9px;
       border-radius: 9999px;
       box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
-      white-space: nowrap;
-    }
-    .hero-offer-hint {
-      font-size: 11px;
-      color: #E7E5E4;
-      font-weight: 600;
-      text-align: right;
-      line-height: 1.35;
-      max-width: 240px;
     }
 
-    /* --- THE EXPANDED ORANGE-BORDERED FRAME --- */
-    .stepper-hero-frame {
-      width: 100%;
-      background: rgba(14, 10, 7, 0.88);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      border: 2px solid rgba(245, 158, 11, 0.62);
-      border-radius: 22px;
-      padding: 16px 20px 14px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.92), 0 0 35px rgba(245, 158, 11, 0.18), inset 0 1px 2px rgba(255, 255, 255, 0.15);
-      box-sizing: border-box;
-      text-align: left;
+    /* Sub-hook with Call to Action Button */
+    .offer-hook-middle {
+      font-size: 13px;
+      color: #F5F5F4;
+      line-height: 1.4;
+      margin-bottom: 12px;
     }
-
-    .frame-stepper-header {
+    .offer-hook-middle strong {
+      color: #FCD34D;
+    }
+    .offer-hook-btn-trigger {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      border-radius: 12px;
+      padding: 9px 14px;
+      color: #FFFFFF;
+      font-size: 12.5px;
+      font-weight: 800;
+      transition: all 0.2s ease;
+    }
+    .offer-hook-card:hover .offer-hook-btn-trigger {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #FCD34D;
+      color: #FCD34D;
+    }
+    .offer-hook-btn-trigger .arrow {
+      font-size: 16px;
+      transition: transform 0.2s ease;
+    }
+    .offer-hook-card:hover .offer-hook-btn-trigger .arrow {
+      transform: translateX(4px);
+    }
+
+    /* --- MAIN PAGE BOTTOM ACTIONS --- */
+    .hero-actions-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 12px;
       margin-bottom: 8px;
     }
-    .frame-stepper-title {
-      font-size: 13px;
-      font-weight: 800;
-      color: #FCD34D;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    .btn-main-order {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 20px;
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      border: 1px solid #FCD34D;
+      border-radius: 14px;
+      color: #000000;
+      font-size: 14px;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+      transition: all 0.2s;
+      cursor: pointer;
     }
-    .frame-stepper-sub {
-      font-size: 11px;
-      color: #A8A29E;
-      font-weight: 600;
+    .btn-main-order:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
+    }
+    .btn-main-support {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 13px 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 14px;
+      color: #E7E5E4;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-main-support:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
     }
 
-    /* Connected Tracker Bar */
-    .v1-tracker {
+    /* --- FLOATING QR ON LEFT DESKTOP --- */
+    .desktop-floating-qr {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(16, 12, 9, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      border-radius: 16px;
+      padding: 9px 15px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.88), 0 0 25px rgba(245, 158, 11, 0.16);
+      margin-left: 12px;
+      margin-bottom: 12px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .desktop-floating-qr:hover {
+      transform: translateY(-2px);
+      border-color: rgba(245, 158, 11, 0.7);
+    }
+    .desktop-floating-qr .qr-mini-card {
+      width: 66px;
+      height: 66px;
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .desktop-floating-qr .qr-mini-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .desktop-qr-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #FCD34D;
+      margin-bottom: 2px;
+    }
+    .desktop-qr-desc {
+      font-size: 11px;
+      color: #D6D3D1;
+      line-height: 1.35;
+      max-width: 180px;
+    }
+
+    /* --- INTERACTIVE STEPPER MODAL / OVERLAY (EXPANDED SCREEN) --- */
+    .step-modal-overlay {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(6, 4, 3, 0.82);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 100000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-sizing: border-box;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+    .step-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+    .step-modal-window {
+      background: rgba(14, 10, 7, 0.95);
+      border: 2px solid rgba(245, 158, 11, 0.7);
+      border-radius: 24px;
+      max-width: 820px;
+      width: 100%;
+      max-height: calc(100vh - 40px);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.98), 0 0 50px rgba(245, 158, 11, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.96);
+      transition: transform 0.25s ease;
+      position: relative;
+    }
+    .step-modal-overlay.active .step-modal-window {
+      transform: scale(1);
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s;
+    }
+    .modal-close-btn:hover {
+      background: rgba(239, 68, 68, 0.3);
+      border-color: #EF4444;
+      transform: scale(1.08);
+    }
+
+    .modal-header-section {
+      padding: 20px 24px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
+    }
+    .modal-pretag {
+      font-size: 11px;
+      font-weight: 800;
+      color: #FCD34D;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .modal-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+    .modal-subtitle {
+      font-size: 13px;
+      color: #A8A29E;
+    }
+
+    /* Modal Stepper Tracker */
+    .modal-tracker-bar {
       position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 6px 12px 12px;
+      margin: 12px 24px 8px;
     }
-    .v1-track-line-bg {
+    .modal-track-bg {
       position: absolute;
-      top: 13px;
-      left: 10px;
-      right: 10px;
+      top: 14px;
+      left: 12px;
+      right: 12px;
       height: 3px;
       background: rgba(255, 255, 255, 0.12);
       border-radius: 9999px;
       z-index: 1;
     }
-    .v1-track-line-fill {
+    .modal-track-fill {
       position: absolute;
-      top: 13px;
-      left: 10px;
+      top: 14px;
+      left: 12px;
       height: 3px;
       background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
       border-radius: 9999px;
@@ -988,7 +1205,7 @@
       transition: width 0.3s ease;
       box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
     }
-    .v1-step-node {
+    .m-step-node {
       position: relative;
       z-index: 3;
       display: flex;
@@ -999,70 +1216,75 @@
       border: none;
       padding: 0;
     }
-    .v1-node-circle {
-      width: 28px;
-      height: 28px;
+    .m-node-circle {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      background: #14100D;
+      background: #18120D;
       border: 2px solid rgba(255, 255, 255, 0.22);
       color: #A8A29E;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.2s ease;
     }
-    .v1-step-node:hover .v1-node-circle {
+    .m-step-node:hover .m-node-circle {
       border-color: rgba(245, 158, 11, 0.7);
       color: #FFFFFF;
     }
-    .v1-step-node.active .v1-node-circle {
+    .m-step-node.active .m-node-circle {
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border-color: #FCD34D;
       color: #000000;
-      box-shadow: 0 0 12px rgba(245, 158, 11, 0.8);
-      transform: scale(1.12);
+      box-shadow: 0 0 14px rgba(245, 158, 11, 0.85);
+      transform: scale(1.15);
     }
-    .v1-step-node.done .v1-node-circle {
+    .m-step-node.done .m-node-circle {
       background: #10B981;
       border-color: #10B981;
       color: #000000;
       box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
     }
-    .v1-node-label {
-      font-size: 10.5px;
+    .m-node-label {
+      font-size: 11px;
       font-weight: 700;
       color: #A8A29E;
       margin-top: 4px;
       white-space: nowrap;
     }
-    .v1-step-node.active .v1-node-label {
+    .m-step-node.active .m-node-label {
       color: #FCD34D;
       font-weight: 800;
     }
-    .v1-step-node.done .v1-node-label {
+    .m-step-node.done .m-node-label {
       color: #FFFFFF;
     }
 
-    /* Active Step Card Inside Frame */
-    .v1-active-card {
-      background: rgba(20, 14, 10, 0.85);
-      border: 1px solid rgba(245, 158, 11, 0.38);
-      border-radius: 16px;
-      padding: 14px 18px 12px;
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
-      margin-bottom: 12px;
-    }
-    .v1-card-top-row {
-      display: flex;
-      justify-content: space-between;
+    /* Modal Step Body with 2-column or wide layout */
+    .modal-step-body {
+      padding: 14px 24px 20px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
       align-items: center;
-      margin-bottom: 4px;
+      overflow-y: auto;
+      text-align: left;
     }
-    .v1-step-tag {
+    .m-step-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .m-step-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .m-step-tag {
       font-size: 10px;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.06em;
       color: #FCD34D;
       text-transform: uppercase;
@@ -1071,7 +1293,7 @@
       border-radius: 9999px;
       border: 1px solid rgba(245, 158, 11, 0.35);
     }
-    .v1-time-tag {
+    .m-time-tag {
       font-size: 10px;
       font-weight: 800;
       color: #10B981;
@@ -1080,166 +1302,161 @@
       border-radius: 9999px;
       border: 1px solid rgba(16, 185, 129, 0.35);
     }
-    .v1-step-title {
-      font-size: 16px;
-      font-weight: 800;
+    .m-step-title {
+      font-size: 18px;
+      font-weight: 900;
       color: #FFFFFF;
-      margin-bottom: 4px;
-      line-height: 1.28;
+      margin-bottom: 6px;
+      line-height: 1.25;
     }
-    .v1-step-pill {
-      font-size: 11.5px;
+    .m-step-pill {
+      font-size: 12px;
       font-weight: 700;
       color: #FCD34D;
       background: rgba(245, 158, 11, 0.1);
       border-left: 3px solid #F59E0B;
-      padding: 4px 9px;
+      padding: 4px 10px;
       border-radius: 4px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       line-height: 1.35;
     }
-    .v1-bullets {
+    .m-bullets {
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      margin-bottom: 10px;
+      gap: 6px;
+      margin-bottom: 14px;
     }
-    .v1-bullet-item {
-      font-size: 12px;
+    .m-bullet-item {
+      font-size: 12.5px;
       color: #E7E5E4;
-      line-height: 1.38;
+      line-height: 1.4;
       display: flex;
       align-items: flex-start;
-      gap: 6px;
+      gap: 8px;
     }
-    .v1-bullet-icon {
-      flex-shrink: 0;
-    }
-    .v1-bullet-item strong {
+    .m-bullet-item strong {
       color: #FFFFFF;
     }
-    .v1-cta-row {
-      margin-bottom: 8px;
-    }
-    .v1-btn-action {
+    .m-btn-action {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 10px 16px;
+      padding: 11px 16px;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       border: 1px solid #34D399;
-      border-radius: 11px;
+      border-radius: 12px;
       color: #FFFFFF;
       font-size: 13.5px;
       font-weight: 800;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.38);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
       transition: all 0.2s ease;
       cursor: pointer;
     }
-    .v1-btn-action:hover {
+    .m-btn-action:hover {
       transform: translateY(-1px);
-      filter: brightness(1.06);
-      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.5);
+      filter: brightness(1.08);
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.55);
     }
-    .v1-nav-bar {
+
+    /* Screencast / Screenshot Showcase Box */
+    .m-media-showcase {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1.5px dashed rgba(245, 158, 11, 0.45);
+      border-radius: 18px;
+      height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+    .m-media-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+    }
+    .m-media-title {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #FCD34D;
+      margin-bottom: 4px;
+    }
+    .m-media-desc {
+      font-size: 11px;
+      color: #A8A29E;
+      line-height: 1.35;
+      max-width: 220px;
+    }
+    .m-media-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 9px;
+      font-weight: 800;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34D399;
+      border: 1px solid #10B981;
+      padding: 2px 6px;
+      border-radius: 9999px;
+    }
+
+    /* Modal Footer Controls */
+    .modal-footer-nav {
+      padding: 12px 24px 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .v1-btn-prev {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+    .m-btn-prev {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       color: #D6D3D1;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 9999px;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .v1-btn-prev:hover {
-      background: rgba(255, 255, 255, 0.14);
+    .m-btn-prev:hover {
+      background: rgba(255, 255, 255, 0.16);
       color: #FFFFFF;
     }
-    .v1-indicator {
-      font-size: 11px;
+    .m-btn-next {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      border: 1px solid #FCD34D;
+      color: #000000;
+      padding: 8px 22px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(245, 158, 11, 0.45);
+      transition: all 0.2s;
+    }
+    .m-btn-next:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 18px rgba(245, 158, 11, 0.6);
+    }
+    .m-indicator {
+      font-size: 11.5px;
       font-weight: 700;
       color: #A8A29E;
     }
-    .v1-btn-next {
-      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-      border: 1px solid #FCD34D;
-      color: #000000;
-      padding: 6px 18px;
-      border-radius: 9999px;
-      font-size: 12px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.4);
-      transition: all 0.2s;
-    }
-    .v1-btn-next:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.6);
-    }
 
-    /* Action Buttons Inside Frame */
-    .actions-block {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 10px;
-      margin-top: 4px;
-    }
-    .btn-primary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-      border: 1px solid #FCD34D;
-      border-radius: 12px;
-      color: #000000;
-      font-size: 13px;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
-      transition: all 0.2s;
-    }
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.06);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
-    }
-    .btn-secondary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 12px;
-      color: #E7E5E4;
-      font-size: 12.5px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.14);
-      color: #FFFFFF;
-    }
-
-    /* --- DESKTOP 50/50 FIT & FLOATING QR UNDER CHOCOLATE --- */
+    /* --- DESKTOP 50/50 SPECIFIC RULES --- */
     @media (min-width: 960px) {
       html, body {
         height: 100vh !important;
         max-height: 100vh !important;
-        overflow: hidden !important; /* Zero scroll on desktop */
+        overflow: hidden !important;
       }
       body.theme-cover {
         height: 100vh;
@@ -1259,29 +1476,25 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 8px 32px 8px;
+        padding: 12px 36px 10px;
         box-sizing: border-box;
       }
       body.theme-cover .top-bar {
         width: 100%;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
         flex-shrink: 0;
       }
-
-      /* 50/50 Split Grid */
       body.theme-cover .main-layout-split {
         display: grid;
-        grid-template-columns: 0.92fr 1.08fr;
+        grid-template-columns: 0.95fr 1.05fr;
         width: 100%;
         flex: 1;
         align-items: center;
-        gap: 36px;
+        gap: 40px;
         max-width: 1520px;
         margin: 0 auto;
         min-height: 0;
       }
-
-      /* Left column: Chocolate bar background visible, QR code placed at bottom under bar */
       body.theme-cover .split-col-left {
         display: flex;
         flex-direction: column;
@@ -1291,59 +1504,6 @@
         padding-bottom: 12px;
         pointer-events: auto;
       }
-
-      /* Desktop Floating QR Badge under/next to chocolate bar */
-      .desktop-floating-qr {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        background: rgba(16, 12, 9, 0.88);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border: 1.5px solid rgba(245, 158, 11, 0.45);
-        border-radius: 16px;
-        padding: 8px 14px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.88), 0 0 25px rgba(245, 158, 11, 0.16);
-        margin-left: 8px;
-        transition: transform 0.2s ease, border-color 0.2s ease;
-      }
-      .desktop-floating-qr:hover {
-        transform: translateY(-2px);
-        border-color: rgba(245, 158, 11, 0.7);
-      }
-      .desktop-floating-qr .qr-mini-card {
-        width: 62px;
-        height: 62px;
-        background: #FFFFFF;
-        border-radius: 10px;
-        padding: 3px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .desktop-floating-qr .qr-mini-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-      .desktop-qr-info {
-        text-align: left;
-      }
-      .desktop-qr-title {
-        font-size: 12px;
-        font-weight: 800;
-        color: #FCD34D;
-        margin-bottom: 2px;
-      }
-      .desktop-qr-desc {
-        font-size: 10.5px;
-        color: #D6D3D1;
-        line-height: 1.35;
-        max-width: 175px;
-      }
-
-      /* Right column: Wide flow container filling the right half */
       body.theme-cover .split-col-right {
         display: flex;
         align-items: center;
@@ -1352,13 +1512,6 @@
         height: 100%;
         min-height: 0;
       }
-      .right-column-flow {
-        width: 100%;
-        max-width: 720px;
-        display: flex;
-        flex-direction: column;
-      }
-
       body.theme-cover .footer-note {
         width: 100%;
         text-align: right;
@@ -1379,7 +1532,7 @@
         overflow-y: auto !important;
       }
       body.theme-cover {
-        padding: 12px 10px 30px;
+        padding: 12px 12px 30px;
       }
       body.theme-cover .container {
         padding: 0;
@@ -1401,114 +1554,33 @@
         width: 100%;
         padding: 0;
       }
-      .right-column-flow {
-        width: 100%;
+      .catchy-title {
+        font-size: 24px;
       }
-      .hero-outside-header {
-        text-align: center;
-        align-items: center;
-        margin-bottom: 10px;
+      .catchy-subtitle {
+        font-size: 13px;
       }
-      .hero-brand-row {
-        justify-content: center;
-        flex-wrap: wrap;
+      .hero-features-row {
         gap: 6px;
       }
-      .hero-brand-name {
-        font-size: 13.5px;
-      }
-      .hero-brand-tag {
-        font-size: 10px;
-      }
-      .hero-main-title {
-        font-size: 21px;
-        line-height: 1.25;
-        margin-bottom: 6px;
-      }
-      .hero-main-desc {
-        font-size: 12px;
-        margin-bottom: 8px;
-      }
-      .hero-offer-banner {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        text-align: center;
-        padding: 10px 12px;
-      }
-      .hero-offer-left {
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        width: 100%;
-      }
-      .hero-offer-prices {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .hero-price-new {
-        font-size: 22px;
-      }
-      .hero-offer-hint {
-        text-align: center;
-        max-width: 100%;
-        font-size: 11px;
-      }
-      .stepper-hero-frame {
-        padding: 16px 14px 14px;
-        border-radius: 20px;
-      }
-      .frame-stepper-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 3px;
-        margin-bottom: 10px;
-      }
-      .frame-stepper-title {
-        font-size: 12.5px;
-      }
-      .frame-stepper-sub {
+      .feat-badge {
         font-size: 10.5px;
+        padding: 4px 8px;
       }
-      .v1-tracker {
-        margin: 4px 6px 10px;
+      .offer-hook-card {
+        padding: 14px;
       }
-      .v1-node-label {
-        font-size: 9px;
+      .price-value-new {
+        font-size: 23px;
       }
-      .v1-node-circle {
-        width: 24px;
-        height: 24px;
-        font-size: 10.5px;
-      }
-      .v1-track-line-bg, .v1-track-line-fill {
-        top: 11px;
-        left: 6px;
-        right: 6px;
-      }
-      .v1-active-card {
-        padding: 12px 14px 10px;
-      }
-      .v1-step-title {
-        font-size: 14.5px;
-      }
-      .v1-step-pill {
-        font-size: 11px;
-      }
-      .v1-bullet-item {
-        font-size: 11.5px;
-      }
-      .actions-block {
+      .hero-actions-grid {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        margin-top: 8px;
       }
-      .btn-primary, .btn-secondary {
-        padding: 12px 14px;
-        font-size: 13.5px;
+      .btn-main-order, .btn-main-support {
+        padding: 13px 16px;
+        font-size: 14px;
       }
       .variant-switcher {
         position: static !important;
@@ -1526,24 +1598,34 @@
         font-size: 10px;
         padding: 4px 8px;
       }
-    }
 
-    @media (max-width: 480px) {
-      .hero-main-title {
-        font-size: 19px;
+      /* Modal on mobile */
+      .modal-step-body {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 12px 16px;
       }
-      .hero-price-new {
-        font-size: 21px;
+      .m-media-showcase {
+        height: 170px;
       }
-      .v1-node-label {
-        font-size: 9px;
+      .modal-header-section {
+        padding: 16px 16px 10px;
       }
-      .v1-node-circle {
-        width: 24px;
-        height: 24px;
-        font-size: 10.5px;
+      .modal-title {
+        font-size: 18px;
       }
-      .v1-track-line-bg, .v1-track-line-fill {
+      .m-node-circle {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+      }
+      .m-node-label {
+        font-size: 9.5px;
+      }
+      .modal-tracker-bar {
+        margin: 10px 16px 6px;
+      }
+      .modal-track-bg, .modal-track-fill {
         top: 12px;
       }
     }
@@ -1560,11 +1642,11 @@
 
     <!-- Sleek Floating Concept Switcher -->
     <nav class="variant-switcher" aria-label="Selector de diseño">
-      <span class="variant-switcher-label">👀 ВАРИАНТЫ:</span>
-      <a href="variant1.html" class="active">⚡️ 1. Степпер</a>
-      <a href="variant2.html">📱 2. Карточки</a>
-      <a href="variant3.html">📋 3. Аккордеон</a>
-      <a href="index.html">🏠 Оригинал</a>
+      <span class="variant-switcher-label">👀 VISTA:</span>
+      <a href="index.html" class="active">🌟 1. Presentación & Guía</a>
+      <a href="variant1.html">⚡️ 2. Stepper Directo</a>
+      <a href="variant2.html">📱 3. Tarjetas</a>
+      <a href="variant3.html">📋 4. Acordeón</a>
     </nav>
 
     <!-- Top Bar: Status + Language Selector -->
@@ -1598,116 +1680,58 @@
         </div>
       </div>
       <div class="split-col-right">
-        <div class="right-column-flow">
-          <!-- 1. HERO HEADLINE & PROMO OFFER (OUTSIDE THE FRAME) -->
-          <div class="hero-outside-header">
-            <div class="hero-brand-row">
-              <img src="mrkey-logo.png" alt="Mr. Key" class="hero-brand-logo-img">
-              <span class="hero-brand-name">MR. KEY</span>
-              <span class="hero-brand-divider">•</span>
-              <span class="hero-brand-tag" id="txt-brand-sub">BUENOS AIRES • BARRAS ARTESANALES</span>
+        <div class="hero-main-container">
+          <!-- Brand Badge -->
+          <div class="brand-top-pill">
+            <div class="brand-mini-circle">
+              <img src="mrkey-logo.png" alt="Mr. Key">
             </div>
+            <span class="brand-pill-text" id="txt-brand-pill">MR. KEY • BUENOS AIRES 24/7</span>
+          </div>
 
-            <h1 class="hero-main-title" id="txt-title">
-              Barras proteicas artesanales sin azúcar
-            </h1>
-            <p class="hero-main-desc" id="txt-desc">
-              100% naturales, sin gluten ni conservantes. Pedí por el bot en Telegram y retirá en kioscos seleccionados de Buenos Aires en 2 minutos.
-            </p>
+          <!-- Catchy Main Headline -->
+          <h1 class="catchy-title" id="txt-catchy-title">
+            El primer chocolate artesanal que podés comer sin culpa todos los días
+          </h1>
+          <p class="catchy-subtitle" id="txt-catchy-subtitle">
+            20g de proteína pura, caramelo salado crocante y cacao negro belga. 100% natural, sin azúcar agregada ni conservantes. Pedilo en el bot y retiralo helado en quioscos de Buenos Aires en 2 minutos.
+          </p>
 
-            <!-- Prominent Offer Banner (Outside the frame) -->
-            <div class="hero-offer-banner">
-              <div class="hero-offer-left">
-                <span class="hero-offer-badge" id="v1-offer-badge">🔥 PRECIO LANZAMIENTO</span>
-                <div class="hero-offer-prices">
-                  <span class="hero-price-new" id="v1-offer-new">$16.000 ARS</span>
-                  <span class="hero-price-old" id="v1-offer-old">$22.000</span>
-                  <span class="hero-price-save" id="v1-offer-save">-27% OFF</span>
-                </div>
+          <!-- Key Highlights Badges -->
+          <div class="hero-features-row">
+            <div class="feat-badge"><span class="icon">🍫</span><span id="feat-1">Cacao puro & caramelo salado</span></div>
+            <div class="feat-badge"><span class="icon">⚡️</span><span id="feat-2">20g Proteína limpia</span></div>
+            <div class="feat-badge"><span class="icon">🌿</span><span id="feat-3">0% Azúcar añadida • Sin TACC</span></div>
+            <div class="feat-badge"><span class="icon">❄️</span><span id="feat-4">Retiro 24/7 helado en 2 min</span></div>
+          </div>
+
+          <!-- CLICKABLE SPECIAL OFFER HOOK CARD -->
+          <div class="offer-hook-card" onclick="openStepModal()">
+            <div class="offer-hook-top">
+              <span class="offer-badge-tag" id="txt-hook-badge">🔥 PRECIO LANZAMIENTO</span>
+              <div class="offer-price-group">
+                <span class="price-value-new" id="txt-hook-new">$16.000 ARS</span>
+                <span class="price-value-old" id="txt-hook-old">$22.000</span>
+                <span class="price-discount-pill" id="txt-hook-save">-27% OFF</span>
               </div>
-              <div class="hero-offer-hint" id="v1-offer-hint">
-                Ahorrá $6.000 ARS por barra pagando con Wallet
-              </div>
+            </div>
+            <div class="offer-hook-middle" id="txt-hook-middle">
+              ¿Querés pagar con <strong>$6.000 ARS de descuento</strong> al instante con Telegram Wallet?
+            </div>
+            <div class="offer-hook-btn-trigger">
+              <span id="txt-hook-btn">⚡️ Ver cómo pagar $16.000 en 10 min paso a paso</span>
+              <span class="arrow">➔</span>
             </div>
           </div>
 
-          <!-- 2. THE EXPANDED ORANGE-BORDERED FRAME (Dedicated Stepper & Payment Steps) -->
-          <div class="stepper-hero-frame" id="hero-card">
-            <div class="frame-stepper-header">
-              <div class="frame-stepper-title" id="v1-stepper-title">⏱ ¿CÓMO PAGAR $16.000 EN 10 MIN?</div>
-              <div class="frame-stepper-sub" id="v1-stepper-sub">Solo 1ra vez • 100% Guiado</div>
-            </div>
-
-            <!-- Progress Tracker Bar -->
-            <div class="v1-tracker">
-              <div class="v1-track-line-bg"></div>
-              <div class="v1-track-line-fill" id="v1-progress-fill" style="width: 0%;"></div>
-
-              <button type="button" class="v1-step-node active" onclick="setV1Step(0)">
-                <div class="v1-node-circle" id="v1-node-0">1</div>
-                <span class="v1-node-label" id="v1-tab-0">1. @wallet</span>
-              </button>
-              <button type="button" class="v1-step-node" onclick="setV1Step(1)">
-                <div class="v1-node-circle" id="v1-node-1">2</div>
-                <span class="v1-node-label" id="v1-tab-1">2. Mercado Pago</span>
-              </button>
-              <button type="button" class="v1-step-node" onclick="setV1Step(2)">
-                <div class="v1-node-circle" id="v1-node-2">3</div>
-                <span class="v1-node-label" id="v1-tab-2">3. Pago -27%</span>
-              </button>
-              <button type="button" class="v1-step-node" onclick="setV1Step(3)">
-                <div class="v1-node-circle" id="v1-node-3">4</div>
-                <span class="v1-node-label" id="v1-tab-3">4. Retiro (2 min)</span>
-              </button>
-            </div>
-
-            <!-- Active Step Card -->
-            <div class="v1-active-card">
-              <div class="v1-card-top-row">
-                <span class="v1-step-tag" id="v1-step-tag">PASO 1 DE 4</span>
-                <span class="v1-time-tag" id="v1-time-tag">⏱ ~15 seg</span>
-              </div>
-              <h3 class="v1-step-title" id="v1-title">Abrí el monedero oficial @wallet</h3>
-              <div class="v1-step-pill" id="v1-pill">👉 Integrado en Telegram • Sin descargas externas ni KYC inicial</div>
-
-              <div class="v1-bullets">
-                <div class="v1-bullet-item">
-                  <span class="v1-bullet-icon">📱</span>
-                  <span id="v1-what"><strong>Qué hacer:</strong> Tocá el botón de abajo o buscá @wallet en Telegram. Es el servicio oficial verificado.</span>
-                </div>
-                <div class="v1-bullet-item">
-                  <span class="v1-bullet-icon">🛡</span>
-                  <span id="v1-why"><strong>Seguridad:</strong> No necesitás apps dudosas ni enviar fotos de pasaporte para empezar.</span>
-                </div>
-                <div class="v1-bullet-item">
-                  <span class="v1-bullet-icon">💡</span>
-                  <span id="v1-tip"><strong>Clave:</strong> Se activa en 1 clic y queda disponible en tus chats de Telegram.</span>
-                </div>
-              </div>
-
-              <div class="v1-cta-row">
-                <a href="https://t.me/wallet" target="_blank" rel="noopener noreferrer" class="v1-btn-action" id="v1-action-btn">
-                  <span>🚀 Abrir @wallet en Telegram</span>
-                </a>
-              </div>
-
-              <!-- Bottom Nav Bar inside step -->
-              <div class="v1-nav-bar">
-                <button type="button" class="v1-btn-prev" id="v1-prev-btn" onclick="prevV1Step()" style="visibility:hidden">← Anterior</button>
-                <span class="v1-indicator" id="v1-indicator">Paso 1 de 4</span>
-                <button type="button" class="v1-btn-next" id="v1-next-btn" onclick="nextV1Step()">Siguiente paso →</button>
-              </div>
-            </div>
-
-            <!-- Bottom Action Buttons inside the frame -->
-            <div class="actions-block">
-              <a href="https://t.me/mrkey_ba_1_bot" class="btn-primary" id="btn-primary" target="_blank" rel="noopener noreferrer">
-                <span id="txt-btn-primary">🚀 Abrir menú en Telegram</span>
-              </a>
-              <a href="https://t.me/mr_key_ba1" class="btn-secondary" id="btn-secondary" target="_blank" rel="noopener noreferrer">
-                <span id="txt-btn-secondary">💬 Soporte & Mayoristas (@mr_key_ba1)</span>
-              </a>
-            </div>
+          <!-- Main Action Buttons -->
+          <div class="hero-actions-grid">
+            <a href="https://t.me/mrkey_ba_1_bot" class="btn-main-order" target="_blank" rel="noopener noreferrer">
+              <span id="txt-btn-order">🚀 Pedir directo en el Bot de Telegram</span>
+            </a>
+            <a href="https://t.me/mr_key_ba1" class="btn-main-support" target="_blank" rel="noopener noreferrer">
+              <span id="txt-btn-support">💬 Soporte (@mr_key_ba1)</span>
+            </a>
           </div>
         </div>
       </div>
@@ -1719,137 +1743,123 @@
 </main>
 
   <!-- Interactive Multilingual & Layout Engine (Default: ES) -->
-  <script>
-    const I18N = {
-      es: {
-        pageTitle: "Mr. Key — Barras Proteicas Artesanales | Buenos Aires 24/7",
-        metaDesc: "Retiro 24/7 de barras proteicas artesanales sin azúcar en kioscos de Buenos Aires (Palermo, Recoleta, Belgrano). Pago anónimo en cripto.",
-        status: "24/7 • Retiro en kioscos online",
-        brandSub: "Buenos Aires • Barras Artesanales",
-        title: "Barras proteicas artesanales sin azúcar",
-        desc: "100% naturales, sin gluten ni conservantes. Pedí por el bot en Telegram y retirá en kioscos seleccionados de Buenos Aires en 2 minutos.",
-        coverBadge: "❄️ Frescura Glacial Sub-Zero",
-        coverTagline: "Edición Artesanal • Buenos Aires",
-        coverTitle: "Cacao Negro & Caramelo Salado con Escarcha",
-        loyaltyHeader: "Beneficios & Sistema de Bonos:",
-        loyaltyItem1: "<strong>Amigos:</strong> 10% de descuento a tu invitado + 10% de saldo bono para vos",
-        loyaltyItem2: "<strong>Reseñas:</strong> +150 puntos extra por cada foto-reseña aprobada",
-        loyaltyItem3: "<strong>Niveles VIP:</strong> Acumulá XP y subí de nivel para obtener cashback de 3% a 10%",
-        chip1: "⚡ Retiro en 2 min",
-        chip2: "📍 Palermo • Recoleta • Belgrano",
-        chip3: "🔒 Pago anónimo (USDT / TON)",
-        chip4: "🍫 4 sabores de autor",
-        chip5: "🛡 24h Garantía total",
-        btnPrimary: "🚀 Abrir menú en Telegram",
-        btnSecondary: "💬 Soporte & Mayoristas (@mr_key_ba1)",
-        qrHint: "Escaneá con tu celular para abrir el bot",
-        footer: "© 2026 Mr. Key • Buenos Aires, Argentina • Sistema autónomo 24/7"
-      },
-      ru: {
-        pageTitle: "Mr. Key — Натуральные ПП-батончики ручной работы | Буэнос-Айрес 24/7",
-        metaDesc: "Круглосуточная выдача авторских ПП-батончиков без сахара в проверенных киосках Буэнос-Айреса (Palermo, Recoleta, Belgrano). Анонимная крипто-оплата.",
-        status: "24/7 • Выдача в киосках онлайн",
-        brandSub: "Буэнос-Айрес • Авторские ПП-батончики",
-        title: "Натуральные ПП-батончики ручной работы",
-        desc: "100% натуральный состав, без сахара, глютена и химии. Оформи заказ в боте и забери в проверенных киосках Буэнос-Айреса за 2 минуты.",
-        coverBadge: "❄️ Морозная свежесть Sub-Zero",
-        coverTagline: "Авторская серия • Буэнос-Айрес",
-        coverTitle: "Тёмный шоколад с соленой карамелью и инеем",
-        loyaltyHeader: "Бонусная система и фишки:",
-        loyaltyItem1: "<strong>Рефералы:</strong> Скидка 10% приглашённому другу + 10% бонус вам на баланс",
-        loyaltyItem2: "<strong>Отзывы:</strong> +150 бонусов на баланс за каждый фото-отзыв",
-        loyaltyItem3: "<strong>VIP Уровни:</strong> Накопление XP и прокачка кешбэка от 3% до 10% на все заказы",
-        chip1: "⚡ Забор за 2 мин",
-        chip2: "📍 Palermo • Recoleta • Belgrano",
-        chip3: "🔒 Анонимная крипто-оплата (USDT/TON)",
-        chip4: "🍫 4 уникальных вкуса",
-        chip5: "🛡 24ч Гарантия замены/возврата",
-        btnPrimary: "🚀 Открыть меню в Telegram",
-        btnSecondary: "💬 Поддержка и Оптовикам (@mr_key_ba1)",
-        qrHint: "Наведи камеру смартфона, чтобы открыть бота",
-        footer: "© 2026 Mr. Key • Буэнос-Айрес, Аргентина • Автономная система 24/7"
-      },
-      en: {
-        pageTitle: "Mr. Key — Handcrafted Protein Bars | Buenos Aires 24/7",
-        metaDesc: "24/7 automated pickup of handcrafted sugar-free protein bars in Buenos Aires kiosks (Palermo, Recoleta, Belgrano). Anonymous crypto pay.",
-        status: "24/7 • Kiosk Pickup Online",
-        brandSub: "Buenos Aires • Artisan Protein Bars",
-        title: "Handcrafted Sugar-Free Protein Bars",
-        desc: "100% natural, gluten-free, zero chemical additives. Order via Telegram and pick up at verified Buenos Aires kiosks within 2 minutes.",
-        coverBadge: "❄️ Sub-Zero Glacial Frost",
-        coverTagline: "Artisan Edition • Buenos Aires",
-        coverTitle: "Dark Chocolate & Salted Caramel with Frost",
-        loyaltyHeader: "Perks & Loyalty Rewards:",
-        loyaltyItem1: "<strong>Referrals:</strong> 10% off for your invited friend + 10% bonus credit for you",
-        loyaltyItem2: "<strong>Reviews:</strong> +150 bonus credits for every verified photo review",
-        loyaltyItem3: "<strong>VIP Tiers:</strong> Earn XP points to unlock permanent 3% to 10% cashback",
-        chip1: "⚡ 2-Min Pickup",
-        chip2: "📍 Palermo • Recoleta • Belgrano",
-        chip3: "🔒 Anonymous Crypto Pay (USDT/TON)",
-        chip4: "🍫 4 Signature Flavors",
-        chip5: "🛡 24h Satisfaction Guarantee",
-        btnPrimary: "🚀 Open Menu in Telegram",
-        btnSecondary: "💬 Support & Wholesale (@mr_key_ba1)",
-        qrHint: "Scan with phone camera to open bot",
-        footer: "© 2026 Mr. Key • Buenos Aires, Argentina • 24/7 Autonomous System"
-      }
-    };
+  
 
-    function setLang(lang) {
-      if (!I18N[lang]) lang = 'es';
-      localStorage.setItem('mrkey_lang', lang);
-      document.documentElement.lang = lang;
 
-      const card = document.getElementById('hero-card');
-      if (card) card.style.opacity = '0.7';
+  <!-- Interactive Step Modal / Fullscreen Walkthrough -->
+  <div class="step-modal-overlay" id="guide-modal" onclick="onModalOverlayClick(event)">
+    <div class="step-modal-window" onclick="event.stopPropagation()">
+      <button type="button" class="modal-close-btn" onclick="closeStepModal()" aria-label="Cerrar">✕</button>
+      
+      <!-- Modal Header -->
+      <div class="modal-header-section">
+        <div class="modal-pretag" id="m-pretag">⚡️ GUÍA PASO A PASO PARA NOVICIOS</div>
+        <h2 class="modal-title" id="m-title">¿Cómo pagar $16.000 ARS en 10 minutos?</h2>
+        <div class="modal-subtitle" id="m-subtitle">Solo la primera vez • 100% Guiado y seguro en Telegram</div>
+      </div>
 
-      setTimeout(() => {
-        const data = I18N[lang];
-        document.title = data.pageTitle;
-        const metaDesc = document.getElementById('meta-desc');
-        if (metaDesc) metaDesc.content = data.metaDesc;
+      <!-- Tracker Bar -->
+      <div class="modal-tracker-bar">
+        <div class="modal-track-bg"></div>
+        <div class="modal-track-fill" id="m-progress-fill" style="width: 0%;"></div>
 
-        const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
-        setT('txt-status', data.status);
-        setT('txt-btn-primary', data.btnPrimary);
-        setT('txt-btn-secondary', data.btnSecondary);
-        setT('txt-footer', data.footer);
+        <button type="button" class="m-step-node active" onclick="setMStep(0)">
+          <div class="m-node-circle" id="m-node-0">1</div>
+          <span class="m-node-label" id="m-tab-0">1. @wallet</span>
+        </button>
+        <button type="button" class="m-step-node" onclick="setMStep(1)">
+          <div class="m-node-circle" id="m-node-1">2</div>
+          <span class="m-node-label" id="m-tab-1">2. Mercado Pago</span>
+        </button>
+        <button type="button" class="m-step-node" onclick="setMStep(2)">
+          <div class="m-node-circle" id="m-node-2">3</div>
+          <span class="m-node-label" id="m-tab-2">3. Pago -27%</span>
+        </button>
+        <button type="button" class="m-step-node" onclick="setMStep(3)">
+          <div class="m-node-circle" id="m-node-3">4</div>
+          <span class="m-node-label" id="m-tab-3">4. Retiro 24/7</span>
+        </button>
+      </div>
 
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${lang}'`));
-        });
+      <!-- Step Content & Media Showcase Grid -->
+      <div class="modal-step-body">
+        <div class="m-step-content">
+          <div class="m-step-tag-row">
+            <span class="m-step-tag" id="m-step-tag">PASO 1 DE 4</span>
+            <span class="m-time-tag" id="m-time-tag">⏱ ~15 seg</span>
+          </div>
+          <h3 class="m-step-title" id="m-step-title">Abrí el monedero oficial @wallet</h3>
+          <div class="m-step-pill" id="m-step-pill">👉 Integrado en Telegram • Sin descargas externas ni KYC inicial</div>
 
-        if (card) card.style.opacity = '1';
-        if (typeof renderV1 === 'function') renderV1();
-      }, 80);
-    }
+          <div class="m-bullets">
+            <div class="m-bullet-item">
+              <span>📱</span>
+              <span id="m-what"><strong>Qué hacer:</strong> Tocá el botón de abajo o buscá @wallet en Telegram. Es el servicio oficial verificado.</span>
+            </div>
+            <div class="m-bullet-item">
+              <span>🛡</span>
+              <span id="m-why"><strong>Seguridad:</strong> No necesitás apps dudosas ni enviar fotos de pasaporte para empezar.</span>
+            </div>
+            <div class="m-bullet-item">
+              <span>💡</span>
+              <span id="m-tip"><strong>Clave:</strong> Se activa en 1 clic y queda disponible en tus chats de Telegram.</span>
+            </div>
+          </div>
 
-    // Default to Spanish ('es') on load
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('mrkey_lang') || 'es';
-      setLang(savedLang);
-    });
-  </script>
+          <a href="https://t.me/wallet" target="_blank" rel="noopener noreferrer" class="m-btn-action" id="m-action-btn">
+            <span>🚀 Abrir @wallet en Telegram</span>
+          </a>
+        </div>
+
+        <!-- Screencast / Screenshot Showcase Container -->
+        <div class="m-media-showcase" id="m-media-box">
+          <span class="m-media-badge" id="m-media-badge">PASO A PASO</span>
+          <div class="m-media-icon" id="m-media-icon">🎬</div>
+          <div class="m-media-title" id="m-media-title">Video-Demostración</div>
+          <div class="m-media-desc" id="m-media-desc">Grabación en pantalla de cómo se activa y se compra cripto en 2 toques.</div>
+        </div>
+      </div>
+
+      <!-- Modal Navigation Footer -->
+      <div class="modal-footer-nav">
+        <button type="button" class="m-btn-prev" id="m-prev-btn" onclick="prevMStep()" style="visibility:hidden">← Anterior</button>
+        <span class="m-indicator" id="m-indicator">Paso 1 de 4</span>
+        <button type="button" class="m-btn-next" id="m-next-btn" onclick="nextMStep()">Siguiente paso →</button>
+      </div>
+    </div>
+  </div>
 
 
 <script>
-const SLIDER_I18N = {
+const PORTAL_I18N = {
   es: {
-    brandSub: "BUENOS AIRES • BARRAS ARTESANALES",
-    mainTitle: "Barras proteicas artesanales sin azúcar",
-    mainDesc: "100% naturales, sin gluten ni conservantes. Pedí por el bot en Telegram y retirá en kioscos seleccionados de Buenos Aires en 2 minutos.",
-    offerBadge: "🔥 PRECIO LANZAMIENTO",
-    offerOld: "$22.000",
-    offerNew: "$16.000 ARS",
-    offerSave: "-27% OFF",
-    offerHint: "Ahorrá $6.000 ARS por barra pagando con Wallet",
-    headerTitle: "⏱ ¿CÓMO PAGAR $16.000 EN 10 MIN?",
-    headerSub: "Solo 1ra vez • 100% Guiado",
-    prevBtn: "← Anterior",
-    nextBtn: "Siguiente paso →",
-    finishBtn: "🍫 Pedir barras a $16.000 ARS ➔",
+    pageTitle: "Mr. Key — Chocolate Proteico Artesanal | Buenos Aires 24/7",
+    metaDesc: "Retiro 24/7 de barras proteicas artesanales sin azúcar en quioscos de Buenos Aires (Palermo, Recoleta, Belgrano). Precio lanzamiento $16.000 ARS con Wallet.",
+    status: "24/7 • Retiro en quioscos online",
+    brandPill: "MR. KEY • BUENOS AIRES 24/7",
+    catchyTitle: "El primer chocolate artesanal que podés comer sin culpa todos los días",
+    catchySubtitle: "20g de proteína pura, caramelo salado crocante y cacao negro belga. 100% natural, sin azúcar agregada ni conservantes. Pedilo en el bot y retiralo helado en quioscos de Buenos Aires en 2 minutos.",
+    feat1: "Cacao puro & caramelo salado",
+    feat2: "20g Proteína limpia",
+    feat3: "0% Azúcar añadida • Sin TACC",
+    feat4: "Retiro 24/7 helado en 2 min",
+    hookBadge: "🔥 PRECIO LANZAMIENTO",
+    hookNew: "$16.000 ARS",
+    hookOld: "$22.000",
+    hookSave: "-27% OFF",
+    hookMiddle: "¿Querés pagar con <strong>$6.000 ARS de descuento</strong> al instante con Telegram Wallet?",
+    hookBtn: "⚡️ Ver cómo pagar $16.000 en 10 min paso a paso",
+    btnOrder: "🚀 Pedir directo en el Bot de Telegram",
+    btnSupport: "💬 Soporte (@mr_key_ba1)",
     desktopQrTitle: "📱 Pedí con tu celular",
     desktopQrDesc: "Escaneá con tu cámara para abrir el bot en Telegram",
+    footer: "© 2026 Mr. Key • Buenos Aires, Argentina • Sistema autónomo 24/7",
+    modalPretag: "⚡️ GUÍA PASO A PASO PARA NOVICIOS",
+    modalTitle: "¿Cómo pagar $16.000 ARS en 10 minutos?",
+    modalSub: "Solo la primera vez • 100% Guiado y seguro en Telegram",
+    mPrev: "← Anterior",
+    mNext: "Siguiente paso →",
+    mFinish: "🍫 Pedir barras a $16.000 ARS ➔",
     steps: [
       {
         stepTag: "PASO 1 DE 4",
@@ -1861,7 +1871,9 @@ const SLIDER_I18N = {
         why: "<strong>Seguridad:</strong> No necesitás apps dudosas ni enviar fotos de pasaporte para empezar.",
         tip: "<strong>Clave:</strong> Se activa en 1 clic y queda disponible en tus chats de Telegram.",
         actionTxt: "🚀 Abrir @wallet en Telegram",
-        actionUrl: "https://t.me/wallet"
+        actionUrl: "https://t.me/wallet",
+        mediaTitle: "Video: Abrir @wallet",
+        mediaDesc: "Se activa instantáneamente sin salir de Telegram ni llenar formularios."
       },
       {
         stepTag: "PASO 2 DE 4",
@@ -1873,7 +1885,9 @@ const SLIDER_I18N = {
         why: "<strong>Garantía:</strong> Telegram congela los USDT del vendedor hasta que vos confirmes la transferencia.",
         tip: "<strong>Acreditación:</strong> Los USDT caen en tu saldo en un par de minutos.",
         actionTxt: "📖 Ver cómo comprar en @wallet",
-        actionUrl: "https://t.me/wallet"
+        actionUrl: "https://t.me/wallet",
+        mediaTitle: "Video: Cargar con Mercado Pago",
+        mediaDesc: "Demostración de transferencia P2P con liberación garantizada por Telegram."
       },
       {
         stepTag: "PASO 3 DE 4",
@@ -1885,38 +1899,54 @@ const SLIDER_I18N = {
         why: "<strong>Precio final:</strong> Pagás $16.000 ARS en lugar de $22.000 ARS ($6.000 ARS de ahorro inmediato).",
         tip: "<strong>Gratis:</strong> Cero comisiones de red dentro de Telegram.",
         actionTxt: "🛒 Ir al menú del bot en Telegram",
-        actionUrl: "https://t.me/mrkey_ba_1_bot"
+        actionUrl: "https://t.me/mrkey_ba_1_bot",
+        mediaTitle: "Video: Pago en 1 Tap",
+        mediaDesc: "El bot descuenta los USDT sin costos de gas ni demoras."
       },
       {
         stepTag: "PASO 4 DE 4",
-        tab: "4. Retiro (2 min)",
-        title: "Retirá tus barras frescas en el kiosco",
+        tab: "4. Retiro 24/7",
+        title: "Retirá tus barras frescas en el quiosco",
         time: "⏱ ~2 min",
-        pill: "❄️ Cadena de frío • Kioscos 24/7 en Palermo, Recoleta y Belgrano",
-        what: "<strong>Qué hacer:</strong> El bot te entrega un código QR y pin. Pasá por el kiosco cuando quieras.",
+        pill: "❄️ Cadena de frío • Quioscos 24/7 en Palermo, Recoleta y Belgrano",
+        what: "<strong>Qué hacer:</strong> El bot te entrega un código QR y pin. Pasá por el quiosco cuando quieras.",
         why: "<strong>Calidad:</strong> Barras refrigeradas para máxima frescura y crocancia.",
         tip: "<strong>Garantía total:</strong> Cambio o reembolso en 24h si no quedás satisfecho.",
         actionTxt: "🍫 Pedir barras a $16.000 ARS",
-        actionUrl: "https://t.me/mrkey_ba_1_bot"
+        actionUrl: "https://t.me/mrkey_ba_1_bot",
+        mediaTitle: "Video: Retiro en Quiosco",
+        mediaDesc: "Mostrás el QR al quiosquero y te entrega tu barra helada al instante."
       }
     ]
   },
   ru: {
-    brandSub: "БУЭНОС-АЙРЕС • АВТОРСКИЕ ПП-БАТОНЧИКИ",
-    mainTitle: "Натуральные ПП–батончики ручной работы",
-    mainDesc: "100% натуральный состав, без сахара, глютена и химии. Оформи заказ в боте и забери в проверенных киосках Буэнос-Айреса за 2 минуты.",
-    offerBadge: "🔥 АКЦИЯ НА СТАРТЕ",
-    offerOld: "$22.000",
-    offerNew: "$16.000 ARS",
-    offerSave: "-27% ВЫГОДЫ",
-    offerHint: "Экономия $6.000 ARS на каждом батончике при оплате через Wallet",
-    headerTitle: "⏱ КАК ОПЛАТИТЬ $16.000 ARS ЗА 10 МИНУТ?",
-    headerSub: "Только при 1-м заказе • 100% просто",
-    prevBtn: "← Назад",
-    nextBtn: "Следующий шаг →",
-    finishBtn: "🍫 Заказать батончики за $16.000 ARS ➔",
+    pageTitle: "Mr. Key — Авторский протеиновый шоколад | Буэнос-Айрес 24/7",
+    metaDesc: "Натуральные протеиновые батончики ручной работы без сахара в киосках Буэнос-Айреса (Палермо, Реколета, Бельграно). Цена $16.000 ARS через Wallet.",
+    status: "24/7 • Выдача в киосках онлайн",
+    brandPill: "MR. KEY • БУЭНОС-АЙРЕС 24/7",
+    catchyTitle: "Первый авторский шоколад, который можно есть без чувства вины каждый день",
+    catchySubtitle: "20г чистого протеина, хрустящий жареный миндаль, солёная карамель и отборное тёмное какао. 100% натурально, без сахара и глютена. Заказ за пару кликов, выдача в проверенных киосках за 2 минуты.",
+    feat1: "Тёмное какао & солёная карамель",
+    feat2: "20г Чистого протеина",
+    feat3: "0% Сахара • Без глютена",
+    feat4: "Холодная выдача 24/7 за 2 мин",
+    hookBadge: "🔥 АКЦИЯ НА СТАРТЕ",
+    hookNew: "$16.000 ARS",
+    hookOld: "$22.000",
+    hookSave: "-27% ВЫГОДЫ",
+    hookMiddle: "Хочешь платить с <strong>выгодой $6.000 ARS</strong> на каждом батончике через Telegram Wallet?",
+    hookBtn: "⚡️ Узнать, как оплатить $16.000 за 10 минут по шагам",
+    btnOrder: "🚀 Открыть меню в Telegram-боте",
+    btnSupport: "💬 Поддержка и Опт (@mr_key_ba1)",
     desktopQrTitle: "📱 Заказ со смартфона",
     desktopQrDesc: "Наведи камеру для мгновенного перехода в Telegram-бот",
+    footer: "© 2026 Mr. Key • Буэнос-Айрес, Аргентина • Автономная система 24/7",
+    modalPretag: "⚡️ ПОШАГОВЫЙ ГИД ДЛЯ НОВИЧКОВ",
+    modalTitle: "Как оплатить $16.000 ARS за 10 минут?",
+    modalSub: "Только при первом заказе • 100% просто и безопасно прямо в Telegram",
+    mPrev: "← Назад",
+    mNext: "Следующий шаг →",
+    mFinish: "🍫 Заказать батончики за $16.000 ARS ➔",
     steps: [
       {
         stepTag: "ШАГ 1 ИЗ 4",
@@ -1928,7 +1958,9 @@ const SLIDER_I18N = {
         why: "<strong>Безопасность:</strong> Не нужно регистрироваться на биржах или привязывать карту.",
         tip: "<strong>Фишка:</strong> Кошелек активируется в 1 клик прямо в чатах Telegram.",
         actionTxt: "🚀 Открыть @wallet в Telegram",
-        actionUrl: "https://t.me/wallet"
+        actionUrl: "https://t.me/wallet",
+        mediaTitle: "Скринкаст: Активация @wallet",
+        mediaDesc: "Мгновенное подключение без отправки паспортов и сторонних приложений."
       },
       {
         stepTag: "ШАГ 2 ИЗ 4",
@@ -1940,7 +1972,9 @@ const SLIDER_I18N = {
         why: "<strong>Гарантия:</strong> Telegram блокирует средства продавца до твоего подтверждения перевода.",
         tip: "<strong>Скорость:</strong> USDT поступают на баланс за пару минут.",
         actionTxt: "📖 Инструкция по покупке в @wallet",
-        actionUrl: "https://t.me/wallet"
+        actionUrl: "https://t.me/wallet",
+        mediaTitle: "Скринкаст: Покупка через Mercado Pago",
+        mediaDesc: "Запись реального процесса безопасной покупки USDT через P2P."
       },
       {
         stepTag: "ШАГ 3 ИЗ 4",
@@ -1952,11 +1986,13 @@ const SLIDER_I18N = {
         why: "<strong>Чистая выгода:</strong> Цена составит $16.000 ARS вместо $22.000 ARS.",
         tip: "<strong>Без комиссий:</strong> Перевод внутри Telegram бесплатный и мгновенный.",
         actionTxt: "🛒 Перейти к заказу в боте",
-        actionUrl: "https://t.me/mrkey_ba_1_bot"
+        actionUrl: "https://t.me/mrkey_ba_1_bot",
+        mediaTitle: "Скринкаст: Оплата в 1 клик",
+        mediaDesc: "Моментальное подтверждение оплаты заказа без сетевых комиссий."
       },
       {
         stepTag: "ШАГ 4 ИЗ 4",
-        tab: "4. Выдача (2 мин)",
+        tab: "4. Выдача 24/7",
         title: "Забери свежие батончики в киоске",
         time: "⏱ ~2 мин",
         pill: "❄️ Холодное хранение • Киоски 24/7 в Палермо, Реколете и Бельграно",
@@ -1964,26 +2000,40 @@ const SLIDER_I18N = {
         why: "<strong>Свежесть:</strong> Все батончики хранятся в холодильниках при идеальной температуре.",
         tip: "<strong>Гарантия:</strong> Возврат или замена в течение 24ч, если что-то не понравится.",
         actionTxt: "🍫 Заказать батончики за $16.000 ARS",
-        actionUrl: "https://t.me/mrkey_ba_1_bot"
+        actionUrl: "https://t.me/mrkey_ba_1_bot",
+        mediaTitle: "Скринкаст: Получение по QR",
+        mediaDesc: "Показываешь QR на экране и забираешь ледяной батончик."
       }
     ]
   },
   en: {
-    brandSub: "BUENOS AIRES • ARTISANAL PROTEIN BARS",
-    mainTitle: "Sugar-Free Artisanal Protein Bars",
-    mainDesc: "100% natural ingredients, gluten-free and preservative-free. Order via Telegram bot and pick up in selected Buenos Aires kiosks in 2 min.",
-    offerBadge: "🔥 LAUNCH SPECIAL",
-    offerOld: "$22.000",
-    offerNew: "$16.000 ARS",
-    offerSave: "-27% OFF",
-    offerHint: "Save $6.000 ARS per bar with Telegram Wallet checkout",
-    headerTitle: "⏱ HOW TO PAY $16.000 ARS IN 10 MIN?",
-    headerSub: "First-time setup only • 100% Guided",
-    prevBtn: "← Previous",
-    nextBtn: "Next step →",
-    finishBtn: "🍫 Order bars for $16.000 ARS ➔",
+    pageTitle: "Mr. Key — Artisanal Protein Chocolate | Buenos Aires 24/7",
+    metaDesc: "24/7 pickup of sugar-free artisanal protein bars in Buenos Aires kiosks (Palermo, Recoleta, Belgrano). Launch price $16.000 ARS via Telegram Wallet.",
+    status: "24/7 • Kiosk pickup online",
+    brandPill: "MR. KEY • BUENOS AIRES 24/7",
+    catchyTitle: "The first artisanal protein chocolate you can crave every single day",
+    catchySubtitle: "20g pure protein, roasted almonds, crunchy salted caramel, and Belgian dark cocoa. 100% natural, no added sugar, gluten-free. Order via bot and pick up ice-cold in Buenos Aires kiosks in 2 min.",
+    feat1: "Pure dark cocoa & salted caramel",
+    feat2: "20g Clean protein",
+    feat3: "0% Added sugar • Gluten-free",
+    feat4: "24/7 Ice-cold pickup in 2 min",
+    hookBadge: "🔥 LAUNCH SPECIAL",
+    hookNew: "$16.000 ARS",
+    hookOld: "$22.000",
+    hookSave: "-27% OFF",
+    hookMiddle: "Want to save <strong>$6.000 ARS per bar</strong> instantly with Telegram Wallet?",
+    hookBtn: "⚡️ See how to pay $16.000 in 10 min step-by-step",
+    btnOrder: "🚀 Order directly in Telegram Bot",
+    btnSupport: "💬 Support (@mr_key_ba1)",
     desktopQrTitle: "📱 Order with your phone",
     desktopQrDesc: "Scan with camera to open Telegram order bot",
+    footer: "© 2026 Mr. Key • Buenos Aires, Argentina • 24/7 Autonomous System",
+    modalPretag: "⚡️ STEP-BY-STEP BEGINNER'S GUIDE",
+    modalTitle: "How to pay $16.000 ARS in 10 minutes?",
+    modalSub: "First-time setup only • 100% Guided and safe in Telegram",
+    mPrev: "← Previous",
+    mNext: "Next step →",
+    mFinish: "🍫 Order bars for $16.000 ARS ➔",
     steps: [
       {
         stepTag: "STEP 1 OF 4",
@@ -1995,7 +2045,9 @@ const SLIDER_I18N = {
         why: "<strong>Security:</strong> No need to register on exchanges or link bank cards.",
         tip: "<strong>Fast:</strong> The wallet activates in 1 click and lives in your Telegram chats.",
         actionTxt: "🚀 Open @wallet in Telegram",
-        actionUrl: "https://t.me/wallet"
+        actionUrl: "https://t.me/wallet",
+        mediaTitle: "Video: Opening @wallet",
+        mediaDesc: "One-tap activation directly in your Telegram chats without forms."
       },
       {
         stepTag: "STEP 2 OF 4",
@@ -2007,7 +2059,9 @@ const SLIDER_I18N = {
         why: "<strong>Safe:</strong> Telegram securely locks seller USDT until you confirm sending pesos.",
         tip: "<strong>Instant:</strong> Funds arrive in your wallet balance within minutes.",
         actionTxt: "📖 How to buy USDT in @wallet",
-        actionUrl: "https://t.me/wallet"
+        actionUrl: "https://t.me/wallet",
+        mediaTitle: "Video: Mercado Pago Top-up",
+        mediaDesc: "Safe peer-to-peer transfer protected by Telegram Escrow."
       },
       {
         stepTag: "STEP 3 OF 4",
@@ -2019,11 +2073,13 @@ const SLIDER_I18N = {
         why: "<strong>Discount:</strong> Pay $16.000 ARS instead of $22.000 ARS ($6.000 savings per bar).",
         tip: "<strong>Zero fees:</strong> Direct Telegram transfers are free of network fees.",
         actionTxt: "🛒 Open order bot in Telegram",
-        actionUrl: "https://t.me/mrkey_ba_1_bot"
+        actionUrl: "https://t.me/mrkey_ba_1_bot",
+        mediaTitle: "Video: 1-Tap Checkout",
+        mediaDesc: "Order confirmation with instant discount and zero network fees."
       },
       {
         stepTag: "STEP 4 OF 4",
-        tab: "4. Pickup (2 min)",
+        tab: "4. Pickup 24/7",
         title: "Pick up your cold protein bars at kiosk",
         time: "⏱ ~2 min",
         pill: "❄️ Sub-zero fridge • 24/7 kiosks in Palermo, Recoleta & Belgrano",
@@ -2031,139 +2087,195 @@ const SLIDER_I18N = {
         why: "<strong>Peak taste:</strong> All bars are kept chilled to preserve chocolate crunch.",
         tip: "<strong>Guarantee:</strong> Full 24h refund or replacement if you're not delighted.",
         actionTxt: "🍫 Order bars for $16.000 ARS",
-        actionUrl: "https://t.me/mrkey_ba_1_bot"
+        actionUrl: "https://t.me/mrkey_ba_1_bot",
+        mediaTitle: "Video: Kiosk QR Pickup",
+        mediaDesc: "Show QR code to the cashier and grab your ice-cold chocolate bar."
       }
     ]
   }
 };
 
-let v1Idx = 0;
+let currentLang = 'es';
+let mStepIdx = 0;
 
-function setV1Step(idx) {
-  v1Idx = idx;
-  renderV1();
+function setLang(lang) {
+  if (!PORTAL_I18N[lang]) lang = 'es';
+  currentLang = lang;
+  localStorage.setItem('mrkey_lang', lang);
+  document.documentElement.lang = lang;
+
+  const data = PORTAL_I18N[lang];
+  document.title = data.pageTitle;
+  const metaDesc = document.getElementById('meta-desc');
+  if (metaDesc) metaDesc.content = data.metaDesc;
+
+  const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
+  const setH = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val; };
+
+  setT('txt-status', data.status);
+  setT('txt-brand-pill', data.brandPill);
+  setT('txt-catchy-title', data.catchyTitle);
+  setT('txt-catchy-subtitle', data.catchySubtitle);
+
+  setT('feat-1', data.feat1);
+  setT('feat-2', data.feat2);
+  setT('feat-3', data.feat3);
+  setT('feat-4', data.feat4);
+
+  setT('txt-hook-badge', data.hookBadge);
+  setT('txt-hook-new', data.hookNew);
+  setT('txt-hook-old', data.hookOld);
+  setT('txt-hook-save', data.hookSave);
+  setH('txt-hook-middle', data.hookMiddle);
+  setT('txt-hook-btn', data.hookBtn);
+
+  setT('txt-btn-order', data.btnOrder);
+  setT('txt-btn-support', data.btnSupport);
+
+  setT('d-qr-title', data.desktopQrTitle);
+  setT('d-qr-desc', data.desktopQrDesc);
+  setT('txt-footer', data.footer);
+
+  // Modal texts
+  setT('m-pretag', data.modalPretag);
+  setT('m-title', data.modalTitle);
+  setT('m-subtitle', data.modalSub);
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${lang}'`));
+  });
+
+  renderModalStep();
 }
 
-function nextV1Step() {
-  const curLang = localStorage.getItem('mrkey_lang') || 'es';
-  const langData = SLIDER_I18N[curLang] || SLIDER_I18N.es;
-  if (v1Idx < langData.steps.length - 1) {
-    v1Idx++;
-    renderV1();
+function openStepModal() {
+  const modal = document.getElementById('guide-modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    renderModalStep();
+  }
+}
+
+function closeStepModal() {
+  const modal = document.getElementById('guide-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    if (window.innerWidth < 960) {
+      document.body.style.overflow = 'auto';
+    }
+  }
+}
+
+function onModalOverlayClick(e) {
+  closeStepModal();
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeStepModal();
+});
+
+function setMStep(idx) {
+  mStepIdx = idx;
+  renderModalStep();
+}
+
+function nextMStep() {
+  const langData = PORTAL_I18N[currentLang] || PORTAL_I18N.es;
+  if (mStepIdx < langData.steps.length - 1) {
+    mStepIdx++;
+    renderModalStep();
   } else {
     window.open("https://t.me/mrkey_ba_1_bot", "_blank");
   }
 }
 
-function prevV1Step() {
-  if (v1Idx > 0) {
-    v1Idx--;
-    renderV1();
+function prevMStep() {
+  if (mStepIdx > 0) {
+    mStepIdx--;
+    renderModalStep();
   }
 }
 
-function renderV1() {
-  const curLang = localStorage.getItem('mrkey_lang') || 'es';
-  const langData = SLIDER_I18N[curLang] || SLIDER_I18N.es;
-  const cur = langData.steps[v1Idx];
+function renderModalStep() {
+  const langData = PORTAL_I18N[currentLang] || PORTAL_I18N.es;
+  const cur = langData.steps[mStepIdx];
 
   const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
   const setH = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val; };
 
-  // Outside header text
-  setT("txt-brand-sub", langData.brandSub);
-  setT("txt-title", langData.mainTitle);
-  setT("txt-desc", langData.mainDesc);
+  setT('m-step-tag', cur.stepTag);
+  setT('m-time-tag', cur.time);
+  setT('m-step-title', cur.title);
+  setH('m-step-pill', cur.pill);
+  setH('m-what', cur.what);
+  setH('m-why', cur.why);
+  setH('m-tip', cur.tip);
 
-  // Offer banner
-  setT("v1-offer-badge", langData.offerBadge);
-  setT("v1-offer-old", langData.offerOld);
-  setT("v1-offer-new", langData.offerNew);
-  setT("v1-offer-save", langData.offerSave);
-  setT("v1-offer-hint", langData.offerHint);
-
-  // Stepper frame
-  setT("v1-stepper-title", langData.headerTitle);
-  setT("v1-stepper-sub", langData.headerSub);
-
-  setT("v1-step-tag", cur.stepTag);
-  setT("v1-time-tag", cur.time);
-  setT("v1-title", cur.title);
-  setH("v1-pill", cur.pill);
-  setH("v1-what", cur.what);
-  setH("v1-why", cur.why);
-  setH("v1-tip", cur.tip);
-
-  const actBtn = document.getElementById("v1-action-btn");
+  const actBtn = document.getElementById('m-action-btn');
   if (actBtn) {
     actBtn.innerHTML = `<span>${cur.actionTxt}</span>`;
     actBtn.href = cur.actionUrl;
   }
 
-  const prevBtn = document.getElementById("v1-prev-btn");
+  setT('m-media-title', cur.mediaTitle);
+  setT('m-media-desc', cur.mediaDesc);
+
+  const prevBtn = document.getElementById('m-prev-btn');
   if (prevBtn) {
-    prevBtn.innerText = langData.prevBtn;
-    prevBtn.style.visibility = v1Idx === 0 ? "hidden" : "visible";
+    prevBtn.innerText = langData.mPrev;
+    prevBtn.style.visibility = mStepIdx === 0 ? "hidden" : "visible";
   }
 
-  const nextBtn = document.getElementById("v1-next-btn");
+  const nextBtn = document.getElementById('m-next-btn');
   if (nextBtn) {
-    if (v1Idx === langData.steps.length - 1) {
-      nextBtn.innerText = langData.finishBtn;
+    if (mStepIdx === langData.steps.length - 1) {
+      nextBtn.innerText = langData.mFinish;
       nextBtn.style.background = "linear-gradient(135deg, #10B981 0%, #059669 100%)";
       nextBtn.style.borderColor = "#34D399";
       nextBtn.style.color = "#FFFFFF";
     } else {
-      nextBtn.innerText = langData.nextBtn;
+      nextBtn.innerText = langData.mNext;
       nextBtn.style.background = "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)";
       nextBtn.style.borderColor = "#FCD34D";
       nextBtn.style.color = "#000000";
     }
   }
 
-  setT("v1-indicator", `${cur.stepTag}`);
+  setT('m-indicator', `${cur.stepTag}`);
 
-  // Update tracker nodes & fill bar
-  const pct = (v1Idx / (langData.steps.length - 1)) * 100;
-  const fill = document.getElementById("v1-progress-fill");
+  // Tracker nodes and fill
+  const pct = (mStepIdx / (langData.steps.length - 1)) * 100;
+  const fill = document.getElementById('m-progress-fill');
   if (fill) fill.style.width = pct + "%";
 
   for (let i = 0; i < 4; i++) {
-    const node = document.querySelector(`.v1-step-node:nth-child(${i + 3})`);
-    const circle = document.getElementById(`v1-node-${i}`);
-    const tabLabel = document.getElementById(`v1-tab-${i}`);
+    const node = document.querySelector(`.m-step-node:nth-child(${i + 3})`);
+    const circle = document.getElementById(`m-node-${i}`);
+    const tabLabel = document.getElementById(`m-tab-${i}`);
     if (tabLabel && langData.steps[i]) tabLabel.innerText = langData.steps[i].tab;
     
     if (node && circle) {
-      if (i < v1Idx) {
-        node.className = "v1-step-node done";
+      if (i < mStepIdx) {
+        node.className = "m-step-node done";
         circle.innerHTML = "✓";
-      } else if (i === v1Idx) {
-        node.className = "v1-step-node active";
+      } else if (i === mStepIdx) {
+        node.className = "m-step-node active";
         circle.innerHTML = (i + 1);
       } else {
-        node.className = "v1-step-node";
+        node.className = "m-step-node";
         circle.innerHTML = (i + 1);
       }
     }
   }
-
-  // Floating desktop QR text
-  setT("d-qr-title", langData.desktopQrTitle);
-  setT("d-qr-desc", langData.desktopQrDesc);
 }
 
-// Hook into setLang
-const origSetLang = window.setLang;
-window.setLang = function(lang) {
-  if (typeof origSetLang === 'function') {
-    origSetLang(lang);
-  }
-  setTimeout(renderV1, 80);
-};
-
+// ALWAYS DEFAULT TO SPANISH ('es') INITIALLY AS REQUESTED
 document.addEventListener('DOMContentLoaded', () => {
-  renderV1();
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  // Strict rule: Default is always 'es' unless explicitly specified via URL param
+  const initialLang = (urlLang === 'ru' || urlLang === 'en') ? urlLang : 'es';
+  setLang(initialLang);
 });
 </script>
 
