@@ -589,7 +589,8 @@
       width: 100%;
     }
 
-    /* Desktop Asymmetrical Composition: Chocolate Bar showcase on Left (50%), Card centered on Right (50%) */
+    
+    /* Desktop Asymmetrical Composition: Chocolate Bar showcase on Left, Card centered on Right */
     @media (min-width: 960px) {
       body.theme-cover {
         min-height: 100vh;
@@ -599,59 +600,101 @@
       }
 
       body.theme-cover .container {
-        max-width: 1560px;
+        max-width: 1600px;
         width: 100%;
-        min-height: calc(100vh - 48px);
+        min-height: calc(100vh - 40px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 16px 36px;
+        padding: 16px 40px;
       }
 
       body.theme-cover .top-bar {
         width: 100%;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
       }
 
       body.theme-cover .main-layout-split {
         display: grid;
-        grid-template-columns: 1.25fr 0.75fr;
+        grid-template-columns: 0.85fr 1.15fr;
         width: 100%;
         flex: 1;
         align-items: center;
-        gap: 36px;
+        gap: 44px;
+        max-width: 1520px;
+        margin: 0 auto;
       }
 
       body.theme-cover .split-col-left {
         display: block;
-        min-height: 200px;
+        min-height: 220px;
         pointer-events: none;
       }
 
       body.theme-cover .split-col-right {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         width: 100%;
-        padding-right: 16px;
       }
 
       body.theme-cover .hero-card {
-        max-width: 470px;
+        max-width: 660px; /* EXPANDED WIDE CARD (was 470px) */
         width: 100%;
-        margin-left: auto;
-        margin-right: 0;
-        background: rgba(14, 10, 7, 0.74);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        border-color: rgba(245, 158, 11, 0.45);
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+        margin: 0 auto;
+        background: rgba(13, 9, 6, 0.86);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        border: 1px solid rgba(245, 158, 11, 0.45);
+        border-radius: 28px;
+        padding: 32px 30px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(245, 158, 11, 0.14), inset 0 1px 2px rgba(255, 255, 255, 0.22);
       }
 
       body.theme-cover .footer-note {
         width: 100%;
         text-align: right;
         padding-right: 24px;
+      }
+    }
+
+    @media (max-width: 1180px) and (min-width: 960px) {
+      body.theme-cover .main-layout-split {
+        grid-template-columns: 0.65fr 1.35fr;
+        gap: 28px;
+      }
+      body.theme-cover .hero-card {
+        max-width: 620px;
+      }
+    }
+
+    @media (max-width: 959px) {
+      body.theme-cover .container {
+        padding: 16px 16px;
+      }
+      body.theme-cover .main-layout-split {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      body.theme-cover .split-col-left {
+        display: none;
+      }
+      body.theme-cover .split-col-right {
+        width: 100%;
+        padding: 0;
+      }
+      body.theme-cover .hero-card {
+        max-width: 580px;
+        padding: 24px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body.theme-cover .hero-card {
+        max-width: 100%;
+        padding: 20px 14px;
+        border-radius: 22px;
       }
     }
 
@@ -831,120 +874,234 @@ body.theme-cover .hero-card::-webkit-scrollbar-thumb {
 </style>
 
 <style>
-.calc-card-v2 {
+/* --- VARIANT 2: APPLE-STYLE HORIZONTAL CARDS --- */
+.offer-header-v2 {
   width: 100%;
-  background: rgba(18, 13, 10, 0.65);
-  border: 1px solid rgba(245, 158, 11, 0.32);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.08) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
   border-radius: 18px;
-  padding: 12px 14px;
-  margin-bottom: 14px;
+  padding: 14px 18px;
+  margin-bottom: 16px;
   text-align: center;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 8px 24px rgba(245, 158, 11, 0.12);
 }
-.calc-badge {
-  font-size: 10px;
+.offer-tag-v2 {
+  font-size: 11px;
   font-weight: 800;
+  letter-spacing: 0.09em;
   color: #FCD34D;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
-.pack-row-v2 {
+.offer-price-row-v2 {
   display: flex;
-  gap: 4px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-.pack-btn-v2 {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #D6D3D1;
-  font-size: 10.5px;
-  font-weight: 700;
-  padding: 5px 9px;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.pack-btn-v2.active {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  color: #000000;
-  border-color: #F59E0B;
-  font-weight: 800;
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
-}
-.price-box-v2 {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 12px;
-  padding: 8px 12px;
-  margin-bottom: 8px;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
-.price-old-v2 {
-  font-size: 13px;
-  color: #EF4444;
-  text-decoration: line-through;
+.offer-hint-v2 {
+  font-size: 11.5px;
+  color: #D6D3D1;
+  margin-top: 6px;
   font-weight: 600;
 }
-.price-new-v2 {
-  font-size: 20px;
-  font-weight: 900;
-  color: #FCD34D;
-  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
-}
-.savings-pill-v2 {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  border-radius: 9999px;
-  padding: 4px 10px;
-  color: #10B981;
-  font-size: 11px;
-  font-weight: 800;
-  margin-bottom: 8px;
-}
-.acc-trigger-v2 {
+
+/* Card Carousel Container */
+.carousel-box-v2 {
   width: 100%;
-  background: rgba(245, 158, 11, 0.08);
-  border: 1px dashed rgba(245, 158, 11, 0.35);
-  border-radius: 10px;
-  padding: 7px 10px;
-  color: #FCD34D;
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
+  background: rgba(0, 0, 0, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 16px 18px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+.carousel-top-bar-v2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
 }
-.acc-content-v2 {
-  display: none;
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 10px;
-  padding: 10px;
-  margin-top: 6px;
-  text-align: left;
+.v2-tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 3px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+.v2-tab-btn {
+  background: transparent;
+  border: none;
+  color: #A8A29E;
   font-size: 11px;
-  color: #D6D3D1;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-radius: 9px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.v2-tab-btn.active {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #000000;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+}
+
+/* Carousel Track & Slides */
+.v2-viewport {
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+}
+.v2-track {
+  display: flex;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+.v2-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  background: rgba(18, 13, 10, 0.78);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-sizing: border-box;
+}
+.v2-slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.v2-big-num {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+  color: #F59E0B;
+  text-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+}
+.v2-slide-time {
+  font-size: 11px;
+  font-weight: 800;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 3px 9px;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.v2-slide-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.v2-slide-pill {
+  font-size: 12px;
+  font-weight: 700;
+  color: #FCD34D;
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 3px solid #F59E0B;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.v2-slide-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  color: #E7E5E4;
   line-height: 1.45;
+  margin-bottom: 14px;
+}
+.v2-slide-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  border: 1px solid #34D399;
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.v2-slide-action-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+/* Controls */
+.v2-controls-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+.v2-arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.v2-arrow-btn:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: #F59E0B;
+  color: #FCD34D;
+}
+.v2-dots-wrap {
+  display: flex;
+  gap: 6px;
+}
+.v2-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.v2-dot.active {
+  width: 24px;
+  border-radius: 9999px;
+  background: #F59E0B;
+  box-shadow: 0 0 10px #F59E0B;
 }
 </style>
 </head>
+
 <body class="theme-cover">
 
     <!-- Sleek Floating Concept Switcher (No layout shift) -->
+    
+    <!-- Sleek Floating Concept Switcher -->
     <nav class="variant-switcher" aria-label="Selector de diseño">
-      <span class="variant-switcher-label">👀 ДИЗАЙН:</span>
-      <a href="variant1.html" class="">⚡️ 1. Слайдер</a>
-      <a href="variant2.html" class="active">💰 2. Калькулятор</a>
-      <a href="variant3.html" class="">💬 3. Чат TG</a>
+      <span class="variant-switcher-label">👀 ВАРИАНТЫ СЛАЙДЕРА:</span>
+      <a href="variant1.html">⚡️ 1. Степпер-прогресс</a>
+      <a href="variant2.html" class="active">📱 2. Карточки Apple</a>
+      <a href="variant3.html">📋 3. Таймлайн-аккордеон</a>
       <a href="index.html">🏠 Оригинал</a>
     </nav>
+
     
 
   <!-- Fullscreen cinematic photo background (Selected Production Version) -->
@@ -987,50 +1144,53 @@ body.theme-cover .hero-card::-webkit-scrollbar-thumb {
 
       <!-- Loyalty & Perks Showcase Box -->
       
-      <!-- Special Offer & Interactive ROI Calculator -->
-      <div class="calc-card-v2">
-        <div class="calc-badge">🔥 CALCULADORA DE AHORRO (27% OFF)</div>
-        <div class="pack-row-v2">
-          <button type="button" class="pack-btn-v2 active" onclick="setV2Qty(1)">1 barra</button>
-          <button type="button" class="pack-btn-v2" onclick="setV2Qty(2)">2 barras</button>
-          <button type="button" class="pack-btn-v2" onclick="setV2Qty(3)">3 barras</button>
-          <button type="button" class="pack-btn-v2" onclick="setV2Qty(5)">5 barras (Pack)</button>
-          <button type="button" class="pack-btn-v2" onclick="setV2Qty(10)">10 barras</button>
+      <!-- Special Offer & 10-Min Step Slider -->
+      
+      <!-- Special Offer & Horizontal Carousel (Variant 2) -->
+      <div class="offer-header-v2">
+        <div class="offer-tag-v2" id="v2-offer-badge">🔥 АКЦИЯ НА СТАРТЕ ПРОДАЖ</div>
+        <div class="offer-price-row-v2">
+          <span class="price-tag-old" id="v2-offer-old">$22.000 ARS</span>
+          <span class="price-tag-new" id="v2-offer-new">$16.000 ARS</span>
+          <span class="price-tag-save" id="v2-offer-save">-27% ВЫГОДЫ</span>
         </div>
-
-        <div class="price-box-v2">
-          <div>
-            <div style="font-size:10px; color:#78716C; text-transform:uppercase;">Habitual</div>
-            <div class="price-old-v2" id="v2-old">$22.000 ARS</div>
-          </div>
-          <div>
-            <div style="font-size:10px; color:#78716C; text-transform:uppercase;">Con Descuento</div>
-            <div class="price-new-v2" id="v2-new">$16.000 ARS</div>
-          </div>
-        </div>
-
-        <div class="savings-pill-v2" id="v2-save">
-          ✨ ¡Ahorrás $6.000 ARS en este pedido! (-27%)
-        </div>
-
-        <button type="button" class="acc-trigger-v2" onclick="toggleV2Acc()">
-          <span>💡 ¿Cómo pagar esta tarifa en 10 min?</span>
-          <span id="v2-arrow">▼</span>
-        </button>
-
-        <div class="acc-content-v2" id="v2-acc-body">
-          <div style="margin-bottom:6px;">1️⃣ <strong>@wallet en Telegram:</strong> El monedero oficial ya integrado.</div>
-          <div style="margin-bottom:6px;">2️⃣ <strong>P2P con Mercado Pago o Banco:</strong> Comprás USDT transfiriendo pesos por Alias.</div>
-          <div style="margin-bottom:8px;">3️⃣ <strong>Pedí con 27% OFF:</strong> En @mrkey_ba_1_bot pagás en 1 clic.</div>
-          <div style="text-align:center;">
-            <a href="https://t.me/wallet" target="_blank" style="display:inline-block; background:#10B981; color:#000; font-weight:800; text-decoration:none; padding:5px 12px; border-radius:9999px; font-size:10.5px;">
-              👉 Abrir @wallet ahora
-            </a>
-          </div>
-        </div>
+        <div class="offer-hint-v2" id="v2-offer-hint">Экономия $6.000 ARS на каждом батончике при оплате через Wallet</div>
       </div>
 
-      <!-- Action Buttons -->
+      <div class="carousel-box-v2">
+        <div class="carousel-top-bar-v2">
+          <span style="font-size:12.5px; font-weight:800; color:#FCD34D; text-transform:uppercase;" id="v2-header-title">⏱ КАК ОПЛАТИТЬ $16.000 ARS ЗА 10 МИНУТ?</span>
+          <span style="font-size:11px; color:#A8A29E;" id="v2-header-sub">Только 1 раз</span>
+        </div>
+
+        <!-- Quick Tabs -->
+        <div class="v2-tabs-grid">
+          <button type="button" class="v2-tab-btn active" onclick="setV2Index(0)" id="v2-tab-0">1. @wallet</button>
+          <button type="button" class="v2-tab-btn" onclick="setV2Index(1)" id="v2-tab-1">2. Mercado Pago</button>
+          <button type="button" class="v2-tab-btn" onclick="setV2Index(2)" id="v2-tab-2">3. Оплата -27%</button>
+          <button type="button" class="v2-tab-btn" onclick="setV2Index(3)" id="v2-tab-3">4. Выдача</button>
+        </div>
+
+        <!-- Carousel Viewport -->
+        <div class="v2-viewport">
+          <div class="v2-track" id="v2-track">
+            <!-- 4 Slides generated by JS -->
+          </div>
+        </div>
+
+        <!-- Bottom Controls -->
+        <div class="v2-controls-bar">
+          <button type="button" class="v2-arrow-btn" onclick="prevV2Slide()">‹</button>
+          <div class="v2-dots-wrap" id="v2-dots">
+            <span class="v2-dot active" onclick="setV2Index(0)"></span>
+            <span class="v2-dot" onclick="setV2Index(1)"></span>
+            <span class="v2-dot" onclick="setV2Index(2)"></span>
+            <span class="v2-dot" onclick="setV2Index(3)"></span>
+          </div>
+          <button type="button" class="v2-arrow-btn" onclick="nextV2Slide()">›</button>
+        </div>
+      </div>
+<!-- Action Buttons -->
       <div class="actions-block">
         <a href="https://t.me/mrkey_ba_1_bot" class="btn-primary" id="btn-primary" target="_blank" rel="noopener noreferrer">
           <span id="txt-btn-primary">🚀 Abrir menú en Telegram</span>
@@ -1194,29 +1354,301 @@ body.theme-cover .hero-card::-webkit-scrollbar-thumb {
 
 
 <script>
-function setV2Qty(qty) {
-  const oldTotal = qty * 22000;
-  const newTotal = qty * 16000;
-  const savings = oldTotal - newTotal;
 
-  document.getElementById("v2-old").innerText = "$" + oldTotal.toLocaleString("es-AR") + " ARS";
-  document.getElementById("v2-new").innerText = "$" + newTotal.toLocaleString("es-AR") + " ARS";
-  document.getElementById("v2-save").innerText = "✨ ¡Ahorrás $" + savings.toLocaleString("es-AR") + " ARS en este pedido! (-27%)";
+const SLIDER_I18N = {
+  es: {
+    offerBadge: "🔥 PRECIO ESPECIAL DE LANZAMIENTO",
+    offerOld: "$22.000 ARS",
+    offerNew: "$16.000 ARS",
+    offerSave: "-27% OFF",
+    offerHint: "Ahorrá $6.000 ARS por barra pagando con Wallet en Telegram",
+    headerTitle: "⏱ ¿CÓMO PAGAR $16.000 EN 10 MIN?",
+    headerSub: "Solo la primera vez • 100% Guiado",
+    prevBtn: "← Anterior",
+    nextBtn: "Siguiente paso →",
+    finishBtn: "🍫 Pedir barras a $16.000 ARS ➔",
+    steps: [
+      {
+        num: "01",
+        stepTag: "PASO 1 DE 4",
+        tab: "1. @wallet",
+        title: "Abrí el monedero oficial @wallet",
+        time: "⏱ ~15 seg",
+        pill: "👉 Integrado en Telegram • Sin descargas externas ni registro",
+        what: "<strong>Qué hacer:</strong> Tocá el botón de abajo o buscá <strong>@wallet</strong> en Telegram. Es el servicio oficial verificado.",
+        why: "<strong>Seguridad:</strong> No necesitás instalar apps bancarias sospechosas ni enviar fotos de pasaporte en el inicio.",
+        tip: "<strong>Clave:</strong> El monedero se activa en 1 clic y queda disponible en el menú de chats de tu Telegram.",
+        actionTxt: "🚀 Abrir @wallet en Telegram",
+        actionUrl: "https://t.me/wallet"
+      },
+      {
+        num: "02",
+        stepTag: "PASO 2 DE 4",
+        tab: "2. Mercado Pago",
+        title: "Cargá Pesos vía Mercado Pago o Banco",
+        time: "⏱ ~3-5 min",
+        pill: "💳 Pagás en Pesos (ARS) • Custodia protegida por Telegram Escrow",
+        what: "<strong>Qué hacer:</strong> En @wallet tocá <strong>«Comprar» → «Mercado P2P»</strong>. Elegí ARS y tu método (Mercado Pago, Brubank, Galicia).",
+        why: "<strong>Garantía:</strong> Telegram congela los USDT del vendedor hasta que vos confirmes la transferencia en pesos por CVU/Alias.",
+        tip: "<strong>Rapidez:</strong> La acreditación es inmediata una vez enviado el comprobante de transferencia.",
+        actionTxt: "📖 Ver guía paso a paso en @wallet",
+        actionUrl: "https://t.me/wallet"
+      },
+      {
+        num: "03",
+        stepTag: "PASO 3 DE 4",
+        tab: "3. Pago -27%",
+        title: "Pagá en el bot con $6.000 ARS de descuento",
+        time: "⏱ ~30 seg",
+        pill: "🎉 Descuento especial aplicado • Débito en 1 toque",
+        what: "<strong>Qué hacer:</strong> Entrá a nuestro bot <strong>@mrkey_ba_1_bot</strong>, seleccioná tus sabores favoritos y elegí «Pagar con Wallet».",
+        why: "<strong>Precio final:</strong> Pagás $16.000 ARS en lugar de $22.000 ARS. ¡Ahorro automático de $6.000 ARS por unidad!",
+        tip: "<strong>Cero comisiones:</strong> La transferencia interna entre usuarios de Telegram es 100% gratuita.",
+        actionTxt: "🛒 Ir al menú del bot en Telegram",
+        actionUrl: "https://t.me/mrkey_ba_1_bot"
+      },
+      {
+        num: "04",
+        stepTag: "PASO 4 DE 4",
+        tab: "4. Retiro (2 min)",
+        title: "Retirá tus barras frescas en el kiosco",
+        time: "⏱ ~2 min",
+        pill: "❄️ Conservación en frío • Kioscos 24/7 en Palermo, Recoleta y Belgrano",
+        what: "<strong>Qué hacer:</strong> El bot te entrega un código QR y pin de retiro. Acercate al kiosco elegido cuando quieras.",
+        why: "<strong>Calidad:</strong> Las barras se almacenan refrigeradas para garantizar la textura crujiente y frescura del chocolate.",
+        tip: "<strong>Garantía:</strong> Si el sabor no te convence al 100%, te devolvemos el dinero o cambiamos el producto en 24h.",
+        actionTxt: "🍫 Pedir barras a $16.000 ARS",
+        actionUrl: "https://t.me/mrkey_ba_1_bot"
+      }
+    ]
+  },
+  ru: {
+    offerBadge: "🔥 АКЦИЯ НА СТАРТЕ ПРОДАЖ",
+    offerOld: "$22.000 ARS",
+    offerNew: "$16.000 ARS",
+    offerSave: "-27% ВЫГОДЫ",
+    offerHint: "Экономия $6.000 ARS на каждом батончике при оплате через Wallet",
+    headerTitle: "⏱ КАК ОПЛАТИТЬ $16.000 ARS ЗА 10 МИНУТ?",
+    headerSub: "Только при 1-м заказе • 100% просто",
+    prevBtn: "← Назад",
+    nextBtn: "Следующий шаг →",
+    finishBtn: "🍫 Заказать батончики за $16.000 ARS ➔",
+    steps: [
+      {
+        num: "01",
+        stepTag: "ШАГ 1 ИЗ 4",
+        tab: "1. @wallet",
+        title: "Открой встроенный кошелек @wallet",
+        time: "⏱ ~15 сек",
+        pill: "👉 Прямо в твоем Telegram • Без скачивания приложений и проверок",
+        what: "<strong>Что делать:</strong> Нажми кнопку ниже или найди <strong>@wallet</strong> в Telegram. Это официальный верифицированный сервис.",
+        why: "<strong>Безопасность:</strong> Не нужно регистрироваться на биржах, ставить сомнительные приложения или привязывать карту.",
+        tip: "<strong>Фишка:</strong> Кошелек активируется в 1 клик и сразу появляется в меню вложений Telegram.",
+        actionTxt: "🚀 Открыть @wallet в Telegram",
+        actionUrl: "https://t.me/wallet"
+      },
+      {
+        num: "02",
+        stepTag: "ШАГ 2 ИЗ 4",
+        tab: "2. Mercado Pago",
+        title: "Пополни песо через Mercado Pago или Банк",
+        time: "⏱ ~3-5 мин",
+        pill: "💳 Оплата в песо (ARS) • Защита сделок гарантом Telegram Escrow",
+        what: "<strong>Что делать:</strong> В @wallet открой <strong>«Купить» → «P2P Маркет»</strong>. Выбери ARS и оплати со своего Mercado Pago, Brubank или любого банка Аргентины.",
+        why: "<strong>Гарантия:</strong> Telegram блокирует средства продавца до тех пор, пока ты не подтвердишь обычный перевод по Alias/CVU.",
+        tip: "<strong>Скорость:</strong> Пополнение занимает пару минут, баланс USDT мгновенно готов к оплате.",
+        actionTxt: "📖 Инструкция по покупке в @wallet",
+        actionUrl: "https://t.me/wallet"
+      },
+      {
+        num: "03",
+        stepTag: "ШАГ 3 ИЗ 4",
+        tab: "3. Оплата -27%",
+        title: "Оплати в боте со скидкой $6.000 ARS",
+        time: "⏱ ~30 сек",
+        pill: "🎉 Скидка -27% применяется автоматически • Списание в 1 тап",
+        what: "<strong>Что делать:</strong> Перейди в нашего бота <strong>@mrkey_ba_1_bot</strong>, собери любимые вкусы и нажми «Оплатить через Wallet».",
+        why: "<strong>Чистая выгода:</strong> Цена составит $16.000 ARS вместо $22.000 ARS — скидка рассчитывается сразу.",
+        tip: "<strong>Без комиссий:</strong> Перевод внутри Telegram бесплатный и проходит за 2 секунды.",
+        actionTxt: "🛒 Перейти к заказу в боте",
+        actionUrl: "https://t.me/mrkey_ba_1_bot"
+      },
+      {
+        num: "04",
+        stepTag: "ШАГ 4 ИЗ 4",
+        tab: "4. Выдача (2 мин)",
+        title: "Забери свежие батончики в киоске",
+        time: "⏱ ~2 мин",
+        pill: "❄️ Холодное хранение • Киоски 24/7 в Палермо, Реколете и Бельграно",
+        what: "<strong>Что делать:</strong> Бот моментально выдаст секретный QR-код. Покажи его сотруднику киоска в удобное время.",
+        why: "<strong>Свежесть:</strong> Все батончики хранятся в фирменных холодильниках при идеальной температуре.",
+        tip: "<strong>Гарантия:</strong> Полный возврат или замена батончика в течение 24 часов, если что-то не понравится.",
+        actionTxt: "🍫 Заказать батончики за $16.000 ARS",
+        actionUrl: "https://t.me/mrkey_ba_1_bot"
+      }
+    ]
+  },
+  en: {
+    offerBadge: "🔥 EXCLUSIVE LAUNCH OFFER",
+    offerOld: "$22.000 ARS",
+    offerNew: "$16.000 ARS",
+    offerSave: "-27% OFF",
+    offerHint: "Save $6.000 ARS on every protein bar with Telegram Wallet",
+    headerTitle: "⏱ HOW TO PAY $16.000 ARS IN 10 MIN?",
+    headerSub: "First-time setup only • 100% Guided",
+    prevBtn: "← Previous",
+    nextBtn: "Next step →",
+    finishBtn: "🍫 Order bars for $16.000 ARS ➔",
+    steps: [
+      {
+        num: "01",
+        stepTag: "STEP 1 OF 4",
+        tab: "1. @wallet",
+        title: "Open official @wallet in Telegram",
+        time: "⏱ ~15 sec",
+        pill: "👉 Built directly into Telegram • No external app downloads",
+        what: "<strong>What to do:</strong> Tap the button below or search for <strong>@wallet</strong> in Telegram. It is verified and safe.",
+        why: "<strong>Security:</strong> No need to download unknown apps, share personal documents, or link credit cards.",
+        tip: "<strong>Instant:</strong> The wallet activates with 1 tap and lives conveniently inside your Telegram chats.",
+        actionTxt: "🚀 Open @wallet in Telegram",
+        actionUrl: "https://t.me/wallet"
+      },
+      {
+        num: "02",
+        stepTag: "STEP 2 OF 4",
+        tab: "2. Mercado Pago",
+        title: "Top up Pesos via Mercado Pago or Bank",
+        time: "⏱ ~3-5 min",
+        pill: "💳 Pay in ARS Pesos • Telegram Escrow buyer protection",
+        what: "<strong>What to do:</strong> Inside @wallet tap <strong>«Buy» → «P2P Market»</strong>. Choose ARS and transfer via Mercado Pago or Brubank Alias/CVU.",
+        why: "<strong>Safe:</strong> Telegram securely locks seller USDT until you confirm sending the pesos transfer.",
+        tip: "<strong>Speed:</strong> Funds arrive in your wallet within 2-3 minutes, ready for checkout.",
+        actionTxt: "📖 How to buy USDT in @wallet",
+        actionUrl: "https://t.me/wallet"
+      },
+      {
+        num: "03",
+        stepTag: "STEP 3 OF 4",
+        tab: "3. Pay -27%",
+        title: "Pay in bot with $6.000 ARS discount",
+        time: "⏱ ~30 sec",
+        pill: "🎉 27% OFF auto-applied • 1-Tap checkout",
+        what: "<strong>What to do:</strong> Open our bot <strong>@mrkey_ba_1_bot</strong>, pick your favorite flavors and choose «Pay with Wallet».",
+        why: "<strong>Special deal:</strong> Pay $16.000 ARS instead of $22.000 ARS. Instant $6.000 ARS savings per bar!",
+        tip: "<strong>Zero fees:</strong> Direct Telegram transfers have no network transaction fees.",
+        actionTxt: "🛒 Open order bot in Telegram",
+        actionUrl: "https://t.me/mrkey_ba_1_bot"
+      },
+      {
+        num: "04",
+        stepTag: "STEP 4 OF 4",
+        tab: "4. Pickup (2 min)",
+        title: "Pick up your cold protein bars at kiosk",
+        time: "⏱ ~2 min",
+        pill: "❄️ Sub-zero storage • 24/7 kiosks in Palermo, Recoleta & Belgrano",
+        what: "<strong>What to do:</strong> The bot provides your unique QR pickup voucher. Show it at the partner kiosk whenever you want.",
+        why: "<strong>Peak taste:</strong> All bars are kept in specialized fridges to preserve artisanal chocolate crunch.",
+        tip: "<strong>100% Guarantee:</strong> Full 24-hour refund or replacement policy if you are not delighted.",
+        actionTxt: "🍫 Order bars for $16.000 ARS",
+        actionUrl: "https://t.me/mrkey_ba_1_bot"
+      }
+    ]
+  }
+};
 
-  const buttons = document.querySelectorAll(".pack-btn-v2");
-  const qtyMap = [1, 2, 3, 5, 10];
-  buttons.forEach((btn, idx) => {
-    btn.classList.toggle("active", qtyMap[idx] === qty);
+</script>
+
+<script>
+let v2Idx = 0;
+
+function setV2Index(idx) {
+  v2Idx = Math.max(0, Math.min(3, idx));
+  updateV2Carousel();
+}
+
+function nextV2Slide() {
+  if (v2Idx < 3) {
+    v2Idx++;
+  } else {
+    v2Idx = 0;
+  }
+  updateV2Carousel();
+}
+
+function prevV2Slide() {
+  if (v2Idx > 0) {
+    v2Idx--;
+  } else {
+    v2Idx = 3;
+  }
+  updateV2Carousel();
+}
+
+function updateV2Carousel() {
+  const track = document.getElementById("v2-track");
+  if (track) {
+    track.style.transform = `translateX(-${v2Idx * 100}%)`;
+  }
+  document.querySelectorAll(".v2-tab-btn").forEach((btn, i) => {
+    btn.classList.toggle("active", i === v2Idx);
+  });
+  document.querySelectorAll(".v2-dot").forEach((dot, i) => {
+    dot.classList.toggle("active", i === v2Idx);
   });
 }
 
-function toggleV2Acc() {
-  const body = document.getElementById("v2-acc-body");
-  const arrow = document.getElementById("v2-arrow");
-  const isOpen = body.style.display === "block";
-  body.style.display = isOpen ? "none" : "block";
-  arrow.innerText = isOpen ? "▼" : "▲";
+function renderV2() {
+  const curLang = localStorage.getItem('mrkey_lang') || 'ru';
+  const langData = SLIDER_I18N[curLang] || SLIDER_I18N.ru;
+
+  document.getElementById("v2-offer-badge").innerText = langData.offerBadge;
+  document.getElementById("v2-offer-old").innerText = langData.offerOld;
+  document.getElementById("v2-offer-new").innerText = langData.offerNew;
+  document.getElementById("v2-offer-save").innerText = langData.offerSave;
+  document.getElementById("v2-offer-hint").innerText = langData.offerHint;
+
+  document.getElementById("v2-header-title").innerText = langData.headerTitle;
+  document.getElementById("v2-header-sub").innerText = langData.headerSub;
+
+  for (let i = 0; i < 4; i++) {
+    document.getElementById(`v2-tab-${i}`).innerText = langData.steps[i].tab;
+  }
+
+  const track = document.getElementById("v2-track");
+  let slidesHtml = "";
+  langData.steps.forEach((s, idx) => {
+    slidesHtml += `
+      <div class="v2-slide">
+        <div class="v2-slide-header">
+          <span class="v2-big-num">${s.num}</span>
+          <span class="v2-slide-time">${s.time}</span>
+        </div>
+        <h3 class="v2-slide-title">${s.title}</h3>
+        <div class="v2-slide-pill">${s.pill}</div>
+        <div class="v2-slide-desc">
+          <div>${s.what}</div>
+          <div>${s.why}</div>
+          <div>${s.tip}</div>
+        </div>
+        <a href="${s.actionUrl}" target="_blank" rel="noopener noreferrer" class="v2-slide-action-btn">
+          <span>${s.actionTxt}</span>
+        </a>
+      </div>
+    `;
+  });
+  track.innerHTML = slidesHtml;
+  updateV2Carousel();
 }
+
+const origSetLang = window.setLang;
+window.setLang = function(lang) {
+  origSetLang(lang);
+  setTimeout(renderV2, 120);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderV2();
+});
 </script>
 
 </body>
