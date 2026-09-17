@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mr. Key — 3 Variantes de Diseño Interactivo (Descuento 27%)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090706;
+      --amber: #F59E0B;
+      --amber-light: #FCD34D;
+      --emerald: #10B981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      background: rgba(18, 13, 10, 0.95);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 14px 16px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .header h1 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--amber-light);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #D6D3D1;
+      padding: 8px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #000000;
+      border-color: #F59E0B;
+      font-weight: 800;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+    }
+    .iframe-wrapper {
+      flex: 1;
+      width: 100%;
+      height: calc(100vh - 85px);
+      display: flex;
+      justify-content: center;
+      background: #090706;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>👀 Выбор концепта: Гайд со скидкой 27% (16.000 ARS)</h1>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="loadView('variant1.html', this)">⚡️ Вариант 1: Слайдер с таймингом</button>
+      <button class="tab-btn" onclick="loadView('variant2.html', this)">💰 Вариант 2: Калькулятор выгоды</button>
+      <button class="tab-btn" onclick="loadView('variant3.html', this)">💬 Вариант 3: Telegram Чат</button>
+      <a href="index.html" class="tab-btn" target="_blank">🏠 Оригинал ↗</a>
+    </div>
+  </div>
+
+  <div class="iframe-wrapper">
+    <iframe id="preview-frame" src="variant1.html"></iframe>
+  </div>
+
+  <script>
+    function loadView(url, btn) {
+      document.getElementById('preview-frame').src = url;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
