@@ -752,7 +752,7 @@
     }
   </style>
 
-  <!-- Variant 1 Custom Styles & Responsive Rules -->
+  <!-- Variant 1 Expanded 50/50 Architecture Styles -->
   <style>
     /* Variant Switcher Pill */
     .variant-switcher {
@@ -769,11 +769,11 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(245, 158, 11, 0.45);
       border-radius: 9999px;
-      padding: 4px 8px;
+      padding: 4px 10px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 16px rgba(245, 158, 11, 0.25);
     }
     .variant-switcher-label {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #FCD34D;
       padding: 0 6px;
@@ -803,92 +803,160 @@
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
     }
 
-    /* Offer Header Component */
-    .offer-header-v1 {
+    /* --- RIGHT COLUMN OUTSIDE HEADER (NEW) --- */
+    .hero-outside-header {
       width: 100%;
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(217, 119, 6, 0.06) 100%);
-      border: 1px solid rgba(245, 158, 11, 0.4);
-      border-radius: 12px;
-      padding: 7px 12px;
-      margin-bottom: 8px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+      flex-direction: column;
+      text-align: left;
+      margin-bottom: 12px;
     }
-    .offer-left-v1 {
+    .hero-brand-row {
       display: flex;
       align-items: center;
       gap: 8px;
+      margin-bottom: 6px;
     }
-    .offer-tag-v1 {
-      font-size: 9.5px;
+    .hero-brand-logo-img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 1.5px solid #F59E0B;
+      background: #000000;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    }
+    .hero-brand-name {
+      font-size: 14px;
       font-weight: 800;
+      letter-spacing: 0.12em;
       color: #FCD34D;
+    }
+    .hero-brand-divider {
+      color: #78716C;
+      font-size: 12px;
+    }
+    .hero-brand-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #A8A29E;
       text-transform: uppercase;
-      background: rgba(245, 158, 11, 0.2);
-      padding: 2px 6px;
-      border-radius: 5px;
-      letter-spacing: 0.04em;
     }
-    .offer-price-row-v1 {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .price-tag-new {
-      font-size: 19px;
+    .hero-main-title {
+      font-size: 26px;
       font-weight: 900;
       color: #FFFFFF;
-      text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+      line-height: 1.22;
+      margin-bottom: 6px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9), 0 0 24px rgba(245, 158, 11, 0.2);
     }
-    .price-tag-old {
-      font-size: 12px;
+    .hero-main-desc {
+      font-size: 13px;
+      color: #D6D3D1;
+      line-height: 1.42;
+      margin-bottom: 10px;
+      max-width: 680px;
+    }
+
+    /* Prominent Offer Banner Outside Frame */
+    .hero-offer-banner {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.22) 0%, rgba(217, 119, 6, 0.10) 100%);
+      border: 1.5px solid rgba(245, 158, 11, 0.52);
+      border-radius: 14px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    }
+    .hero-offer-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-offer-badge {
+      font-size: 10.5px;
+      font-weight: 900;
+      color: #FCD34D;
+      text-transform: uppercase;
+      background: rgba(245, 158, 11, 0.25);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .hero-offer-prices {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-price-new {
+      font-size: 24px;
+      font-weight: 900;
+      color: #FFFFFF;
+      text-shadow: 0 0 14px rgba(245, 158, 11, 0.65);
+      white-space: nowrap;
+    }
+    .hero-price-old {
+      font-size: 14px;
       color: #EF4444;
       text-decoration: line-through;
-      font-weight: 600;
+      font-weight: 700;
+      white-space: nowrap;
     }
-    .price-tag-save {
-      font-size: 10.5px;
+    .hero-price-save {
+      font-size: 12px;
       font-weight: 900;
       background: #10B981;
       color: #000000;
-      padding: 2px 6px;
+      padding: 3px 9px;
       border-radius: 9999px;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+      white-space: nowrap;
     }
-    .offer-hint-v1 {
-      font-size: 10px;
-      color: #D6D3D1;
+    .hero-offer-hint {
+      font-size: 11px;
+      color: #E7E5E4;
       font-weight: 600;
       text-align: right;
+      line-height: 1.35;
+      max-width: 240px;
     }
 
-    /* Stepper Component Container */
-    .stepper-box-v1 {
+    /* --- THE EXPANDED ORANGE-BORDERED FRAME --- */
+    .stepper-hero-frame {
       width: 100%;
-      background: rgba(0, 0, 0, 0.42);
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      border-radius: 14px;
-      padding: 10px 12px 8px;
-      margin-bottom: 8px;
+      background: rgba(14, 10, 7, 0.88);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 2px solid rgba(245, 158, 11, 0.62);
+      border-radius: 22px;
+      padding: 16px 20px 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.92), 0 0 35px rgba(245, 158, 11, 0.18), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+      box-sizing: border-box;
       text-align: left;
     }
-    .stepper-header-v1 {
+
+    .frame-stepper-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .stepper-heading {
-      font-size: 11px;
+    .frame-stepper-title {
+      font-size: 13px;
       font-weight: 800;
       color: #FCD34D;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
     }
-    .stepper-subheading {
-      font-size: 10px;
+    .frame-stepper-sub {
+      font-size: 11px;
       color: #A8A29E;
+      font-weight: 600;
     }
 
     /* Connected Tracker Bar */
@@ -897,28 +965,28 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 4px 6px 8px;
+      margin: 6px 12px 12px;
     }
     .v1-track-line-bg {
       position: absolute;
-      top: 12px;
-      left: 8px;
-      right: 8px;
-      height: 2.5px;
-      background: rgba(255, 255, 255, 0.1);
+      top: 13px;
+      left: 10px;
+      right: 10px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.12);
       border-radius: 9999px;
       z-index: 1;
     }
     .v1-track-line-fill {
       position: absolute;
-      top: 12px;
-      left: 8px;
-      height: 2.5px;
+      top: 13px;
+      left: 10px;
+      height: 3px;
       background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
       border-radius: 9999px;
       z-index: 2;
       transition: width 0.3s ease;
-      box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
     }
     .v1-step-node {
       position: relative;
@@ -932,13 +1000,13 @@
       padding: 0;
     }
     .v1-node-circle {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       background: #14100D;
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.22);
       color: #A8A29E;
-      font-size: 10.5px;
+      font-size: 11.5px;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -946,27 +1014,27 @@
       transition: all 0.2s ease;
     }
     .v1-step-node:hover .v1-node-circle {
-      border-color: rgba(245, 158, 11, 0.6);
+      border-color: rgba(245, 158, 11, 0.7);
       color: #FFFFFF;
     }
     .v1-step-node.active .v1-node-circle {
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border-color: #FCD34D;
       color: #000000;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
-      transform: scale(1.1);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.8);
+      transform: scale(1.12);
     }
     .v1-step-node.done .v1-node-circle {
       background: #10B981;
       border-color: #10B981;
       color: #000000;
-      box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
     }
     .v1-node-label {
-      font-size: 9.5px;
+      font-size: 10.5px;
       font-weight: 700;
-      color: #78716C;
-      margin-top: 3px;
+      color: #A8A29E;
+      margin-top: 4px;
       white-space: nowrap;
     }
     .v1-step-node.active .v1-node-label {
@@ -974,127 +1042,132 @@
       font-weight: 800;
     }
     .v1-step-node.done .v1-node-label {
-      color: #E7E5E4;
+      color: #FFFFFF;
     }
 
-    /* Active Step Card Inside */
+    /* Active Step Card Inside Frame */
     .v1-active-card {
-      background: rgba(18, 13, 10, 0.78);
-      border: 1px solid rgba(245, 158, 11, 0.32);
-      border-radius: 12px;
-      padding: 10px 12px 8px;
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      background: rgba(20, 14, 10, 0.85);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      border-radius: 16px;
+      padding: 14px 18px 12px;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.12);
+      margin-bottom: 12px;
     }
     .v1-card-top-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
     .v1-step-tag {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       color: #FCD34D;
       text-transform: uppercase;
-      background: rgba(245, 158, 11, 0.15);
-      padding: 1px 6px;
+      background: rgba(245, 158, 11, 0.18);
+      padding: 2px 8px;
       border-radius: 9999px;
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      border: 1px solid rgba(245, 158, 11, 0.35);
     }
     .v1-time-tag {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 800;
       color: #10B981;
-      background: rgba(16, 185, 129, 0.15);
-      padding: 1px 6px;
+      background: rgba(16, 185, 129, 0.18);
+      padding: 2px 8px;
       border-radius: 9999px;
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      border: 1px solid rgba(16, 185, 129, 0.35);
     }
     .v1-step-title {
-      font-size: 13.5px;
+      font-size: 16px;
       font-weight: 800;
       color: #FFFFFF;
-      margin-bottom: 3px;
-      line-height: 1.25;
+      margin-bottom: 4px;
+      line-height: 1.28;
     }
     .v1-step-pill {
-      font-size: 10.5px;
+      font-size: 11.5px;
       font-weight: 700;
       color: #FCD34D;
-      background: rgba(245, 158, 11, 0.08);
+      background: rgba(245, 158, 11, 0.1);
       border-left: 3px solid #F59E0B;
-      padding: 3px 7px;
+      padding: 4px 9px;
       border-radius: 4px;
-      margin-bottom: 6px;
-      line-height: 1.3;
+      margin-bottom: 8px;
+      line-height: 1.35;
     }
     .v1-bullets {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      margin-bottom: 8px;
+      gap: 5px;
+      margin-bottom: 10px;
     }
     .v1-bullet-item {
-      font-size: 11px;
+      font-size: 12px;
       color: #E7E5E4;
-      line-height: 1.3;
+      line-height: 1.38;
       display: flex;
       align-items: flex-start;
-      gap: 5px;
+      gap: 6px;
+    }
+    .v1-bullet-icon {
+      flex-shrink: 0;
     }
     .v1-bullet-item strong {
       color: #FFFFFF;
     }
     .v1-cta-row {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .v1-btn-action {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
       width: 100%;
-      padding: 8px 12px;
+      padding: 10px 16px;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       border: 1px solid #34D399;
-      border-radius: 9px;
+      border-radius: 11px;
       color: #FFFFFF;
-      font-size: 12px;
+      font-size: 13.5px;
       font-weight: 800;
       text-decoration: none;
-      box-shadow: 0 3px 8px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.38);
       transition: all 0.2s ease;
       cursor: pointer;
     }
     .v1-btn-action:hover {
       transform: translateY(-1px);
       filter: brightness(1.06);
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.5);
     }
     .v1-nav-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 6px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
     .v1-btn-prev {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       color: #D6D3D1;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 9999px;
-      font-size: 10.5px;
+      font-size: 11.5px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
     }
     .v1-btn-prev:hover {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.14);
       color: #FFFFFF;
     }
     .v1-indicator {
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       color: #A8A29E;
     }
@@ -1102,25 +1175,71 @@
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border: 1px solid #FCD34D;
       color: #000000;
-      padding: 5px 14px;
+      padding: 6px 18px;
       border-radius: 9999px;
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 2px 7px rgba(245, 158, 11, 0.35);
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.4);
       transition: all 0.2s;
     }
     .v1-btn-next:hover {
       transform: translateY(-1px);
-      box-shadow: 0 3px 12px rgba(245, 158, 11, 0.5);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.6);
     }
 
-    /* --- DESKTOP STRICT ZERO-SCROLL MEDIA QUERY --- */
+    /* Action Buttons Inside Frame */
+    .actions-block {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      border: 1px solid #FCD34D;
+      border-radius: 12px;
+      color: #000000;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+      transition: all 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+    }
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      color: #E7E5E4;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      color: #FFFFFF;
+    }
+
+    /* --- DESKTOP 50/50 FIT & FLOATING QR UNDER CHOCOLATE --- */
     @media (min-width: 960px) {
       html, body {
         height: 100vh !important;
         max-height: 100vh !important;
-        overflow: hidden !important; /* ZERO VERTICAL SCROLL ON DESKTOP */
+        overflow: hidden !important; /* Zero scroll on desktop */
       }
       body.theme-cover {
         height: 100vh;
@@ -1140,7 +1259,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 8px 36px 8px;
+        padding: 8px 32px 8px;
         box-sizing: border-box;
       }
       body.theme-cover .top-bar {
@@ -1148,122 +1267,55 @@
         margin-bottom: 2px;
         flex-shrink: 0;
       }
+
+      /* 50/50 Split Grid */
       body.theme-cover .main-layout-split {
         display: grid;
-        grid-template-columns: 0.88fr 1.12fr;
+        grid-template-columns: 0.92fr 1.08fr;
         width: 100%;
         flex: 1;
         align-items: center;
-        gap: 32px;
-        max-width: 1440px;
+        gap: 36px;
+        max-width: 1520px;
         margin: 0 auto;
         min-height: 0;
       }
+
+      /* Left column: Chocolate bar background visible, QR code placed at bottom under bar */
       body.theme-cover .split-col-left {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-start;
         height: 100%;
-        padding-bottom: 16px;
+        padding-bottom: 12px;
         pointer-events: auto;
       }
-      body.theme-cover .split-col-right {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        min-height: 0;
-      }
-      body.theme-cover .hero-card {
-        max-width: 630px;
-        width: 100%;
-        margin: 0 auto;
-        background: rgba(12, 8, 6, 0.86);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(245, 158, 11, 0.42);
-        border-radius: 20px;
-        padding: 16px 22px 14px;
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.95), 0 0 35px rgba(245, 158, 11, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.2);
-        box-sizing: border-box;
-        overflow: hidden; /* Fits screen cleanly without scrollbars */
-      }
-      body.theme-cover .brand-badge-icon {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 2px;
-      }
-      body.theme-cover .brand-logo {
-        font-size: 18px;
-        letter-spacing: 0.14em;
-        margin-bottom: 2px;
-      }
-      body.theme-cover .brand-sub {
-        font-size: 10.5px;
-        margin-bottom: 4px;
-      }
-      body.theme-cover .title {
-        font-size: 18px;
-        margin-bottom: 4px;
-        line-height: 1.22;
-      }
-      body.theme-cover .description {
-        font-size: 11.5px;
-        line-height: 1.38;
-        margin-bottom: 8px;
-        max-width: 560px;
-      }
-      body.theme-cover .actions-block {
-        display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 8px;
-        margin-top: 8px;
-      }
-      body.theme-cover .btn-primary, 
-      body.theme-cover .btn-secondary {
-        padding: 9px 12px;
-        font-size: 12px;
-        border-radius: 11px;
-      }
-      body.theme-cover .hero-card .qr-container {
-        display: none !important;
-      }
-      body.theme-cover .footer-note {
-        width: 100%;
-        text-align: right;
-        padding-right: 20px;
-        font-size: 10.5px;
-        color: #78716C;
-        flex-shrink: 0;
-        margin-top: 0;
-      }
 
-      /* Desktop Floating QR Badge on left column */
+      /* Desktop Floating QR Badge under/next to chocolate bar */
       .desktop-floating-qr {
         display: flex;
         align-items: center;
         gap: 12px;
-        background: rgba(18, 13, 10, 0.85);
+        background: rgba(16, 12, 9, 0.88);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
-        border: 1px solid rgba(245, 158, 11, 0.38);
-        border-radius: 14px;
+        border: 1.5px solid rgba(245, 158, 11, 0.45);
+        border-radius: 16px;
         padding: 8px 14px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.85), 0 0 25px rgba(245, 158, 11, 0.15);
-        margin-left: 12px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.88), 0 0 25px rgba(245, 158, 11, 0.16);
+        margin-left: 8px;
         transition: transform 0.2s ease, border-color 0.2s ease;
       }
       .desktop-floating-qr:hover {
         transform: translateY(-2px);
-        border-color: rgba(245, 158, 11, 0.65);
+        border-color: rgba(245, 158, 11, 0.7);
       }
       .desktop-floating-qr .qr-mini-card {
-        width: 56px;
-        height: 56px;
+        width: 62px;
+        height: 62px;
         background: #FFFFFF;
-        border-radius: 9px;
+        border-radius: 10px;
         padding: 3px;
         display: flex;
         align-items: center;
@@ -1279,16 +1331,42 @@
         text-align: left;
       }
       .desktop-qr-title {
-        font-size: 11.5px;
+        font-size: 12px;
         font-weight: 800;
         color: #FCD34D;
         margin-bottom: 2px;
       }
       .desktop-qr-desc {
-        font-size: 10px;
+        font-size: 10.5px;
         color: #D6D3D1;
         line-height: 1.35;
-        max-width: 165px;
+        max-width: 175px;
+      }
+
+      /* Right column: Wide flow container filling the right half */
+      body.theme-cover .split-col-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+      }
+      .right-column-flow {
+        width: 100%;
+        max-width: 720px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      body.theme-cover .footer-note {
+        width: 100%;
+        text-align: right;
+        padding-right: 20px;
+        font-size: 10.5px;
+        color: #78716C;
+        flex-shrink: 0;
+        margin-top: 0;
       }
     }
 
@@ -1301,18 +1379,17 @@
         overflow-y: auto !important;
       }
       body.theme-cover {
-        padding: 12px 12px 30px;
+        padding: 12px 10px 30px;
       }
       body.theme-cover .container {
         padding: 0;
         max-width: 520px;
       }
-      body.theme-cover .hero-card {
-        max-width: 100%;
-        padding: 18px 14px;
-        border-radius: 18px;
-        max-height: none !important;
-        overflow: visible !important;
+      body.theme-cover .main-layout-split {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
       }
       body.theme-cover .split-col-left {
         display: none !important;
@@ -1320,23 +1397,118 @@
       body.theme-cover .desktop-floating-qr {
         display: none !important;
       }
-      body.theme-cover .hero-card .qr-container {
-        display: none !important;
+      body.theme-cover .split-col-right {
+        width: 100%;
+        padding: 0;
       }
-      body.theme-cover .actions-block {
+      .right-column-flow {
+        width: 100%;
+      }
+      .hero-outside-header {
+        text-align: center;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .hero-brand-row {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .hero-brand-name {
+        font-size: 13.5px;
+      }
+      .hero-brand-tag {
+        font-size: 10px;
+      }
+      .hero-main-title {
+        font-size: 21px;
+        line-height: 1.25;
+        margin-bottom: 6px;
+      }
+      .hero-main-desc {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+      .hero-offer-banner {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+        padding: 10px 12px;
+      }
+      .hero-offer-left {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+      }
+      .hero-offer-prices {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .hero-price-new {
+        font-size: 22px;
+      }
+      .hero-offer-hint {
+        text-align: center;
+        max-width: 100%;
+        font-size: 11px;
+      }
+      .stepper-hero-frame {
+        padding: 16px 14px 14px;
+        border-radius: 20px;
+      }
+      .frame-stepper-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3px;
+        margin-bottom: 10px;
+      }
+      .frame-stepper-title {
+        font-size: 12.5px;
+      }
+      .frame-stepper-sub {
+        font-size: 10.5px;
+      }
+      .v1-tracker {
+        margin: 4px 6px 10px;
+      }
+      .v1-node-label {
+        font-size: 9px;
+      }
+      .v1-node-circle {
+        width: 24px;
+        height: 24px;
+        font-size: 10.5px;
+      }
+      .v1-track-line-bg, .v1-track-line-fill {
+        top: 11px;
+        left: 6px;
+        right: 6px;
+      }
+      .v1-active-card {
+        padding: 12px 14px 10px;
+      }
+      .v1-step-title {
+        font-size: 14.5px;
+      }
+      .v1-step-pill {
+        font-size: 11px;
+      }
+      .v1-bullet-item {
+        font-size: 11.5px;
+      }
+      .actions-block {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        margin-top: 10px;
+        margin-top: 8px;
       }
-      body.theme-cover .btn-primary, 
-      body.theme-cover .btn-secondary {
+      .btn-primary, .btn-secondary {
         padding: 12px 14px;
-        font-size: 13px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        font-size: 13.5px;
       }
       .variant-switcher {
         position: static !important;
@@ -1354,33 +1526,25 @@
         font-size: 10px;
         padding: 4px 8px;
       }
-      .offer-header-v1 {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-      }
-      .offer-hint-v1 {
-        text-align: left;
-      }
     }
 
     @media (max-width: 480px) {
-      body.theme-cover .title {
-        font-size: 17px;
+      .hero-main-title {
+        font-size: 19px;
       }
-      body.theme-cover .description {
-        font-size: 11.5px;
+      .hero-price-new {
+        font-size: 21px;
       }
       .v1-node-label {
-        font-size: 8.5px;
+        font-size: 9px;
       }
       .v1-node-circle {
-        width: 22px;
-        height: 22px;
-        font-size: 10px;
+        width: 24px;
+        height: 24px;
+        font-size: 10.5px;
       }
       .v1-track-line-bg, .v1-track-line-fill {
-        top: 10px;
+        top: 12px;
       }
     }
   </style>
@@ -1422,7 +1586,7 @@
     <!-- Main Split Layout for 2-column grid -->
     <div class="main-layout-split">
       <div class="split-col-left">
-        <!-- Floating QR Card for Desktop Visitors -->
+        <!-- Floating QR Card for Desktop Visitors under/alongside chocolate bar -->
         <div class="desktop-floating-qr">
           <div class="qr-mini-card">
             <img src="qr_mrkey.png" alt="QR Mr. Key">
@@ -1434,126 +1598,120 @@
         </div>
       </div>
       <div class="split-col-right">
-        <!-- Main Hero Card (Centered) -->
-        <div class="hero-card" id="hero-card">
-      <div class="brand-badge-icon">
-        <img src="mrkey-logo.png" alt="Mr. Key" class="brand-mini-logo">
-      </div>
-      <div class="brand-logo">MR. KEY</div>
-      <div class="brand-sub" id="txt-brand-sub">Buenos Aires • Barras Artesanales</div>
+        <div class="right-column-flow">
+          <!-- 1. HERO HEADLINE & PROMO OFFER (OUTSIDE THE FRAME) -->
+          <div class="hero-outside-header">
+            <div class="hero-brand-row">
+              <img src="mrkey-logo.png" alt="Mr. Key" class="hero-brand-logo-img">
+              <span class="hero-brand-name">MR. KEY</span>
+              <span class="hero-brand-divider">•</span>
+              <span class="hero-brand-tag" id="txt-brand-sub">BUENOS AIRES • BARRAS ARTESANALES</span>
+            </div>
 
-      <h1 class="title" id="txt-title">Barras proteicas artesanales sin azúcar</h1>
-      <p class="description" id="txt-desc">
-        100% naturales, sin gluten ni conservantes. Pedí por el bot en Telegram y retirá en kioscos seleccionados de Buenos Aires en 2 minutos.
-      </p>
+            <h1 class="hero-main-title" id="txt-title">
+              Barras proteicas artesanales sin azúcar
+            </h1>
+            <p class="hero-main-desc" id="txt-desc">
+              100% naturales, sin gluten ni conservantes. Pedí por el bot en Telegram y retirá en kioscos seleccionados de Buenos Aires en 2 minutos.
+            </p>
 
-      
-      <!-- Special Offer (Integrated Compact Bar) -->
-      <div class="offer-header-v1">
-        <div class="offer-left-v1">
-          <span class="offer-tag-v1" id="v1-offer-badge">🔥 АКЦИЯ НА СТАРТЕ</span>
-          <div class="offer-price-row-v1">
-            <span class="price-tag-new" id="v1-offer-new">$16.000 ARS</span>
-            <span class="price-tag-old" id="v1-offer-old">$22.000</span>
-            <span class="price-tag-save" id="v1-offer-save">-27%</span>
+            <!-- Prominent Offer Banner (Outside the frame) -->
+            <div class="hero-offer-banner">
+              <div class="hero-offer-left">
+                <span class="hero-offer-badge" id="v1-offer-badge">🔥 PRECIO LANZAMIENTO</span>
+                <div class="hero-offer-prices">
+                  <span class="hero-price-new" id="v1-offer-new">$16.000 ARS</span>
+                  <span class="hero-price-old" id="v1-offer-old">$22.000</span>
+                  <span class="hero-price-save" id="v1-offer-save">-27% OFF</span>
+                </div>
+              </div>
+              <div class="hero-offer-hint" id="v1-offer-hint">
+                Ahorrá $6.000 ARS por barra pagando con Wallet
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="offer-hint-v1" id="v1-offer-hint">Экономия $6.000 ARS через Wallet</div>
-      </div>
 
-      <!-- Stepper Component (Zero-Scroll Optimized) -->
-      <div class="stepper-box-v1">
-        <div class="stepper-header-v1">
-          <span class="stepper-heading" id="v1-stepper-title">⏱ КАК ОПЛАТИТЬ $16.000 ARS ЗА 10 МИНУТ?</span>
-          <span class="stepper-subheading" id="v1-stepper-sub">Только при 1-м заказе • 100% просто</span>
-        </div>
-
-        <!-- Progress Tracker Bar -->
-        <div class="v1-tracker">
-          <div class="v1-track-line-bg"></div>
-          <div class="v1-track-line-fill" id="v1-progress-fill" style="width: 0%;"></div>
-
-          <button type="button" class="v1-step-node active" onclick="setV1Step(0)">
-            <div class="v1-node-circle" id="v1-node-0">1</div>
-            <span class="v1-node-label" id="v1-tab-0">@wallet</span>
-          </button>
-          <button type="button" class="v1-step-node" onclick="setV1Step(1)">
-            <div class="v1-node-circle" id="v1-node-1">2</div>
-            <span class="v1-node-label" id="v1-tab-1">Mercado Pago</span>
-          </button>
-          <button type="button" class="v1-step-node" onclick="setV1Step(2)">
-            <div class="v1-node-circle" id="v1-node-2">3</div>
-            <span class="v1-node-label" id="v1-tab-2">Оплата -27%</span>
-          </button>
-          <button type="button" class="v1-step-node" onclick="setV1Step(3)">
-            <div class="v1-node-circle" id="v1-node-3">4</div>
-            <span class="v1-node-label" id="v1-tab-3">Киоск 24/7</span>
-          </button>
-        </div>
-
-        <!-- Active Step Card -->
-        <div class="v1-active-card">
-          <div>
-            <div class="v1-card-top-row">
-              <span class="v1-step-tag" id="v1-step-tag">ШАГ 1 ИЗ 4</span>
-              <span class="v1-time-tag" id="v1-time-tag">⏱ ~15 сек</span>
-            </div>
-            <h3 class="v1-step-title" id="v1-title">Открой встроенный кошелек @wallet</h3>
-            <div class="v1-step-pill" id="v1-pill">👉 Прямо в Telegram • Без скачивания приложений и проверок</div>
-
-            <div class="v1-bullets">
-              <div class="v1-bullet-item">
-                <span>📱</span>
-                <span id="v1-what"><strong>Что делать:</strong> Нажми кнопку ниже или найди @wallet в Telegram. Это официальный сервис.</span>
-              </div>
-              <div class="v1-bullet-item">
-                <span>🛡</span>
-                <span id="v1-why"><strong>Безопасность:</strong> Не нужно регистрироваться на биржах или привязывать карту.</span>
-              </div>
-              <div class="v1-bullet-item">
-                <span>💡</span>
-                <span id="v1-tip"><strong>Фишка:</strong> Кошелек активируется в 1 клик прямо в чатах.</span>
-              </div>
+          <!-- 2. THE EXPANDED ORANGE-BORDERED FRAME (Dedicated Stepper & Payment Steps) -->
+          <div class="stepper-hero-frame" id="hero-card">
+            <div class="frame-stepper-header">
+              <div class="frame-stepper-title" id="v1-stepper-title">⏱ ¿CÓMO PAGAR $16.000 EN 10 MIN?</div>
+              <div class="frame-stepper-sub" id="v1-stepper-sub">Solo 1ra vez • 100% Guiado</div>
             </div>
 
-            <div class="v1-cta-row">
-              <a href="https://t.me/wallet" target="_blank" rel="noopener noreferrer" class="v1-btn-action" id="v1-action-btn">
-                <span>🚀 Открыть @wallet в Telegram</span>
+            <!-- Progress Tracker Bar -->
+            <div class="v1-tracker">
+              <div class="v1-track-line-bg"></div>
+              <div class="v1-track-line-fill" id="v1-progress-fill" style="width: 0%;"></div>
+
+              <button type="button" class="v1-step-node active" onclick="setV1Step(0)">
+                <div class="v1-node-circle" id="v1-node-0">1</div>
+                <span class="v1-node-label" id="v1-tab-0">1. @wallet</span>
+              </button>
+              <button type="button" class="v1-step-node" onclick="setV1Step(1)">
+                <div class="v1-node-circle" id="v1-node-1">2</div>
+                <span class="v1-node-label" id="v1-tab-1">2. Mercado Pago</span>
+              </button>
+              <button type="button" class="v1-step-node" onclick="setV1Step(2)">
+                <div class="v1-node-circle" id="v1-node-2">3</div>
+                <span class="v1-node-label" id="v1-tab-2">3. Pago -27%</span>
+              </button>
+              <button type="button" class="v1-step-node" onclick="setV1Step(3)">
+                <div class="v1-node-circle" id="v1-node-3">4</div>
+                <span class="v1-node-label" id="v1-tab-3">4. Retiro (2 min)</span>
+              </button>
+            </div>
+
+            <!-- Active Step Card -->
+            <div class="v1-active-card">
+              <div class="v1-card-top-row">
+                <span class="v1-step-tag" id="v1-step-tag">PASO 1 DE 4</span>
+                <span class="v1-time-tag" id="v1-time-tag">⏱ ~15 seg</span>
+              </div>
+              <h3 class="v1-step-title" id="v1-title">Abrí el monedero oficial @wallet</h3>
+              <div class="v1-step-pill" id="v1-pill">👉 Integrado en Telegram • Sin descargas externas ni KYC inicial</div>
+
+              <div class="v1-bullets">
+                <div class="v1-bullet-item">
+                  <span class="v1-bullet-icon">📱</span>
+                  <span id="v1-what"><strong>Qué hacer:</strong> Tocá el botón de abajo o buscá @wallet en Telegram. Es el servicio oficial verificado.</span>
+                </div>
+                <div class="v1-bullet-item">
+                  <span class="v1-bullet-icon">🛡</span>
+                  <span id="v1-why"><strong>Seguridad:</strong> No necesitás apps dudosas ni enviar fotos de pasaporte para empezar.</span>
+                </div>
+                <div class="v1-bullet-item">
+                  <span class="v1-bullet-icon">💡</span>
+                  <span id="v1-tip"><strong>Clave:</strong> Se activa en 1 clic y queda disponible en tus chats de Telegram.</span>
+                </div>
+              </div>
+
+              <div class="v1-cta-row">
+                <a href="https://t.me/wallet" target="_blank" rel="noopener noreferrer" class="v1-btn-action" id="v1-action-btn">
+                  <span>🚀 Abrir @wallet en Telegram</span>
+                </a>
+              </div>
+
+              <!-- Bottom Nav Bar inside step -->
+              <div class="v1-nav-bar">
+                <button type="button" class="v1-btn-prev" id="v1-prev-btn" onclick="prevV1Step()" style="visibility:hidden">← Anterior</button>
+                <span class="v1-indicator" id="v1-indicator">Paso 1 de 4</span>
+                <button type="button" class="v1-btn-next" id="v1-next-btn" onclick="nextV1Step()">Siguiente paso →</button>
+              </div>
+            </div>
+
+            <!-- Bottom Action Buttons inside the frame -->
+            <div class="actions-block">
+              <a href="https://t.me/mrkey_ba_1_bot" class="btn-primary" id="btn-primary" target="_blank" rel="noopener noreferrer">
+                <span id="txt-btn-primary">🚀 Abrir menú en Telegram</span>
+              </a>
+              <a href="https://t.me/mr_key_ba1" class="btn-secondary" id="btn-secondary" target="_blank" rel="noopener noreferrer">
+                <span id="txt-btn-secondary">💬 Soporte & Mayoristas (@mr_key_ba1)</span>
               </a>
             </div>
           </div>
-
-          <!-- Bottom Nav Bar -->
-          <div class="v1-nav-bar">
-            <button type="button" class="v1-btn-prev" id="v1-prev-btn" onclick="prevV1Step()" style="visibility:hidden">← Назад</button>
-            <span class="v1-indicator" id="v1-indicator">Шаг 1 из 4</span>
-            <button type="button" class="v1-btn-next" id="v1-next-btn" onclick="nextV1Step()">Следующий шаг →</button>
-          </div>
         </div>
       </div>
-
-      <!-- Action Buttons -->
-      <div class="actions-block">
-        <a href="https://t.me/mrkey_ba_1_bot" class="btn-primary" id="btn-primary" target="_blank" rel="noopener noreferrer">
-          <span id="txt-btn-primary">🚀 Abrir menú en Telegram</span>
-        </a>
-
-        <a href="https://t.me/mr_key_ba1" class="btn-secondary" id="btn-secondary" target="_blank" rel="noopener noreferrer">
-          <span id="txt-btn-secondary">💬 Soporte & Mayoristas (@mr_key_ba1)</span>
-        </a>
-      </div>
-
-      <!-- QR Code for Desktop Visitors -->
-      <div class="qr-container">
-        <div class="qr-card" title="Escanear para abrir en Telegram">
-          <!-- Standalone SVG QR Code for https://t.me/mrkey_ba_1_bot -->
-          <svg viewBox="0 0 26.4 26.4" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.6,1.6H2.4V2.4H1.6zM2.4,1.6H3.2V2.4H2.4zM3.2,1.6H4V2.4H3.2zM4,1.6H4.8V2.4H4zM4.8,1.6H5.6V2.4H4.8zM5.6,1.6H6.4V2.4H5.6zM6.4,1.6H7.2V2.4H6.4zM8.8,1.6H9.6V2.4H8.8zM9.6,1.6H10.4V2.4H9.6zM10.4,1.6H11.2V2.4H10.4zM11.2,1.6H12V2.4H11.2zM12.8,1.6H13.6V2.4H12.8zM16.8,1.6H17.6V2.4H16.8zM17.6,1.6H18.4V2.4H17.6zM19.2,1.6H20V2.4H19.2zM20,1.6H20.8V2.4H20zM20.8,1.6H21.6V2.4H20.8zM21.6,1.6H22.4V2.4H21.6zM22.4,1.6H23.2V2.4H22.4zM23.2,1.6H24V2.4H23.2zM24,1.6H24.8V2.4H24zM1.6,2.4H2.4V3.2H1.6zM6.4,2.4H7.2V3.2H6.4zM9.6,2.4H10.4V3.2H9.6zM14.4,2.4H15.2V3.2H14.4zM15.2,2.4H16V3.2H15.2zM17.6,2.4H18.4V3.2H17.6zM19.2,2.4H20V3.2H19.2zM24,2.4H24.8V3.2H24zM1.6,3.2H2.4V4H1.6zM3.2,3.2H4V4H3.2zM4,3.2H4.8V4H4zM4.8,3.2H5.6V4H4.8zM6.4,3.2H7.2V4H6.4zM9.6,3.2H10.4V4H9.6zM10.4,3.2H11.2V4H10.4zM12.8,3.2H13.6V4H12.8zM13.6,3.2H14.4V4H13.6zM15.2,3.2H16V4H15.2zM16.8,3.2H17.6V4H16.8zM17.6,3.2H18.4V4H17.6zM19.2,3.2H20V4H19.2zM20.8,3.2H21.6V4H20.8zM21.6,3.2H22.4V4H21.6zM22.4,3.2H23.2V4H22.4zM24,3.2H24.8V4H24zM1.6,4H2.4V4.8H1.6zM3.2,4H4V4.8H3.2zM4,4H4.8V4.8H4zM4.8,4H5.6V4.8H4.8zM6.4,4H7.2V4.8H6.4zM8.8,4H9.6V4.8H8.8zM9.6,4H10.4V4.8H9.6zM10.4,4H11.2V4.8H10.4zM11.2,4H12V4.8H11.2zM12,4H12.8V4.8H12zM14.4,4H15.2V4.8H14.4zM15.2,4H16V4.8H15.2zM16,4H16.8V4.8H16zM17.6,4H18.4V4.8H17.6zM19.2,4H20V4.8H19.2zM20.8,4H21.6V4.8H20.8zM21.6,4H22.4V4.8H21.6zM22.4,4H23.2V4.8H22.4zM24,4H24.8V4.8H24zM1.6,4.8H2.4V5.6H1.6zM3.2,4.8H4V5.6H3.2zM4,4.8H4.8V5.6H4zM4.8,4.8H5.6V5.6H4.8zM6.4,4.8H7.2V5.6H6.4zM8.8,4.8H9.6V5.6H8.8zM9.6,4.8H10.4V5.6H9.6zM10.4,4.8H11.2V5.6H10.4zM15.2,4.8H16V5.6H15.2zM16.8,4.8H17.6V5.6H16.8zM19.2,4.8H20V5.6H19.2zM20.8,4.8H21.6V5.6H20.8zM21.6,4.8H22.4V5.6H21.6zM22.4,4.8H23.2V5.6H22.4zM24,4.8H24.8V5.6H24zM1.6,5.6H2.4V6.4H1.6zM6.4,5.6H7.2V6.4H6.4zM8,5.6H8.8V6.4H8zM9.6,5.6H10.4V6.4H9.6zM13.6,5.6H14.4V6.4H13.6zM14.4,5.6H15.2V6.4H14.4zM15.2,5.6H16V6.4H15.2zM16,5.6H16.8V6.4H16zM16.8,5.6H17.6V6.4H16.8zM19.2,5.6H20V6.4H19.2zM24,5.6H24.8V6.4H24zM1.6,6.4H2.4V7.2H1.6zM2.4,6.4H3.2V7.2H2.4zM3.2,6.4H4V7.2H3.2zM4,6.4H4.8V7.2H4zM4.8,6.4H5.6V7.2H4.8zM5.6,6.4H6.4V7.2H5.6zM6.4,6.4H7.2V7.2H6.4zM8,6.4H8.8V7.2H8zM9.6,6.4H10.4V7.2H9.6zM11.2,6.4H12V7.2H11.2zM12.8,6.4H13.6V7.2H12.8zM14.4,6.4H15.2V7.2H14.4zM16,6.4H16.8V7.2H16zM17.6,6.4H18.4V7.2H17.6zM19.2,6.4H20V7.2H19.2zM20,6.4H20.8V7.2H20zM20.8,6.4H21.6V7.2H20.8zM21.6,6.4H22.4V7.2H21.6zM22.4,6.4H23.2V7.2H22.4zM23.2,6.4H24V7.2H23.2zM24,6.4H24.8V7.2H24zM10.4,7.2H11.2V8H10.4zM12,7.2H12.8V8H12zM13.6,7.2H14.4V8H13.6zM14.4,7.2H15.2V8H14.4zM15.2,7.2H16V8H15.2zM16,7.2H16.8V8H16zM1.6,8H2.4V8.8H1.6zM4,8H4.8V8.8H4zM5.6,8H6.4V8.8H5.6zM6.4,8H7.2V8.8H6.4zM8,8H8.8V8.8H8zM8.8,8H9.6V8.8H8.8zM9.6,8H10.4V8.8H9.6zM10.4,8H11.2V8.8H10.4zM11.2,8H12V8.8H11.2zM12.8,8H13.6V8.8H12.8zM14.4,8H15.2V8.8H14.4zM18.4,8H19.2V8.8H18.4zM20,8H20.8V8.8H20zM3.2,8.8H4V9.6H3.2zM4,8.8H4.8V9.6H4zM7.2,8.8H8V9.6H7.2zM8,8.8H8.8V9.6H8zM8.8,8.8H9.6V9.6H8.8zM12,8.8H12.8V9.6H12zM13.6,8.8H14.4V9.6H13.6zM14.4,8.8H15.2V9.6H14.4zM15.2,8.8H16V9.6H15.2zM17.6,8.8H18.4V9.6H17.6zM18.4,8.8H19.2V9.6H18.4zM19.2,8.8H20V9.6H19.2zM20,8.8H20.8V9.6H20zM21.6,8.8H22.4V9.6H21.6zM24,8.8H24.8V9.6H24zM1.6,9.6H2.4V10.4H1.6zM2.4,9.6H3.2V10.4H2.4zM4.8,9.6H5.6V10.4H4.8zM6.4,9.6H7.2V10.4H6.4zM8,9.6H8.8V10.4H8zM8.8,9.6H9.6V10.4H8.8zM9.6,9.6H10.4V10.4H9.6zM10.4,9.6H11.2V10.4H10.4zM12,9.6H12.8V10.4H12zM12.8,9.6H13.6V10.4H12.8zM13.6,9.6H14.4V10.4H13.6zM15.2,9.6H16V10.4H15.2zM16,9.6H16.8V10.4H16zM16.8,9.6H17.6V10.4H16.8zM17.6,9.6H18.4V10.4H17.6zM18.4,9.6H19.2V10.4H18.4zM19.2,9.6H20V10.4H19.2zM20,9.6H20.8V10.4H20zM20.8,9.6H21.6V10.4H20.8zM21.6,9.6H22.4V10.4H21.6zM22.4,9.6H23.2V10.4H22.4zM23.2,9.6H24V10.4H23.2zM1.6,10.4H2.4V11.2H1.6zM4,10.4H4.8V11.2H4zM7.2,10.4H8V11.2H7.2zM9.6,10.4H10.4V11.2H9.6zM10.4,10.4H11.2V11.2H10.4zM12,10.4H12.8V11.2H12zM14.4,10.4H15.2V11.2H14.4zM17.6,10.4H18.4V11.2H17.6zM19.2,10.4H20V11.2H19.2zM20,10.4H20.8V11.2H20zM22.4,10.4H23.2V11.2H22.4zM23.2,10.4H24V11.2H23.2zM3.2,11.2H4V12H3.2zM4.8,11.2H5.6V12H4.8zM5.6,11.2H6.4V12H5.6zM6.4,11.2H7.2V12H6.4zM8,11.2H8.8V12H8zM9.6,11.2H10.4V12H9.6zM12.8,11.2H13.6V12H12.8zM13.6,11.2H14.4V12H13.6zM15.2,11.2H16V12H15.2zM17.6,11.2H18.4V12H17.6zM18.4,11.2H19.2V12H18.4zM19.2,11.2H20V12H19.2zM21.6,11.2H22.4V12H21.6zM23.2,11.2H24V12H23.2zM24,11.2H24.8V12H24zM4.8,12H5.6V12.8H4.8zM5.6,12H6.4V12.8H5.6zM7.2,12H8V12.8H7.2zM8,12H8.8V12.8H8zM9.6,12H10.4V12.8H9.6zM10.4,12H11.2V12.8H10.4zM11.2,12H12V12.8H11.2zM12,12H12.8V12.8H12zM12.8,12H13.6V12.8H12.8zM13.6,12H14.4V12.8H13.6zM14.4,12H15.2V12.8H14.4zM16.8,12H17.6V12.8H16.8zM17.6,12H18.4V12.8H17.6zM18.4,12H19.2V12.8H18.4zM1.6,12.8H2.4V13.6H1.6zM3.2,12.8H4V13.6H3.2zM4,12.8H4.8V13.6H4zM5.6,12.8H6.4V13.6H5.6zM6.4,12.8H7.2V13.6H6.4zM8,12.8H8.8V13.6H8zM9.6,12.8H10.4V13.6H9.6zM12,12.8H12.8V13.6H12zM12.8,12.8H13.6V13.6H12.8zM17.6,12.8H18.4V13.6H17.6zM18.4,12.8H19.2V13.6H18.4zM20.8,12.8H21.6V13.6H20.8zM21.6,12.8H22.4V13.6H21.6zM22.4,12.8H23.2V13.6H22.4zM23.2,12.8H24V13.6H23.2zM24,12.8H24.8V13.6H24zM1.6,13.6H2.4V14.4H1.6zM4.8,13.6H5.6V14.4H4.8zM9.6,13.6H10.4V14.4H9.6zM10.4,13.6H11.2V14.4H10.4zM13.6,13.6H14.4V14.4H13.6zM15.2,13.6H16V14.4H15.2zM16,13.6H16.8V14.4H16zM17.6,13.6H18.4V14.4H17.6zM20.8,13.6H21.6V14.4H20.8zM21.6,13.6H22.4V14.4H21.6zM23.2,13.6H24V14.4H23.2zM1.6,14.4H2.4V15.2H1.6zM2.4,14.4H3.2V15.2H2.4zM4.8,14.4H5.6V15.2H4.8zM5.6,14.4H6.4V15.2H5.6zM6.4,14.4H7.2V15.2H6.4zM7.2,14.4H8V15.2H7.2zM11.2,14.4H12V15.2H11.2zM12,14.4H12.8V15.2H12zM15.2,14.4H16V15.2H15.2zM18.4,14.4H19.2V15.2H18.4zM23.2,14.4H24V15.2H23.2zM3.2,15.2H4V16H3.2zM4,15.2H4.8V16H4zM4.8,15.2H5.6V16H4.8zM5.6,15.2H6.4V16H5.6zM8,15.2H8.8V16H8zM11.2,15.2H12V16H11.2zM12,15.2H12.8V16H12zM12.8,15.2H13.6V16H12.8zM13.6,15.2H14.4V16H13.6zM14.4,15.2H15.2V16H14.4zM16,15.2H16.8V16H16zM16.8,15.2H17.6V16H16.8zM19.2,15.2H20V16H19.2zM20,15.2H20.8V16H20zM21.6,15.2H22.4V16H21.6zM24,15.2H24.8V16H24zM1.6,16H2.4V16.8H1.6zM3.2,16H4V16.8H3.2zM4,16H4.8V16.8H4zM6.4,16H7.2V16.8H6.4zM7.2,16H8V16.8H7.2zM9.6,16H10.4V16.8H9.6zM12.8,16H13.6V16.8H12.8zM13.6,16H14.4V16.8H13.6zM14.4,16H15.2V16.8H14.4zM19.2,16H20V16.8H19.2zM23.2,16H24V16.8H23.2zM24,16H24.8V16.8H24zM3.2,16.8H4V17.6H3.2zM4,16.8H4.8V17.6H4zM4.8,16.8H5.6V17.6H4.8zM9.6,16.8H10.4V17.6H9.6zM11.2,16.8H12V17.6H11.2zM12.8,16.8H13.6V17.6H12.8zM15.2,16.8H16V17.6H15.2zM18.4,16.8H19.2V17.6H18.4zM20.8,16.8H21.6V17.6H20.8zM23.2,16.8H24V17.6H23.2zM24,16.8H24.8V17.6H24zM1.6,17.6H2.4V18.4H1.6zM3.2,17.6H4V18.4H3.2zM4,17.6H4.8V18.4H4zM4.8,17.6H5.6V18.4H4.8zM6.4,17.6H7.2V18.4H6.4zM7.2,17.6H8V18.4H7.2zM8.8,17.6H9.6V18.4H8.8zM11.2,17.6H12V18.4H11.2zM13.6,17.6H14.4V18.4H13.6zM15.2,17.6H16V18.4H15.2zM16,17.6H16.8V18.4H16zM16.8,17.6H17.6V18.4H16.8zM17.6,17.6H18.4V18.4H17.6zM18.4,17.6H19.2V18.4H18.4zM19.2,17.6H20V18.4H19.2zM20,17.6H20.8V18.4H20zM20.8,17.6H21.6V18.4H20.8zM22.4,17.6H23.2V18.4H22.4zM8,18.4H8.8V19.2H8zM10.4,18.4H11.2V19.2H10.4zM12.8,18.4H13.6V19.2H12.8zM13.6,18.4H14.4V19.2H13.6zM17.6,18.4H18.4V19.2H17.6zM20.8,18.4H21.6V19.2H20.8zM22.4,18.4H23.2V19.2H22.4zM23.2,18.4H24V19.2H23.2zM24,18.4H24.8V19.2H24zM1.6,19.2H2.4V20H1.6zM2.4,19.2H3.2V20H2.4zM3.2,19.2H4V20H3.2zM4,19.2H4.8V20H4zM4.8,19.2H5.6V20H4.8zM5.6,19.2H6.4V20H5.6zM6.4,19.2H7.2V20H6.4zM8.8,19.2H9.6V20H8.8zM9.6,19.2H10.4V20H9.6zM10.4,19.2H11.2V20H10.4zM14.4,19.2H15.2V20H14.4zM15.2,19.2H16V20H15.2zM17.6,19.2H18.4V20H17.6zM19.2,19.2H20V20H19.2zM20.8,19.2H21.6V20H20.8zM23.2,19.2H24V20H23.2zM1.6,20H2.4V20.8H1.6zM6.4,20H7.2V20.8H6.4zM8,20H8.8V20.8H8zM8.8,20H9.6V20.8H8.8zM11.2,20H12V20.8H11.2zM12.8,20H13.6V20.8H12.8zM13.6,20H14.4V20.8H13.6zM15.2,20H16V20.8H15.2zM17.6,20H18.4V20.8H17.6zM20.8,20H21.6V20.8H20.8zM21.6,20H22.4V20.8H21.6zM22.4,20H23.2V20.8H22.4zM24,20H24.8V20.8H24zM1.6,20.8H2.4V21.6H1.6zM3.2,20.8H4V21.6H3.2zM4,20.8H4.8V21.6H4zM4.8,20.8H5.6V21.6H4.8zM6.4,20.8H7.2V21.6H6.4zM10.4,20.8H11.2V21.6H10.4zM11.2,20.8H12V21.6H11.2zM14.4,20.8H15.2V21.6H14.4zM17.6,20.8H18.4V21.6H17.6zM18.4,20.8H19.2V21.6H18.4zM19.2,20.8H20V21.6H19.2zM20,20.8H20.8V21.6H20zM20.8,20.8H21.6V21.6H20.8zM1.6,21.6H2.4V22.4H1.6zM3.2,21.6H4V22.4H3.2zM4,21.6H4.8V22.4H4zM4.8,21.6H5.6V22.4H4.8zM6.4,21.6H7.2V22.4H6.4zM8,21.6H8.8V22.4H8zM8.8,21.6H9.6V22.4H8.8zM10.4,21.6H11.2V22.4H10.4zM11.2,21.6H12V22.4H11.2zM12,21.6H12.8V22.4H12zM13.6,21.6H14.4V22.4H13.6zM15.2,21.6H16V22.4H15.2zM16.8,21.6H17.6V22.4H16.8zM19.2,21.6H20V22.4H19.2zM20,21.6H20.8V22.4H20zM20.8,21.6H21.6V22.4H20.8zM21.6,21.6H22.4V22.4H21.6zM22.4,21.6H23.2V22.4H22.4zM24,21.6H24.8V22.4H24zM1.6,22.4H2.4V23.2H1.6zM3.2,22.4H4V23.2H3.2zM4,22.4H4.8V23.2H4zM4.8,22.4H5.6V23.2H4.8zM6.4,22.4H7.2V23.2H6.4zM8.8,22.4H9.6V23.2H8.8zM12,22.4H12.8V23.2H12zM12.8,22.4H13.6V23.2H12.8zM13.6,22.4H14.4V23.2H13.6zM14.4,22.4H15.2V23.2H14.4zM15.2,22.4H16V23.2H15.2zM16,22.4H16.8V23.2H16zM16.8,22.4H17.6V23.2H16.8zM20,22.4H20.8V23.2H20zM20.8,22.4H21.6V23.2H20.8zM21.6,22.4H22.4V23.2H21.6zM22.4,22.4H23.2V23.2H22.4zM24,22.4H24.8V23.2H24zM1.6,23.2H2.4V24H1.6zM6.4,23.2H7.2V24H6.4zM9.6,23.2H10.4V24H9.6zM11.2,23.2H12V24H11.2zM12.8,23.2H13.6V24H12.8zM14.4,23.2H15.2V24H14.4zM15.2,23.2H16V24H15.2zM16,23.2H16.8V24H16zM16.8,23.2H17.6V24H16.8zM17.6,23.2H18.4V24H17.6zM18.4,23.2H19.2V24H18.4zM19.2,23.2H20V24H19.2zM20,23.2H20.8V24H20zM23.2,23.2H24V24H23.2zM1.6,24H2.4V24.8H1.6zM2.4,24H3.2V24.8H2.4zM3.2,24H4V24.8H3.2zM4,24H4.8V24.8H4zM4.8,24H5.6V24.8H4.8zM5.6,24H6.4V24.8H5.6zM6.4,24H7.2V24.8H6.4zM8,24H8.8V24.8H8zM9.6,24H10.4V24.8H9.6zM10.4,24H11.2V24.8H10.4zM12,24H12.8V24.8H12zM13.6,24H14.4V24.8H13.6zM14.4,24H15.2V24.8H14.4zM16,24H16.8V24.8H16zM17.6,24H18.4V24.8H17.6zM18.4,24H19.2V24        <div class="qr-hint" id="txt-qr-hint">Escaneá con tu celular para abrir el bot</div>
-      </div>
     </div>
-      </div> <!-- /split-col-right -->
-    </div> <!-- /main-layout-split -->
-
   <!-- Minimal Copyright -->
   <div class="footer-note" id="txt-footer">
     © 2026 Mr. Key • Buenos Aires, Argentina • Sistema autónomo 24/7
@@ -1653,13 +1811,8 @@
 
         const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
         setT('txt-status', data.status);
-        setT('txt-brand-sub', data.brandSub);
-        setT('txt-title', data.title);
-        setT('txt-desc', data.desc);
-
         setT('txt-btn-primary', data.btnPrimary);
         setT('txt-btn-secondary', data.btnSecondary);
-        setT('txt-qr-hint', data.qrHint);
         setT('txt-footer', data.footer);
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -1682,6 +1835,9 @@
 <script>
 const SLIDER_I18N = {
   es: {
+    brandSub: "BUENOS AIRES • BARRAS ARTESANALES",
+    mainTitle: "Barras proteicas artesanales sin azúcar",
+    mainDesc: "100% naturales, sin gluten ni conservantes. Pedí por el bot en Telegram y retirá en kioscos seleccionados de Buenos Aires en 2 minutos.",
     offerBadge: "🔥 PRECIO LANZAMIENTO",
     offerOld: "$22.000",
     offerNew: "$16.000 ARS",
@@ -1746,6 +1902,9 @@ const SLIDER_I18N = {
     ]
   },
   ru: {
+    brandSub: "БУЭНОС-АЙРЕС • АВТОРСКИЕ ПП-БАТОНЧИКИ",
+    mainTitle: "Натуральные ПП–батончики ручной работы",
+    mainDesc: "100% натуральный состав, без сахара, глютена и химии. Оформи заказ в боте и забери в проверенных киосках Буэнос-Айреса за 2 минуты.",
     offerBadge: "🔥 АКЦИЯ НА СТАРТЕ",
     offerOld: "$22.000",
     offerNew: "$16.000 ARS",
@@ -1810,6 +1969,9 @@ const SLIDER_I18N = {
     ]
   },
   en: {
+    brandSub: "BUENOS AIRES • ARTISANAL PROTEIN BARS",
+    mainTitle: "Sugar-Free Artisanal Protein Bars",
+    mainDesc: "100% natural ingredients, gluten-free and preservative-free. Order via Telegram bot and pick up in selected Buenos Aires kiosks in 2 min.",
     offerBadge: "🔥 LAUNCH SPECIAL",
     offerOld: "$22.000",
     offerNew: "$16.000 ARS",
@@ -1905,36 +2067,32 @@ function renderV1() {
   const langData = SLIDER_I18N[curLang] || SLIDER_I18N.es;
   const cur = langData.steps[v1Idx];
 
-  const offBadge = document.getElementById("v1-offer-badge");
-  if (offBadge) offBadge.innerText = langData.offerBadge;
-  const offOld = document.getElementById("v1-offer-old");
-  if (offOld) offOld.innerText = langData.offerOld;
-  const offNew = document.getElementById("v1-offer-new");
-  if (offNew) offNew.innerText = langData.offerNew;
-  const offSave = document.getElementById("v1-offer-save");
-  if (offSave) offSave.innerText = langData.offerSave;
-  const offHint = document.getElementById("v1-offer-hint");
-  if (offHint) offHint.innerText = langData.offerHint;
+  const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
+  const setH = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val; };
 
-  const stTitle = document.getElementById("v1-stepper-title");
-  if (stTitle) stTitle.innerText = langData.headerTitle;
-  const stSub = document.getElementById("v1-stepper-sub");
-  if (stSub) stSub.innerText = langData.headerSub;
+  // Outside header text
+  setT("txt-brand-sub", langData.brandSub);
+  setT("txt-title", langData.mainTitle);
+  setT("txt-desc", langData.mainDesc);
 
-  const sTag = document.getElementById("v1-step-tag");
-  if (sTag) sTag.innerText = cur.stepTag;
-  const tTag = document.getElementById("v1-time-tag");
-  if (tTag) tTag.innerText = cur.time;
-  const title = document.getElementById("v1-title");
-  if (title) title.innerText = cur.title;
-  const pill = document.getElementById("v1-pill");
-  if (pill) pill.innerHTML = cur.pill;
-  const what = document.getElementById("v1-what");
-  if (what) what.innerHTML = cur.what;
-  const why = document.getElementById("v1-why");
-  if (why) why.innerHTML = cur.why;
-  const tip = document.getElementById("v1-tip");
-  if (tip) tip.innerHTML = cur.tip;
+  // Offer banner
+  setT("v1-offer-badge", langData.offerBadge);
+  setT("v1-offer-old", langData.offerOld);
+  setT("v1-offer-new", langData.offerNew);
+  setT("v1-offer-save", langData.offerSave);
+  setT("v1-offer-hint", langData.offerHint);
+
+  // Stepper frame
+  setT("v1-stepper-title", langData.headerTitle);
+  setT("v1-stepper-sub", langData.headerSub);
+
+  setT("v1-step-tag", cur.stepTag);
+  setT("v1-time-tag", cur.time);
+  setT("v1-title", cur.title);
+  setH("v1-pill", cur.pill);
+  setH("v1-what", cur.what);
+  setH("v1-why", cur.why);
+  setH("v1-tip", cur.tip);
 
   const actBtn = document.getElementById("v1-action-btn");
   if (actBtn) {
@@ -1963,8 +2121,7 @@ function renderV1() {
     }
   }
 
-  const ind = document.getElementById("v1-indicator");
-  if (ind) ind.innerText = `${cur.stepTag}`;
+  setT("v1-indicator", `${cur.stepTag}`);
 
   // Update tracker nodes & fill bar
   const pct = (v1Idx / (langData.steps.length - 1)) * 100;
@@ -1992,19 +2149,17 @@ function renderV1() {
   }
 
   // Floating desktop QR text
-  const dTitle = document.getElementById("d-qr-title");
-  if (dTitle) dTitle.innerText = langData.desktopQrTitle;
-  const dDesc = document.getElementById("d-qr-desc");
-  if (dDesc) dDesc.innerText = langData.desktopQrDesc;
+  setT("d-qr-title", langData.desktopQrTitle);
+  setT("d-qr-desc", langData.desktopQrDesc);
 }
 
-// Hook into existing setLang
+// Hook into setLang
 const origSetLang = window.setLang;
 window.setLang = function(lang) {
   if (typeof origSetLang === 'function') {
     origSetLang(lang);
   }
-  setTimeout(renderV1, 110);
+  setTimeout(renderV1, 80);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
