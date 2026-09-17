@@ -753,229 +753,241 @@
   </style>
 
 <style>
-/* Demo Navigation Header */
-.demo-nav-bar {
-  width: 100%;
-  max-width: 580px;
-  margin: 0 auto 18px;
-  background: rgba(18, 13, 10, 0.85);
+/* Sleek Floating Concept Switcher */
+.variant-switcher {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 10, 7, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  border-radius: 20px;
-  padding: 12px 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: center;
-  position: relative;
-  z-index: 50;
-  animation: fadeInDown 0.4s ease;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 9999px;
+  padding: 4px 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 16px rgba(245, 158, 11, 0.25);
 }
-.demo-nav-title {
-  font-size: 11px;
+.variant-switcher-label {
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: #FCD34D;
+  padding: 0 6px;
+  letter-spacing: 0.06em;
 }
-.demo-nav-pills {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.demo-pill {
+.variant-switcher a {
   font-size: 11px;
   font-weight: 700;
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 9999px;
   text-decoration: none;
+  color: #D6D3D1;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #E7E5E4;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
-.demo-pill:hover {
-  background: rgba(255, 255, 255, 0.12);
+.variant-switcher a:hover {
   color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.16);
 }
-.demo-pill.active {
+.variant-switcher a.active {
   background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  border-color: #F59E0B;
   color: #000000;
+  border-color: #F59E0B;
   font-weight: 800;
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
 }
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (max-width: 600px) {
+  .variant-switcher {
+    top: auto;
+    bottom: 12px;
+    padding: 4px 6px;
+    gap: 4px;
+    max-width: 95vw;
+    overflow-x: auto;
+  }
+  .variant-switcher-label { display: none; }
+  .variant-switcher a { font-size: 10px; padding: 4px 8px; }
+}
+
+/* Ensure hero-card scrolls comfortably if content exceeds viewport */
+body.theme-cover .hero-card {
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 158, 11, 0.35) transparent;
+}
+body.theme-cover .hero-card::-webkit-scrollbar {
+  width: 4px;
+}
+body.theme-cover .hero-card::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
 }
 </style>
 
 <style>
-.guide-card-v1 {
+.offer-header-v1 {
   width: 100%;
-  background: rgba(245, 158, 11, 0.04);
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  border-radius: 20px;
-  padding: 18px 16px;
-  margin: 18px 0 20px;
-  text-align: left;
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.14) 0%, rgba(217, 119, 6, 0.06) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 16px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  text-align: center;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
-.guide-badge-top {
-  display: inline-flex;
+.offer-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #FCD34D;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.offer-price-row {
+  display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  border-radius: 9999px;
-  padding: 4px 10px;
+  justify-content: center;
+  gap: 10px;
+}
+.price-tag-old {
+  font-size: 13px;
+  color: #EF4444;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+.price-tag-new {
+  font-size: 22px;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}
+.price-tag-save {
   font-size: 11px;
   font-weight: 800;
-  color: #34D399;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
+  background: #10B981;
+  color: #000000;
+  padding: 2px 7px;
+  border-radius: 9999px;
 }
-.guide-v1-title {
-  font-size: 17px;
-  font-weight: 800;
-  color: #FFFFFF;
-  line-height: 1.35;
-  margin-bottom: 4px;
-}
-.guide-v1-subtitle {
-  font-size: 12.5px;
-  color: #A8A29E;
+
+.guide-box-v1 {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 12px;
   margin-bottom: 14px;
-  line-height: 1.45;
+  text-align: left;
 }
-.step-tabs-nav {
+.guide-tabs-v1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 3px;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 2px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
-.step-tab-btn {
+.g-tab-btn {
   background: transparent;
   border: none;
   color: #A8A29E;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
-  padding: 7px 4px;
-  border-radius: 9px;
+  padding: 6px 2px;
+  border-radius: 8px;
   cursor: pointer;
   text-align: center;
   transition: all 0.2s ease;
 }
-.step-tab-btn.active {
+.g-tab-btn.active {
   background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
   color: #000000;
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+  font-weight: 800;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.35);
 }
-.step-content-box {
+.g-step-content {
   background: rgba(18, 13, 10, 0.6);
   border: 1px solid rgba(245, 158, 11, 0.2);
-  border-radius: 14px;
-  padding: 14px;
-  min-height: 120px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  min-height: 82px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.step-header-meta {
+.g-step-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
-.step-timing-pill {
-  font-size: 10px;
-  font-weight: 800;
-  color: #FCD34D;
-  background: rgba(245, 158, 11, 0.12);
-  padding: 3px 8px;
-  border-radius: 9999px;
-  border: 1px solid rgba(245, 158, 11, 0.25);
-}
-.step-num-title {
-  font-size: 14px;
+.g-step-title {
+  font-size: 12.5px;
   font-weight: 800;
   color: #FAFAF9;
 }
-.step-desc-text {
-  font-size: 12px;
-  color: #D6D3D1;
-  line-height: 1.5;
-  margin-bottom: 12px;
+.g-step-time {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #FCD34D;
+  background: rgba(245, 158, 11, 0.14);
+  padding: 2px 6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
 }
-.step-controls {
+.g-step-desc {
+  font-size: 11.5px;
+  color: #D6D3D1;
+  line-height: 1.45;
+}
+.g-step-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 8px;
 }
-.step-ctrl-btn {
+.g-nav-btn {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #FFFFFF;
-  padding: 7px 14px;
+  padding: 5px 10px;
   border-radius: 9999px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
 }
-.step-ctrl-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-}
-.step-ctrl-btn.primary {
+.g-nav-btn.primary {
   background: linear-gradient(135deg, #10B981 0%, #059669 100%);
   border-color: #10B981;
   color: #FFFFFF;
 }
-.step-dots {
-  display: flex;
-  gap: 5px;
-}
-.step-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: all 0.2s ease;
-}
-.step-dot.active {
-  width: 16px;
-  border-radius: 9999px;
-  background: #F59E0B;
-}
 </style>
 </head>
 <body class="theme-cover">
+
+    <!-- Sleek Floating Concept Switcher (No layout shift) -->
+    <nav class="variant-switcher" aria-label="Selector de diseño">
+      <span class="variant-switcher-label">👀 ДИЗАЙН:</span>
+      <a href="variant1.html" class="active">⚡️ 1. Слайдер</a>
+      <a href="variant2.html" class="">💰 2. Калькулятор</a>
+      <a href="variant3.html" class="">💬 3. Чат TG</a>
+      <a href="index.html">🏠 Оригинал</a>
+    </nav>
+    
 
   <!-- Fullscreen cinematic photo background (Selected Production Version) -->
   <div class="fullscreen-bg-photo"></div>
   <div class="fullscreen-bg-scrim"></div>
 
   <main class="container">
-    <!-- Global Concept Switcher Header -->
-    <div class="demo-nav-bar">
-      <div class="demo-nav-title">✨ Сравнение концептов дизайна (выберите для просмотра):</div>
-      <div class="demo-nav-pills">
-        <a href="variant1.html" class="demo-pill active">⚡️ Вариант 1: Слайдер с таймингом</a>
-        <a href="variant2.html" class="demo-pill ">💰 Вариант 2: Калькулятор выгоды</a>
-        <a href="variant3.html" class="demo-pill ">💬 Вариант 3: Telegram Чат</a>
-        <a href="index.html" class="demo-pill">🏠 Оригинальный сайт</a>
-      </div>
-    </div>
-    
     <!-- Top Bar: Status + Language Selector -->
     <div class="top-bar">
       <!-- 24/7 Status Beacon -->
@@ -1010,77 +1022,50 @@
       </p>
 
       <!-- Loyalty & Perks Showcase Box -->
-      <div class="loyalty-box">
-        <div class="loyalty-header">
-          <span>🎁</span>
-          <span id="txt-loyalty-header">Beneficios & Sistema de Bonos:</span>
-        </div>
-        <div class="loyalty-item">
-          <span>🤝</span>
-          <span id="txt-loyalty-item-1"><strong>Amigos:</strong> 10% de descuento a tu invitado + 10% de saldo bono para vos</span>
-        </div>
-        <div class="loyalty-item">
-          <span>⭐</span>
-          <span id="txt-loyalty-item-2"><strong>Reseñas:</strong> +150 puntos extra por cada foto-reseña aprobada</span>
-        </div>
-        <div class="loyalty-item">
-          <span>📈</span>
-          <span id="txt-loyalty-item-3"><strong>Niveles VIP:</strong> Acumulá XP y subí de nivel para obtener cashback de 3% a 10%</span>
+      
+      <!-- Special Offer & 10-Min Step Slider -->
+      <div class="offer-header-v1">
+        <div class="offer-tag">🔥 PRECIO ESPECIAL DE LANZAMIENTO</div>
+        <div class="offer-price-row">
+          <span class="price-tag-old">$22.000 ARS</span>
+          <span class="price-tag-new">$16.000 ARS</span>
+          <span class="price-tag-save">-27% OFF</span>
         </div>
       </div>
 
-      <!-- Advantage Chips -->
-      <div class="chips-grid">
-        <div class="chip" id="chip-1">⚡ Retiro en 2 min</div>
-        <div class="chip" id="chip-2">📍 Palermo • Recoleta • Belgrano</div>
-        <div class="chip" id="chip-3">🔒 Pago anónimo (USDT / TON)</div>
-        <div class="chip" id="chip-4">🍫 4 sabores de autor</div>
-        <div class="chip" id="chip-5">🛡 24h Garantía total</div>
+      <div class="guide-box-v1">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="font-size:11px; font-weight:800; color:#FCD34D; text-transform:uppercase;">⏱ ¿Cómo pagar $16.000 en 10 min?</span>
+          <span style="font-size:10px; color:#A8A29E;">Solo 1 vez</span>
+        </div>
+
+        <div class="guide-tabs-v1">
+          <button type="button" class="g-tab-btn active" onclick="setV1Step(0)">1. Wallet</button>
+          <button type="button" class="g-tab-btn" onclick="setV1Step(1)">2. P2P Pesos</button>
+          <button type="button" class="g-tab-btn" onclick="setV1Step(2)">3. USDT</button>
+          <button type="button" class="g-tab-btn" onclick="setV1Step(3)">4. -27% OFF</button>
+        </div>
+
+        <div class="g-step-content">
+          <div>
+            <div class="g-step-top">
+              <span class="g-step-title" id="v1-step-title">1. Abrí @wallet en Telegram</span>
+              <span class="g-step-time" id="v1-step-time">⏱ 1 min</span>
+            </div>
+            <p class="g-step-desc" id="v1-step-desc">
+              Buscá <strong>@wallet</strong> en Telegram o tocalo directamente. Es el monedero oficial verificado. No necesitás descargar nada externo.
+            </p>
+          </div>
+          <div class="g-step-nav">
+            <button type="button" class="g-nav-btn" id="v1-prev-btn" onclick="prevV1Step()" style="visibility:hidden">← Anterior</button>
+            <span style="font-size:10px; color:#78716C;" id="v1-indicator">Paso 1 de 4</span>
+            <button type="button" class="g-nav-btn primary" id="v1-next-btn" onclick="nextV1Step()">Siguiente →</button>
+          </div>
+        </div>
       </div>
 
       <!-- Action Buttons -->
-      
-      <!-- Concept 1: Step-by-Step Interactive Slider -->
-      <div class="guide-card-v1">
-        <div class="guide-badge-top">
-          <span>⏱ 10 MINUTOS = 27% OFF</span>
-        </div>
-        <div class="guide-v1-title" id="v1-title">¿Cómo pagar 16.000 ARS en vez de 22.000 ARS?</div>
-        <div class="guide-v1-subtitle" id="v1-subtitle">Ahorrá 6.000 ARS por barra siguiendo estos 4 pasos rápidos con Telegram Wallet.</div>
-
-        <!-- Step Tabs -->
-        <div class="step-tabs-nav">
-          <button type="button" class="step-tab-btn active" onclick="selectStep(0)">1. Wallet</button>
-          <button type="button" class="step-tab-btn" onclick="selectStep(1)">2. Pesos ARS</button>
-          <button type="button" class="step-tab-btn" onclick="selectStep(2)">3. USDT</button>
-          <button type="button" class="step-tab-btn" onclick="selectStep(3)">4. -27% OFF</button>
-        </div>
-
-        <!-- Step Content Card -->
-        <div class="step-content-box" id="step-box">
-          <div>
-            <div class="step-header-meta">
-              <span class="step-num-title" id="step-title">1. Abrí @wallet en Telegram</span>
-              <span class="step-timing-pill" id="step-time">⏱ 1 min</span>
-            </div>
-            <p class="step-desc-text" id="step-desc">
-              Buscá <strong>@wallet</strong> en Telegram o tocalo directamente. Es el monedero oficial verificado. No necesitás descargar ninguna app externa ni trámites complejos.
-            </p>
-          </div>
-          <div class="step-controls">
-            <button type="button" class="step-ctrl-btn" id="btn-prev" onclick="prevStep()" style="visibility:hidden">← Anterior</button>
-            <div class="step-dots">
-              <span class="step-dot active"></span>
-              <span class="step-dot"></span>
-              <span class="step-dot"></span>
-              <span class="step-dot"></span>
-            </div>
-            <button type="button" class="step-ctrl-btn primary" id="btn-next" onclick="nextStep()">Siguiente →</button>
-          </div>
-        </div>
-      </div>
-
-<div class="actions-block">
+      <div class="actions-block">
         <a href="https://t.me/mrkey_ba_1_bot" class="btn-primary" id="btn-primary" target="_blank" rel="noopener noreferrer">
           <span id="txt-btn-primary">🚀 Abrir menú en Telegram</span>
         </a>
@@ -1243,73 +1228,67 @@
 
 
 <script>
-const STEPS_DATA = [
+const V1_STEPS = [
   {
     title: "1. Abrí @wallet en Telegram",
     time: "⏱ 1 min",
-    desc: "Buscá <strong>@wallet</strong> en Telegram o tocalo directamente. Es el monedero oficial verificado dentro de la app. No necesitás descargar nada extra.",
-    btnText: "Siguiente →"
+    desc: "Buscá <strong>@wallet</strong> en Telegram o tocalo directamente. Es el monedero oficial verificado. No necesitás descargar nada externo.",
+    btn: "Siguiente →"
   },
   {
     title: "2. Mercado P2P con Pesos (ARS)",
     time: "⏱ 4 min",
-    desc: "Dentro de @wallet tocá <strong>Comprar → Mercado P2P</strong>. Elegí ARS y seleccioná tu medio preferido: <strong>Mercado Pago</strong> o transferencia bancaria por Alias.",
-    btnText: "Siguiente →"
+    desc: "En @wallet tocá <strong>Comprar → P2P</strong>. Elegí ARS y pagá con tu <strong>Mercado Pago</strong> o transferencia bancaria por Alias.",
+    btn: "Siguiente →"
   },
   {
     title: "3. Recibí USDT protegidos",
     time: "⏱ 2 min",
-    desc: "Transferís los pesos por tu banco/MP y el vendedor te envía los USDT. Todo queda asegurado por el sistema de custodia oficial de Telegram.",
-    btnText: "Siguiente →"
+    desc: "Transferís los pesos por tu app y el vendedor libera los USDT con garantía de custodia de Telegram. ¡Listo en tu saldo!",
+    btn: "Siguiente →"
   },
   {
-    title: "4. ¡Pedí en el bot a $16.000!",
+    title: "4. ¡Pedí a $16.000 con 27% OFF!",
     time: "⏱ 3 min",
-    desc: "Volvés a nuestro bot <strong>@mrkey_ba_1_bot</strong>, elegís tus barras y pagás con 1 toque con tu saldo. <strong>¡Ahorraste 27% (6.000 ARS por barra)!</strong>",
-    btnText: "👉 Abrir @wallet ahora"
+    desc: "En nuestro bot <strong>@mrkey_ba_1_bot</strong> elegís sabores y pagás en 1 clic con tu saldo. <strong>¡Ahorraste $6.000 por barra!</strong>",
+    btn: "👉 Abrir @wallet ahora"
   }
 ];
 
-let currentStep = 0;
+let v1Idx = 0;
 
-function selectStep(idx) {
-  currentStep = idx;
-  updateStepView();
+function setV1Step(idx) {
+  v1Idx = idx;
+  renderV1();
 }
 
-function nextStep() {
-  if (currentStep < STEPS_DATA.length - 1) {
-    currentStep++;
-    updateStepView();
+function nextV1Step() {
+  if (v1Idx < V1_STEPS.length - 1) {
+    v1Idx++;
+    renderV1();
   } else {
     window.open("https://t.me/wallet", "_blank");
   }
 }
 
-function prevStep() {
-  if (currentStep > 0) {
-    currentStep--;
-    updateStepView();
+function prevV1Step() {
+  if (v1Idx > 0) {
+    v1Idx--;
+    renderV1();
   }
 }
 
-function updateStepView() {
-  const data = STEPS_DATA[currentStep];
-  document.getElementById("step-title").innerHTML = data.title;
-  document.getElementById("step-time").innerText = data.time;
-  document.getElementById("step-desc").innerHTML = data.desc;
-  document.getElementById("btn-next").innerText = data.btnText;
+function renderV1() {
+  const cur = V1_STEPS[v1Idx];
+  document.getElementById("v1-step-title").innerHTML = cur.title;
+  document.getElementById("v1-step-time").innerText = cur.time;
+  document.getElementById("v1-step-desc").innerHTML = cur.desc;
+  document.getElementById("v1-next-btn").innerText = cur.btn;
+  document.getElementById("v1-indicator").innerText = `Paso ${v1Idx + 1} de 4`;
+  document.getElementById("v1-prev-btn").style.visibility = v1Idx === 0 ? "hidden" : "visible";
 
-  document.getElementById("btn-prev").style.visibility = currentStep === 0 ? "hidden" : "visible";
-
-  const tabs = document.querySelectorAll(".step-tab-btn");
-  tabs.forEach((t, i) => {
-    t.classList.toggle("active", i === currentStep);
-  });
-
-  const dots = document.querySelectorAll(".step-dot");
-  dots.forEach((d, i) => {
-    d.classList.toggle("active", i === currentStep);
+  document.querySelectorAll(".g-tab-btn").forEach((btn, i) => {
+    btn.classList.toggle("active", i === v1Idx);
   });
 }
 </script>

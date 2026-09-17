@@ -753,64 +753,80 @@
   </style>
 
 <style>
-/* Demo Navigation Header */
-.demo-nav-bar {
-  width: 100%;
-  max-width: 580px;
-  margin: 0 auto 18px;
-  background: rgba(18, 13, 10, 0.85);
+/* Sleek Floating Concept Switcher */
+.variant-switcher {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 10, 7, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  border-radius: 20px;
-  padding: 12px 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: center;
-  position: relative;
-  z-index: 50;
-  animation: fadeInDown 0.4s ease;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 9999px;
+  padding: 4px 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 16px rgba(245, 158, 11, 0.25);
 }
-.demo-nav-title {
-  font-size: 11px;
+.variant-switcher-label {
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: #FCD34D;
+  padding: 0 6px;
+  letter-spacing: 0.06em;
 }
-.demo-nav-pills {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.demo-pill {
+.variant-switcher a {
   font-size: 11px;
   font-weight: 700;
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 9999px;
   text-decoration: none;
+  color: #D6D3D1;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #E7E5E4;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
-.demo-pill:hover {
-  background: rgba(255, 255, 255, 0.12);
+.variant-switcher a:hover {
   color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.16);
 }
-.demo-pill.active {
+.variant-switcher a.active {
   background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  border-color: #F59E0B;
   color: #000000;
+  border-color: #F59E0B;
   font-weight: 800;
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
 }
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (max-width: 600px) {
+  .variant-switcher {
+    top: auto;
+    bottom: 12px;
+    padding: 4px 6px;
+    gap: 4px;
+    max-width: 95vw;
+    overflow-x: auto;
+  }
+  .variant-switcher-label { display: none; }
+  .variant-switcher a { font-size: 10px; padding: 4px 8px; }
+}
+
+/* Ensure hero-card scrolls comfortably if content exceeds viewport */
+body.theme-cover .hero-card {
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 158, 11, 0.35) transparent;
+}
+body.theme-cover .hero-card::-webkit-scrollbar {
+  width: 4px;
+}
+body.theme-cover .hero-card::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
 }
 </style>
 
@@ -819,172 +835,123 @@
   width: 100%;
   background: rgba(18, 13, 10, 0.65);
   border: 1px solid rgba(245, 158, 11, 0.32);
-  border-radius: 22px;
-  padding: 18px 16px;
-  margin: 18px 0 20px;
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
   text-align: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08);
 }
 .calc-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  border-radius: 9999px;
-  padding: 4px 12px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   color: #FCD34D;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
-.calc-title {
-  font-size: 18px;
-  font-weight: 800;
-  color: #FFFFFF;
-  margin-bottom: 4px;
-}
-.calc-subtitle {
-  font-size: 12px;
-  color: #A8A29E;
-  margin-bottom: 14px;
-}
-.pack-selector-row {
+.pack-row-v2 {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
-.pack-btn {
-  background: rgba(255, 255, 255, 0.05);
+.pack-btn-v2 {
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #D6D3D1;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
-  padding: 7px 11px;
-  border-radius: 12px;
+  padding: 5px 9px;
+  border-radius: 9999px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.pack-btn.active {
+.pack-btn-v2.active {
   background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
   color: #000000;
   border-color: #F59E0B;
   font-weight: 800;
-  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.45);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
 }
-.price-display-panel {
+.price-box-v2 {
   background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  padding: 12px 16px;
-  margin-bottom: 14px;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.price-col {
-  display: flex;
-  flex-direction: column;
-}
-.price-label {
-  font-size: 10.5px;
-  color: #78716C;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-.price-old {
-  font-size: 14px;
+.price-old-v2 {
+  font-size: 13px;
   color: #EF4444;
   text-decoration: line-through;
   font-weight: 600;
 }
-.price-new {
+.price-new-v2 {
   font-size: 20px;
-  color: #FCD34D;
   font-weight: 900;
-  text-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+  color: #FCD34D;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
-.savings-alert-pill {
+.savings-pill-v2 {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   background: rgba(16, 185, 129, 0.15);
   border: 1px solid rgba(16, 185, 129, 0.4);
   border-radius: 9999px;
-  padding: 6px 14px;
+  padding: 4px 10px;
   color: #10B981;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
-.guide-accordion-trigger {
+.acc-trigger-v2 {
   width: 100%;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(245, 158, 11, 0.08);
   border: 1px dashed rgba(245, 158, 11, 0.35);
-  border-radius: 12px;
-  padding: 9px 12px;
+  border-radius: 10px;
+  padding: 7px 10px;
   color: #FCD34D;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s;
 }
-.guide-accordion-trigger:hover {
-  background: rgba(245, 158, 11, 0.08);
-}
-.guide-accordion-content {
+.acc-content-v2 {
   display: none;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-  padding: 12px;
-  margin-top: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 6px;
   text-align: left;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-.guide-step-mini {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 9px;
-  font-size: 12px;
+  font-size: 11px;
   color: #D6D3D1;
-  line-height: 1.4;
-}
-.guide-step-mini:last-child {
-  margin-bottom: 0;
-}
-.guide-step-icon {
-  font-size: 14px;
-  flex-shrink: 0;
+  line-height: 1.45;
 }
 </style>
 </head>
 <body class="theme-cover">
+
+    <!-- Sleek Floating Concept Switcher (No layout shift) -->
+    <nav class="variant-switcher" aria-label="Selector de diseño">
+      <span class="variant-switcher-label">👀 ДИЗАЙН:</span>
+      <a href="variant1.html" class="">⚡️ 1. Слайдер</a>
+      <a href="variant2.html" class="active">💰 2. Калькулятор</a>
+      <a href="variant3.html" class="">💬 3. Чат TG</a>
+      <a href="index.html">🏠 Оригинал</a>
+    </nav>
+    
 
   <!-- Fullscreen cinematic photo background (Selected Production Version) -->
   <div class="fullscreen-bg-photo"></div>
   <div class="fullscreen-bg-scrim"></div>
 
   <main class="container">
-    <!-- Global Concept Switcher Header -->
-    <div class="demo-nav-bar">
-      <div class="demo-nav-title">✨ Сравнение концептов дизайна (выберите для просмотра):</div>
-      <div class="demo-nav-pills">
-        <a href="variant1.html" class="demo-pill ">⚡️ Вариант 1: Слайдер с таймингом</a>
-        <a href="variant2.html" class="demo-pill active">💰 Вариант 2: Калькулятор выгоды</a>
-        <a href="variant3.html" class="demo-pill ">💬 Вариант 3: Telegram Чат</a>
-        <a href="index.html" class="demo-pill">🏠 Оригинальный сайт</a>
-      </div>
-    </div>
-    
     <!-- Top Bar: Status + Language Selector -->
     <div class="top-bar">
       <!-- 24/7 Status Beacon -->
@@ -1019,98 +986,52 @@
       </p>
 
       <!-- Loyalty & Perks Showcase Box -->
-      <div class="loyalty-box">
-        <div class="loyalty-header">
-          <span>🎁</span>
-          <span id="txt-loyalty-header">Beneficios & Sistema de Bonos:</span>
-        </div>
-        <div class="loyalty-item">
-          <span>🤝</span>
-          <span id="txt-loyalty-item-1"><strong>Amigos:</strong> 10% de descuento a tu invitado + 10% de saldo bono para vos</span>
-        </div>
-        <div class="loyalty-item">
-          <span>⭐</span>
-          <span id="txt-loyalty-item-2"><strong>Reseñas:</strong> +150 puntos extra por cada foto-reseña aprobada</span>
-        </div>
-        <div class="loyalty-item">
-          <span>📈</span>
-          <span id="txt-loyalty-item-3"><strong>Niveles VIP:</strong> Acumulá XP y subí de nivel para obtener cashback de 3% a 10%</span>
-        </div>
-      </div>
-
-      <!-- Advantage Chips -->
-      <div class="chips-grid">
-        <div class="chip" id="chip-1">⚡ Retiro en 2 min</div>
-        <div class="chip" id="chip-2">📍 Palermo • Recoleta • Belgrano</div>
-        <div class="chip" id="chip-3">🔒 Pago anónimo (USDT / TON)</div>
-        <div class="chip" id="chip-4">🍫 4 sabores de autor</div>
-        <div class="chip" id="chip-5">🛡 24h Garantía total</div>
-      </div>
-
-      <!-- Action Buttons -->
       
-      <!-- Concept 2: ROI-First Calculator + Guide Accordion -->
+      <!-- Special Offer & Interactive ROI Calculator -->
       <div class="calc-card-v2">
-        <div class="calc-badge">
-          <span>🔥 PRECIO ESPECIAL TELEGRAM</span>
-        </div>
-        <div class="calc-title">Calculadora de Descuento (27% OFF)</div>
-        <div class="calc-subtitle">Elegí la cantidad de barras y comprobá cuánto dinero ahorrás en cada compra:</div>
-
-        <!-- Quantity buttons -->
-        <div class="pack-selector-row">
-          <button type="button" class="pack-btn active" onclick="setQty(1)">1 barra</button>
-          <button type="button" class="pack-btn" onclick="setQty(2)">2 barras</button>
-          <button type="button" class="pack-btn" onclick="setQty(3)">3 barras</button>
-          <button type="button" class="pack-btn" onclick="setQty(5)">5 barras (Pack)</button>
-          <button type="button" class="pack-btn" onclick="setQty(10)">10 barras (Box)</button>
+        <div class="calc-badge">🔥 CALCULADORA DE AHORRO (27% OFF)</div>
+        <div class="pack-row-v2">
+          <button type="button" class="pack-btn-v2 active" onclick="setV2Qty(1)">1 barra</button>
+          <button type="button" class="pack-btn-v2" onclick="setV2Qty(2)">2 barras</button>
+          <button type="button" class="pack-btn-v2" onclick="setV2Qty(3)">3 barras</button>
+          <button type="button" class="pack-btn-v2" onclick="setV2Qty(5)">5 barras (Pack)</button>
+          <button type="button" class="pack-btn-v2" onclick="setV2Qty(10)">10 barras</button>
         </div>
 
-        <!-- Price display -->
-        <div class="price-display-panel">
-          <div class="price-col">
-            <span class="price-label">Precio Habitual</span>
-            <span class="price-old" id="calc-old">$22.000 ARS</span>
+        <div class="price-box-v2">
+          <div>
+            <div style="font-size:10px; color:#78716C; text-transform:uppercase;">Habitual</div>
+            <div class="price-old-v2" id="v2-old">$22.000 ARS</div>
           </div>
-          <div class="price-col">
-            <span class="price-label">Con Cripto en Bot</span>
-            <span class="price-new" id="calc-new">$16.000 ARS</span>
+          <div>
+            <div style="font-size:10px; color:#78716C; text-transform:uppercase;">Con Descuento</div>
+            <div class="price-new-v2" id="v2-new">$16.000 ARS</div>
           </div>
         </div>
 
-        <div class="savings-alert-pill" id="calc-savings">
+        <div class="savings-pill-v2" id="v2-save">
           ✨ ¡Ahorrás $6.000 ARS en este pedido! (-27%)
         </div>
 
-        <!-- Accordion trigger -->
-        <button type="button" class="guide-accordion-trigger" onclick="toggleAccordion()">
-          <span>💡 ¿Cómo conseguir esta tarifa en 10 minutos?</span>
-          <span id="acc-arrow">▼</span>
+        <button type="button" class="acc-trigger-v2" onclick="toggleV2Acc()">
+          <span>💡 ¿Cómo pagar esta tarifa en 10 min?</span>
+          <span id="v2-arrow">▼</span>
         </button>
 
-        <!-- Accordion hidden body -->
-        <div class="guide-accordion-content" id="acc-body">
-          <div class="guide-step-mini">
-            <span class="guide-step-icon">1️⃣</span>
-            <div><strong>Abrí @wallet:</strong> Es el monedero oficial en Telegram. Sin descargas extra ni trámites.</div>
-          </div>
-          <div class="guide-step-mini">
-            <span class="guide-step-icon">2️⃣</span>
-            <div><strong>Cargá pesos (ARS):</strong> En P2P Market comprás USDT transfiriendo por Mercado Pago o Alias.</div>
-          </div>
-          <div class="guide-step-mini">
-            <span class="guide-step-icon">3️⃣</span>
-            <div><strong>Comprá con 27% OFF:</strong> En @mrkey_ba_1_bot pagás en 1 clic y retirás 24/7.</div>
-          </div>
-          <div style="margin-top: 10px; text-align: center;">
-            <a href="https://t.me/wallet" target="_blank" class="step-ctrl-btn primary" style="display:inline-block; text-decoration:none; padding:8px 18px;">
-              🚀 Abrir @wallet ahora
+        <div class="acc-content-v2" id="v2-acc-body">
+          <div style="margin-bottom:6px;">1️⃣ <strong>@wallet en Telegram:</strong> El monedero oficial ya integrado.</div>
+          <div style="margin-bottom:6px;">2️⃣ <strong>P2P con Mercado Pago o Banco:</strong> Comprás USDT transfiriendo pesos por Alias.</div>
+          <div style="margin-bottom:8px;">3️⃣ <strong>Pedí con 27% OFF:</strong> En @mrkey_ba_1_bot pagás en 1 clic.</div>
+          <div style="text-align:center;">
+            <a href="https://t.me/wallet" target="_blank" style="display:inline-block; background:#10B981; color:#000; font-weight:800; text-decoration:none; padding:5px 12px; border-radius:9999px; font-size:10.5px;">
+              👉 Abrir @wallet ahora
             </a>
           </div>
         </div>
       </div>
 
-<div class="actions-block">
+      <!-- Action Buttons -->
+      <div class="actions-block">
         <a href="https://t.me/mrkey_ba_1_bot" class="btn-primary" id="btn-primary" target="_blank" rel="noopener noreferrer">
           <span id="txt-btn-primary">🚀 Abrir menú en Telegram</span>
         </a>
@@ -1273,35 +1194,28 @@
 
 
 <script>
-let currentQty = 1;
-
-function setQty(qty) {
-  currentQty = qty;
+function setV2Qty(qty) {
   const oldTotal = qty * 22000;
   const newTotal = qty * 16000;
   const savings = oldTotal - newTotal;
 
-  document.getElementById("calc-old").innerText = "$" + oldTotal.toLocaleString("es-AR") + " ARS";
-  document.getElementById("calc-new").innerText = "$" + newTotal.toLocaleString("es-AR") + " ARS";
-  document.getElementById("calc-savings").innerText = "✨ ¡Ahorrás $" + savings.toLocaleString("es-AR") + " ARS en este pedido! (-27%)";
+  document.getElementById("v2-old").innerText = "$" + oldTotal.toLocaleString("es-AR") + " ARS";
+  document.getElementById("v2-new").innerText = "$" + newTotal.toLocaleString("es-AR") + " ARS";
+  document.getElementById("v2-save").innerText = "✨ ¡Ahorrás $" + savings.toLocaleString("es-AR") + " ARS en este pedido! (-27%)";
 
-  const buttons = document.querySelectorAll(".pack-btn");
+  const buttons = document.querySelectorAll(".pack-btn-v2");
   const qtyMap = [1, 2, 3, 5, 10];
   buttons.forEach((btn, idx) => {
     btn.classList.toggle("active", qtyMap[idx] === qty);
   });
 }
 
-function toggleAccordion() {
-  const body = document.getElementById("acc-body");
-  const arrow = document.getElementById("acc-arrow");
-  if (body.style.display === "block") {
-    body.style.display = "none";
-    arrow.innerText = "▼";
-  } else {
-    body.style.display = "block";
-    arrow.innerText = "▲";
-  }
+function toggleV2Acc() {
+  const body = document.getElementById("v2-acc-body");
+  const arrow = document.getElementById("v2-arrow");
+  const isOpen = body.style.display === "block";
+  body.style.display = isOpen ? "none" : "block";
+  arrow.innerText = isOpen ? "▼" : "▲";
 }
 </script>
 

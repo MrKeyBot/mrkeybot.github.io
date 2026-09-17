@@ -753,192 +753,170 @@
   </style>
 
 <style>
-/* Demo Navigation Header */
-.demo-nav-bar {
-  width: 100%;
-  max-width: 580px;
-  margin: 0 auto 18px;
-  background: rgba(18, 13, 10, 0.85);
+/* Sleek Floating Concept Switcher */
+.variant-switcher {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 10, 7, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  border-radius: 20px;
-  padding: 12px 14px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  text-align: center;
-  position: relative;
-  z-index: 50;
-  animation: fadeInDown 0.4s ease;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 9999px;
+  padding: 4px 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 16px rgba(245, 158, 11, 0.25);
 }
-.demo-nav-title {
-  font-size: 11px;
+.variant-switcher-label {
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: #FCD34D;
+  padding: 0 6px;
+  letter-spacing: 0.06em;
 }
-.demo-nav-pills {
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.demo-pill {
+.variant-switcher a {
   font-size: 11px;
   font-weight: 700;
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 9999px;
   text-decoration: none;
+  color: #D6D3D1;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #E7E5E4;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
-.demo-pill:hover {
-  background: rgba(255, 255, 255, 0.12);
+.variant-switcher a:hover {
   color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.16);
 }
-.demo-pill.active {
+.variant-switcher a.active {
   background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  border-color: #F59E0B;
   color: #000000;
+  border-color: #F59E0B;
   font-weight: 800;
-  box-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
 }
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+@media (max-width: 600px) {
+  .variant-switcher {
+    top: auto;
+    bottom: 12px;
+    padding: 4px 6px;
+    gap: 4px;
+    max-width: 95vw;
+    overflow-x: auto;
+  }
+  .variant-switcher-label { display: none; }
+  .variant-switcher a { font-size: 10px; padding: 4px 8px; }
+}
+
+/* Ensure hero-card scrolls comfortably if content exceeds viewport */
+body.theme-cover .hero-card {
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245, 158, 11, 0.35) transparent;
+}
+body.theme-cover .hero-card::-webkit-scrollbar {
+  width: 4px;
+}
+body.theme-cover .hero-card::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.35);
+  border-radius: 4px;
 }
 </style>
 
 <style>
-.tg-chat-card-v3 {
+.tg-chat-v3 {
   width: 100%;
   background: rgba(18, 13, 10, 0.7);
   border: 1px solid rgba(245, 158, 11, 0.3);
-  border-radius: 22px;
-  padding: 16px 14px;
-  margin: 18px 0 20px;
+  border-radius: 16px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
   text-align: left;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
 }
-.tg-chat-top-header {
+.tg-chat-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
-.tg-chat-user-info {
+.tg-chat-user {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
-.tg-chat-avatar {
-  width: 32px;
-  height: 32px;
+.tg-chat-av {
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #F59E0B 0%, #B45309 100%);
+  background: #F59E0B;
+  color: #000;
+  font-weight: 800;
+  font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 13px;
-  color: #000000;
 }
-.tg-chat-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #FAFAF9;
-}
-.tg-chat-status {
-  font-size: 10.5px;
-  color: #10B981;
-  font-weight: 500;
-}
-.tg-msg-bubble-user {
+.tg-bubble-u {
   background: rgba(255, 255, 255, 0.07);
-  border-radius: 14px 14px 3px 14px;
-  padding: 10px 12px;
-  max-width: 85%;
+  border-radius: 12px 12px 2px 12px;
+  padding: 7px 10px;
+  max-width: 90%;
   margin-left: auto;
-  margin-bottom: 10px;
-  font-size: 12px;
+  margin-bottom: 6px;
+  font-size: 11px;
   color: #FAFAF9;
-  line-height: 1.45;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
+  line-height: 1.35;
 }
-.tg-msg-time {
-  font-size: 9.5px;
-  color: #78716C;
-  text-align: right;
-  margin-top: 4px;
-}
-.tg-msg-bubble-bot {
+.tg-bubble-b {
   background: rgba(245, 158, 11, 0.08);
   border: 1px solid rgba(245, 158, 11, 0.25);
-  border-radius: 14px 14px 14px 3px;
-  padding: 12px 14px;
-  max-width: 95%;
-  margin-bottom: 12px;
-  font-size: 12px;
+  border-radius: 12px 12px 12px 2px;
+  padding: 8px 10px;
+  max-width: 98%;
+  font-size: 11px;
   color: #E7E5E4;
-  line-height: 1.5;
+  line-height: 1.45;
 }
-.tg-inline-btn-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 6px;
-  margin-top: 10px;
-}
-.tg-inline-action-btn {
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  border-radius: 10px;
-  padding: 8px 12px;
+.tg-quick-link {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-radius: 8px;
+  padding: 4px 10px;
   color: #FCD34D;
-  font-size: 11.5px;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.2s;
-  display: block;
-}
-.tg-inline-action-btn:hover {
-  background: rgba(245, 158, 11, 0.28);
-  color: #FFFFFF;
-}
-.tg-chat-footer-note {
   font-size: 10.5px;
-  color: #78716C;
-  text-align: center;
+  font-weight: 700;
+  text-decoration: none;
   margin-top: 6px;
 }
 </style>
 </head>
 <body class="theme-cover">
 
+    <!-- Sleek Floating Concept Switcher (No layout shift) -->
+    <nav class="variant-switcher" aria-label="Selector de diseño">
+      <span class="variant-switcher-label">👀 ДИЗАЙН:</span>
+      <a href="variant1.html" class="">⚡️ 1. Слайдер</a>
+      <a href="variant2.html" class="">💰 2. Калькулятор</a>
+      <a href="variant3.html" class="active">💬 3. Чат TG</a>
+      <a href="index.html">🏠 Оригинал</a>
+    </nav>
+    
+
   <!-- Fullscreen cinematic photo background (Selected Production Version) -->
   <div class="fullscreen-bg-photo"></div>
   <div class="fullscreen-bg-scrim"></div>
 
   <main class="container">
-    <!-- Global Concept Switcher Header -->
-    <div class="demo-nav-bar">
-      <div class="demo-nav-title">✨ Сравнение концептов дизайна (выберите для просмотра):</div>
-      <div class="demo-nav-pills">
-        <a href="variant1.html" class="demo-pill ">⚡️ Вариант 1: Слайдер с таймингом</a>
-        <a href="variant2.html" class="demo-pill ">💰 Вариант 2: Калькулятор выгоды</a>
-        <a href="variant3.html" class="demo-pill active">💬 Вариант 3: Telegram Чат</a>
-        <a href="index.html" class="demo-pill">🏠 Оригинальный сайт</a>
-      </div>
-    </div>
-    
     <!-- Top Bar: Status + Language Selector -->
     <div class="top-bar">
       <!-- 24/7 Status Beacon -->
@@ -973,82 +951,49 @@
       </p>
 
       <!-- Loyalty & Perks Showcase Box -->
-      <div class="loyalty-box">
-        <div class="loyalty-header">
-          <span>🎁</span>
-          <span id="txt-loyalty-header">Beneficios & Sistema de Bonos:</span>
-        </div>
-        <div class="loyalty-item">
-          <span>🤝</span>
-          <span id="txt-loyalty-item-1"><strong>Amigos:</strong> 10% de descuento a tu invitado + 10% de saldo bono para vos</span>
-        </div>
-        <div class="loyalty-item">
-          <span>⭐</span>
-          <span id="txt-loyalty-item-2"><strong>Reseñas:</strong> +150 puntos extra por cada foto-reseña aprobada</span>
-        </div>
-        <div class="loyalty-item">
-          <span>📈</span>
-          <span id="txt-loyalty-item-3"><strong>Niveles VIP:</strong> Acumulá XP y subí de nivel para obtener cashback de 3% a 10%</span>
+      
+      <!-- Special Offer & Telegram Dialogue -->
+      <div class="offer-header-v1" style="margin-bottom:10px;">
+        <div class="offer-tag">🔥 PRECIO ESPECIAL DE LANZAMIENTO</div>
+        <div class="offer-price-row">
+          <span class="price-tag-old">$22.000 ARS</span>
+          <span class="price-tag-new">$16.000 ARS</span>
+          <span class="price-tag-save">-27% OFF</span>
         </div>
       </div>
 
-      <!-- Advantage Chips -->
-      <div class="chips-grid">
-        <div class="chip" id="chip-1">⚡ Retiro en 2 min</div>
-        <div class="chip" id="chip-2">📍 Palermo • Recoleta • Belgrano</div>
-        <div class="chip" id="chip-3">🔒 Pago anónimo (USDT / TON)</div>
-        <div class="chip" id="chip-4">🍫 4 sabores de autor</div>
-        <div class="chip" id="chip-5">🛡 24h Garantía total</div>
+      <div class="tg-chat-v3">
+        <div class="tg-chat-head">
+          <div class="tg-chat-user">
+            <div class="tg-chat-av">MK</div>
+            <div>
+              <div style="font-size:11px; font-weight:800; color:#FAFAF9;">Mr. Key Oficial ✅</div>
+              <div style="font-size:9.5px; color:#10B981;">en línea 24/7</div>
+            </div>
+          </div>
+          <span style="font-size:10px; font-weight:800; color:#FCD34D;">-27% OFF</span>
+        </div>
+
+        <div class="tg-bubble-u">
+          ¿Cómo hago para pagar $16.000 en vez de $22.000? Nunca compré cripto.
+          <div style="font-size:8.5px; color:#78716C; text-align:right;">14:20 ✓✓</div>
+        </div>
+
+        <div class="tg-bubble-b">
+          ¡Es súper fácil! 🙌 Usamos el monedero oficial <strong>@wallet</strong> en Telegram:
+          <br>
+          1️⃣ En P2P comprás USDT pagando con tu <strong>Mercado Pago o banco</strong>.<br>
+          2️⃣ En nuestro bot pagás <strong>$16.000</strong> (ahorrás $6.000 por barra).<br>
+          ⏱ <em>Toma 10 min por única vez. ¡Próximas compras en 20 seg!</em>
+          <br>
+          <a href="https://t.me/wallet" target="_blank" class="tg-quick-link">
+            👉 Abrir @wallet oficial en Telegram
+          </a>
+        </div>
       </div>
 
       <!-- Action Buttons -->
-      
-      <!-- Concept 3: Telegram Native Chat Simulator -->
-      <div class="tg-chat-card-v3">
-        <div class="tg-chat-top-header">
-          <div class="tg-chat-user-info">
-            <div class="tg-chat-avatar">MK</div>
-            <div>
-              <div class="tg-chat-title">Mr. Key • Asistente Oficial ✅</div>
-              <div class="tg-chat-status">en línea • responde al instante</div>
-            </div>
-          </div>
-          <span style="font-size: 11px; font-weight:800; color:#FCD34D;">27% OFF</span>
-        </div>
-
-        <!-- User Bubble -->
-        <div class="tg-msg-bubble-user">
-          Hola! Vi que con cripto sale <strong>$16.000 en vez de $22.000</strong>. ¿Cómo es el tema? Nunca compré cripto en mi vida.
-          <div class="tg-msg-time">14:20 ✓✓</div>
-        </div>
-
-        <!-- Mr Key Bot Bubble -->
-        <div class="tg-msg-bubble-bot">
-          ¡Buenas! 🙌 Es súper simple y 100% seguro. Usamos el monedero oficial <strong>@wallet</strong> dentro de Telegram:
-          <br><br>
-          1️⃣ <strong>Sin apps raras:</strong> Abrís @wallet directo en tu Telegram.<br>
-          2️⃣ <strong>P2P con Pesos:</strong> Comprás USDT pagando con Mercado Pago o transferencia bancaria.<br>
-          3️⃣ <strong>Ahorro inmediato:</strong> En nuestro bot pagás <strong>$16.000 ARS</strong> por barra (ahorrás $6.000 en cada una).<br>
-          <br>
-          ⏱ <em>Solo te lleva 10 minutos por única vez. ¡Tus próximos pedidos se pagan en 20 segundos!</em>
-
-          <div class="tg-inline-btn-grid">
-            <a href="https://t.me/wallet" target="_blank" class="tg-inline-action-btn">
-              📱 1. Abrir @wallet oficial en Telegram
-            </a>
-            <a href="https://t.me/mrkey_ba_1_bot" target="_blank" class="tg-inline-action-btn" style="background:linear-gradient(135deg,#10B981,#059669); color:#fff; border-color:#10B981;">
-              🚀 2. Abrir Menú con Descuento (@mrkey_ba_1_bot)
-            </a>
-          </div>
-          <div class="tg-msg-time" style="color:#A8A29E; margin-top:8px;">14:21 • Mr. Key Bot</div>
-        </div>
-
-        <div class="tg-chat-footer-note">
-          🔒 Custodia oficial de Telegram • 100% confidencial y seguro
-        </div>
-      </div>
-
-<div class="actions-block">
+      <div class="actions-block">
         <a href="https://t.me/mrkey_ba_1_bot" class="btn-primary" id="btn-primary" target="_blank" rel="noopener noreferrer">
           <span id="txt-btn-primary">🚀 Abrir menú en Telegram</span>
         </a>
@@ -1211,7 +1156,7 @@
 
 
 <script>
-// Variant 3 interactions
+// Variant 3
 </script>
 
 </body>
