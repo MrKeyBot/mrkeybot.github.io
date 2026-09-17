@@ -207,7 +207,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
       padding: 14px 16px;
-      margin-bottom: 24px;
+      margin-bottom: 0;
       text-align: left;
       font-size: 12px;
       line-height: 1.55;
@@ -222,30 +222,6 @@
     }
     .info-row:last-child {
       margin-bottom: 0;
-    }
-
-    .btn-support {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      padding: 12px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      border-radius: 14px;
-      color: #FCD34D;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-support:hover {
-      background: rgba(245, 158, 11, 0.12);
-      border-color: rgba(245, 158, 11, 0.5);
-      color: #FFFFFF;
-      transform: translateY(-1px);
     }
 
     .footer {
@@ -290,10 +266,6 @@
           <span id="txt-info-2"><strong>Reanudación:</strong> Estimada en unos minutos.</span>
         </div>
       </div>
-
-      <a href="https://t.me/mr_key_ba1" class="btn-support" id="btn-support" target="_blank" rel="noopener noreferrer">
-        <span>💬 Contactar a Soporte (@mr_key_ba1)</span>
-      </a>
     </div>
 
     <div class="footer" id="txt-footer">
@@ -311,7 +283,6 @@
         desc: "Estamos realizando tareas de optimización y actualización en nuestro sistema de catálogo y pedidos. El servicio se reanudará en breve. Disculpe las molestias.",
         info1: "<strong>Estado:</strong> Actualización de plataforma en curso.",
         info2: "<strong>Reanudación:</strong> Estimada en unos minutos.",
-        support: "💬 Contactar a Soporte (@mr_key_ba1)",
         footer: "© 2026 Mr. Key • Buenos Aires • Sistema en Mantenimiento"
       },
       ru: {
@@ -322,7 +293,6 @@
         desc: "Мы проводим плановое обновление каталога и системы обработки заказов. Сайт возобновит работу в ближайшее время. Приносим извинения за временные неудобства.",
         info1: "<strong>Статус:</strong> Обновление платформы и витрины.",
         info2: "<strong>Возобновление:</strong> В течение нескольких минут.",
-        support: "💬 Написать в поддержку (@mr_key_ba1)",
         footer: "© 2026 Mr. Key • Буэнос-Айрес • Техническое обслуживание"
       },
       en: {
@@ -333,7 +303,6 @@
         desc: "We are currently performing scheduled platform and catalog updates to improve our service. Everything will be back online shortly. Thank you for your patience.",
         info1: "<strong>Status:</strong> System maintenance in progress.",
         info2: "<strong>Estimated time:</strong> Back online in a few minutes.",
-        support: "💬 Contact Support (@mr_key_ba1)",
         footer: "© 2026 Mr. Key • Buenos Aires • System Under Maintenance"
       }
     };
@@ -351,7 +320,6 @@
       document.getElementById('txt-desc').innerText = data.desc;
       document.getElementById('txt-info-1').innerHTML = data.info1;
       document.getElementById('txt-info-2').innerHTML = data.info2;
-      document.getElementById('btn-support').innerHTML = `<span>${data.support}</span>`;
       document.getElementById('txt-footer').innerText = data.footer;
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
