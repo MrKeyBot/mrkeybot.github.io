@@ -31,7 +31,9 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -752,8 +754,34 @@
     }
   </style>
 
-  <!-- Refined User Styles: Centered Status, 3 Full-Width Features, Green CTA Button, QR under Right Block, Centered Footer -->
+  <!-- Luxury Cinematic & High-Impact Animated Design System (UI Pro Max) -->
   <style>
+    /* Gradient text shimmer animation */
+    .gradient-shimmer {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDE68A 35%, #F59E0B 70%, #FCD34D 100%);
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textShine 4s ease-in-out infinite alternate;
+      display: inline;
+    }
+    @keyframes textShine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Ambient card breathing halo */
+    @keyframes ambientHaloPulse {
+      0%, 100% {
+        box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(245, 158, 11, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+        border-color: rgba(245, 158, 11, 0.65);
+      }
+      50% {
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.95), 0 0 45px rgba(245, 158, 11, 0.45), inset 0 1px 3px rgba(255, 255, 255, 0.45);
+        border-color: rgba(252, 211, 77, 0.95);
+      }
+    }
+
     /* Variant Switcher Docked at Bottom Left (Zero interference with top header) */
     .variant-switcher {
       position: fixed;
@@ -770,6 +798,10 @@
       border-radius: 9999px;
       padding: 4px 10px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 16px rgba(245, 158, 11, 0.25);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .variant-switcher:hover {
+      transform: translateY(-1px);
     }
     .variant-switcher-label {
       font-size: 10.5px;
@@ -816,29 +848,34 @@
       display: inline-flex !important;
       align-items: center;
       gap: 8px;
-      background: rgba(14, 10, 7, 0.85);
-      border: 1.5px solid rgba(16, 185, 129, 0.5);
+      background: rgba(14, 10, 7, 0.88);
+      border: 1.5px solid rgba(16, 185, 129, 0.55);
       border-radius: 9999px;
-      padding: 5px 16px;
-      font-size: 11.5px;
+      padding: 6px 18px;
+      font-size: 12px;
       font-weight: 800;
       color: #D1FAE5;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 18px rgba(16, 185, 129, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 20px rgba(16, 185, 129, 0.35);
       margin: 0 auto;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .status-badge:hover {
+      transform: scale(1.02);
+      border-color: #34D399;
     }
     .pulse-dot {
-      width: 8px;
-      height: 8px;
+      width: 9px;
+      height: 9px;
       background: #10B981;
       border-radius: 50%;
-      box-shadow: 0 0 10px #10B981, 0 0 20px #10B981;
+      box-shadow: 0 0 12px #10B981, 0 0 24px #10B981;
       animation: pulseGlow 1.8s infinite;
     }
     @keyframes pulseGlow {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+      50% { opacity: 0.4; transform: scale(0.82); }
     }
     .lang-switcher {
       position: absolute;
@@ -857,7 +894,7 @@
     /* --- RIGHT COLUMN HERO CONTAINER --- */
     .hero-main-container {
       width: 100%;
-      max-width: 680px;
+      max-width: 740px;
       display: flex;
       flex-direction: column;
       text-align: left;
@@ -868,11 +905,12 @@
       align-items: center;
       gap: 8px;
       background: rgba(245, 158, 11, 0.12);
-      border: 1px solid rgba(245, 158, 11, 0.35);
+      border: 1px solid rgba(245, 158, 11, 0.4);
       border-radius: 9999px;
-      padding: 4px 12px 4px 6px;
+      padding: 4px 14px 4px 6px;
       margin-bottom: 8px;
       width: fit-content;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
     .brand-mini-circle {
       width: 24px;
@@ -898,22 +936,24 @@
       text-transform: uppercase;
     }
 
-    /* Bigger, Bolder, Catchier Heading */
+    /* BIG, BOLD, LUXURY OUTFIT HEADLINE (Significantly larger for Desktop) */
     .catchy-title {
-      font-size: 35px;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 42px;
       font-weight: 900;
       color: #FFFFFF;
-      line-height: 1.14;
+      line-height: 1.12;
       margin-bottom: 10px;
-      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.95), 0 0 35px rgba(245, 158, 11, 0.3);
-      letter-spacing: -0.015em;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.95), 0 0 40px rgba(245, 158, 11, 0.35);
+      letter-spacing: -0.02em;
     }
     .catchy-subtitle {
-      font-size: 13.5px;
+      font-size: 15px;
       color: #E7E5E4;
-      line-height: 1.45;
-      margin-bottom: 12px;
-      max-width: 640px;
+      line-height: 1.52;
+      margin-bottom: 14px;
+      max-width: 680px;
+      letter-spacing: -0.005em;
     }
 
     /* 3 FEATURES IN 1 ROW SPANNING FULL WIDTH MATCHING CARD BELOW */
@@ -921,8 +961,8 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       width: 100%;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 14px;
     }
     .feat-badge {
       display: flex;
@@ -930,77 +970,86 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: rgba(20, 14, 10, 0.82);
-      border: 1.5px solid rgba(245, 158, 11, 0.32);
-      border-radius: 14px;
-      padding: 9px 10px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
-      transition: all 0.2s ease;
+      background: rgba(22, 15, 10, 0.88);
+      border: 1.5px solid rgba(245, 158, 11, 0.36);
+      border-radius: 16px;
+      padding: 11px 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .feat-badge:hover {
-      background: rgba(245, 158, 11, 0.12);
-      border-color: rgba(245, 158, 11, 0.65);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.25);
+      background: rgba(245, 158, 11, 0.15);
+      border-color: rgba(252, 211, 77, 0.85);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
     }
     .feat-badge span.icon {
-      font-size: 20px;
-      margin-bottom: 3px;
+      font-size: 22px;
+      margin-bottom: 4px;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
     }
     .feat-badge span.feat-text {
-      font-size: 11.5px;
+      font-size: 12.5px;
       font-weight: 800;
       color: #F5F5F4;
       line-height: 1.25;
+      letter-spacing: -0.01em;
     }
 
-    /* --- SPECIAL OFFER HOOK BOX --- */
+    /* --- SPECIAL OFFER HOOK BOX (Breathing Ambient Glow) --- */
     .offer-hook-card {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.08) 100%);
-      border: 1.5px solid rgba(245, 158, 11, 0.65);
-      border-radius: 18px;
-      padding: 14px 18px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.09) 100%);
+      border: 1.5px solid rgba(245, 158, 11, 0.7);
+      border-radius: 20px;
+      padding: 16px 22px;
       margin-bottom: 12px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 158, 11, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.25);
       cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
       position: relative;
+      animation: ambientHaloPulse 4.5s ease-in-out infinite;
     }
     .offer-hook-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.01);
       border-color: #FCD34D;
-      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.35);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.9), 0 0 50px rgba(245, 158, 11, 0.5);
     }
     .offer-hook-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
     .offer-badge-tag {
       font-size: 11px;
       font-weight: 900;
       color: #000000;
       background: #FCD34D;
-      padding: 3px 9px;
-      border-radius: 6px;
-      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 7px;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.5);
+      box-shadow: 0 2px 10px rgba(245, 158, 11, 0.6);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .offer-price-group {
       display: flex;
       align-items: baseline;
-      gap: 12px;
+      gap: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
-    /* BOLD, MUCH LARGER PRICE AS REQUESTED */
+    /* GIANT BOLD RADIANT PRICE */
     .price-value-new {
+      font-family: 'Outfit', sans-serif;
       font-size: 34px;
       font-weight: 950;
       color: #FCD34D;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8), 0 0 25px rgba(245, 158, 11, 0.6);
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.85), 0 0 32px rgba(245, 158, 11, 0.7);
       letter-spacing: -0.02em;
       line-height: 1;
+      white-space: nowrap;
     }
     .price-value-old {
       font-size: 18px;
@@ -1008,6 +1057,7 @@
       text-decoration: line-through;
       font-weight: 700;
       opacity: 0.9;
+      white-space: nowrap;
     }
     .price-discount-pill {
       font-size: 13px;
@@ -1016,33 +1066,35 @@
       color: #000000;
       padding: 4px 10px;
       border-radius: 9999px;
-      box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.6);
       letter-spacing: 0.04em;
+      white-space: nowrap;
     }
 
     .offer-hook-middle {
-      font-size: 12.5px;
+      font-size: 13.5px;
       color: #F5F5F4;
-      line-height: 1.35;
-      margin-bottom: 10px;
+      line-height: 1.4;
+      margin-bottom: 12px;
     }
     .offer-hook-middle strong {
       color: #FCD34D;
+      font-weight: 800;
     }
 
-    /* VIBRANT EMERALD GREEN INTERACTIVE BUTTON (DISTINCT FROM ANY INPUT) */
+    /* VIBRANT EMERALD GREEN INTERACTIVE BUTTON (Light Sweep + Pulse Icon) */
     .offer-hook-btn-trigger {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       border: 1.5px solid #34D399;
-      border-radius: 13px;
-      padding: 11px 18px;
+      border-radius: 14px;
+      padding: 13px 20px;
       color: #FFFFFF;
-      font-size: 13.5px;
+      font-size: 14.5px;
       font-weight: 900;
-      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.35);
+      box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.4);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       letter-spacing: 0.01em;
       position: relative;
@@ -1055,8 +1107,8 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
-      animation: greenBtnSheen 3.5s infinite;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+      animation: greenBtnSheen 3.2s infinite;
     }
     @keyframes greenBtnSheen {
       0%, 65% { left: -100%; }
@@ -1065,114 +1117,116 @@
     .offer-hook-card:hover .offer-hook-btn-trigger {
       background: linear-gradient(135deg, #059669 0%, #10B981 100%);
       border-color: #6EE7B7;
-      box-shadow: 0 8px 28px rgba(16, 185, 129, 0.65), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.75), inset 0 1px 2px rgba(255, 255, 255, 0.6);
       transform: scale(1.015);
     }
     .btn-content-left {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
     }
     .pulse-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 24px;
-      height: 24px;
-      background: rgba(255, 255, 255, 0.22);
+      width: 26px;
+      height: 26px;
+      background: rgba(255, 255, 255, 0.25);
       border-radius: 50%;
-      font-size: 13px;
+      font-size: 14px;
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
     }
     .arrow-circle {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 26px;
-      height: 26px;
-      background: rgba(0, 0, 0, 0.25);
+      width: 28px;
+      height: 28px;
+      background: rgba(0, 0, 0, 0.28);
       border-radius: 50%;
-      font-size: 14px;
+      font-size: 15px;
       transition: transform 0.2s ease, background 0.2s ease;
     }
     .offer-hook-card:hover .arrow-circle {
       transform: translateX(4px);
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
     }
 
     /* Main Action Buttons Grid */
     .hero-actions-grid {
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
-      gap: 10px;
-      margin-bottom: 6px;
+      gap: 12px;
+      margin-bottom: 8px;
     }
     .btn-main-order {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 11px 18px;
+      padding: 13px 20px;
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border: 1px solid #FCD34D;
-      border-radius: 13px;
+      border-radius: 14px;
       color: #000000;
-      font-size: 13.5px;
+      font-size: 14.5px;
       font-weight: 900;
       text-decoration: none;
-      box-shadow: 0 5px 18px rgba(245, 158, 11, 0.45);
-      transition: all 0.2s;
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.48);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
     }
     .btn-main-order:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.08);
-      box-shadow: 0 7px 24px rgba(245, 158, 11, 0.6);
+      transform: translateY(-2px) scale(1.01);
+      filter: brightness(1.09);
+      box-shadow: 0 8px 28px rgba(245, 158, 11, 0.65);
     }
     .btn-main-support {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 11px 14px;
+      padding: 13px 16px;
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 14px;
       color: #E7E5E4;
-      font-size: 12.5px;
-      font-weight: 700;
+      font-size: 13.5px;
+      font-weight: 800;
       text-decoration: none;
-      transition: all 0.2s;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-main-support:hover {
-      background: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.18);
       color: #FFFFFF;
+      transform: translateY(-2px);
     }
 
     /* QR CODE UNDER THE RIGHT BLOCK AT THE BOTTOM */
     .right-block-qr-bar {
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: rgba(14, 10, 7, 0.82);
-      border: 1px solid rgba(245, 158, 11, 0.38);
-      border-radius: 14px;
-      padding: 7px 14px;
+      gap: 14px;
+      background: rgba(14, 10, 7, 0.85);
+      border: 1.5px solid rgba(245, 158, 11, 0.4);
+      border-radius: 16px;
+      padding: 8px 16px;
       margin-top: 6px;
       width: 100%;
       box-sizing: border-box;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.75);
     }
     .right-qr-card {
-      width: 50px;
-      height: 50px;
+      width: 52px;
+      height: 52px;
       background: #FFFFFF;
-      border-radius: 9px;
+      border-radius: 10px;
       padding: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.65);
     }
     .right-qr-card img {
       width: 100%;
@@ -1183,15 +1237,15 @@
       text-align: left;
     }
     .right-qr-title {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
       color: #FCD34D;
       margin-bottom: 2px;
     }
     .right-qr-desc {
-      font-size: 10.5px;
+      font-size: 11px;
       color: #D6D3D1;
-      line-height: 1.3;
+      line-height: 1.35;
     }
 
     /* CENTERED FOOTER NOTE */
@@ -1206,122 +1260,134 @@
       letter-spacing: 0.02em;
     }
 
-    /* --- STEP MODAL WINDOW --- */
+    /* =======================================================
+       --- GRAND CINEMATIC MODAL WINDOW (EXPANDED TO 1080px) ---
+       ======================================================= */
     .step-modal-overlay {
       position: fixed;
       inset: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(6, 4, 3, 0.82);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+      background: rgba(4, 3, 2, 0.88);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
       z-index: 100000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 24px;
       box-sizing: border-box;
       opacity: 0;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .step-modal-overlay.active {
       display: flex;
       opacity: 1;
     }
+    /* EXPANDED DESKTOP MODAL WIDTH (1080px) */
     .step-modal-window {
-      background: rgba(14, 10, 7, 0.95);
-      border: 2px solid rgba(245, 158, 11, 0.7);
-      border-radius: 24px;
-      max-width: 820px;
+      background: radial-gradient(circle at 85% 15%, rgba(38, 24, 14, 0.98), rgba(12, 9, 6, 0.98));
+      border: 2px solid rgba(245, 158, 11, 0.75);
+      border-radius: 28px;
+      max-width: 1080px;
       width: 100%;
-      max-height: calc(100vh - 40px);
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.98), 0 0 50px rgba(245, 158, 11, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      max-height: calc(100vh - 48px);
+      box-shadow: 0 35px 100px rgba(0, 0, 0, 0.98), 0 0 70px rgba(245, 158, 11, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.3);
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      transform: scale(0.96);
-      transition: transform 0.25s ease;
+      transform: scale(0.94) translateY(18px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
     .step-modal-overlay.active .step-modal-window {
-      transform: scale(1);
+      transform: scale(1) translateY(0);
     }
     .modal-close-btn {
       position: absolute;
-      top: 14px;
-      right: 16px;
-      width: 34px;
-      height: 34px;
+      top: 16px;
+      right: 20px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #FFFFFF;
-      font-size: 16px;
+      font-size: 18px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      z-index: 10;
-      transition: all 0.2s;
+      z-index: 20;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .modal-close-btn:hover {
-      background: rgba(239, 68, 68, 0.3);
+      background: rgba(239, 68, 68, 0.35);
       border-color: #EF4444;
-      transform: scale(1.08);
+      transform: scale(1.1);
     }
 
+    /* Modal Header */
     .modal-header-section {
-      padding: 18px 24px 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 22px 32px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
       text-align: left;
     }
     .modal-pretag {
-      font-size: 10.5px;
-      font-weight: 800;
+      font-size: 12px;
+      font-weight: 900;
       color: #FCD34D;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.16);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(245, 158, 11, 0.35);
     }
     .modal-title {
-      font-size: 21px;
-      font-weight: 900;
+      font-family: 'Outfit', sans-serif;
+      font-size: 28px;
+      font-weight: 950;
       color: #FFFFFF;
-      line-height: 1.25;
-      margin-bottom: 3px;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      letter-spacing: -0.015em;
     }
     .modal-subtitle {
-      font-size: 12.5px;
-      color: #A8A29E;
+      font-size: 14.5px;
+      color: #D6D3D1;
     }
 
+    /* Tracker Bar with 40px Nodes */
     .modal-tracker-bar {
       position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 10px 24px 6px;
+      margin: 14px 32px 10px;
     }
     .modal-track-bg {
       position: absolute;
-      top: 14px;
-      left: 12px;
-      right: 12px;
-      height: 3px;
+      top: 19px;
+      left: 20px;
+      right: 20px;
+      height: 4px;
       background: rgba(255, 255, 255, 0.12);
       border-radius: 9999px;
       z-index: 1;
     }
     .modal-track-fill {
       position: absolute;
-      top: 14px;
-      left: 12px;
-      height: 3px;
+      top: 19px;
+      left: 20px;
+      height: 4px;
       background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
       border-radius: 9999px;
       z-index: 2;
-      transition: width 0.3s ease;
-      box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 0 14px rgba(245, 158, 11, 0.85);
     }
     .m-step-node {
       position: relative;
@@ -1333,62 +1399,77 @@
       background: transparent;
       border: none;
       padding: 0;
+      transition: transform 0.2s ease;
+    }
+    .m-step-node:hover {
+      transform: translateY(-2px);
     }
     .m-node-circle {
-      width: 28px;
-      height: 28px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: #18120D;
-      border: 2px solid rgba(255, 255, 255, 0.22);
+      border: 2px solid rgba(255, 255, 255, 0.24);
       color: #A8A29E;
-      font-size: 11.5px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 900;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.2s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .m-step-node:hover .m-node-circle {
-      border-color: rgba(245, 158, 11, 0.7);
+      border-color: rgba(245, 158, 11, 0.85);
       color: #FFFFFF;
     }
     .m-step-node.active .m-node-circle {
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border-color: #FCD34D;
       color: #000000;
-      box-shadow: 0 0 14px rgba(245, 158, 11, 0.85);
-      transform: scale(1.12);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.9);
+      transform: scale(1.15);
     }
     .m-step-node.done .m-node-circle {
       background: #10B981;
       border-color: #10B981;
       color: #000000;
-      box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
     }
     .m-node-label {
-      font-size: 10.5px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 800;
       color: #A8A29E;
-      margin-top: 3px;
+      margin-top: 5px;
       white-space: nowrap;
+      transition: color 0.2s;
     }
     .m-step-node.active .m-node-label {
       color: #FCD34D;
-      font-weight: 800;
+      font-weight: 900;
     }
     .m-step-node.done .m-node-label {
       color: #FFFFFF;
     }
 
+    /* Modal Step Body Grid (Substantially larger typography) */
     .modal-step-body {
-      padding: 12px 24px 18px;
+      padding: 16px 32px 24px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 20px;
+      gap: 28px;
       align-items: center;
       overflow-y: auto;
       text-align: left;
     }
+    /* Step change animation */
+    .step-fade-anim {
+      animation: stepSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes stepSlideIn {
+      0% { opacity: 0; transform: translateX(14px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
     .m-step-content {
       display: flex;
       flex-direction: column;
@@ -1396,173 +1477,207 @@
     .m-step-tag-row {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 5px;
+      gap: 10px;
+      margin-bottom: 6px;
     }
     .m-step-tag {
-      font-size: 9.5px;
+      font-size: 11px;
       font-weight: 900;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       color: #FCD34D;
       text-transform: uppercase;
-      background: rgba(245, 158, 11, 0.18);
-      padding: 2px 8px;
+      background: rgba(245, 158, 11, 0.2);
+      padding: 3px 10px;
       border-radius: 9999px;
-      border: 1px solid rgba(245, 158, 11, 0.35);
+      border: 1px solid rgba(245, 158, 11, 0.4);
     }
     .m-time-tag {
-      font-size: 9.5px;
+      font-size: 11px;
       font-weight: 800;
       color: #10B981;
-      background: rgba(16, 185, 129, 0.18);
-      padding: 2px 8px;
+      background: rgba(16, 185, 129, 0.2);
+      padding: 3px 10px;
       border-radius: 9999px;
-      border: 1px solid rgba(16, 185, 129, 0.35);
+      border: 1px solid rgba(16, 185, 129, 0.4);
     }
     .m-step-title {
-      font-size: 17px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
       font-weight: 900;
       color: #FFFFFF;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       line-height: 1.25;
+      letter-spacing: -0.01em;
     }
     .m-step-pill {
-      font-size: 11.5px;
+      font-size: 14px;
       font-weight: 700;
       color: #FCD34D;
-      background: rgba(245, 158, 11, 0.1);
-      border-left: 3px solid #F59E0B;
-      padding: 4px 9px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-      line-height: 1.35;
+      background: rgba(245, 158, 11, 0.12);
+      border-left: 3.5px solid #F59E0B;
+      padding: 7px 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      line-height: 1.4;
     }
     .m-bullets {
       display: flex;
       flex-direction: column;
-      gap: 5px;
-      margin-bottom: 12px;
+      gap: 9px;
+      margin-bottom: 16px;
     }
     .m-bullet-item {
-      font-size: 12px;
+      font-size: 14px;
       color: #E7E5E4;
-      line-height: 1.38;
+      line-height: 1.45;
       display: flex;
       align-items: flex-start;
-      gap: 7px;
+      gap: 10px;
+    }
+    .m-bullet-item span:first-child {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
     .m-bullet-item strong {
       color: #FFFFFF;
+      font-weight: 800;
     }
     .m-btn-action {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       width: 100%;
-      padding: 10px 16px;
+      padding: 13px 20px;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-      border: 1px solid #34D399;
-      border-radius: 12px;
+      border: 1.5px solid #34D399;
+      border-radius: 14px;
       color: #FFFFFF;
-      font-size: 13px;
-      font-weight: 800;
+      font-size: 15px;
+      font-weight: 900;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
-      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
     }
     .m-btn-action:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.08);
-      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.55);
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+      box-shadow: 0 8px 26px rgba(16, 185, 129, 0.7);
     }
 
+    /* ANIMATED MEDIA SHOWCASE CONTAINER (280px tall, dynamic interactive feel) */
     .m-media-showcase {
-      background: rgba(0, 0, 0, 0.65);
-      border: 1.5px dashed rgba(245, 158, 11, 0.45);
-      border-radius: 18px;
-      height: 220px;
+      background: linear-gradient(145deg, rgba(16, 11, 8, 0.95), rgba(6, 4, 3, 0.98));
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      border-radius: 22px;
+      height: 280px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 20px;
       text-align: center;
-      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9), 0 10px 30px rgba(0, 0, 0, 0.6);
       position: relative;
+      overflow: hidden;
+    }
+    .m-media-showcase::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 65%);
+      animation: rotateGlow 8s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     .m-media-icon {
-      font-size: 32px;
-      margin-bottom: 6px;
-      filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+      font-size: 42px;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.65));
+      animation: floatIcon 3s ease-in-out infinite alternate;
+    }
+    @keyframes floatIcon {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
     }
     .m-media-title {
-      font-size: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
       font-weight: 800;
       color: #FCD34D;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
     }
     .m-media-desc {
-      font-size: 10.5px;
+      font-size: 12.5px;
       color: #A8A29E;
-      line-height: 1.35;
-      max-width: 210px;
+      line-height: 1.45;
+      max-width: 250px;
     }
     .m-media-badge {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 8.5px;
-      font-weight: 800;
-      background: rgba(16, 185, 129, 0.2);
+      top: 12px;
+      right: 14px;
+      font-size: 9.5px;
+      font-weight: 900;
+      background: rgba(16, 185, 129, 0.22);
       color: #34D399;
       border: 1px solid #10B981;
-      padding: 2px 6px;
+      padding: 3px 8px;
       border-radius: 9999px;
+      letter-spacing: 0.05em;
     }
 
+    /* Modal Navigation Footer */
     .modal-footer-nav {
-      padding: 10px 24px 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 32px 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .m-btn-prev {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       color: #D6D3D1;
-      padding: 5px 12px;
+      padding: 8px 18px;
       border-radius: 9999px;
-      font-size: 11.5px;
-      font-weight: 700;
+      font-size: 13.5px;
+      font-weight: 800;
       cursor: pointer;
       transition: all 0.2s;
     }
     .m-btn-prev:hover {
-      background: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.18);
       color: #FFFFFF;
     }
     .m-btn-next {
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border: 1px solid #FCD34D;
       color: #000000;
-      padding: 7px 20px;
+      padding: 10px 26px;
       border-radius: 9999px;
-      font-size: 12.5px;
+      font-size: 14.5px;
       font-weight: 900;
       cursor: pointer;
-      box-shadow: 0 3px 12px rgba(245, 158, 11, 0.45);
-      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .m-btn-next:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 18px rgba(245, 158, 11, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.7);
     }
     .m-indicator {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 12.5px;
+      font-weight: 800;
       color: #A8A29E;
     }
 
@@ -1584,7 +1699,7 @@
         box-sizing: border-box;
       }
       body.theme-cover .container {
-        max-width: 1560px;
+        max-width: 1580px;
         width: 100%;
         height: 100vh;
         max-height: 100vh;
@@ -1606,7 +1721,7 @@
         flex: 1;
         align-items: center;
         gap: 36px;
-        max-width: 1520px;
+        max-width: 1540px;
         margin: 0 auto;
         min-height: 0;
       }
@@ -1667,19 +1782,19 @@
         padding: 0;
       }
       .catchy-title {
-        font-size: 25px;
+        font-size: 26px;
       }
       .catchy-subtitle {
-        font-size: 13px;
+        font-size: 13.5px;
       }
       .hero-features-row {
         gap: 6px;
       }
       .feat-badge {
-        padding: 6px 4px;
+        padding: 8px 4px;
       }
       .feat-badge span.feat-text {
-        font-size: 10px;
+        font-size: 10.5px;
       }
       .offer-hook-card {
         padding: 12px;
@@ -1697,14 +1812,14 @@
         gap: 7px;
       }
       .price-value-new {
-        font-size: 22px !important;
+        font-size: 24px !important;
         letter-spacing: normal;
       }
       .price-value-old {
-        font-size: 14px !important;
+        font-size: 15px !important;
       }
       .price-discount-pill {
-        font-size: 11px !important;
+        font-size: 11.5px !important;
         padding: 2px 7px !important;
       }
       .hero-actions-grid {
@@ -1740,6 +1855,10 @@
       }
 
       /* Modal on mobile */
+      .step-modal-window {
+        max-height: 94vh;
+        border-radius: 20px;
+      }
       .modal-step-body {
         grid-template-columns: 1fr;
         gap: 14px;
@@ -1752,21 +1871,21 @@
         padding: 16px 16px 10px;
       }
       .modal-title {
-        font-size: 18px;
+        font-size: 20px;
       }
       .m-node-circle {
-        width: 26px;
-        height: 26px;
-        font-size: 11px;
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
       }
       .m-node-label {
-        font-size: 9.5px;
+        font-size: 10px;
       }
       .modal-tracker-bar {
         margin: 10px 16px 6px;
       }
       .modal-track-bg, .modal-track-fill {
-        top: 12px;
+        top: 15px;
       }
     }
   </style>
@@ -1780,7 +1899,7 @@
 
   <main class="container">
 
-    <!-- Sleek Floating Concept Switcher (Docked Top-Left for testing) -->
+    <!-- Sleek Floating Concept Switcher (Docked Bottom-Left) -->
     <nav class="variant-switcher" aria-label="Selector de diseño">
       <span class="variant-switcher-label">👀 VISTA:</span>
       <a href="index.html" class="active">🌟 1. Presentación & Guía</a>
@@ -1818,12 +1937,12 @@
             <span class="brand-pill-text" id="txt-brand-pill">MR. KEY • BUENOS AIRES 24/7</span>
           </div>
 
-          <!-- Bigger, Catchier Main Headline -->
+          <!-- Bigger, Catchier Main Headline with Gradient Shimmer -->
           <h1 class="catchy-title" id="txt-catchy-title">
-            El primer chocolate artesanal que podés comer sin culpa todos los días
+            Puro placer belga. 20g de proteína. <span class="gradient-shimmer">Cero culpa.</span>
           </h1>
           <p class="catchy-subtitle" id="txt-catchy-subtitle">
-            20g de proteína pura, caramelo salado crocante y cacao negro belga. 100% natural, sin azúcar agregada ni conservantes. Pedilo en el bot y retiralo helado en quioscos de Buenos Aires en 2 minutos.
+            El primer chocolate artesanal de Buenos Aires con caramelo salado crocante y cacao negro belga 100% natural, sin azúcar agregada. Pedilo en 1 clic y retiralo helado en quioscos 24/7 en 2 minutos.
           </p>
 
           <!-- 3 Features in 1 Row Spanning Full Width (Matching Card Below) -->
@@ -1910,7 +2029,7 @@
         <div class="modal-subtitle" id="m-subtitle">Solo la primera vez • 100% Guiado y seguro en Telegram</div>
       </div>
 
-      <!-- Tracker Bar -->
+      <!-- Tracker Bar (40px Nodes) -->
       <div class="modal-tracker-bar">
         <div class="modal-track-bg"></div>
         <div class="modal-track-fill" id="m-progress-fill" style="width: 0%;"></div>
@@ -1934,8 +2053,8 @@
       </div>
 
       <!-- Step Content & Media Showcase Grid -->
-      <div class="modal-step-body">
-        <div class="m-step-content">
+      <div class="modal-step-body" id="modal-step-body">
+        <div class="m-step-content" id="m-step-content">
           <div class="m-step-tag-row">
             <span class="m-step-tag" id="m-step-tag">PASO 1 DE 4</span>
             <span class="m-time-tag" id="m-time-tag">⏱ ~15 seg</span>
@@ -1946,7 +2065,7 @@
           <div class="m-bullets">
             <div class="m-bullet-item">
               <span>📱</span>
-              <span id="m-what"><strong>Qué hacer:</strong> Tocá el botón de abajo o buscá @wallet en Telegram. Es el servicio oficial verificado.</span>
+              <span id="m-what"><strong>Qué hacer:</strong> Tocá el botón de abajo o buscá <strong>@wallet</strong> en Telegram. Es el servicio oficial verificado.</span>
             </div>
             <div class="m-bullet-item">
               <span>🛡</span>
@@ -1963,12 +2082,12 @@
           </a>
         </div>
 
-        <!-- Screencast / Screenshot Showcase Container -->
+        <!-- Animated Screencast / Graphic Showcase Container -->
         <div class="m-media-showcase" id="m-media-box">
           <span class="m-media-badge" id="m-media-badge">PASO A PASO</span>
           <div class="m-media-icon" id="m-media-icon">🎬</div>
-          <div class="m-media-title" id="m-media-title">Video-Demostración</div>
-          <div class="m-media-desc" id="m-media-desc">Grabación en pantalla de cómo se activa y se compra cripto en 2 toques.</div>
+          <div class="m-media-title" id="m-media-title">Video: Abrir @wallet</div>
+          <div class="m-media-desc" id="m-media-desc">Se activa instantáneamente sin salir de Telegram ni llenar formularios.</div>
         </div>
       </div>
 
@@ -1989,8 +2108,8 @@ const PORTAL_I18N = {
     metaDesc: "Retiro 24/7 de barras proteicas artesanales sin azúcar en quioscos de Buenos Aires (Palermo, Recoleta, Belgrano). Precio lanzamiento $16.000 ARS con Wallet.",
     status: "24/7 • Retiro en quioscos online",
     brandPill: "MR. KEY • BUENOS AIRES 24/7",
-    catchyTitle: "El primer chocolate artesanal que podés comer sin culpa todos los días",
-    catchySubtitle: "20g de proteína pura, caramelo salado crocante y cacao negro belga. 100% natural, sin azúcar agregada ni conservantes. Pedilo en el bot y retiralo helado en quioscos de Buenos Aires en 2 minutos.",
+    catchyTitle: 'Puro placer belga. 20g de proteína. <span class="gradient-shimmer">Cero culpa.</span>',
+    catchySubtitle: "El primer chocolate artesanal de Buenos Aires con caramelo salado crocante y cacao negro belga 100% natural, sin azúcar agregada. Pedilo en 1 clic y retiralo helado en quioscos 24/7 en 2 minutos.",
     feat1: "Cacao puro & caramelo",
     feat2: "20g Proteína limpia",
     feat3: "0% Azúcar • Sin TACC",
@@ -2023,8 +2142,9 @@ const PORTAL_I18N = {
         tip: "<strong>Clave:</strong> Se activa en 1 clic y queda disponible en tus chats de Telegram.",
         actionTxt: "🚀 Abrir @wallet en Telegram",
         actionUrl: "https://t.me/wallet",
-        mediaTitle: "Video: Abrir @wallet",
-        mediaDesc: "Se activa instantáneamente sin salir de Telegram ni llenar formularios."
+        icon: "💳",
+        mediaTitle: "Activación en 1 Tap de @wallet",
+        mediaDesc: "Se activa directamente en tu lista de chats de Telegram, sin descargas externas."
       },
       {
         stepTag: "PASO 2 DE 4",
@@ -2037,8 +2157,9 @@ const PORTAL_I18N = {
         tip: "<strong>Acreditación:</strong> Los USDT caen en tu saldo en un par de minutos.",
         actionTxt: "📖 Ver cómo comprar en @wallet",
         actionUrl: "https://t.me/wallet",
-        mediaTitle: "Video: Cargar con Mercado Pago",
-        mediaDesc: "Demostración de transferencia P2P con liberación garantizada por Telegram."
+        icon: "⚡️",
+        mediaTitle: "Transferencia en Pesos (ARS)",
+        mediaDesc: "Pagás por Mercado Pago o banco local. Los fondos quedan bloqueados de forma segura."
       },
       {
         stepTag: "PASO 3 DE 4",
@@ -2051,8 +2172,9 @@ const PORTAL_I18N = {
         tip: "<strong>Gratis:</strong> Cero comisiones de red dentro de Telegram.",
         actionTxt: "🛒 Ir al menú del bot en Telegram",
         actionUrl: "https://t.me/mrkey_ba_1_bot",
-        mediaTitle: "Video: Pago en 1 Tap",
-        mediaDesc: "El bot descuenta los USDT sin costos de gas ni demoras."
+        icon: "🎉",
+        mediaTitle: "Pago Instantáneo con -27% OFF",
+        mediaDesc: "El bot aplica la bonificación de $6.000 ARS automáticamente al elegir Wallet."
       },
       {
         stepTag: "PASO 4 DE 4",
@@ -2065,8 +2187,9 @@ const PORTAL_I18N = {
         tip: "<strong>Garantía total:</strong> Cambio o reembolso en 24h si no quedás satisfecho.",
         actionTxt: "🍫 Pedir barras a $16.000 ARS",
         actionUrl: "https://t.me/mrkey_ba_1_bot",
-        mediaTitle: "Video: Retiro en Quiosco",
-        mediaDesc: "Mostrás el QR al quiosquero y te entrega tu barra helada al instante."
+        icon: "❄️",
+        mediaTitle: "Retiro Glacial en Quiosco",
+        mediaDesc: "Mostrás tu código QR en el quiosco y te entregan tu barra artesanal helada."
       }
     ]
   },
@@ -2075,8 +2198,8 @@ const PORTAL_I18N = {
     metaDesc: "Натуральные протеиновые батончики ручной работы без сахара в киосках Буэнос-Айреса (Палермо, Реколета, Бельграно). Цена $16.000 ARS через Wallet.",
     status: "24/7 • Выдача в киосках онлайн",
     brandPill: "MR. KEY • БУЭНОС-АЙРЕС 24/7",
-    catchyTitle: "Первый авторский шоколад, который можно есть без чувства вины каждый день",
-    catchySubtitle: "20г чистого протеина, хрустящий жареный миндаль, солёная карамель и отборное тёмное какао. 100% натурально, без сахара и глютена. Заказ за пару кликов, выдача в проверенных киосках за 2 минуты.",
+    catchyTitle: 'Чистое бельгийское удовольствие. 20г протеина. <span class="gradient-shimmer">Ноль чувства вины.</span>',
+    catchySubtitle: "Первый авторский протеиновый шоколад в Буэнос-Айресе: хрустящий миндаль, солёная карамель и отборное тёмное какао. 100% натурально, без глютена. Заказ за минуту, выдача ледяным в киосках 24/7 за 2 минуты.",
     feat1: "Тёмное какао & карамель",
     feat2: "20г Чистого протеина",
     feat3: "0% Сахара • Без глютена",
@@ -2109,8 +2232,9 @@ const PORTAL_I18N = {
         tip: "<strong>Фишка:</strong> Кошелек активируется в 1 клик прямо в чатах Telegram.",
         actionTxt: "🚀 Открыть @wallet в Telegram",
         actionUrl: "https://t.me/wallet",
-        mediaTitle: "Скринкаст: Активация @wallet",
-        mediaDesc: "Мгновенное подключение без отправки паспортов и сторонних приложений."
+        icon: "💳",
+        mediaTitle: "Активация @wallet в 1 клик",
+        mediaDesc: "Кошелек появляется прямо в меню Telegram без заполнения анкет."
       },
       {
         stepTag: "ШАГ 2 ИЗ 4",
@@ -2123,8 +2247,9 @@ const PORTAL_I18N = {
         tip: "<strong>Скорость:</strong> USDT поступают на баланс за пару минут.",
         actionTxt: "📖 Инструкция по покупке в @wallet",
         actionUrl: "https://t.me/wallet",
-        mediaTitle: "Скринкаст: Покупка через Mercado Pago",
-        mediaDesc: "Запись реального процесса безопасной покупки USDT через P2P."
+        icon: "⚡️",
+        mediaTitle: "Перевод в песо (ARS)",
+        mediaDesc: "Оплата через Mercado Pago или местный банк с гарантией безопасности Telegram."
       },
       {
         stepTag: "ШАГ 3 ИЗ 4",
@@ -2137,8 +2262,9 @@ const PORTAL_I18N = {
         tip: "<strong>Без комиссий:</strong> Перевод внутри Telegram бесплатный и мгновенный.",
         actionTxt: "🛒 Перейти к заказу в боте",
         actionUrl: "https://t.me/mrkey_ba_1_bot",
-        mediaTitle: "Скринкаст: Оплата в 1 клик",
-        mediaDesc: "Моментальное подтверждение оплаты заказа без сетевых комиссий."
+        icon: "🎉",
+        mediaTitle: "Списание со скидкой -27%",
+        mediaDesc: "Бот автоматически пересчитывает сумму в $16.000 ARS без комиссий."
       },
       {
         stepTag: "ШАГ 4 ИЗ 4",
@@ -2151,8 +2277,9 @@ const PORTAL_I18N = {
         tip: "<strong>Гарантия:</strong> Возврат или замена в течение 24ч, если что-то не понравится.",
         actionTxt: "🍫 Заказать батончики за $16.000 ARS",
         actionUrl: "https://t.me/mrkey_ba_1_bot",
-        mediaTitle: "Скринкаст: Получение по QR",
-        mediaDesc: "Показываешь QR на экране и забираешь ледяной батончик."
+        icon: "❄️",
+        mediaTitle: "Ледяная выдача по QR",
+        mediaDesc: "Показываешь QR на экране киоскеру и забираешь свежий охлаждённый шоколад."
       }
     ]
   },
@@ -2161,8 +2288,8 @@ const PORTAL_I18N = {
     metaDesc: "24/7 pickup of sugar-free artisanal protein bars in Buenos Aires kiosks (Palermo, Recoleta, Belgrano). Launch price $16.000 ARS via Telegram Wallet.",
     status: "24/7 • Kiosk pickup online",
     brandPill: "MR. KEY • BUENOS AIRES 24/7",
-    catchyTitle: "The first artisanal protein chocolate you can crave every single day",
-    catchySubtitle: "20g pure protein, roasted almonds, crunchy salted caramel, and Belgian dark cocoa. 100% natural, no added sugar, gluten-free. Order via bot and pick up ice-cold in Buenos Aires kiosks in 2 min.",
+    catchyTitle: 'Belgian artisanal chocolate that breaks the rules: <span class="gradient-shimmer">20g protein & zero guilt</span>',
+    catchySubtitle: "The first craft protein chocolate in Buenos Aires with crunchy salted caramel and 100% natural Belgian dark cocoa, no added sugar. Order in 1 click and pick up ice-cold in 24/7 kiosks in 2 min.",
     feat1: "Pure dark cocoa & caramel",
     feat2: "20g Clean protein",
     feat3: "0% Added sugar • Gluten-free",
@@ -2195,8 +2322,9 @@ const PORTAL_I18N = {
         tip: "<strong>Fast:</strong> The wallet activates in 1 click and lives in your Telegram chats.",
         actionTxt: "🚀 Open @wallet in Telegram",
         actionUrl: "https://t.me/wallet",
-        mediaTitle: "Video: Opening @wallet",
-        mediaDesc: "One-tap activation directly in your Telegram chats without forms."
+        icon: "💳",
+        mediaTitle: "1-Tap @wallet Activation",
+        mediaDesc: "Launches directly in your Telegram chats without forms or app downloads."
       },
       {
         stepTag: "STEP 2 OF 4",
@@ -2209,8 +2337,9 @@ const PORTAL_I18N = {
         tip: "<strong>Instant:</strong> Funds arrive in your wallet balance within minutes.",
         actionTxt: "📖 How to buy USDT in @wallet",
         actionUrl: "https://t.me/wallet",
-        mediaTitle: "Video: Mercado Pago Top-up",
-        mediaDesc: "Safe peer-to-peer transfer protected by Telegram Escrow."
+        icon: "⚡️",
+        mediaTitle: "Peso (ARS) Escrow Top-up",
+        mediaDesc: "Pay via Mercado Pago or local bank with Telegram Escrow protection."
       },
       {
         stepTag: "STEP 3 OF 4",
@@ -2223,8 +2352,9 @@ const PORTAL_I18N = {
         tip: "<strong>Zero fees:</strong> Direct Telegram transfers are free of network fees.",
         actionTxt: "🛒 Open order bot in Telegram",
         actionUrl: "https://t.me/mrkey_ba_1_bot",
-        mediaTitle: "Video: 1-Tap Checkout",
-        mediaDesc: "Order confirmation with instant discount and zero network fees."
+        icon: "🎉",
+        mediaTitle: "Instant -27% OFF Checkout",
+        mediaDesc: "The bot automatically applies the $6.000 discount with zero gas fees."
       },
       {
         stepTag: "STEP 4 OF 4",
@@ -2237,8 +2367,9 @@ const PORTAL_I18N = {
         tip: "<strong>Guarantee:</strong> Full 24h refund or replacement if you're not delighted.",
         actionTxt: "🍫 Order bars for $16.000 ARS",
         actionUrl: "https://t.me/mrkey_ba_1_bot",
-        mediaTitle: "Video: Kiosk QR Pickup",
-        mediaDesc: "Show QR code to the cashier and grab your ice-cold chocolate bar."
+        icon: "❄️",
+        mediaTitle: "Ice-Cold Kiosk QR Pickup",
+        mediaDesc: "Present your QR code voucher and receive your chilled craft chocolate bar."
       }
     ]
   }
@@ -2263,7 +2394,7 @@ function setLang(lang) {
 
   setT('txt-status', data.status);
   setT('txt-brand-pill', data.brandPill);
-  setT('txt-catchy-title', data.catchyTitle);
+  setH('txt-catchy-title', data.catchyTitle);
   setT('txt-catchy-subtitle', data.catchySubtitle);
 
   setT('feat-1', data.feat1);
@@ -2354,6 +2485,14 @@ function renderModalStep() {
   const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
   const setH = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val; };
 
+  // Trigger step slide animation
+  const stepBody = document.getElementById('modal-step-body');
+  if (stepBody) {
+    stepBody.classList.remove('step-fade-anim');
+    void stepBody.offsetWidth; // trigger reflow
+    stepBody.classList.add('step-fade-anim');
+  }
+
   setT('m-step-tag', cur.stepTag);
   setT('m-time-tag', cur.time);
   setT('m-step-title', cur.title);
@@ -2368,6 +2507,7 @@ function renderModalStep() {
     actBtn.href = cur.actionUrl;
   }
 
+  setT('m-media-icon', cur.icon || '🎬');
   setT('m-media-title', cur.mediaTitle);
   setT('m-media-desc', cur.mediaDesc);
 
