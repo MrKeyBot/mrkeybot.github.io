@@ -752,14 +752,13 @@
     }
   </style>
 
-  <!-- Premium Catchy Hero + Step Modal Styles -->
+  <!-- Refined User Styles: Centered Status, 3 Full-Width Features, Green CTA Button, QR under Right Block, Centered Footer -->
   <style>
-    /* Variant Switcher Pill */
+    /* Variant Switcher Docked at Bottom Left (Zero interference with top header) */
     .variant-switcher {
       position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 12px;
+      left: 18px;
       z-index: 99999;
       display: flex;
       align-items: center;
@@ -803,7 +802,59 @@
       box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
     }
 
-    /* --- RIGHT COLUMN MAIN HERO CARD (SEXY & CATCHY) --- */
+    /* Top Bar with Centered Status Badge */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      margin-bottom: 6px;
+      z-index: 50;
+    }
+    .status-badge {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 8px;
+      background: rgba(14, 10, 7, 0.85);
+      border: 1.5px solid rgba(16, 185, 129, 0.5);
+      border-radius: 9999px;
+      padding: 5px 16px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #D1FAE5;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 18px rgba(16, 185, 129, 0.3);
+      margin: 0 auto;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10B981, 0 0 20px #10B981;
+      animation: pulseGlow 1.8s infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .lang-switcher {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(14, 10, 7, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 9999px;
+      padding: 3px;
+    }
+
+    /* --- RIGHT COLUMN HERO CONTAINER --- */
     .hero-main-container {
       width: 100%;
       max-width: 680px;
@@ -820,7 +871,7 @@
       border: 1px solid rgba(245, 158, 11, 0.35);
       border-radius: 9999px;
       padding: 4px 12px 4px 6px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       width: fit-content;
     }
     .brand-mini-circle {
@@ -847,59 +898,73 @@
       text-transform: uppercase;
     }
 
+    /* Bigger, Bolder, Catchier Heading */
     .catchy-title {
-      font-size: 32px;
+      font-size: 35px;
       font-weight: 900;
       color: #FFFFFF;
-      line-height: 1.18;
-      margin-bottom: 12px;
-      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95), 0 0 30px rgba(245, 158, 11, 0.25);
-      letter-spacing: -0.01em;
+      line-height: 1.14;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.95), 0 0 35px rgba(245, 158, 11, 0.3);
+      letter-spacing: -0.015em;
     }
     .catchy-subtitle {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #E7E5E4;
-      line-height: 1.48;
-      margin-bottom: 16px;
+      line-height: 1.45;
+      margin-bottom: 12px;
       max-width: 640px;
     }
 
-    /* Highlights Badges Strip */
+    /* 3 FEATURES IN 1 ROW SPANNING FULL WIDTH MATCHING CARD BELOW */
     .hero-features-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      width: 100%;
+      gap: 10px;
+      margin-bottom: 12px;
     }
     .feat-badge {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 8px;
-      padding: 5px 10px;
-      font-size: 11.5px;
-      font-weight: 700;
-      color: #F5F5F4;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      text-align: center;
+      background: rgba(20, 14, 10, 0.82);
+      border: 1.5px solid rgba(245, 158, 11, 0.32);
+      border-radius: 14px;
+      padding: 9px 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+      transition: all 0.2s ease;
+    }
+    .feat-badge:hover {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.65);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.25);
     }
     .feat-badge span.icon {
-      font-size: 13px;
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+    .feat-badge span.feat-text {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #F5F5F4;
+      line-height: 1.25;
     }
 
-    /* --- SPECIAL OFFER HOOK BOX (CLICKABLE TEASER TRIGGER) --- */
+    /* --- SPECIAL OFFER HOOK BOX --- */
     .offer-hook-card {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.08) 100%);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.08) 100%);
       border: 1.5px solid rgba(245, 158, 11, 0.65);
       border-radius: 18px;
-      padding: 16px 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.22), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.2);
       cursor: pointer;
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       position: relative;
-      overflow: hidden;
     }
     .offer-hook-card:hover {
       transform: translateY(-2px);
@@ -910,7 +975,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .offer-badge-tag {
       font-size: 11px;
@@ -925,107 +990,155 @@
     }
     .offer-price-group {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      align-items: baseline;
+      gap: 12px;
     }
+    /* BOLD, MUCH LARGER PRICE AS REQUESTED */
     .price-value-new {
-      font-size: 26px;
-      font-weight: 900;
-      color: #FFFFFF;
-      text-shadow: 0 0 16px rgba(245, 158, 11, 0.7);
+      font-size: 34px;
+      font-weight: 950;
+      color: #FCD34D;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8), 0 0 25px rgba(245, 158, 11, 0.6);
+      letter-spacing: -0.02em;
+      line-height: 1;
     }
     .price-value-old {
-      font-size: 15px;
+      font-size: 18px;
       color: #EF4444;
       text-decoration: line-through;
       font-weight: 700;
+      opacity: 0.9;
     }
     .price-discount-pill {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 900;
       background: #10B981;
       color: #000000;
-      padding: 3px 9px;
+      padding: 4px 10px;
       border-radius: 9999px;
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+      letter-spacing: 0.04em;
     }
 
-    /* Sub-hook with Call to Action Button */
     .offer-hook-middle {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #F5F5F4;
-      line-height: 1.4;
-      margin-bottom: 12px;
+      line-height: 1.35;
+      margin-bottom: 10px;
     }
     .offer-hook-middle strong {
       color: #FCD34D;
     }
+
+    /* VIBRANT EMERALD GREEN INTERACTIVE BUTTON (DISTINCT FROM ANY INPUT) */
     .offer-hook-btn-trigger {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(245, 158, 11, 0.5);
-      border-radius: 12px;
-      padding: 9px 14px;
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      border: 1.5px solid #34D399;
+      border-radius: 13px;
+      padding: 11px 18px;
       color: #FFFFFF;
-      font-size: 12.5px;
-      font-weight: 800;
-      transition: all 0.2s ease;
+      font-size: 13.5px;
+      font-weight: 900;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.35);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      letter-spacing: 0.01em;
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-hook-btn-trigger::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+      animation: greenBtnSheen 3.5s infinite;
+    }
+    @keyframes greenBtnSheen {
+      0%, 65% { left: -100%; }
+      100% { left: 100%; }
     }
     .offer-hook-card:hover .offer-hook-btn-trigger {
-      background: rgba(245, 158, 11, 0.2);
-      border-color: #FCD34D;
-      color: #FCD34D;
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+      border-color: #6EE7B7;
+      box-shadow: 0 8px 28px rgba(16, 185, 129, 0.65), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+      transform: scale(1.015);
     }
-    .offer-hook-btn-trigger .arrow {
-      font-size: 16px;
-      transition: transform 0.2s ease;
+    .btn-content-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
     }
-    .offer-hook-card:hover .offer-hook-btn-trigger .arrow {
+    .pulse-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 50%;
+      font-size: 13px;
+    }
+    .arrow-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 50%;
+      font-size: 14px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .offer-hook-card:hover .arrow-circle {
       transform: translateX(4px);
+      background: rgba(0, 0, 0, 0.4);
     }
 
-    /* --- MAIN PAGE BOTTOM ACTIONS --- */
+    /* Main Action Buttons Grid */
     .hero-actions-grid {
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 10px;
+      margin-bottom: 6px;
     }
     .btn-main-order {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 13px 20px;
+      padding: 11px 18px;
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border: 1px solid #FCD34D;
-      border-radius: 14px;
+      border-radius: 13px;
       color: #000000;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 900;
       text-decoration: none;
-      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+      box-shadow: 0 5px 18px rgba(245, 158, 11, 0.45);
       transition: all 0.2s;
       cursor: pointer;
     }
     .btn-main-order:hover {
       transform: translateY(-2px);
       filter: brightness(1.08);
-      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
+      box-shadow: 0 7px 24px rgba(245, 158, 11, 0.6);
     }
     .btn-main-support {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 13px 16px;
+      padding: 11px 14px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 14px;
+      border-radius: 13px;
       color: #E7E5E4;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.2s;
@@ -1035,56 +1148,65 @@
       color: #FFFFFF;
     }
 
-    /* --- FLOATING QR ON LEFT DESKTOP --- */
-    .desktop-floating-qr {
+    /* QR CODE UNDER THE RIGHT BLOCK AT THE BOTTOM */
+    .right-block-qr-bar {
       display: flex;
       align-items: center;
-      gap: 14px;
-      background: rgba(16, 12, 9, 0.88);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1.5px solid rgba(245, 158, 11, 0.45);
-      border-radius: 16px;
-      padding: 9px 15px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.88), 0 0 25px rgba(245, 158, 11, 0.16);
-      margin-left: 12px;
-      margin-bottom: 12px;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      gap: 12px;
+      background: rgba(14, 10, 7, 0.82);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      border-radius: 14px;
+      padding: 7px 14px;
+      margin-top: 6px;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
     }
-    .desktop-floating-qr:hover {
-      transform: translateY(-2px);
-      border-color: rgba(245, 158, 11, 0.7);
-    }
-    .desktop-floating-qr .qr-mini-card {
-      width: 66px;
-      height: 66px;
+    .right-qr-card {
+      width: 50px;
+      height: 50px;
       background: #FFFFFF;
-      border-radius: 10px;
+      border-radius: 9px;
       padding: 3px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
-    .desktop-floating-qr .qr-mini-card img {
+    .right-qr-card img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
-    .desktop-qr-title {
-      font-size: 12.5px;
+    .right-qr-info {
+      text-align: left;
+    }
+    .right-qr-title {
+      font-size: 12px;
       font-weight: 800;
       color: #FCD34D;
       margin-bottom: 2px;
     }
-    .desktop-qr-desc {
-      font-size: 11px;
+    .right-qr-desc {
+      font-size: 10.5px;
       color: #D6D3D1;
-      line-height: 1.35;
-      max-width: 180px;
+      line-height: 1.3;
     }
 
-    /* --- INTERACTIVE STEPPER MODAL / OVERLAY (EXPANDED SCREEN) --- */
+    /* CENTERED FOOTER NOTE */
+    body.theme-cover .footer-note {
+      width: 100%;
+      text-align: center !important;
+      margin: 6px auto 2px !important;
+      padding: 0 !important;
+      font-size: 11px;
+      color: #78716C;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    /* --- STEP MODAL WINDOW --- */
     .step-modal-overlay {
       position: fixed;
       inset: 0;
@@ -1149,40 +1271,36 @@
     }
 
     .modal-header-section {
-      padding: 20px 24px 12px;
+      padding: 18px 24px 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       text-align: left;
     }
     .modal-pretag {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #FCD34D;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      margin-bottom: 3px;
     }
     .modal-title {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 900;
       color: #FFFFFF;
       line-height: 1.25;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .modal-subtitle {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #A8A29E;
     }
 
-    /* Modal Stepper Tracker */
     .modal-tracker-bar {
       position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 12px 24px 8px;
+      margin: 10px 24px 6px;
     }
     .modal-track-bg {
       position: absolute;
@@ -1217,13 +1335,13 @@
       padding: 0;
     }
     .m-node-circle {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       background: #18120D;
       border: 2px solid rgba(255, 255, 255, 0.22);
       color: #A8A29E;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -1239,7 +1357,7 @@
       border-color: #FCD34D;
       color: #000000;
       box-shadow: 0 0 14px rgba(245, 158, 11, 0.85);
-      transform: scale(1.15);
+      transform: scale(1.12);
     }
     .m-step-node.done .m-node-circle {
       background: #10B981;
@@ -1248,10 +1366,10 @@
       box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
     }
     .m-node-label {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       color: #A8A29E;
-      margin-top: 4px;
+      margin-top: 3px;
       white-space: nowrap;
     }
     .m-step-node.active .m-node-label {
@@ -1262,9 +1380,8 @@
       color: #FFFFFF;
     }
 
-    /* Modal Step Body with 2-column or wide layout */
     .modal-step-body {
-      padding: 14px 24px 20px;
+      padding: 12px 24px 18px;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 20px;
@@ -1280,10 +1397,10 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .m-step-tag {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 900;
       letter-spacing: 0.06em;
       color: #FCD34D;
@@ -1294,7 +1411,7 @@
       border: 1px solid rgba(245, 158, 11, 0.35);
     }
     .m-time-tag {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: 800;
       color: #10B981;
       background: rgba(16, 185, 129, 0.18);
@@ -1303,36 +1420,36 @@
       border: 1px solid rgba(16, 185, 129, 0.35);
     }
     .m-step-title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 900;
       color: #FFFFFF;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       line-height: 1.25;
     }
     .m-step-pill {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: #FCD34D;
       background: rgba(245, 158, 11, 0.1);
       border-left: 3px solid #F59E0B;
-      padding: 4px 10px;
+      padding: 4px 9px;
       border-radius: 4px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       line-height: 1.35;
     }
     .m-bullets {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      margin-bottom: 14px;
+      gap: 5px;
+      margin-bottom: 12px;
     }
     .m-bullet-item {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #E7E5E4;
-      line-height: 1.4;
+      line-height: 1.38;
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 7px;
     }
     .m-bullet-item strong {
       color: #FFFFFF;
@@ -1343,12 +1460,12 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 11px 16px;
+      padding: 10px 16px;
       background: linear-gradient(135deg, #10B981 0%, #059669 100%);
       border: 1px solid #34D399;
       border-radius: 12px;
       color: #FFFFFF;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 800;
       text-decoration: none;
       box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
@@ -1361,12 +1478,11 @@
       box-shadow: 0 6px 18px rgba(16, 185, 129, 0.55);
     }
 
-    /* Screencast / Screenshot Showcase Box */
     .m-media-showcase {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.65);
       border: 1.5px dashed rgba(245, 158, 11, 0.45);
       border-radius: 18px;
-      height: 230px;
+      height: 220px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1378,26 +1494,26 @@
     }
     .m-media-icon {
       font-size: 32px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
     }
     .m-media-title {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 800;
       color: #FCD34D;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .m-media-desc {
-      font-size: 11px;
+      font-size: 10.5px;
       color: #A8A29E;
       line-height: 1.35;
-      max-width: 220px;
+      max-width: 210px;
     }
     .m-media-badge {
       position: absolute;
       top: 10px;
       right: 10px;
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: 800;
       background: rgba(16, 185, 129, 0.2);
       color: #34D399;
@@ -1406,9 +1522,8 @@
       border-radius: 9999px;
     }
 
-    /* Modal Footer Controls */
     .modal-footer-nav {
-      padding: 12px 24px 16px;
+      padding: 10px 24px 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       justify-content: space-between;
@@ -1418,9 +1533,9 @@
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.16);
       color: #D6D3D1;
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 9999px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
@@ -1433,9 +1548,9 @@
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border: 1px solid #FCD34D;
       color: #000000;
-      padding: 8px 22px;
+      padding: 7px 20px;
       border-radius: 9999px;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 900;
       cursor: pointer;
       box-shadow: 0 3px 12px rgba(245, 158, 11, 0.45);
@@ -1446,12 +1561,12 @@
       box-shadow: 0 5px 18px rgba(245, 158, 11, 0.6);
     }
     .m-indicator {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       color: #A8A29E;
     }
 
-    /* --- DESKTOP 50/50 SPECIFIC RULES --- */
+    /* --- DESKTOP 50/50 SPECIFIC ZERO-SCROLL RULES --- */
     @media (min-width: 960px) {
       html, body {
         height: 100vh !important;
@@ -1476,7 +1591,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 12px 36px 10px;
+        padding: 10px 36px 8px;
         box-sizing: border-box;
       }
       body.theme-cover .top-bar {
@@ -1490,19 +1605,15 @@
         width: 100%;
         flex: 1;
         align-items: center;
-        gap: 40px;
+        gap: 36px;
         max-width: 1520px;
         margin: 0 auto;
         min-height: 0;
       }
       body.theme-cover .split-col-left {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-        height: 100%;
-        padding-bottom: 12px;
-        pointer-events: auto;
+        display: block;
+        min-height: 200px;
+        pointer-events: none;
       }
       body.theme-cover .split-col-right {
         display: flex;
@@ -1511,15 +1622,6 @@
         width: 100%;
         height: 100%;
         min-height: 0;
-      }
-      body.theme-cover .footer-note {
-        width: 100%;
-        text-align: right;
-        padding-right: 20px;
-        font-size: 10.5px;
-        color: #78716C;
-        flex-shrink: 0;
-        margin-top: 0;
       }
     }
 
@@ -1538,6 +1640,19 @@
         padding: 0;
         max-width: 520px;
       }
+      .top-bar {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .status-badge {
+        position: static;
+        margin: 0 auto;
+      }
+      .lang-switcher {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+      }
       body.theme-cover .main-layout-split {
         display: flex;
         flex-direction: column;
@@ -1547,15 +1662,12 @@
       body.theme-cover .split-col-left {
         display: none !important;
       }
-      body.theme-cover .desktop-floating-qr {
-        display: none !important;
-      }
       body.theme-cover .split-col-right {
         width: 100%;
         padding: 0;
       }
       .catchy-title {
-        font-size: 24px;
+        font-size: 25px;
       }
       .catchy-subtitle {
         font-size: 13px;
@@ -1564,14 +1676,36 @@
         gap: 6px;
       }
       .feat-badge {
-        font-size: 10.5px;
-        padding: 4px 8px;
+        padding: 6px 4px;
+      }
+      .feat-badge span.feat-text {
+        font-size: 10px;
       }
       .offer-hook-card {
-        padding: 14px;
+        padding: 12px;
+      }
+      .offer-hook-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .offer-price-group {
+        display: flex;
+        align-items: baseline;
+        gap: 7px;
       }
       .price-value-new {
-        font-size: 23px;
+        font-size: 22px !important;
+        letter-spacing: normal;
+      }
+      .price-value-old {
+        font-size: 14px !important;
+      }
+      .price-discount-pill {
+        font-size: 11px !important;
+        padding: 2px 7px !important;
       }
       .hero-actions-grid {
         display: flex;
@@ -1582,14 +1716,20 @@
         padding: 13px 16px;
         font-size: 14px;
       }
+      .right-block-qr-bar {
+        display: none !important; /* Hide QR on mobile */
+      }
       .variant-switcher {
         position: static !important;
         transform: none !important;
-        margin: 0 auto 12px auto !important;
-        padding: 4px 8px;
+        margin: 0 auto 10px auto !important;
+        padding: 4px 6px;
         gap: 4px;
-        width: fit-content;
-        max-width: 100%;
+        width: 100%;
+        max-width: 360px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
       }
       .variant-switcher-label {
         display: none;
@@ -1606,7 +1746,7 @@
         padding: 12px 16px;
       }
       .m-media-showcase {
-        height: 170px;
+        height: 160px;
       }
       .modal-header-section {
         padding: 16px 16px 10px;
@@ -1640,7 +1780,7 @@
 
   <main class="container">
 
-    <!-- Sleek Floating Concept Switcher -->
+    <!-- Sleek Floating Concept Switcher (Docked Top-Left for testing) -->
     <nav class="variant-switcher" aria-label="Selector de diseño">
       <span class="variant-switcher-label">👀 VISTA:</span>
       <a href="index.html" class="active">🌟 1. Presentación & Guía</a>
@@ -1667,18 +1807,7 @@
 
     <!-- Main Split Layout for 2-column grid -->
     <div class="main-layout-split">
-      <div class="split-col-left">
-        <!-- Floating QR Card for Desktop Visitors under/alongside chocolate bar -->
-        <div class="desktop-floating-qr">
-          <div class="qr-mini-card">
-            <img src="qr_mrkey.png" alt="QR Mr. Key">
-          </div>
-          <div class="desktop-qr-info">
-            <div class="desktop-qr-title" id="d-qr-title">📱 Pedí con tu celular</div>
-            <div class="desktop-qr-desc" id="d-qr-desc">Escaneá con tu cámara para abrir el bot en Telegram</div>
-          </div>
-        </div>
-      </div>
+      <div class="split-col-left"></div>
       <div class="split-col-right">
         <div class="hero-main-container">
           <!-- Brand Badge -->
@@ -1689,7 +1818,7 @@
             <span class="brand-pill-text" id="txt-brand-pill">MR. KEY • BUENOS AIRES 24/7</span>
           </div>
 
-          <!-- Catchy Main Headline -->
+          <!-- Bigger, Catchier Main Headline -->
           <h1 class="catchy-title" id="txt-catchy-title">
             El primer chocolate artesanal que podés comer sin culpa todos los días
           </h1>
@@ -1697,15 +1826,23 @@
             20g de proteína pura, caramelo salado crocante y cacao negro belga. 100% natural, sin azúcar agregada ni conservantes. Pedilo en el bot y retiralo helado en quioscos de Buenos Aires en 2 minutos.
           </p>
 
-          <!-- Key Highlights Badges -->
+          <!-- 3 Features in 1 Row Spanning Full Width (Matching Card Below) -->
           <div class="hero-features-row">
-            <div class="feat-badge"><span class="icon">🍫</span><span id="feat-1">Cacao puro & caramelo salado</span></div>
-            <div class="feat-badge"><span class="icon">⚡️</span><span id="feat-2">20g Proteína limpia</span></div>
-            <div class="feat-badge"><span class="icon">🌿</span><span id="feat-3">0% Azúcar añadida • Sin TACC</span></div>
-            <div class="feat-badge"><span class="icon">❄️</span><span id="feat-4">Retiro 24/7 helado en 2 min</span></div>
+            <div class="feat-badge">
+              <span class="icon">🍫</span>
+              <span class="feat-text" id="feat-1">Cacao puro & caramelo</span>
+            </div>
+            <div class="feat-badge">
+              <span class="icon">⚡️</span>
+              <span class="feat-text" id="feat-2">20g Proteína limpia</span>
+            </div>
+            <div class="feat-badge">
+              <span class="icon">🌿</span>
+              <span class="feat-text" id="feat-3">0% Azúcar • Sin TACC</span>
+            </div>
           </div>
 
-          <!-- CLICKABLE SPECIAL OFFER HOOK CARD -->
+          <!-- CLICKABLE SPECIAL OFFER HOOK CARD WITH VIBRANT GREEN BUTTON -->
           <div class="offer-hook-card" onclick="openStepModal()">
             <div class="offer-hook-top">
               <span class="offer-badge-tag" id="txt-hook-badge">🔥 PRECIO LANZAMIENTO</span>
@@ -1718,9 +1855,13 @@
             <div class="offer-hook-middle" id="txt-hook-middle">
               ¿Querés pagar con <strong>$6.000 ARS de descuento</strong> al instante con Telegram Wallet?
             </div>
+            <!-- Vibrant Emerald Green Action Button -->
             <div class="offer-hook-btn-trigger">
-              <span id="txt-hook-btn">⚡️ Ver cómo pagar $16.000 en 10 min paso a paso</span>
-              <span class="arrow">➔</span>
+              <div class="btn-content-left">
+                <span class="pulse-icon">⚡️</span>
+                <span id="txt-hook-btn">Ver cómo pagar $16.000 en 10 min paso a paso</span>
+              </div>
+              <div class="arrow-circle">➔</div>
             </div>
           </div>
 
@@ -1732,6 +1873,17 @@
             <a href="https://t.me/mr_key_ba1" class="btn-main-support" target="_blank" rel="noopener noreferrer">
               <span id="txt-btn-support">💬 Soporte (@mr_key_ba1)</span>
             </a>
+          </div>
+
+          <!-- QR Code Under the Right Block at the Bottom -->
+          <div class="right-block-qr-bar">
+            <div class="right-qr-card">
+              <img src="qr_mrkey.png" alt="QR Mr. Key">
+            </div>
+            <div class="right-qr-info">
+              <div class="right-qr-title" id="d-qr-title">📱 Pedí con tu celular</div>
+              <div class="right-qr-desc" id="d-qr-desc">Escaneá con tu cámara para abrir el bot en Telegram</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1839,16 +1991,15 @@ const PORTAL_I18N = {
     brandPill: "MR. KEY • BUENOS AIRES 24/7",
     catchyTitle: "El primer chocolate artesanal que podés comer sin culpa todos los días",
     catchySubtitle: "20g de proteína pura, caramelo salado crocante y cacao negro belga. 100% natural, sin azúcar agregada ni conservantes. Pedilo en el bot y retiralo helado en quioscos de Buenos Aires en 2 minutos.",
-    feat1: "Cacao puro & caramelo salado",
+    feat1: "Cacao puro & caramelo",
     feat2: "20g Proteína limpia",
-    feat3: "0% Azúcar añadida • Sin TACC",
-    feat4: "Retiro 24/7 helado en 2 min",
+    feat3: "0% Azúcar • Sin TACC",
     hookBadge: "🔥 PRECIO LANZAMIENTO",
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
     hookSave: "-27% OFF",
     hookMiddle: "¿Querés pagar con <strong>$6.000 ARS de descuento</strong> al instante con Telegram Wallet?",
-    hookBtn: "⚡️ Ver cómo pagar $16.000 en 10 min paso a paso",
+    hookBtn: "Ver cómo pagar $16.000 en 10 min paso a paso",
     btnOrder: "🚀 Pedir directo en el Bot de Telegram",
     btnSupport: "💬 Soporte (@mr_key_ba1)",
     desktopQrTitle: "📱 Pedí con tu celular",
@@ -1926,16 +2077,15 @@ const PORTAL_I18N = {
     brandPill: "MR. KEY • БУЭНОС-АЙРЕС 24/7",
     catchyTitle: "Первый авторский шоколад, который можно есть без чувства вины каждый день",
     catchySubtitle: "20г чистого протеина, хрустящий жареный миндаль, солёная карамель и отборное тёмное какао. 100% натурально, без сахара и глютена. Заказ за пару кликов, выдача в проверенных киосках за 2 минуты.",
-    feat1: "Тёмное какао & солёная карамель",
+    feat1: "Тёмное какао & карамель",
     feat2: "20г Чистого протеина",
     feat3: "0% Сахара • Без глютена",
-    feat4: "Холодная выдача 24/7 за 2 мин",
     hookBadge: "🔥 АКЦИЯ НА СТАРТЕ",
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
     hookSave: "-27% ВЫГОДЫ",
     hookMiddle: "Хочешь платить с <strong>выгодой $6.000 ARS</strong> на каждом батончике через Telegram Wallet?",
-    hookBtn: "⚡️ Узнать, как оплатить $16.000 за 10 минут по шагам",
+    hookBtn: "Узнать, как оплатить $16.000 за 10 минут по шагам",
     btnOrder: "🚀 Открыть меню в Telegram-боте",
     btnSupport: "💬 Поддержка и Опт (@mr_key_ba1)",
     desktopQrTitle: "📱 Заказ со смартфона",
@@ -2013,16 +2163,15 @@ const PORTAL_I18N = {
     brandPill: "MR. KEY • BUENOS AIRES 24/7",
     catchyTitle: "The first artisanal protein chocolate you can crave every single day",
     catchySubtitle: "20g pure protein, roasted almonds, crunchy salted caramel, and Belgian dark cocoa. 100% natural, no added sugar, gluten-free. Order via bot and pick up ice-cold in Buenos Aires kiosks in 2 min.",
-    feat1: "Pure dark cocoa & salted caramel",
+    feat1: "Pure dark cocoa & caramel",
     feat2: "20g Clean protein",
     feat3: "0% Added sugar • Gluten-free",
-    feat4: "24/7 Ice-cold pickup in 2 min",
     hookBadge: "🔥 LAUNCH SPECIAL",
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
     hookSave: "-27% OFF",
     hookMiddle: "Want to save <strong>$6.000 ARS per bar</strong> instantly with Telegram Wallet?",
-    hookBtn: "⚡️ See how to pay $16.000 in 10 min step-by-step",
+    hookBtn: "See how to pay $16.000 in 10 min step-by-step",
     btnOrder: "🚀 Order directly in Telegram Bot",
     btnSupport: "💬 Support (@mr_key_ba1)",
     desktopQrTitle: "📱 Order with your phone",
@@ -2120,7 +2269,6 @@ function setLang(lang) {
   setT('feat-1', data.feat1);
   setT('feat-2', data.feat2);
   setT('feat-3', data.feat3);
-  setT('feat-4', data.feat4);
 
   setT('txt-hook-badge', data.hookBadge);
   setT('txt-hook-new', data.hookNew);
@@ -2176,18 +2324,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 function setMStep(idx) {
-  mStepIdx = idx;
+  mStepIdx = Math.max(0, Math.min(3, idx));
   renderModalStep();
-}
-
-function nextMStep() {
-  const langData = PORTAL_I18N[currentLang] || PORTAL_I18N.es;
-  if (mStepIdx < langData.steps.length - 1) {
-    mStepIdx++;
-    renderModalStep();
-  } else {
-    window.open("https://t.me/mrkey_ba_1_bot", "_blank");
-  }
 }
 
 function prevMStep() {
@@ -2197,9 +2335,21 @@ function prevMStep() {
   }
 }
 
+function nextMStep() {
+  if (mStepIdx < 3) {
+    mStepIdx++;
+    renderModalStep();
+  } else {
+    // Finish step: open bot directly
+    window.open('https://t.me/mrkey_ba_1_bot', '_blank');
+    closeStepModal();
+  }
+}
+
 function renderModalStep() {
-  const langData = PORTAL_I18N[currentLang] || PORTAL_I18N.es;
+  const langData = PORTAL_I18N[currentLang] || PORTAL_I18N['es'];
   const cur = langData.steps[mStepIdx];
+  if (!cur) return;
 
   const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
   const setH = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val; };
@@ -2207,7 +2357,7 @@ function renderModalStep() {
   setT('m-step-tag', cur.stepTag);
   setT('m-time-tag', cur.time);
   setT('m-step-title', cur.title);
-  setH('m-step-pill', cur.pill);
+  setT('m-step-pill', cur.pill);
   setH('m-what', cur.what);
   setH('m-why', cur.why);
   setH('m-tip', cur.tip);
@@ -2223,23 +2373,13 @@ function renderModalStep() {
 
   const prevBtn = document.getElementById('m-prev-btn');
   if (prevBtn) {
+    prevBtn.style.visibility = (mStepIdx === 0) ? 'hidden' : 'visible';
     prevBtn.innerText = langData.mPrev;
-    prevBtn.style.visibility = mStepIdx === 0 ? "hidden" : "visible";
   }
 
   const nextBtn = document.getElementById('m-next-btn');
   if (nextBtn) {
-    if (mStepIdx === langData.steps.length - 1) {
-      nextBtn.innerText = langData.mFinish;
-      nextBtn.style.background = "linear-gradient(135deg, #10B981 0%, #059669 100%)";
-      nextBtn.style.borderColor = "#34D399";
-      nextBtn.style.color = "#FFFFFF";
-    } else {
-      nextBtn.innerText = langData.mNext;
-      nextBtn.style.background = "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)";
-      nextBtn.style.borderColor = "#FCD34D";
-      nextBtn.style.color = "#000000";
-    }
+    nextBtn.innerText = (mStepIdx === 3) ? langData.mFinish : langData.mNext;
   }
 
   setT('m-indicator', `${cur.stepTag}`);
@@ -2273,7 +2413,6 @@ function renderModalStep() {
 // ALWAYS DEFAULT TO SPANISH ('es') INITIALLY AS REQUESTED
 document.addEventListener('DOMContentLoaded', () => {
   const urlLang = new URLSearchParams(window.location.search).get('lang');
-  // Strict rule: Default is always 'es' unless explicitly specified via URL param
   const initialLang = (urlLang === 'ru' || urlLang === 'en') ? urlLang : 'es';
   setLang(initialLang);
 });
