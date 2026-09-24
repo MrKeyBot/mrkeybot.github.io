@@ -2864,6 +2864,8 @@ function setLang(lang) {
 function openStepModal() {
   const modal = document.getElementById('guide-modal');
   if (modal) {
+    selectedGuideApp = null;
+    currentStepIdx = 0;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
     renderModalState();
