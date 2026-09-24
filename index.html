@@ -782,13 +782,13 @@
       }
     }
 
-    /* Variant Switcher Docked at Bottom Left (Zero interference with top header) */
+    /* Variant Switcher - Hidden behind feature flag (?variants=1 or ?dev=1) */
     .variant-switcher {
+      display: none !important;
       position: fixed;
       bottom: 12px;
       left: 18px;
       z-index: 99999;
-      display: flex;
       align-items: center;
       gap: 6px;
       background: rgba(14, 10, 7, 0.94);
@@ -799,6 +799,9 @@
       padding: 4px 10px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.85), 0 0 16px rgba(245, 158, 11, 0.25);
       transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    body.show-variants-flag .variant-switcher {
+      display: flex !important;
     }
     .variant-switcher:hover {
       transform: translateY(-1px);
@@ -1261,21 +1264,21 @@
     }
 
     /* =======================================================
-       --- GRAND CINEMATIC MODAL WINDOW (EXPANDED TO 1080px) ---
+       --- GRAND CINEMATIC TEXT GUIDE MODAL (LEMON & BELO) ---
        ======================================================= */
     .step-modal-overlay {
       position: fixed;
       inset: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(4, 3, 2, 0.88);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
+      background: rgba(4, 3, 2, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       z-index: 100000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 20px;
       box-sizing: border-box;
       opacity: 0;
       transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1284,19 +1287,18 @@
       display: flex;
       opacity: 1;
     }
-    /* EXPANDED DESKTOP MODAL WIDTH (1080px) */
     .step-modal-window {
-      background: radial-gradient(circle at 85% 15%, rgba(38, 24, 14, 0.98), rgba(12, 9, 6, 0.98));
-      border: 2px solid rgba(245, 158, 11, 0.75);
+      background: radial-gradient(circle at 85% 15%, rgba(32, 22, 14, 0.98), rgba(12, 9, 6, 0.98));
+      border: 1.5px solid rgba(245, 158, 11, 0.65);
       border-radius: 28px;
-      max-width: 1080px;
+      max-width: 840px;
       width: 100%;
-      max-height: calc(100vh - 48px);
-      box-shadow: 0 35px 100px rgba(0, 0, 0, 0.98), 0 0 70px rgba(245, 158, 11, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+      max-height: calc(100vh - 40px);
+      box-shadow: 0 35px 100px rgba(0, 0, 0, 0.98), 0 0 70px rgba(245, 158, 11, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.2);
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      transform: scale(0.94) translateY(18px);
+      transform: scale(0.95) translateY(16px);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
@@ -1305,15 +1307,15 @@
     }
     .modal-close-btn {
       position: absolute;
-      top: 16px;
+      top: 18px;
       right: 20px;
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       color: #FFFFFF;
-      font-size: 18px;
+      font-size: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1329,17 +1331,17 @@
 
     /* Modal Header */
     .modal-header-section {
-      padding: 22px 32px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      padding: 24px 32px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       text-align: left;
     }
     .modal-pretag {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 900;
       color: #FCD34D;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       display: inline-block;
       background: rgba(245, 158, 11, 0.16);
       padding: 3px 10px;
@@ -1348,46 +1350,106 @@
     }
     .modal-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 28px;
-      font-weight: 950;
+      font-size: 26px;
+      font-weight: 900;
       color: #FFFFFF;
-      line-height: 1.2;
+      line-height: 1.22;
       margin-bottom: 4px;
       letter-spacing: -0.015em;
     }
     .modal-subtitle {
-      font-size: 14.5px;
+      font-size: 14px;
       color: #D6D3D1;
+      line-height: 1.4;
     }
 
-    /* Tracker Bar with 40px Nodes */
+    /* App Nav Switcher (Shown inside steps) */
+    .modal-app-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 32px 0;
+      gap: 12px;
+    }
+    .m-app-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .m-app-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #D6D3D1;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .m-app-tab:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+    }
+    .m-app-tab.active.tab-lemon {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #F59E0B;
+      color: #FCD34D;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+    }
+    .m-app-tab.active.tab-belo {
+      background: rgba(168, 85, 247, 0.22);
+      border-color: #A855F7;
+      color: #E9D5FF;
+      box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
+    }
+    .m-app-change-btn {
+      background: transparent;
+      border: none;
+      color: #A8A29E;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: color 0.2s;
+    }
+    .m-app-change-btn:hover {
+      color: #FCD34D;
+      text-decoration: underline;
+    }
+
+    /* Tracker Bar with 4 Steps */
     .modal-tracker-bar {
       position: relative;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 14px 32px 10px;
+      margin: 12px 32px 6px;
     }
     .modal-track-bg {
       position: absolute;
-      top: 19px;
-      left: 20px;
-      right: 20px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.12);
+      top: 17px;
+      left: 18px;
+      right: 18px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 9999px;
       z-index: 1;
     }
     .modal-track-fill {
       position: absolute;
-      top: 19px;
-      left: 20px;
-      height: 4px;
+      top: 17px;
+      left: 18px;
+      height: 3px;
       background: linear-gradient(90deg, #F59E0B 0%, #D97706 100%);
       border-radius: 9999px;
       z-index: 2;
-      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 0 14px rgba(245, 158, 11, 0.85);
+      transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.7);
     }
     .m-step-node {
       position: relative;
@@ -1405,41 +1467,37 @@
       transform: translateY(-2px);
     }
     .m-node-circle {
-      width: 38px;
-      height: 38px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       background: #18120D;
-      border: 2px solid rgba(255, 255, 255, 0.24);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
       color: #A8A29E;
-      font-size: 15px;
-      font-weight: 900;
+      font-size: 13.5px;
+      font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .m-step-node:hover .m-node-circle {
-      border-color: rgba(245, 158, 11, 0.85);
-      color: #FFFFFF;
-    }
     .m-step-node.active .m-node-circle {
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border-color: #FCD34D;
       color: #000000;
-      box-shadow: 0 0 20px rgba(245, 158, 11, 0.9);
-      transform: scale(1.15);
+      box-shadow: 0 0 16px rgba(245, 158, 11, 0.8);
+      transform: scale(1.1);
     }
     .m-step-node.done .m-node-circle {
       background: #10B981;
       border-color: #10B981;
       color: #000000;
-      box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
     }
     .m-node-label {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       color: #A8A29E;
-      margin-top: 5px;
+      margin-top: 4px;
       white-space: nowrap;
       transition: color 0.2s;
     }
@@ -1451,34 +1509,145 @@
       color: #FFFFFF;
     }
 
-    /* Modal Step Body Grid (Substantially larger typography) */
+    /* Modal Step Body */
     .modal-step-body {
-      padding: 16px 32px 24px;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: center;
+      padding: 18px 32px 20px;
       overflow-y: auto;
       text-align: left;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
-    /* Step change animation */
     .step-fade-anim {
       animation: stepSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     @keyframes stepSlideIn {
-      0% { opacity: 0; transform: translateX(14px); }
+      0% { opacity: 0; transform: translateX(12px); }
       100% { opacity: 1; transform: translateX(0); }
     }
 
-    .m-step-content {
+    /* SCREEN 0: APP SELECTION GRID */
+    .app-selection-screen {
       display: flex;
       flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      margin: auto 0;
+    }
+    .app-selection-prompt {
+      font-size: 15px;
+      font-weight: 700;
+      color: #E7E5E4;
+      line-height: 1.4;
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .app-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      width: 100%;
+    }
+    .app-card-btn {
+      background: linear-gradient(145deg, rgba(24, 17, 13, 0.95), rgba(14, 10, 8, 0.95));
+      border: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 22px 20px;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+    .app-card-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8);
+    }
+    .app-card-btn.lemon-theme:hover {
+      border-color: rgba(245, 158, 11, 0.85);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 24px rgba(245, 158, 11, 0.25);
+    }
+    .app-card-btn.belo-theme:hover {
+      border-color: rgba(168, 85, 247, 0.85);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 24px rgba(168, 85, 247, 0.25);
+    }
+    .app-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .app-badge {
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 9999px;
+    }
+    .lemon-theme .app-badge {
+      background: rgba(245, 158, 11, 0.2);
+      color: #FCD34D;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+    .belo-theme .app-badge {
+      background: rgba(168, 85, 247, 0.2);
+      color: #E9D5FF;
+      border: 1px solid rgba(168, 85, 247, 0.4);
+    }
+    .app-big-icon {
+      font-size: 32px;
+      line-height: 1;
+    }
+    .app-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .app-card-desc {
+      font-size: 13.5px;
+      color: #A8A29E;
+      line-height: 1.45;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+    .app-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13.5px;
+      font-weight: 800;
+    }
+    .lemon-theme .app-card-footer {
+      color: #F59E0B;
+    }
+    .belo-theme .app-card-footer {
+      color: #C084FC;
+    }
+    .app-cta-arrow {
+      transition: transform 0.2s ease;
+    }
+    .app-card-btn:hover .app-cta-arrow {
+      transform: translateX(4px);
+    }
+
+    /* SCREEN 1..4: TEXT INSTRUCTIONS */
+    .step-text-screen {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
     }
     .m-step-tag-row {
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
     .m-step-tag {
       font-size: 11px;
@@ -1486,7 +1655,7 @@
       letter-spacing: 0.08em;
       color: #FCD34D;
       text-transform: uppercase;
-      background: rgba(245, 158, 11, 0.2);
+      background: rgba(245, 158, 11, 0.18);
       padding: 3px 10px;
       border-radius: 9999px;
       border: 1px solid rgba(245, 158, 11, 0.4);
@@ -1495,160 +1664,117 @@
       font-size: 11px;
       font-weight: 800;
       color: #10B981;
-      background: rgba(16, 185, 129, 0.2);
+      background: rgba(16, 185, 129, 0.18);
       padding: 3px 10px;
       border-radius: 9999px;
       border: 1px solid rgba(16, 185, 129, 0.4);
     }
     .m-step-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 900;
       color: #FFFFFF;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       line-height: 1.25;
       letter-spacing: -0.01em;
     }
     .m-step-pill {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #FCD34D;
-      background: rgba(245, 158, 11, 0.12);
+      background: rgba(245, 158, 11, 0.1);
       border-left: 3.5px solid #F59E0B;
       padding: 7px 12px;
       border-radius: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       line-height: 1.4;
     }
     .m-bullets {
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      margin-bottom: 16px;
+      gap: 10px;
+      margin-bottom: 14px;
     }
     .m-bullet-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 11px 14px;
       font-size: 14px;
       color: #E7E5E4;
-      line-height: 1.45;
+      line-height: 1.48;
       display: flex;
       align-items: flex-start;
       gap: 10px;
     }
-    .m-bullet-item span:first-child {
-      font-size: 18px;
+    .m-bullet-icon {
+      font-size: 17px;
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .m-bullet-item strong {
+    .m-bullet-text strong {
       color: #FFFFFF;
       font-weight: 800;
     }
-    .m-btn-action {
+    .m-tip-box {
       display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      color: #D1FAE5;
+      line-height: 1.45;
+    }
+    .m-tip-icon {
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .m-action-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .m-btn-action {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 13px 20px;
-      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-      border: 1.5px solid #34D399;
-      border-radius: 14px;
-      color: #FFFFFF;
-      font-size: 15px;
-      font-weight: 900;
+      gap: 8px;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(217, 119, 6, 0.25) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.55);
+      border-radius: 10px;
+      color: #FCD34D;
+      font-size: 13.5px;
+      font-weight: 800;
       text-decoration: none;
-      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s ease;
       cursor: pointer;
     }
     .m-btn-action:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.1);
-      box-shadow: 0 8px 26px rgba(16, 185, 129, 0.7);
-    }
-
-    /* ANIMATED MEDIA SHOWCASE CONTAINER (280px tall, dynamic interactive feel) */
-    .m-media-showcase {
-      background: linear-gradient(145deg, rgba(16, 11, 8, 0.95), rgba(6, 4, 3, 0.98));
-      border: 1.5px solid rgba(245, 158, 11, 0.45);
-      border-radius: 22px;
-      height: 280px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9), 0 10px 30px rgba(0, 0, 0, 0.6);
-      position: relative;
-      overflow: hidden;
-    }
-    .m-media-showcase::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 65%);
-      animation: rotateGlow 8s linear infinite;
-      pointer-events: none;
-    }
-    @keyframes rotateGlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .m-media-icon {
-      font-size: 42px;
-      margin-bottom: 8px;
-      filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.65));
-      animation: floatIcon 3s ease-in-out infinite alternate;
-    }
-    @keyframes floatIcon {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-6px); }
-    }
-    .m-media-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px;
-      font-weight: 800;
-      color: #FCD34D;
-      margin-bottom: 4px;
-      letter-spacing: -0.01em;
-    }
-    .m-media-desc {
-      font-size: 12.5px;
-      color: #A8A29E;
-      line-height: 1.45;
-      max-width: 250px;
-    }
-    .m-media-badge {
-      position: absolute;
-      top: 12px;
-      right: 14px;
-      font-size: 9.5px;
-      font-weight: 900;
-      background: rgba(16, 185, 129, 0.22);
-      color: #34D399;
-      border: 1px solid #10B981;
-      padding: 3px 8px;
-      border-radius: 9999px;
-      letter-spacing: 0.05em;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.4) 0%, rgba(217, 119, 6, 0.4) 100%);
+      border-color: #FCD34D;
+      color: #FFFFFF;
+      transform: translateY(-1px);
     }
 
     /* Modal Navigation Footer */
     .modal-footer-nav {
       padding: 14px 32px 18px;
-      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .m-btn-prev {
-      background: rgba(255, 255, 255, 0.09);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       color: #D6D3D1;
-      padding: 8px 18px;
+      padding: 9px 18px;
       border-radius: 9999px;
       font-size: 13.5px;
       font-weight: 800;
@@ -1656,29 +1782,30 @@
       transition: all 0.2s;
     }
     .m-btn-prev:hover {
-      background: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.16);
       color: #FFFFFF;
+    }
+    .m-indicator {
+      font-size: 13px;
+      font-weight: 800;
+      color: #A8A29E;
     }
     .m-btn-next {
       background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
       border: 1px solid #FCD34D;
       color: #000000;
-      padding: 10px 26px;
+      padding: 9px 22px;
       border-radius: 9999px;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 900;
       cursor: pointer;
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.5);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45);
     }
     .m-btn-next:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.7);
-    }
-    .m-indicator {
-      font-size: 12.5px;
-      font-weight: 800;
-      color: #A8A29E;
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.65);
     }
 
     /* --- DESKTOP 50/50 SPECIFIC ZERO-SCROLL RULES --- */
@@ -1834,7 +1961,8 @@
       .right-block-qr-bar {
         display: none !important; /* Hide QR on mobile */
       }
-      .variant-switcher {
+      body.show-variants-flag .variant-switcher {
+        display: flex !important;
         position: static !important;
         transform: none !important;
         margin: 0 auto 10px auto !important;
@@ -1859,33 +1987,54 @@
         max-height: 94vh;
         border-radius: 20px;
       }
-      .modal-step-body {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 12px 16px;
-      }
-      .m-media-showcase {
-        height: 160px;
-      }
       .modal-header-section {
-        padding: 16px 16px 10px;
+        padding: 16px 18px 10px;
       }
       .modal-title {
-        font-size: 20px;
+        font-size: 19px;
       }
-      .m-node-circle {
-        width: 30px;
-        height: 30px;
-        font-size: 12px;
+      .modal-subtitle {
+        font-size: 12.5px;
+      }
+      .modal-app-nav {
+        padding: 8px 16px 0;
+      }
+      .modal-tracker-bar {
+        margin: 8px 16px 4px;
       }
       .m-node-label {
         font-size: 10px;
       }
-      .modal-tracker-bar {
-        margin: 10px 16px 6px;
+      .modal-step-body {
+        padding: 12px 16px 16px;
       }
-      .modal-track-bg, .modal-track-fill {
-        top: 15px;
+      .app-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .app-card-btn {
+        padding: 16px 14px;
+      }
+      .app-card-title {
+        font-size: 18px;
+      }
+      .app-card-desc {
+        font-size: 12.5px;
+        margin-bottom: 12px;
+      }
+      .m-step-title {
+        font-size: 18px;
+      }
+      .m-bullet-item {
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+      .modal-footer-nav {
+        padding: 10px 16px 14px;
+      }
+      .m-btn-prev, .m-btn-next {
+        padding: 8px 14px;
+        font-size: 12.5px;
       }
     }
   </style>
@@ -1972,13 +2121,13 @@
               </div>
             </div>
             <div class="offer-hook-middle" id="txt-hook-middle">
-              ¿Querés pagar con <strong>$6.000 ARS de descuento</strong> al instante con Telegram Wallet?
+              ¿Querés pagar con <strong>$6.000 ARS de descuento</strong> con Lemon Cash o Belo?
             </div>
-            <!-- Vibrant Emerald Green Action Button -->
+            <!-- Action Button -->
             <div class="offer-hook-btn-trigger">
               <div class="btn-content-left">
                 <span class="pulse-icon">⚡️</span>
-                <span id="txt-hook-btn">Ver cómo pagar $16.000 en 10 min paso a paso</span>
+                <span id="txt-hook-btn">Ver cómo pagar en Lemon y Belo paso a paso</span>
               </div>
               <div class="arrow-circle">➔</div>
             </div>
@@ -2017,34 +2166,51 @@
   
 
 
-  <!-- Interactive Step Modal / Fullscreen Walkthrough -->
+  <!-- Interactive Step Modal / Pure Text Guided Walkthrough -->
   <div class="step-modal-overlay" id="guide-modal" onclick="onModalOverlayClick(event)">
     <div class="step-modal-window" onclick="event.stopPropagation()">
       <button type="button" class="modal-close-btn" onclick="closeStepModal()" aria-label="Cerrar">✕</button>
       
       <!-- Modal Header -->
       <div class="modal-header-section">
-        <div class="modal-pretag" id="m-pretag">⚡️ GUÍA PASO A PASO PARA NOVICIOS</div>
-        <h2 class="modal-title" id="m-title">¿Cómo pagar $16.000 ARS en 10 minutos?</h2>
-        <div class="modal-subtitle" id="m-subtitle">Solo la primera vez • 100% Guiado y seguro en Telegram</div>
+        <div class="modal-pretag" id="m-pretag">⚡️ GUÍA PASO A PASO EN PESOS</div>
+        <h2 class="modal-title" id="m-title">¿Cómo pagar en Lemon Cash o Belo?</h2>
+        <div class="modal-subtitle" id="m-subtitle">Instrucciones guiadas en texto • Sin vueltas ni tecnicismos</div>
       </div>
 
-      <!-- Tracker Bar (40px Nodes) -->
-      <div class="modal-tracker-bar">
+      <!-- App Switcher Bar (Visible inside steps) -->
+      <div class="modal-app-nav" id="m-app-nav" style="display: none;">
+        <div class="m-app-tabs">
+          <button type="button" class="m-app-tab" id="tab-lemon" onclick="switchGuideApp('lemon')">
+            <span class="tab-icon">🍋</span>
+            <span class="tab-name">Lemon Cash</span>
+          </button>
+          <button type="button" class="m-app-tab" id="tab-belo" onclick="switchGuideApp('belo')">
+            <span class="tab-icon">🟣</span>
+            <span class="tab-name">Belo App</span>
+          </button>
+        </div>
+        <button type="button" class="m-app-change-btn" onclick="goToAppSelect()" id="btn-change-app">
+          ↺ Cambiar app
+        </button>
+      </div>
+
+      <!-- Tracker Bar (4 Steps) - Visible inside steps -->
+      <div class="modal-tracker-bar" id="m-tracker-bar" style="display: none;">
         <div class="modal-track-bg"></div>
         <div class="modal-track-fill" id="m-progress-fill" style="width: 0%;"></div>
 
         <button type="button" class="m-step-node active" onclick="setMStep(0)">
           <div class="m-node-circle" id="m-node-0">1</div>
-          <span class="m-node-label" id="m-tab-0">1. @wallet</span>
+          <span class="m-node-label" id="m-tab-0">1. Pesos</span>
         </button>
         <button type="button" class="m-step-node" onclick="setMStep(1)">
           <div class="m-node-circle" id="m-node-1">2</div>
-          <span class="m-node-label" id="m-tab-1">2. Mercado Pago</span>
+          <span class="m-node-label" id="m-tab-1">2. USDT</span>
         </button>
         <button type="button" class="m-step-node" onclick="setMStep(2)">
           <div class="m-node-circle" id="m-node-2">3</div>
-          <span class="m-node-label" id="m-tab-2">3. Pago -27%</span>
+          <span class="m-node-label" id="m-tab-2">3. Enviar</span>
         </button>
         <button type="button" class="m-step-node" onclick="setMStep(3)">
           <div class="m-node-circle" id="m-node-3">4</div>
@@ -2052,49 +2218,81 @@
         </button>
       </div>
 
-      <!-- Step Content & Media Showcase Grid -->
+      <!-- Modal Body -->
       <div class="modal-step-body" id="modal-step-body">
-        <div class="m-step-content" id="m-step-content">
+        
+        <!-- Screen 0: App Selection Screen -->
+        <div class="app-selection-screen" id="screen-app-select">
+          <div class="app-selection-prompt" id="app-select-prompt">
+            Elegí la aplicación que utilizás para ver el instructivo paso a paso:
+          </div>
+          
+          <div class="app-cards-grid">
+            <!-- Lemon Cash Card -->
+            <button type="button" class="app-card-btn lemon-theme" onclick="selectGuideApp('lemon')">
+              <div class="app-card-top">
+                <span class="app-badge" id="badge-lemon">MÁS POPULAR EN BS AS</span>
+                <span class="app-big-icon">🍋</span>
+              </div>
+              <h3 class="app-card-title">Lemon Cash</h3>
+              <p class="app-card-desc" id="desc-lemon">
+                Transferís pesos desde Mercado Pago o banco a tu CVU/Alias y comprás USDT en 1 toque.
+              </p>
+              <div class="app-card-footer">
+                <span class="app-cta-label" id="cta-lemon">Ver guía Lemon Cash</span>
+                <span class="app-cta-arrow">➔</span>
+              </div>
+            </button>
+
+            <!-- Belo App Card -->
+            <button type="button" class="app-card-btn belo-theme" onclick="selectGuideApp('belo')">
+              <div class="app-card-top">
+                <span class="app-badge" id="badge-belo">RÁPIDO & SIN COMISIONES</span>
+                <span class="app-big-icon">🟣</span>
+              </div>
+              <h3 class="app-card-title">Belo App</h3>
+              <p class="app-card-desc" id="desc-belo">
+                Ingresás pesos por Alias/CVU e intercambiás a USDT instantáneamente al mejor cambio.
+              </p>
+              <div class="app-card-footer">
+                <span class="app-cta-label" id="cta-belo">Ver guía Belo App</span>
+                <span class="app-cta-arrow">➔</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Screen 1..4: Pure Text Step Content (No videos, no screenshots) -->
+        <div class="step-text-screen" id="screen-step-content" style="display: none;">
           <div class="m-step-tag-row">
-            <span class="m-step-tag" id="m-step-tag">PASO 1 DE 4</span>
-            <span class="m-time-tag" id="m-time-tag">⏱ ~15 seg</span>
+            <span class="m-step-tag" id="m-step-tag">PASO 1 DE 4 • LEMON CASH</span>
+            <span class="m-time-tag" id="m-time-tag">⏱ ~2 min</span>
           </div>
-          <h3 class="m-step-title" id="m-step-title">Abrí el monedero oficial @wallet</h3>
-          <div class="m-step-pill" id="m-step-pill">👉 Integrado en Telegram • Sin descargas externas ni KYC inicial</div>
+          <h3 class="m-step-title" id="m-step-title">Transferí pesos a tu cuenta de Lemon</h3>
+          <div class="m-step-pill" id="m-step-pill">👉 Acreditación inmediata por CVU o Alias</div>
 
-          <div class="m-bullets">
-            <div class="m-bullet-item">
-              <span>📱</span>
-              <span id="m-what"><strong>Qué hacer:</strong> Tocá el botón de abajo o buscá <strong>@wallet</strong> en Telegram. Es el servicio oficial verificado.</span>
-            </div>
-            <div class="m-bullet-item">
-              <span>🛡</span>
-              <span id="m-why"><strong>Seguridad:</strong> No necesitás apps dudosas ni enviar fotos de pasaporte para empezar.</span>
-            </div>
-            <div class="m-bullet-item">
-              <span>💡</span>
-              <span id="m-tip"><strong>Clave:</strong> Se activa en 1 clic y queda disponible en tus chats de Telegram.</span>
-            </div>
+          <div class="m-bullets" id="m-bullets">
+            <!-- Dynamic text bullets inserted by JS -->
           </div>
 
-          <a href="https://t.me/wallet" target="_blank" rel="noopener noreferrer" class="m-btn-action" id="m-action-btn">
-            <span>🚀 Abrir @wallet en Telegram</span>
-          </a>
+          <div class="m-tip-box" id="m-tip-box">
+            <span class="m-tip-icon">💡</span>
+            <span class="m-tip-text" id="m-tip-text"></span>
+          </div>
+
+          <div class="m-action-row" id="m-action-row">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="m-btn-action" id="m-action-btn">
+              <span>🚀 Abrir Lemon Cash</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Animated Screencast / Graphic Showcase Container -->
-        <div class="m-media-showcase" id="m-media-box">
-          <span class="m-media-badge" id="m-media-badge">PASO A PASO</span>
-          <div class="m-media-icon" id="m-media-icon">🎬</div>
-          <div class="m-media-title" id="m-media-title">Video: Abrir @wallet</div>
-          <div class="m-media-desc" id="m-media-desc">Se activa instantáneamente sin salir de Telegram ni llenar formularios.</div>
-        </div>
       </div>
 
       <!-- Modal Navigation Footer -->
       <div class="modal-footer-nav">
-        <button type="button" class="m-btn-prev" id="m-prev-btn" onclick="prevMStep()" style="visibility:hidden">← Anterior</button>
-        <span class="m-indicator" id="m-indicator">Paso 1 de 4</span>
+        <button type="button" class="m-btn-prev" id="m-prev-btn" onclick="prevMStep()">← Anterior</button>
+        <span class="m-indicator" id="m-indicator">Seleccionar aplicación</span>
         <button type="button" class="m-btn-next" id="m-next-btn" onclick="nextMStep()">Siguiente paso →</button>
       </div>
     </div>
@@ -2105,7 +2303,7 @@
 const PORTAL_I18N = {
   es: {
     pageTitle: "Mr. Key — Chocolate Proteico Artesanal | Buenos Aires 24/7",
-    metaDesc: "Retiro 24/7 de barras proteicas artesanales sin azúcar en quioscos de Buenos Aires (Palermo, Recoleta, Belgrano). Precio lanzamiento $16.000 ARS con Wallet.",
+    metaDesc: "Retiro 24/7 de barras proteicas artesanales sin azúcar en quioscos de Buenos Aires (Palermo, Recoleta, Belgrano). Pagá con Lemon o Belo con descuento de lanzamiento.",
     status: "24/7 • Retiro en quioscos online",
     brandPill: "MR. KEY • BUENOS AIRES 24/7",
     catchyTitle: 'Puro placer belga. 20g de proteína. <span class="gradient-shimmer">Cero culpa.</span>',
@@ -2117,85 +2315,161 @@ const PORTAL_I18N = {
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
     hookSave: "-27% OFF",
-    hookMiddle: "¿Querés pagar con <strong>$6.000 ARS de descuento</strong> al instante con Telegram Wallet?",
-    hookBtn: "Ver cómo pagar $16.000 en 10 min paso a paso",
+    hookMiddle: "¿Querés pagar con <strong>$6.000 ARS de descuento</strong> con Lemon Cash o Belo?",
+    hookBtn: "Ver cómo pagar en Lemon y Belo paso a paso",
     btnOrder: "🚀 Pedir directo en el Bot de Telegram",
     btnSupport: "💬 Soporte (@mr_key_ba1)",
     desktopQrTitle: "📱 Pedí con tu celular",
     desktopQrDesc: "Escaneá con tu cámara para abrir el bot en Telegram",
     footer: "© 2026 Mr. Key • Buenos Aires, Argentina • Sistema autónomo 24/7",
-    modalPretag: "⚡️ GUÍA PASO A PASO PARA NOVICIOS",
-    modalTitle: "¿Cómo pagar $16.000 ARS en 10 minutos?",
-    modalSub: "Solo la primera vez • 100% Guiado y seguro en Telegram",
+    modalPretag: "⚡️ GUÍA PASO A PASO EN PESOS",
+    modalTitle: "¿Cómo pagar en Lemon Cash o Belo?",
+    modalSub: "Instrucciones guiadas en texto • Sin vueltas ni tecnicismos",
+    appSelectPrompt: "Elegí la aplicación que utilizás para ver el instructivo paso a paso:",
+    badgeLemon: "MÁS POPULAR EN BS AS",
+    descLemon: "Transferís pesos desde Mercado Pago o banco a tu CVU/Alias y comprás USDT en 1 toque.",
+    ctaLemon: "Ver instructivo Lemon Cash",
+    badgeBelo: "RÁPIDO & SIN COMISIONES",
+    descBelo: "Ingresás pesos por Alias/CVU e intercambiás a USDT instantáneamente al mejor cambio.",
+    ctaBelo: "Ver instructivo Belo App",
+    btnChangeApp: "↺ Cambiar app",
     mPrev: "← Anterior",
     mNext: "Siguiente paso →",
-    mFinish: "🍫 Pedir barras a $16.000 ARS ➔",
-    steps: [
-      {
-        stepTag: "PASO 1 DE 4",
-        tab: "1. @wallet",
-        title: "Abrí el monedero oficial @wallet",
-        time: "⏱ ~15 seg",
-        pill: "👉 Integrado en Telegram • Sin descargas externas ni KYC inicial",
-        what: "<strong>Qué hacer:</strong> Tocá el botón de abajo o buscá <strong>@wallet</strong> en Telegram. Es el servicio oficial verificado.",
-        why: "<strong>Seguridad:</strong> No necesitás apps dudosas ni enviar fotos de pasaporte para empezar.",
-        tip: "<strong>Clave:</strong> Se activa en 1 clic y queda disponible en tus chats de Telegram.",
-        actionTxt: "🚀 Abrir @wallet en Telegram",
-        actionUrl: "https://t.me/wallet",
-        icon: "💳",
-        mediaTitle: "Activación en 1 Tap de @wallet",
-        mediaDesc: "Se activa directamente en tu lista de chats de Telegram, sin descargas externas."
-      },
-      {
-        stepTag: "PASO 2 DE 4",
-        tab: "2. Mercado Pago",
-        title: "Cargá Pesos vía Mercado Pago o Banco",
-        time: "⏱ ~3-5 min",
-        pill: "💳 Pagás en Pesos (ARS) • Custodia protegida por Telegram Escrow",
-        what: "<strong>Qué hacer:</strong> En @wallet tocá <strong>«Comprar» → «Mercado P2P»</strong>. Elegí ARS y transferí pesos por Alias/CVU.",
-        why: "<strong>Garantía:</strong> Telegram congela los USDT del vendedor hasta que vos confirmes la transferencia.",
-        tip: "<strong>Acreditación:</strong> Los USDT caen en tu saldo en un par de minutos.",
-        actionTxt: "📖 Ver cómo comprar en @wallet",
-        actionUrl: "https://t.me/wallet",
-        icon: "⚡️",
-        mediaTitle: "Transferencia en Pesos (ARS)",
-        mediaDesc: "Pagás por Mercado Pago o banco local. Los fondos quedan bloqueados de forma segura."
-      },
-      {
-        stepTag: "PASO 3 DE 4",
-        tab: "3. Pago -27%",
-        title: "Pagá en el bot con $6.000 ARS de descuento",
-        time: "⏱ ~30 seg",
-        pill: "🎉 Descuento automático • Débito en 1 toque",
-        what: "<strong>Qué hacer:</strong> En nuestro bot <strong>@mrkey_ba_1_bot</strong> elegí tus barras y tocá «Pagar con Wallet».",
-        why: "<strong>Precio final:</strong> Pagás $16.000 ARS en lugar de $22.000 ARS ($6.000 ARS de ahorro inmediato).",
-        tip: "<strong>Gratis:</strong> Cero comisiones de red dentro de Telegram.",
-        actionTxt: "🛒 Ir al menú del bot en Telegram",
-        actionUrl: "https://t.me/mrkey_ba_1_bot",
-        icon: "🎉",
-        mediaTitle: "Pago Instantáneo con -27% OFF",
-        mediaDesc: "El bot aplica la bonificación de $6.000 ARS automáticamente al elegir Wallet."
-      },
-      {
-        stepTag: "PASO 4 DE 4",
-        tab: "4. Retiro 24/7",
-        title: "Retirá tus barras frescas en el quiosco",
-        time: "⏱ ~2 min",
-        pill: "❄️ Cadena de frío • Quioscos 24/7 en Palermo, Recoleta y Belgrano",
-        what: "<strong>Qué hacer:</strong> El bot te entrega un código QR y pin. Pasá por el quiosco cuando quieras.",
-        why: "<strong>Calidad:</strong> Barras refrigeradas para máxima frescura y crocancia.",
-        tip: "<strong>Garantía total:</strong> Cambio o reembolso en 24h si no quedás satisfecho.",
-        actionTxt: "🍫 Pedir barras a $16.000 ARS",
-        actionUrl: "https://t.me/mrkey_ba_1_bot",
-        icon: "❄️",
-        mediaTitle: "Retiro Glacial en Quiosco",
-        mediaDesc: "Mostrás tu código QR en el quiosco y te entregan tu barra artesanal helada."
-      }
-    ]
+    mFinish: "🍫 Pedir barras en Telegram Bot ➔",
+    selectAppPrompt: "Seleccionar aplicación",
+    steps: {
+      lemon: [
+        {
+          tab: "1. Pesos",
+          tag: "PASO 1 DE 4 • LEMON CASH",
+          time: "⏱ ~2 min",
+          title: "1. Descargá Lemon y transferí pesos",
+          pill: "👉 Acreditación instantánea por CVU o Alias",
+          bullets: [
+            "<strong>1️⃣ Abrí Lemon:</strong> Si no la tenés, descargala desde App Store o Google Play y completá el registro con tu DNI argentino (toma menos de 2 minutos).",
+            "<strong>2️⃣ Obtené tu CVU o Alias:</strong> En la pantalla principal de Lemon tocá el botón verde «Depositar» ➔ elegí «Pesos argentinos» ➔ tocá «Copiar CVU / Alias».",
+            "<strong>3️⃣ Transferí desde Mercado Pago o Banco:</strong> Abrí tu app habitual (Mercado Pago o banco) y transferí el monto necesario a ese Alias. El saldo entra al instante."
+          ],
+          tip: "La transferencia en pesos es inmediata y no tiene comisión bancaria.",
+          actionTxt: "📲 Descargar / Abrir Lemon Cash",
+          actionUrl: "https://lemon.me/"
+        },
+        {
+          tab: "2. USDT",
+          tag: "PASO 2 DE 4 • LEMON CASH",
+          time: "⏱ ~30 seg",
+          title: "2. Convertí tus pesos a Dólar Digital (USDT)",
+          pill: "🔄 En 1 solo toque y al tipo de cambio en vivo",
+          bullets: [
+            "<strong>1️⃣ Menú de cambio:</strong> En la pantalla principal de Lemon tocá el botón central «Cambiar» (o entrá a tu saldo de pesos y tocá «Comprar cripto»).",
+            "<strong>2️⃣ Seleccioná USDT:</strong> En la lista de monedas elegí USDT (Dólar Digital).",
+            "<strong>3️⃣ Ingresá el monto:</strong> Indicá cuántos pesos querés convertir. La pantalla te mostrará la cotización en vivo y cuántos USDT vas a recibir.",
+            "<strong>4️⃣ Confirmá el cambio:</strong> Deslizá la barra verde hacia la derecha: «Cambiar pesos a USDT». La acreditación en USDT es instantánea."
+          ],
+          tip: "Tu saldo queda asegurado en dólares digitales sin riesgo de devaluación del peso.",
+          actionTxt: "📲 Abrir Lemon Cash",
+          actionUrl: "https://lemon.me/"
+        },
+        {
+          tab: "3. Enviar",
+          tag: "PASO 3 DE 4 • LEMON CASH",
+          time: "⏱ ~1 min",
+          title: "3. Enviá los USDT a la billetera del Bot",
+          pill: "🚀 Transferencia cripto automática 24/7",
+          bullets: [
+            "<strong>1️⃣ Botón Enviar:</strong> En la pantalla de inicio de Lemon tocá «Enviar» ➔ elegí «Criptomonedas a una billetera externa» ➔ seleccioná USDT.",
+            "<strong>2️⃣ Elegí la Red:</strong> Seleccioná la red indicada por el bot (por ejemplo red Tron TRC-20 o red Polygon).",
+            "<strong>3️⃣ Escaneá o pegá:</strong> Tocá el ícono de cámara para escanear el código QR que te dio el bot, o pegá la dirección de billetera alfanumérica.",
+            "<strong>4️⃣ Confirmá el envío:</strong> Ingresá el monto exacto de tu pedido y confirmá. La blockchain confirma el pago en 15 a 30 segundos."
+          ],
+          tip: "Asegurate de seleccionar la misma red (TRC-20 o Polygon) que te indicó el bot.",
+          actionTxt: "🤖 Abrir Bot en Telegram",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        },
+        {
+          tab: "4. Retiro 24/7",
+          tag: "PASO 4 DE 4 • LEMON CASH",
+          time: "⏱ ~2 min",
+          title: "4. Retirá tu chocolate fresco 24/7 en el quiosco",
+          pill: "❄️ Cadena de frío asegurada en Palermo, Recoleta y Belgrano",
+          bullets: [
+            "<strong>1️⃣ Recibí tu código:</strong> Apenas confirmada la transacción, el bot te enviará al chat de Telegram tu código QR secreto de retiro y la ubicación del quiosco.",
+            "<strong>2️⃣ Pasá a retirarlo:</strong> Acercate al quiosco 24/7 en cualquier momento, mostrás el QR desde la pantalla de tu celular y el personal te entrega tu barra helada.",
+            "<strong>3️⃣ Puro disfrute:</strong> Chocolate artesanal belga con 20g de proteína pura y caramelo salado crocante sin culpa."
+          ],
+          tip: "Soporte humano directo 24/7 en Telegram ante cualquier duda (@mr_key_ba1).",
+          actionTxt: "🍫 Pedir en el Bot de Telegram",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        }
+      ],
+      belo: [
+        {
+          tab: "1. Pesos",
+          tag: "PASO 1 DE 4 • BELO APP",
+          time: "⏱ ~2 min",
+          title: "1. Descargá Belo y transferí pesos",
+          pill: "👉 Registro rápido con DNI y acreditación en el acto",
+          bullets: [
+            "<strong>1️⃣ Abrí Belo:</strong> Descargá la app belo desde App Store o Google Play y completá tu registro con DNI argentino en solo 2 minutos.",
+            "<strong>2️⃣ Obtené tu Alias / CVU:</strong> En la pantalla principal tocá el botón «Recibir» (o «Ingresar dinero») ➔ seleccioná «Pesos argentinos».",
+            "<strong>3️⃣ Transferí desde Mercado Pago o Banco:</strong> Copiá tu Alias o CVU de Belo (ej: belo.usuario.ars) y transferí pesos desde Mercado Pago o tu cuenta bancaria."
+          ],
+          tip: "Belo no cobra ningún costo por ingreso ni acreditación de pesos.",
+          actionTxt: "📲 Descargar / Abrir Belo App",
+          actionUrl: "https://belo.app/"
+        },
+        {
+          tab: "2. USDT",
+          tag: "PASO 2 DE 4 • BELO APP",
+          time: "⏱ ~30 seg",
+          title: "2. Intercambiá tus pesos a USDT al instante",
+          pill: "⚡️ Cero comisiones ocultas al mejor tipo de cambio",
+          bullets: [
+            "<strong>1️⃣ Botón Intercambiar:</strong> En el menú inferior de Belo tocá el botón del centro «Intercambiar» (ícono de dos flechas enfrentadas).",
+            "<strong>2️⃣ Configurá las monedas:</strong> En «Pagar con» seleccioná ARS (pesos). En «Recibir» seleccioná USDT.",
+            "<strong>3️⃣ Confirmá la operación:</strong> Ingresá la cantidad de pesos y tocá «Confirmar intercambio». Tus pesos se convierten a USDT en 1 segundo."
+          ],
+          tip: "La cotización es en tiempo real y transparente sin recargos sorpresa.",
+          actionTxt: "📲 Abrir Belo App",
+          actionUrl: "https://belo.app/"
+        },
+        {
+          tab: "3. Enviar",
+          tag: "PASO 3 DE 4 • BELO APP",
+          time: "⏱ ~1 min",
+          title: "3. Transferí los USDT al Bot de Telegram",
+          pill: "🔒 Seguridad y confirmación automática por blockchain",
+          bullets: [
+            "<strong>1️⃣ Menú Transferir:</strong> En la pantalla principal de Belo tocá «Transferir» ➔ seleccioná «A nuevo contacto» ➔ «Criptomonedas».",
+            "<strong>2️⃣ Elegí USDT y la Red:</strong> Seleccioná USDT y luego la red indicada por el bot (Red Tron TRC-20 o Red Polygon).",
+            "<strong>3️⃣ Escaneá o pegá la dirección:</strong> Escaneá con la cámara de Belo el código QR provisto por el bot o pegá la dirección de billetera.",
+            "<strong>4️⃣ Enviá los fondos:</strong> Colocá el importe exacto y confirmá. La red procesa el pago inmediatamente."
+          ],
+          tip: "Verificá que la red seleccionada coincida con la que te muestra el bot.",
+          actionTxt: "🤖 Abrir Bot en Telegram",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        },
+        {
+          tab: "4. Retiro 24/7",
+          tag: "PASO 4 DE 4 • BELO APP",
+          time: "⏱ ~2 min",
+          title: "4. Mostrá tu QR y retirá tu barra helada 24/7",
+          pill: "🍫 Chocolate belga con 20g de proteína y 0 culpa",
+          bullets: [
+            "<strong>1️⃣ Cupón de retiro:</strong> Al confirmarse el pago, el bot te enviará de inmediato un código QR de canje.",
+            "<strong>2️⃣ Retiro sin espera:</strong> Acercate al quiosco 24/7 de Palermo, Recoleta o Belgrano en el horario que prefieras.",
+            "<strong>3️⃣ Canje al instante:</strong> Mostrás el QR en tu pantalla y te entregan tu barra refrigerada lista para comer."
+          ],
+          tip: "Garantía de calidad: si algo no te convence, tenés cambio o reembolso en 24h.",
+          actionTxt: "🍫 Pedir en el Bot de Telegram",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        }
+      ]
+    }
   },
   ru: {
     pageTitle: "Mr. Key — Авторский протеиновый шоколад | Буэнос-Айрес 24/7",
-    metaDesc: "Натуральные протеиновые батончики ручной работы без сахара в киосках Буэнос-Айреса (Палермо, Реколета, Бельграно). Цена $16.000 ARS через Wallet.",
+    metaDesc: "Натуральные протеиновые батончики ручной работы без сахара в киосках Буэнос-Айреса (Палермо, Реколета, Бельграно). Оплата через Lemon или Belo по акции.",
     status: "24/7 • Выдача в киосках онлайн",
     brandPill: "MR. KEY • БУЭНОС-АЙРЕС 24/7",
     catchyTitle: 'Чистое бельгийское удовольствие. 20г протеина. <span class="gradient-shimmer">Ноль чувства вины.</span>',
@@ -2207,85 +2481,160 @@ const PORTAL_I18N = {
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
     hookSave: "-27% ВЫГОДЫ",
-    hookMiddle: "Хочешь платить с <strong>выгодой $6.000 ARS</strong> на каждом батончике через Telegram Wallet?",
-    hookBtn: "Узнать, как оплатить $16.000 за 10 минут по шагам",
+    hookMiddle: "Хочешь платить с <strong>выгодой $6.000 ARS</strong> через Lemon Cash или Belo?",
+    hookBtn: "Инструкция по оплате через Lemon и Belo по шагам",
     btnOrder: "🚀 Открыть меню в Telegram-боте",
     btnSupport: "💬 Поддержка и Опт (@mr_key_ba1)",
     desktopQrTitle: "📱 Заказ со смартфона",
     desktopQrDesc: "Наведи камеру для мгновенного перехода в Telegram-бот",
     footer: "© 2026 Mr. Key • Буэнос-Айрес, Аргентина • Автономная система 24/7",
-    modalPretag: "⚡️ ПОШАГОВЫЙ ГИД ДЛЯ НОВИЧКОВ",
-    modalTitle: "Как оплатить $16.000 ARS за 10 минут?",
-    modalSub: "Только при первом заказе • 100% просто и безопасно прямо в Telegram",
+    modalPretag: "⚡️ ПОШАГОВЫЙ ГИД В ПЕСО",
+    modalTitle: "Как оплатить через Lemon Cash или Belo?",
+    modalSub: "Простая пошаговая текстовая инструкция без лишних терминов",
+    appSelectPrompt: "Выберите приложение, через которое вам удобнее оплатить:",
+    badgeLemon: "ПОПУЛЯРНО В АРГЕНТИНЕ",
+    descLemon: "Пополнение в песо с Mercado Pago или банка и покупка USDT в 1 клик.",
+    ctaLemon: "Открыть инструкцию Lemon Cash",
+    badgeBelo: "БЫСТРО И БЕЗ КОМИССИЙ",
+    descBelo: "Мгновенный обмен песо на USDT по прозрачному курсу через Alias/CVU.",
+    ctaBelo: "Открыть инструкцию Belo App",
+    btnChangeApp: "↺ Выбрать другое приложение",
     mPrev: "← Назад",
     mNext: "Следующий шаг →",
-    mFinish: "🍫 Заказать батончики за $16.000 ARS ➔",
-    steps: [
-      {
-        stepTag: "ШАГ 1 ИЗ 4",
-        tab: "1. @wallet",
-        title: "Открой встроенный кошелек @wallet",
-        time: "⏱ ~15 сек",
-        pill: "👉 Прямо в Telegram • Без скачивания приложений и проверок",
-        what: "<strong>Что делать:</strong> Нажми кнопку ниже или найди <strong>@wallet</strong> в Telegram. Это официальный верифицированный сервис.",
-        why: "<strong>Безопасность:</strong> Не нужно регистрироваться на биржах или привязывать карту.",
-        tip: "<strong>Фишка:</strong> Кошелек активируется в 1 клик прямо в чатах Telegram.",
-        actionTxt: "🚀 Открыть @wallet в Telegram",
-        actionUrl: "https://t.me/wallet",
-        icon: "💳",
-        mediaTitle: "Активация @wallet в 1 клик",
-        mediaDesc: "Кошелек появляется прямо в меню Telegram без заполнения анкет."
-      },
-      {
-        stepTag: "ШАГ 2 ИЗ 4",
-        tab: "2. Mercado Pago",
-        title: "Пополни песо через Mercado Pago или Банк",
-        time: "⏱ ~3-5 мин",
-        pill: "💳 Оплата в песо (ARS) • Защита сделок гарантом Telegram Escrow",
-        what: "<strong>Что делать:</strong> В @wallet открой <strong>«Купить» → «P2P Маркет»</strong>. Выбери ARS и переведи песо со своего Mercado Pago или банка по Alias/CVU.",
-        why: "<strong>Гарантия:</strong> Telegram блокирует средства продавца до твоего подтверждения перевода.",
-        tip: "<strong>Скорость:</strong> USDT поступают на баланс за пару минут.",
-        actionTxt: "📖 Инструкция по покупке в @wallet",
-        actionUrl: "https://t.me/wallet",
-        icon: "⚡️",
-        mediaTitle: "Перевод в песо (ARS)",
-        mediaDesc: "Оплата через Mercado Pago или местный банк с гарантией безопасности Telegram."
-      },
-      {
-        stepTag: "ШАГ 3 ИЗ 4",
-        tab: "3. Оплата -27%",
-        title: "Оплати в боте со скидкой $6.000 ARS",
-        time: "⏱ ~30 сек",
-        pill: "🎉 Скидка -27% применяется автоматически • Списание в 1 тап",
-        what: "<strong>Что делать:</strong> Перейди в бота <strong>@mrkey_ba_1_bot</strong>, выбери вкусы и нажми «Оплатить через Wallet».",
-        why: "<strong>Чистая выгода:</strong> Цена составит $16.000 ARS вместо $22.000 ARS.",
-        tip: "<strong>Без комиссий:</strong> Перевод внутри Telegram бесплатный и мгновенный.",
-        actionTxt: "🛒 Перейти к заказу в боте",
-        actionUrl: "https://t.me/mrkey_ba_1_bot",
-        icon: "🎉",
-        mediaTitle: "Списание со скидкой -27%",
-        mediaDesc: "Бот автоматически пересчитывает сумму в $16.000 ARS без комиссий."
-      },
-      {
-        stepTag: "ШАГ 4 ИЗ 4",
-        tab: "4. Выдача 24/7",
-        title: "Забери свежие батончики в киоске",
-        time: "⏱ ~2 мин",
-        pill: "❄️ Холодное хранение • Киоски 24/7 в Палермо, Реколете и Бельграно",
-        what: "<strong>Что делать:</strong> Бот моментально выдаст секретный QR-код. Покажи его сотруднику киоска.",
-        why: "<strong>Свежесть:</strong> Все батончики хранятся в холодильниках при идеальной температуре.",
-        tip: "<strong>Гарантия:</strong> Возврат или замена в течение 24ч, если что-то не понравится.",
-        actionTxt: "🍫 Заказать батончики за $16.000 ARS",
-        actionUrl: "https://t.me/mrkey_ba_1_bot",
-        icon: "❄️",
-        mediaTitle: "Ледяная выдача по QR",
-        mediaDesc: "Показываешь QR на экране киоскеру и забираешь свежий охлаждённый шоколад."
-      }
-    ]
+    mFinish: "🍫 Заказать батончики в Telegram-боте ➔",
+    selectAppPrompt: "Выберите кошелек",
+    steps: {
+      lemon: [
+        {
+          tab: "1. Песо",
+          tag: "ШАГ 1 ИЗ 4 • LEMON CASH",
+          time: "⏱ ~2 мин",
+          title: "1. Установите Lemon и переведите песо",
+          pill: "👉 Мгновенное пополнение по CVU или Alias",
+          bullets: [
+            "<strong>1️⃣ Скачайте Lemon:</strong> Установите приложение из App Store или Google Play и пройдите регистрацию по аргентинскому DNI (2 минуты).",
+            "<strong>2️⃣ Скопируйте Alias / CVU:</strong> На главном экране нажмите зелёную кнопку «Depositar» ➔ «Pesos argentinos» ➔ «Copiar CVU / Alias».",
+            "<strong>3️⃣ Переведите песо:</strong> Откройте Mercado Pago или приложение вашего банка и сделайте перевод по скопированному Alias. Баланс пополнится мгновенно."
+          ],
+          tip: "Перевод в песо зачисляется моментально без комиссий банка.",
+          actionTxt: "📲 Скачать / Открыть Lemon Cash",
+          actionUrl: "https://lemon.me/"
+        },
+        {
+          tab: "2. USDT",
+          tag: "ШАГ 2 ИЗ 4 • LEMON CASH",
+          time: "⏱ ~30 сек",
+          title: "2. Обменяйте песо на цифровые доллары (USDT)",
+          pill: "🔄 В 1 тап по живому рыночному курсу",
+          bullets: [
+            "<strong>1️⃣ Кнопка обмена:</strong> В приложении Lemon нажмите кнопку «Cambiar» (или в балансе песо нажмите «Comprar cripto»).",
+            "<strong>2️⃣ Выберите USDT:</strong> Найдите в списке криптовалют USDT (цифровой доллар).",
+            "<strong>3️⃣ Укажите сумму:</strong> Введите сумму в песо — на экране сразу отобразится живой курс и количество USDT.",
+            "<strong>4️⃣ Подтвердите:</strong> Смахните зелёный ползунок вправо: «Cambiar pesos a USDT». Средства сразу зачислятся на криптобаланс."
+          ],
+          tip: "Деньги сохраняются в цифровом долларе без риска инфляции песо.",
+          actionTxt: "📲 Открыть Lemon Cash",
+          actionUrl: "https://lemon.me/"
+        },
+        {
+          tab: "3. Отправка",
+          tag: "ШАГ 3 ИЗ 4 • LEMON CASH",
+          time: "⏱ ~1 мин",
+          title: "3. Отправьте USDT в Telegram-бот",
+          pill: "🚀 Автоматическое подтверждение 24/7",
+          bullets: [
+            "<strong>1️⃣ Отправка:</strong> На главном экране Lemon нажмите «Enviar» ➔ «Criptomonedas a una billetera externa» ➔ выберите USDT.",
+            "<strong>2️⃣ Сеть перевода:</strong> Выберите сеть, которую указал бот (обычно Tron TRC-20 или Polygon).",
+            "<strong>3️⃣ Реквизиты:</strong> Отсканируйте QR-код из бота или вставьте скопированный текстовый адрес кошелька.",
+            "<strong>4️⃣ Подтвердите перевод:</strong> Укажите точную сумму заказа и подтвердите. Оплата подтвердится за 15–30 секунд."
+          ],
+          tip: "Убедитесь, что выбранная сеть (TRC-20 или Polygon) совпадает с указанной в боте.",
+          actionTxt: "🤖 Открыть Telegram-бот",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        },
+        {
+          tab: "4. Выдача 24/7",
+          tag: "ШАГ 4 ИЗ 4 • LEMON CASH",
+          time: "⏱ ~2 мин",
+          title: "4. Заберите холодный батончик в киоске 24/7",
+          pill: "❄️ Идеальное охлаждение в Палермо, Реколете и Бельграно",
+          bullets: [
+            "<strong>1️⃣ QR-код выдачи:</strong> После подтверждения оплаты бот моментально пришлет персональный QR-код и адрес киоска.",
+            "<strong>2️⃣ Круглосуточный забор:</strong> Подойдите к киоску в удобное время, покажите QR-код с экрана и заберите заказ из холодильника.",
+            "<strong>3️⃣ Наслаждайтесь вкусом:</strong> 20г белка, хрустящий миндаль, соленая карамель и бельгийское какао без сахара!"
+          ],
+          tip: "Круглосуточная поддержка в Telegram по любым вопросам (@mr_key_ba1).",
+          actionTxt: "🍫 Заказать батончики в боте",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        }
+      ],
+      belo: [
+        {
+          tab: "1. Песо",
+          tag: "ШАГ 1 ИЗ 4 • BELO APP",
+          time: "⏱ ~2 мин",
+          title: "1. Установите Belo и пополните баланс песо",
+          pill: "👉 Быстрая регистрация по DNI и зачисление в секунды",
+          bullets: [
+            "<strong>1️⃣ Скачайте Belo:</strong> Загрузите belo из App Store или Google Play. Регистрация занимает 2 минуты.",
+            "<strong>2️⃣ Получите реквизиты:</strong> Нажмите «Recibir» (или «Ingresar dinero») ➔ выберите «Pesos argentinos».",
+            "<strong>3️⃣ Перевод:</strong> Скопируйте Alias/CVU от Belo и переведите песо со своего счета Mercado Pago или банка."
+          ],
+          tip: "Belo не берет комиссий за входящие переводы в песо.",
+          actionTxt: "📲 Скачать / Открыть Belo App",
+          actionUrl: "https://belo.app/"
+        },
+        {
+          tab: "2. USDT",
+          tag: "ШАГ 2 ИЗ 4 • BELO APP",
+          time: "⏱ ~30 сек",
+          title: "2. Мгновенный обмен песо на USDT в приложении",
+          pill: "⚡️ Без скрытых комиссий по выгодному курсу",
+          bullets: [
+            "<strong>1️⃣ Вкладка Intercambiar:</strong> В нижнем меню Belo нажмите центральную кнопку обмена (две стрелочки).",
+            "<strong>2️⃣ Направление:</strong> В «Pagar con» укажите ARS (песо), а в «Recibir» выберите USDT.",
+            "<strong>3️⃣ Подтверждение:</strong> Введите сумму и нажмите «Confirmar intercambio». Обмен происходит моментально без скрытых комиссий."
+          ],
+          tip: "Курс фиксируется в реальном времени без скрытых надбавок.",
+          actionTxt: "📲 Открыть Belo App",
+          actionUrl: "https://belo.app/"
+        },
+        {
+          tab: "3. Отправка",
+          tag: "ШАГ 3 ИЗ 4 • BELO APP",
+          time: "⏱ ~1 мин",
+          title: "3. Отправка крипто-оплаты в Telegram-бот",
+          pill: "🔒 Надежная защита и быстрое зачисление",
+          bullets: [
+            "<strong>1️⃣ Перевод:</strong> В Belo нажмите «Transferir» ➔ «A nuevo contacto» ➔ «Criptomonedas» ➔ выберите USDT.",
+            "<strong>2️⃣ Сеть:</strong> Укажите сеть из бота (Tron TRC-20 или Polygon).",
+            "<strong>3️⃣ Адрес:</strong> Наведите камеру на QR-код бота либо вставьте адрес и подтвердите отправку."
+          ],
+          tip: "Проверьте соответствие сети перед подтверждением отправки.",
+          actionTxt: "🤖 Открыть Telegram-бот",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        },
+        {
+          tab: "4. Выдача 24/7",
+          tag: "ШАГ 4 ИЗ 4 • BELO APP",
+          time: "⏱ ~2 мин",
+          title: "4. Заберите свой крафтовый шоколад в киоске 24/7",
+          pill: "🍫 20г белка, хрустящий миндаль и 0 чувства вины",
+          bullets: [
+            "<strong>1️⃣ QR-купон:</strong> Бот автоматически присылает QR-код для выдачи.",
+            "<strong>2️⃣ Выдача 24/7:</strong> Локации в Палермо, Реколете и Бельграно открыты круглосуточно.",
+            "<strong>3️⃣ Идеальная свежесть:</strong> Забирайте холодный батончик за 2 минуты без очередей."
+          ],
+          tip: "Гарантия качества: замена или возврат в течение 24 часов.",
+          actionTxt: "🍫 Заказать батончики в боте",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        }
+      ]
+    }
   },
   en: {
     pageTitle: "Mr. Key — Artisanal Protein Chocolate | Buenos Aires 24/7",
-    metaDesc: "24/7 pickup of sugar-free artisanal protein bars in Buenos Aires kiosks (Palermo, Recoleta, Belgrano). Launch price $16.000 ARS via Telegram Wallet.",
+    metaDesc: "24/7 pickup of sugar-free artisanal protein bars in Buenos Aires kiosks (Palermo, Recoleta, Belgrano). Pay via Lemon or Belo with launch discount.",
     status: "24/7 • Kiosk pickup online",
     brandPill: "MR. KEY • BUENOS AIRES 24/7",
     catchyTitle: 'Belgian artisanal chocolate that breaks the rules: <span class="gradient-shimmer">20g protein & zero guilt</span>',
@@ -2297,86 +2646,163 @@ const PORTAL_I18N = {
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
     hookSave: "-27% OFF",
-    hookMiddle: "Want to save <strong>$6.000 ARS per bar</strong> instantly with Telegram Wallet?",
-    hookBtn: "See how to pay $16.000 in 10 min step-by-step",
+    hookMiddle: "Want to save <strong>$6.000 ARS per bar</strong> paying with Lemon Cash or Belo?",
+    hookBtn: "See step-by-step guide for Lemon & Belo",
     btnOrder: "🚀 Order directly in Telegram Bot",
     btnSupport: "💬 Support (@mr_key_ba1)",
     desktopQrTitle: "📱 Order with your phone",
     desktopQrDesc: "Scan with camera to open Telegram order bot",
     footer: "© 2026 Mr. Key • Buenos Aires, Argentina • 24/7 Autonomous System",
-    modalPretag: "⚡️ STEP-BY-STEP BEGINNER'S GUIDE",
-    modalTitle: "How to pay $16.000 ARS in 10 minutes?",
-    modalSub: "First-time setup only • 100% Guided and safe in Telegram",
+    modalPretag: "⚡️ STEP-BY-STEP PESO GUIDE",
+    modalTitle: "How to pay via Lemon Cash or Belo?",
+    modalSub: "Guided text instructions • Zero technical jargon",
+    appSelectPrompt: "Choose which app you prefer to view the step-by-step text guide:",
+    badgeLemon: "MOST POPULAR IN ARGENTINA",
+    descLemon: "Top up pesos via Mercado Pago or bank and buy USDT in 1 tap.",
+    ctaLemon: "View Lemon Cash guide",
+    badgeBelo: "FAST & ZERO COMMISSIONS",
+    descBelo: "Instant peso-to-USDT conversion with live fair rates via CVU/Alias.",
+    ctaBelo: "View Belo App guide",
+    btnChangeApp: "↺ Switch app",
     mPrev: "← Previous",
     mNext: "Next step →",
-    mFinish: "🍫 Order bars for $16.000 ARS ➔",
-    steps: [
-      {
-        stepTag: "STEP 1 OF 4",
-        tab: "1. @wallet",
-        title: "Open official @wallet in Telegram",
-        time: "⏱ ~15 sec",
-        pill: "👉 Built directly into Telegram • No third-party apps or initial KYC",
-        what: "<strong>What to do:</strong> Tap the button below or search for <strong>@wallet</strong> in Telegram. It is official and safe.",
-        why: "<strong>Security:</strong> No need to register on exchanges or link bank cards.",
-        tip: "<strong>Fast:</strong> The wallet activates in 1 click and lives in your Telegram chats.",
-        actionTxt: "🚀 Open @wallet in Telegram",
-        actionUrl: "https://t.me/wallet",
-        icon: "💳",
-        mediaTitle: "1-Tap @wallet Activation",
-        mediaDesc: "Launches directly in your Telegram chats without forms or app downloads."
-      },
-      {
-        stepTag: "STEP 2 OF 4",
-        tab: "2. Mercado Pago",
-        title: "Top up Pesos via Mercado Pago or Bank",
-        time: "⏱ ~3-5 min",
-        pill: "💳 Pay in ARS Pesos • Telegram Escrow buyer protection",
-        what: "<strong>What to do:</strong> In @wallet tap <strong>«Buy» → «P2P Market»</strong>. Pick ARS and send pesos via Alias/CVU.",
-        why: "<strong>Safe:</strong> Telegram securely locks seller USDT until you confirm sending pesos.",
-        tip: "<strong>Instant:</strong> Funds arrive in your wallet balance within minutes.",
-        actionTxt: "📖 How to buy USDT in @wallet",
-        actionUrl: "https://t.me/wallet",
-        icon: "⚡️",
-        mediaTitle: "Peso (ARS) Escrow Top-up",
-        mediaDesc: "Pay via Mercado Pago or local bank with Telegram Escrow protection."
-      },
-      {
-        stepTag: "STEP 3 OF 4",
-        tab: "3. Pay -27%",
-        title: "Pay in bot with $6.000 ARS discount",
-        time: "⏱ ~30 sec",
-        pill: "🎉 27% OFF auto-applied • 1-Tap checkout",
-        what: "<strong>What to do:</strong> Open our bot <strong>@mrkey_ba_1_bot</strong>, pick your flavors and tap «Pay with Wallet».",
-        why: "<strong>Discount:</strong> Pay $16.000 ARS instead of $22.000 ARS ($6.000 savings per bar).",
-        tip: "<strong>Zero fees:</strong> Direct Telegram transfers are free of network fees.",
-        actionTxt: "🛒 Open order bot in Telegram",
-        actionUrl: "https://t.me/mrkey_ba_1_bot",
-        icon: "🎉",
-        mediaTitle: "Instant -27% OFF Checkout",
-        mediaDesc: "The bot automatically applies the $6.000 discount with zero gas fees."
-      },
-      {
-        stepTag: "STEP 4 OF 4",
-        tab: "4. Pickup 24/7",
-        title: "Pick up your cold protein bars at kiosk",
-        time: "⏱ ~2 min",
-        pill: "❄️ Sub-zero fridge • 24/7 kiosks in Palermo, Recoleta & Belgrano",
-        what: "<strong>What to do:</strong> The bot generates your QR pickup voucher. Show it at the partner kiosk.",
-        why: "<strong>Peak taste:</strong> All bars are kept chilled to preserve chocolate crunch.",
-        tip: "<strong>Guarantee:</strong> Full 24h refund or replacement if you're not delighted.",
-        actionTxt: "🍫 Order bars for $16.000 ARS",
-        actionUrl: "https://t.me/mrkey_ba_1_bot",
-        icon: "❄️",
-        mediaTitle: "Ice-Cold Kiosk QR Pickup",
-        mediaDesc: "Present your QR code voucher and receive your chilled craft chocolate bar."
-      }
-    ]
+    mFinish: "🍫 Order bars in Telegram Bot ➔",
+    selectAppPrompt: "Choose wallet app",
+    steps: {
+      lemon: [
+        {
+          tab: "1. Pesos",
+          tag: "STEP 1 OF 4 • LEMON CASH",
+          time: "⏱ ~2 min",
+          title: "1. Open Lemon & transfer pesos",
+          pill: "👉 Instant credit via CVU or Alias with zero fee",
+          bullets: [
+            "<strong>1️⃣ Open Lemon:</strong> Download Lemon Cash from the App Store or Google Play and verify with your Argentine DNI (takes 2 minutes).",
+            "<strong>2️⃣ Copy your Alias / CVU:</strong> Tap the green «Depositar» button ➔ select «Pesos argentinos» ➔ tap «Copiar CVU / Alias».",
+            "<strong>3️⃣ Transfer pesos:</strong> Open Mercado Pago or your bank app and transfer pesos to that Alias. Funds arrive immediately."
+          ],
+          tip: "Transfers in pesos arrive in seconds without any bank transfer fee.",
+          actionTxt: "📲 Download / Open Lemon Cash",
+          actionUrl: "https://lemon.me/"
+        },
+        {
+          tab: "2. USDT",
+          tag: "STEP 2 OF 4 • LEMON CASH",
+          time: "⏱ ~30 sec",
+          title: "2. Convert pesos to Digital Dollars (USDT)",
+          pill: "🔄 1-Tap live market rate conversion",
+          bullets: [
+            "<strong>1️⃣ Exchange Menu:</strong> Tap the central «Cambiar» button (or open your peso balance and tap «Comprar cripto»).",
+            "<strong>2️⃣ Choose USDT:</strong> Select USDT (Digital Dollar) from the crypto list.",
+            "<strong>3️⃣ Enter amount:</strong> Type the peso amount you transferred. You will see live pricing and USDT received.",
+            "<strong>4️⃣ Confirm:</strong> Slide the green bar to confirm: «Cambiar pesos a USDT». Your USDT arrives instantly."
+          ],
+          tip: "Your balance is locked in digital USD with no inflation risk.",
+          actionTxt: "📲 Open Lemon Cash",
+          actionUrl: "https://lemon.me/"
+        },
+        {
+          tab: "3. Send",
+          tag: "STEP 3 OF 4 • LEMON CASH",
+          time: "⏱ ~1 min",
+          title: "3. Send USDT to the Telegram Bot",
+          pill: "🚀 24/7 Automated blockchain confirmation",
+          bullets: [
+            "<strong>1️⃣ Send Button:</strong> On Lemon's home screen tap «Enviar» ➔ choose «Criptomonedas a una billetera externa» ➔ select USDT.",
+            "<strong>2️⃣ Select Network:</strong> Pick the network requested by the bot (TRC-20 Tron or Polygon).",
+            "<strong>3️⃣ Scan or Paste:</strong> Scan the QR code given by the bot or paste the wallet address.",
+            "<strong>4️⃣ Confirm:</strong> Enter the order amount and confirm. The blockchain verifies payment in 15–30 seconds."
+          ],
+          tip: "Always double-check that the network (TRC-20 or Polygon) matches the bot's request.",
+          actionTxt: "🤖 Open Telegram Bot",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        },
+        {
+          tab: "4. Pickup 24/7",
+          tag: "STEP 4 OF 4 • LEMON CASH",
+          time: "⏱ ~2 min",
+          title: "4. Pick up your cold protein bar at the 24/7 kiosk",
+          pill: "❄️ Ice-cold sub-zero storage in Palermo, Recoleta & Belgrano",
+          bullets: [
+            "<strong>1️⃣ Get Pickup Voucher:</strong> The bot automatically sends your secret QR voucher code and kiosk location.",
+            "<strong>2️⃣ Visit Anytime:</strong> Head to the 24/7 kiosk whenever you want, display the QR code and receive your bar.",
+            "<strong>3️⃣ Pure Taste:</strong> Belgian craft chocolate with 20g pure protein and salted caramel crunch."
+          ],
+          tip: "Direct human Telegram support available 24/7 (@mr_key_ba1).",
+          actionTxt: "🍫 Order bars in Telegram Bot",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        }
+      ],
+      belo: [
+        {
+          tab: "1. Pesos",
+          tag: "STEP 1 OF 4 • BELO APP",
+          time: "⏱ ~2 min",
+          title: "1. Open Belo & deposit pesos",
+          pill: "👉 Quick DNI signup and instant credit",
+          bullets: [
+            "<strong>1️⃣ Open Belo:</strong> Download the belo app from App Store or Google Play. Free 2-minute registration.",
+            "<strong>2️⃣ Get your CVU / Alias:</strong> On the home screen tap «Recibir» (or «Ingresar dinero») ➔ select «Pesos argentinos».",
+            "<strong>3️⃣ Transfer pesos:</strong> Copy your Belo Alias/CVU and transfer pesos from Mercado Pago or local bank."
+          ],
+          tip: "Belo charges zero fees for receiving peso bank transfers.",
+          actionTxt: "📲 Download / Open Belo App",
+          actionUrl: "https://belo.app/"
+        },
+        {
+          tab: "2. USDT",
+          tag: "STEP 2 OF 4 • BELO APP",
+          time: "⏱ ~30 sec",
+          title: "2. Exchange pesos to USDT inside Belo",
+          pill: "⚡️ Zero hidden commissions at fair live rate",
+          bullets: [
+            "<strong>1️⃣ Swap Button:</strong> In the bottom navigation tap the center «Intercambiar» icon (two arrows).",
+            "<strong>2️⃣ Set currencies:</strong> Set «Pagar con» to ARS (pesos) and «Recibir» to USDT.",
+            "<strong>3️⃣ Confirm swap:</strong> Enter your amount and tap «Confirmar intercambio». Done in 1 second."
+          ],
+          tip: "Transparent real-time pricing without hidden markups.",
+          actionTxt: "📲 Open Belo App",
+          actionUrl: "https://belo.app/"
+        },
+        {
+          tab: "3. Send",
+          tag: "STEP 3 OF 4 • BELO APP",
+          time: "⏱ ~1 min",
+          title: "3. Transfer USDT to the Telegram Bot",
+          pill: "🔒 Blockchain protection and instant order release",
+          bullets: [
+            "<strong>1️⃣ Transfer Menu:</strong> On Belo's home screen tap «Transferir» ➔ select «A nuevo contacto» ➔ «Criptomonedas».",
+            "<strong>2️⃣ Choose USDT & Network:</strong> Pick USDT and the network indicated by the bot (Tron TRC-20 or Polygon).",
+            "<strong>3️⃣ Scan QR or Paste:</strong> Scan the bot's QR code or paste the address and confirm.",
+            "<strong>4️⃣ Send:</strong> The blockchain confirms transaction within seconds."
+          ],
+          tip: "Make sure you choose the exact network requested by the bot.",
+          actionTxt: "🤖 Open Telegram Bot",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        },
+        {
+          tab: "4. Pickup 24/7",
+          tag: "STEP 4 OF 4 • BELO APP",
+          time: "⏱ ~2 min",
+          title: "4. Show QR voucher & enjoy chilled artisan chocolate",
+          pill: "🍫 20g clean protein, real dark chocolate & 0 guilt",
+          bullets: [
+            "<strong>1️⃣ Digital Voucher:</strong> The bot issues your QR pickup pass right after confirmation.",
+            "<strong>2️⃣ 24/7 Pickup:</strong> Go to any affiliated kiosk in Palermo, Recoleta or Belgrano at your convenience.",
+            "<strong>3️⃣ Instant handoff:</strong> Show the QR voucher on your phone and receive your chilled bar."
+          ],
+          tip: "24-hour satisfaction replacement or refund guarantee.",
+          actionTxt: "🍫 Order bars in Telegram Bot",
+          actionUrl: "https://t.me/mrkey_ba_1_bot"
+        }
+      ]
+    }
   }
 };
 
 let currentLang = 'es';
-let mStepIdx = 0;
+let selectedGuideApp = null; // null = App selection screen, 'lemon' | 'belo' = step screen
+let currentStepIdx = 0; // 0..3
 
 function setLang(lang) {
   if (!PORTAL_I18N[lang]) lang = 'es';
@@ -2419,12 +2845,20 @@ function setLang(lang) {
   setT('m-pretag', data.modalPretag);
   setT('m-title', data.modalTitle);
   setT('m-subtitle', data.modalSub);
+  setT('app-select-prompt', data.appSelectPrompt);
+  setT('badge-lemon', data.badgeLemon);
+  setT('desc-lemon', data.descLemon);
+  setT('cta-lemon', data.ctaLemon);
+  setT('badge-belo', data.badgeBelo);
+  setT('desc-belo', data.descBelo);
+  setT('cta-belo', data.ctaBelo);
+  setT('btn-change-app', data.btnChangeApp);
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${lang}'`));
   });
 
-  renderModalStep();
+  renderModalState();
 }
 
 function openStepModal() {
@@ -2432,7 +2866,7 @@ function openStepModal() {
   if (modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    renderModalStep();
+    renderModalState();
   }
 }
 
@@ -2454,22 +2888,48 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeStepModal();
 });
 
+function selectGuideApp(app) {
+  selectedGuideApp = (app === 'belo') ? 'belo' : 'lemon';
+  currentStepIdx = 0;
+  renderModalState();
+}
+
+function switchGuideApp(app) {
+  selectedGuideApp = (app === 'belo') ? 'belo' : 'lemon';
+  renderModalState();
+}
+
+function goToAppSelect() {
+  selectedGuideApp = null;
+  renderModalState();
+}
+
 function setMStep(idx) {
-  mStepIdx = Math.max(0, Math.min(3, idx));
-  renderModalStep();
+  if (selectedGuideApp === null) selectedGuideApp = 'lemon';
+  currentStepIdx = Math.max(0, Math.min(3, idx));
+  renderModalState();
 }
 
 function prevMStep() {
-  if (mStepIdx > 0) {
-    mStepIdx--;
-    renderModalStep();
+  if (selectedGuideApp === null) return;
+  if (currentStepIdx > 0) {
+    currentStepIdx--;
+    renderModalState();
+  } else {
+    // If on Step 0 of an app, back button goes to App Selection
+    goToAppSelect();
   }
 }
 
 function nextMStep() {
-  if (mStepIdx < 3) {
-    mStepIdx++;
-    renderModalStep();
+  if (selectedGuideApp === null) {
+    // Default to lemon if user clicks next on selection screen
+    selectGuideApp('lemon');
+    return;
+  }
+  if (currentStepIdx < 3) {
+    currentStepIdx++;
+    renderModalState();
   } else {
     // Finish step: open bot directly
     window.open('https://t.me/mrkey_ba_1_bot', '_blank');
@@ -2477,82 +2937,139 @@ function nextMStep() {
   }
 }
 
-function renderModalStep() {
+function renderModalState() {
   const langData = PORTAL_I18N[currentLang] || PORTAL_I18N['es'];
-  const cur = langData.steps[mStepIdx];
-  if (!cur) return;
+  const screenSelect = document.getElementById('screen-app-select');
+  const screenStep = document.getElementById('screen-step-content');
+  const appNav = document.getElementById('m-app-nav');
+  const trackerBar = document.getElementById('m-tracker-bar');
+  const prevBtn = document.getElementById('m-prev-btn');
+  const nextBtn = document.getElementById('m-next-btn');
+  const indicator = document.getElementById('m-indicator');
 
   const setT = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerText = val; };
   const setH = (id, val) => { const el = document.getElementById(id); if (el && val) el.innerHTML = val; };
 
-  // Trigger step slide animation
-  const stepBody = document.getElementById('modal-step-body');
-  if (stepBody) {
-    stepBody.classList.remove('step-fade-anim');
-    void stepBody.offsetWidth; // trigger reflow
-    stepBody.classList.add('step-fade-anim');
-  }
+  if (selectedGuideApp === null) {
+    // SHOW SCREEN 0: APP SELECTION
+    if (screenSelect) screenSelect.style.display = 'flex';
+    if (screenStep) screenStep.style.display = 'none';
+    if (appNav) appNav.style.display = 'none';
+    if (trackerBar) trackerBar.style.display = 'none';
 
-  setT('m-step-tag', cur.stepTag);
-  setT('m-time-tag', cur.time);
-  setT('m-step-title', cur.title);
-  setT('m-step-pill', cur.pill);
-  setH('m-what', cur.what);
-  setH('m-why', cur.why);
-  setH('m-tip', cur.tip);
+    if (prevBtn) prevBtn.style.visibility = 'hidden';
+    if (nextBtn) {
+      nextBtn.style.visibility = 'visible';
+      nextBtn.innerText = langData.ctaLemon;
+    }
+    if (indicator) indicator.innerText = langData.selectAppPrompt;
+  } else {
+    // SHOW SCREEN 1..4: STEP CONTENT
+    if (screenSelect) screenSelect.style.display = 'none';
+    if (screenStep) screenStep.style.display = 'flex';
+    if (appNav) appNav.style.display = 'flex';
+    if (trackerBar) trackerBar.style.display = 'flex';
 
-  const actBtn = document.getElementById('m-action-btn');
-  if (actBtn) {
-    actBtn.innerHTML = `<span>${cur.actionTxt}</span>`;
-    actBtn.href = cur.actionUrl;
-  }
+    // Update active app tab
+    const tabLemon = document.getElementById('tab-lemon');
+    const tabBelo = document.getElementById('tab-belo');
+    if (tabLemon) tabLemon.className = 'm-app-tab' + (selectedGuideApp === 'lemon' ? ' active tab-lemon' : '');
+    if (tabBelo) tabBelo.className = 'm-app-tab' + (selectedGuideApp === 'belo' ? ' active tab-belo' : '');
 
-  setT('m-media-icon', cur.icon || '🎬');
-  setT('m-media-title', cur.mediaTitle);
-  setT('m-media-desc', cur.mediaDesc);
+    const appSteps = langData.steps[selectedGuideApp] || langData.steps['lemon'];
+    const cur = appSteps[currentStepIdx];
+    if (!cur) return;
 
-  const prevBtn = document.getElementById('m-prev-btn');
-  if (prevBtn) {
-    prevBtn.style.visibility = (mStepIdx === 0) ? 'hidden' : 'visible';
-    prevBtn.innerText = langData.mPrev;
-  }
+    // Trigger step slide animation
+    const stepBody = document.getElementById('modal-step-body');
+    if (stepBody) {
+      stepBody.classList.remove('step-fade-anim');
+      void stepBody.offsetWidth; // trigger reflow
+      stepBody.classList.add('step-fade-anim');
+    }
 
-  const nextBtn = document.getElementById('m-next-btn');
-  if (nextBtn) {
-    nextBtn.innerText = (mStepIdx === 3) ? langData.mFinish : langData.mNext;
-  }
+    setT('m-step-tag', cur.tag);
+    setT('m-time-tag', cur.time);
+    setT('m-step-title', cur.title);
+    setT('m-step-pill', cur.pill);
 
-  setT('m-indicator', `${cur.stepTag}`);
+    // Render clean text bullets
+    const bulletsContainer = document.getElementById('m-bullets');
+    if (bulletsContainer && cur.bullets) {
+      bulletsContainer.innerHTML = cur.bullets.map(b => `
+        <div class="m-bullet-item">
+          <div class="m-bullet-text">${b}</div>
+        </div>
+      `).join('');
+    }
 
-  // Tracker nodes and fill
-  const pct = (mStepIdx / (langData.steps.length - 1)) * 100;
-  const fill = document.getElementById('m-progress-fill');
-  if (fill) fill.style.width = pct + "%";
-
-  for (let i = 0; i < 4; i++) {
-    const node = document.querySelector(`.m-step-node:nth-child(${i + 3})`);
-    const circle = document.getElementById(`m-node-${i}`);
-    const tabLabel = document.getElementById(`m-tab-${i}`);
-    if (tabLabel && langData.steps[i]) tabLabel.innerText = langData.steps[i].tab;
-    
-    if (node && circle) {
-      if (i < mStepIdx) {
-        node.className = "m-step-node done";
-        circle.innerHTML = "✓";
-      } else if (i === mStepIdx) {
-        node.className = "m-step-node active";
-        circle.innerHTML = (i + 1);
+    // Render tip box
+    const tipBox = document.getElementById('m-tip-box');
+    const tipText = document.getElementById('m-tip-text');
+    if (tipBox && tipText) {
+      if (cur.tip) {
+        tipBox.style.display = 'flex';
+        tipText.innerText = cur.tip;
       } else {
-        node.className = "m-step-node";
-        circle.innerHTML = (i + 1);
+        tipBox.style.display = 'none';
+      }
+    }
+
+    // Render action button
+    const actBtn = document.getElementById('m-action-btn');
+    if (actBtn) {
+      actBtn.innerHTML = `<span>${cur.actionTxt}</span>`;
+      actBtn.href = cur.actionUrl;
+    }
+
+    // Navigation buttons
+    if (prevBtn) {
+      prevBtn.style.visibility = 'visible';
+      prevBtn.innerText = langData.mPrev;
+    }
+    if (nextBtn) {
+      nextBtn.style.visibility = 'visible';
+      nextBtn.innerText = (currentStepIdx === 3) ? langData.mFinish : langData.mNext;
+    }
+
+    const appName = selectedGuideApp === 'lemon' ? 'Lemon Cash' : 'Belo App';
+    if (indicator) indicator.innerText = `${cur.tab} • ${appName}`;
+
+    // Tracker nodes and fill
+    const pct = (currentStepIdx / 3) * 100;
+    const fill = document.getElementById('m-progress-fill');
+    if (fill) fill.style.width = pct + "%";
+
+    for (let i = 0; i < 4; i++) {
+      const node = document.querySelector(`.m-step-node:nth-child(${i + 3})`);
+      const circle = document.getElementById(`m-node-${i}`);
+      const tabLabel = document.getElementById(`m-tab-${i}`);
+      if (tabLabel && appSteps[i]) tabLabel.innerText = appSteps[i].tab;
+      
+      if (node && circle) {
+        if (i < currentStepIdx) {
+          node.className = "m-step-node done";
+          circle.innerHTML = "✓";
+        } else if (i === currentStepIdx) {
+          node.className = "m-step-node active";
+          circle.innerHTML = (i + 1);
+        } else {
+          node.className = "m-step-node";
+          circle.innerHTML = (i + 1);
+        }
       }
     }
   }
 }
 
-// ALWAYS DEFAULT TO SPANISH ('es') INITIALLY AS REQUESTED
+// Check feature flag for ?variants=1 or ?dev=1 to conditionally show design switcher
 document.addEventListener('DOMContentLoaded', () => {
-  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('variants') === '1' || urlParams.get('dev') === '1' || urlParams.get('preview') === 'all') {
+    document.body.classList.add('show-variants-flag');
+  }
+
+  const urlLang = urlParams.get('lang');
   const initialLang = (urlLang === 'ru' || urlLang === 'en') ? urlLang : 'es';
   setLang(initialLang);
 });
