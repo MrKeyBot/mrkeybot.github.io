@@ -959,13 +959,19 @@
       letter-spacing: -0.005em;
     }
 
-    /* 3 FEATURES IN 1 ROW SPANNING FULL WIDTH MATCHING CARD BELOW */
+    /* 4 FEATURES IN 1 ROW SPANNING FULL WIDTH (Chocolates & Flores) */
     .hero-features-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       width: 100%;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 14px;
+    }
+    @media (max-width: 680px) {
+      .hero-features-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
     }
     .feat-badge {
       display: flex;
@@ -1203,6 +1209,295 @@
       background: rgba(255, 255, 255, 0.18);
       color: #FFFFFF;
       transform: translateY(-2px);
+    }
+
+    /* --- PROMINENT HIGH-VISIBILITY WHATSAPP BUTTON --- */
+    .btn-whatsapp-prominent {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.22) 0%, rgba(18, 140, 126, 0.32) 100%);
+      border: 2px solid #25D366;
+      border-radius: 16px;
+      padding: 12px 18px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      text-decoration: none;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.75), 0 0 25px rgba(37, 211, 102, 0.35);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .btn-whatsapp-prominent:hover {
+      transform: translateY(-2px) scale(1.008);
+      border-color: #4ADE80;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85), 0 0 40px rgba(37, 211, 102, 0.6);
+      filter: brightness(1.06);
+    }
+    .wa-prominent-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .wa-icon-glow {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.5);
+    }
+    .wa-info-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: left;
+    }
+    .wa-sub-label {
+      font-size: 11px;
+      font-weight: 800;
+      color: #86EFAC;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .wa-phone-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 950;
+      color: #FFFFFF;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    }
+    .wa-prominent-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .wa-live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37, 211, 102, 0.25);
+      border: 1px solid #25D366;
+      color: #86EFAC;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+    .wa-pulse-circle {
+      width: 8px;
+      height: 8px;
+      background: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #25D366;
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .wa-arrow {
+      color: #86EFAC;
+      font-size: 16px;
+      font-weight: 900;
+      transition: transform 0.2s ease;
+    }
+    .btn-whatsapp-prominent:hover .wa-arrow {
+      transform: translateX(4px);
+      color: #FFFFFF;
+    }
+
+    /* --- FLOWERS SHOWCASE BANNER --- */
+    .flowers-banner-card {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.12) 0%, rgba(168, 85, 247, 0.08) 50%, rgba(20, 14, 10, 0.85) 100%);
+      border: 1.5px solid rgba(244, 114, 182, 0.45);
+      border-radius: 18px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 20px rgba(236, 72, 153, 0.15);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .flowers-banner-card:hover {
+      border-color: rgba(244, 114, 182, 0.85);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), 0 0 30px rgba(236, 72, 153, 0.25);
+    }
+    .flowers-banner-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(244, 114, 182, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .flowers-banner-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+    }
+    .flowers-emoji-box {
+      font-size: 28px;
+      line-height: 1;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(244, 114, 182, 0.15);
+      border: 1px solid rgba(244, 114, 182, 0.35);
+      border-radius: 14px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(236, 72, 153, 0.2);
+    }
+    .flowers-text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: left;
+    }
+    .flowers-tag-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .flowers-badge-tag {
+      font-size: 10px;
+      font-weight: 900;
+      color: #FDF2F8;
+      background: linear-gradient(135deg, #EC4899 0%, #DB2777 100%);
+      padding: 2.5px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(236, 72, 153, 0.4);
+    }
+    .flowers-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 850;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+    .flowers-desc {
+      font-size: 12.5px;
+      color: #E2E8F0;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .btn-flowers-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 16px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      border: 1px solid #4ADE80;
+      border-radius: 12px;
+      color: #FFFFFF;
+      font-size: 12.5px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: all 0.22s ease;
+      cursor: pointer;
+    }
+    .btn-flowers-wa:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.6);
+    }
+
+    /* --- FLOATING WHATSAPP PILL --- */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 9999px;
+      border: 1.5px solid #86EFAC;
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.55), 0 4px 12px rgba(0, 0, 0, 0.6);
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      backdrop-filter: blur(10px);
+    }
+    .floating-wa-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 12px 38px rgba(37, 211, 102, 0.75), 0 6px 16px rgba(0, 0, 0, 0.7);
+      filter: brightness(1.08);
+      color: #FFFFFF;
+    }
+    .floating-wa-btn svg {
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+
+    @media (max-width: 640px) {
+      .flowers-banner-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 12px 14px;
+      }
+      .btn-flowers-wa {
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .btn-whatsapp-prominent {
+        padding: 10px 14px;
+      }
+      .wa-icon-glow {
+        width: 38px;
+        height: 38px;
+      }
+      .wa-phone-number {
+        font-size: 17px;
+      }
+      .wa-sub-label {
+        font-size: 10px;
+      }
+      .wa-live-pill {
+        display: none;
+      }
+      .floating-wa-btn {
+        bottom: 16px;
+        right: 16px;
+        padding: 9px 14px;
+        font-size: 12.5px;
+      }
     }
 
     /* QR CODE UNDER THE RIGHT BLOCK AT THE BOTTOM */
@@ -1889,6 +2184,15 @@
       .status-badge {
         position: static;
         margin: 0 auto;
+        max-width: 100%;
+        font-size: 10.5px;
+        padding: 5px 14px;
+        white-space: nowrap;
+      }
+      .status-badge span:last-child {
+        overflow: visible;
+        text-overflow: clip;
+        white-space: nowrap;
       }
       .lang-switcher {
         position: static;
@@ -2062,7 +2366,7 @@
       <!-- 24/7 Status Beacon -->
       <div class="status-badge">
         <span class="pulse-dot"></span>
-        <span id="txt-status">24/7 • Retiro en kioscos online</span>
+        <span id="txt-status">24/7 • Retiro autónomo online</span>
       </div>
 
       <!-- Language Switcher -->
@@ -2083,7 +2387,7 @@
             <div class="brand-mini-circle">
               <img src="mrkey-logo.png" alt="Mr. Key">
             </div>
-            <span class="brand-pill-text" id="txt-brand-pill">MR. KEY • BUENOS AIRES 24/7</span>
+            <span class="brand-pill-text" id="txt-brand-pill">MR. KEY • CHOCOLATES & FLORES 24/7</span>
           </div>
 
           <!-- Bigger, Catchier Main Headline with Gradient Shimmer -->
@@ -2091,10 +2395,10 @@
             Puro placer belga. 20g de proteína. <span class="gradient-shimmer">Cero culpa.</span>
           </h1>
           <p class="catchy-subtitle" id="txt-catchy-subtitle">
-            El primer chocolate artesanal de Buenos Aires con caramelo salado crocante y cacao negro belga 100% natural, sin azúcar agregada. Pedilo en 1 clic y retiralo helado en quioscos 24/7 en 2 minutos.
+            El primer chocolate artesanal de Buenos Aires con caramelo salado crocante y cacao negro belga 100% natural, sin azúcar agregada. Pedilo en 1 clic y retiralo de forma 100% autónoma las 24/7 en 2 minutos.
           </p>
 
-          <!-- 3 Features in 1 Row Spanning Full Width (Matching Card Below) -->
+          <!-- 4 Features in 1 Row Spanning Full Width (Matching Card Below) -->
           <div class="hero-features-row">
             <div class="feat-badge">
               <span class="icon">🍫</span>
@@ -2107,6 +2411,10 @@
             <div class="feat-badge">
               <span class="icon">🌿</span>
               <span class="feat-text" id="feat-3">0% Azúcar • Sin TACC</span>
+            </div>
+            <div class="feat-badge">
+              <span class="icon">💐</span>
+              <span class="feat-text" id="feat-4">Flores frescas 24/7</span>
             </div>
           </div>
 
@@ -2132,6 +2440,44 @@
               <div class="arrow-circle">➔</div>
             </div>
           </div>
+
+          <!-- FRESH FLOWERS SHOWCASE BANNER -->
+          <div class="flowers-banner-card">
+            <div class="flowers-banner-left">
+              <div class="flowers-emoji-box">💐</div>
+              <div class="flowers-text-content">
+                <div class="flowers-tag-row">
+                  <span class="flowers-badge-tag">NUEVO • DISPONIBLE 24/7</span>
+                  <span class="flowers-title" id="txt-flowers-title">¡También vendemos Flores Frescas!</span>
+                </div>
+                <p class="flowers-desc" id="txt-flowers-desc">
+                  Ramos de autor y flores frescas de estación seleccionadas. Retiro autónomo 24/7 o envíos directos. Consultá modelos y encargá en 1 clic.
+                </p>
+              </div>
+            </div>
+            <a href="https://wa.me/5491130127047?text=Hola!%20Quiero%20consultar%20por%20las%20flores%20y%20chocolates" class="btn-flowers-wa" target="_blank" rel="noopener noreferrer">
+              <span id="txt-flowers-btn">Pedir flores por WhatsApp ➔</span>
+            </a>
+          </div>
+
+          <!-- PROMINENT HIGH-VISIBILITY WHATSAPP DIRECT CONTACT BUTTON -->
+          <a href="https://wa.me/5491130127047" class="btn-whatsapp-prominent" target="_blank" rel="noopener noreferrer">
+            <div class="wa-prominent-left">
+              <div class="wa-icon-glow">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.9 8 8.5 8 9.72C8 10.94 8.89 12.12 9.01 12.28C9.13 12.44 10.74 14.93 13.22 16C13.81 16.25 14.27 16.41 14.63 16.52C15.22 16.71 15.76 16.68 16.19 16.62C16.67 16.55 17.66 16.02 17.86 15.44C18.07 14.86 18.07 14.37 18.01 14.26C17.95 14.15 17.79 14.09 17.54 13.97C17.29 13.85 16.06 13.24 15.83 13.16C15.6 13.07 15.44 13.03 15.27 13.28C15.11 13.53 14.64 14.09 14.5 14.25C14.36 14.42 14.22 14.44 13.97 14.31C13.72 14.19 12.92 13.93 11.97 13.08C11.23 12.42 10.73 11.61 10.59 11.36C10.44 11.11 10.57 10.98 10.7 10.85C10.81 10.74 10.95 10.55 11.07 10.41C11.19 10.27 11.24 10.17 11.32 10.01C11.4 9.85 11.36 9.71 11.3 9.59C11.24 9.47 10.75 8.27 10.54 7.78C10.34 7.3 10.13 7.37 9.97 7.36C9.82 7.35 9.68 7.34 9.53 7.34Z"/>
+                </svg>
+              </div>
+              <div class="wa-info-text">
+                <div class="wa-sub-label" id="txt-wa-label">💬 WhatsApp Directo 24/7 (Pedidos y Consultas)</div>
+                <div class="wa-phone-number">+54 9 11 3012-7047</div>
+              </div>
+            </div>
+            <div class="wa-prominent-right">
+              <span class="wa-live-pill"><span class="wa-pulse-circle"></span> ONLINE</span>
+              <span class="wa-arrow">➔</span>
+            </div>
+          </a>
 
           <!-- Main Action Buttons -->
           <div class="hero-actions-grid">
@@ -2161,6 +2507,14 @@
     © 2026 Mr. Key • Buenos Aires, Argentina • Sistema autónomo 24/7
   </div>
 </main>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/5491130127047" class="floating-wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp +5491130127047">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.53 7.34C9.36 7.34 9.09 7.4 8.87 7.65C8.64 7.9 8 8.5 8 9.72C8 10.94 8.89 12.12 9.01 12.28C9.13 12.44 10.74 14.93 13.22 16C13.81 16.25 14.27 16.41 14.63 16.52C15.22 16.71 15.76 16.68 16.19 16.62C16.67 16.55 17.66 16.02 17.86 15.44C18.07 14.86 18.07 14.37 18.01 14.26C17.95 14.15 17.79 14.09 17.54 13.97C17.29 13.85 16.06 13.24 15.83 13.16C15.6 13.07 15.44 13.03 15.27 13.28C15.11 13.53 14.64 14.09 14.5 14.25C14.36 14.42 14.22 14.44 13.97 14.31C13.72 14.19 12.92 13.93 11.97 13.08C11.23 12.42 10.73 11.61 10.59 11.36C10.44 11.11 10.57 10.98 10.7 10.85C10.81 10.74 10.95 10.55 11.07 10.41C11.19 10.27 11.24 10.17 11.32 10.01C11.4 9.85 11.36 9.71 11.3 9.59C11.24 9.47 10.75 8.27 10.54 7.78C10.34 7.3 10.13 7.37 9.97 7.36C9.82 7.35 9.68 7.34 9.53 7.34Z"/>
+    </svg>
+    <span class="floating-wa-text">+54 9 11 3012-7047</span>
+  </a>
 
   <!-- Interactive Multilingual & Layout Engine (Default: ES) -->
   
@@ -2302,15 +2656,20 @@
 <script>
 const PORTAL_I18N = {
   es: {
-    pageTitle: "Mr. Key — Chocolate Proteico Artesanal | Buenos Aires 24/7",
-    metaDesc: "Retiro 24/7 de barras proteicas artesanales sin azúcar en quioscos de Buenos Aires (Palermo, Recoleta, Belgrano). Pagá con Lemon o Belo con descuento de lanzamiento.",
-    status: "24/7 • Retiro en quioscos online",
-    brandPill: "MR. KEY • BUENOS AIRES 24/7",
+    pageTitle: "Mr. Key — Chocolate Proteico Artesanal & Flores | Buenos Aires 24/7",
+    metaDesc: "Retiro autónomo 24/7 de barras proteicas artesanales sin azúcar y flores frescas en Buenos Aires (Palermo, Recoleta, Belgrano). Pedidos por Telegram y WhatsApp +54 9 11 3012-7047.",
+    status: "24/7 • Retiro autónomo online",
+    brandPill: "MR. KEY • CHOCOLATES & FLORES 24/7",
     catchyTitle: 'Puro placer belga. 20g de proteína. <span class="gradient-shimmer">Cero culpa.</span>',
-    catchySubtitle: "El primer chocolate artesanal de Buenos Aires con caramelo salado crocante y cacao negro belga 100% natural, sin azúcar agregada. Pedilo en 1 clic y retiralo helado en quioscos 24/7 en 2 minutos.",
+    catchySubtitle: "El primer chocolate artesanal de Buenos Aires con caramelo salado crocante y cacao negro belga 100% natural, sin azúcar agregada. Pedilo en 1 clic y retiralo de forma 100% autónoma las 24/7 en 2 minutos.",
     feat1: "Cacao puro & caramelo",
     feat2: "20g Proteína limpia",
     feat3: "0% Azúcar • Sin TACC",
+    feat4: "Flores frescas 24/7",
+    flowersTitle: "¡También vendemos Flores Frescas!",
+    flowersDesc: "Ramos de autor y flores frescas de estación seleccionadas. Retiro autónomo 24/7 o envíos directos. Consultá modelos y encargá en 1 clic.",
+    flowersBtn: "Pedir flores por WhatsApp ➔",
+    waLabel: "💬 WhatsApp Directo 24/7 (Pedidos y Consultas)",
     hookBadge: "🔥 PRECIO LANZAMIENTO",
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
@@ -2321,7 +2680,7 @@ const PORTAL_I18N = {
     btnSupport: "💬 Soporte (@mr_key_ba1)",
     desktopQrTitle: "📱 Pedí con tu celular",
     desktopQrDesc: "Escaneá con tu cámara para abrir el bot en Telegram",
-    footer: "© 2026 Mr. Key • Buenos Aires, Argentina • Sistema autónomo 24/7",
+    footer: "© 2026 Mr. Key • Buenos Aires, Argentina • Sistema autónomo 24/7 • WhatsApp: +54 9 11 3012-7047",
     modalPretag: "⚡️ GUÍA PASO A PASO EN PESOS",
     modalTitle: "¿Cómo pagar en Lemon Cash o Belo?",
     modalSub: "Instrucciones guiadas en texto • Sin vueltas ni tecnicismos",
@@ -2335,7 +2694,7 @@ const PORTAL_I18N = {
     btnChangeApp: "↺ Cambiar app",
     mPrev: "← Anterior",
     mNext: "Siguiente paso →",
-    mFinish: "🍫 Pedir barras en Telegram Bot ➔",
+    mFinish: "🍫 Pedir en Telegram Bot ➔",
     selectAppPrompt: "Seleccionar aplicación",
     steps: {
       lemon: [
@@ -2390,14 +2749,14 @@ const PORTAL_I18N = {
           tab: "4. Retiro 24/7",
           tag: "PASO 4 DE 4 • LEMON CASH",
           time: "⏱ ~2 min",
-          title: "4. Retirá tu chocolate fresco 24/7 en el quiosco",
-          pill: "❄️ Cadena de frío asegurada en Palermo, Recoleta y Belgrano",
+          title: "4. Retirá tu pedido fresco 24/7 de forma 100% autónoma",
+          pill: "❄️ Cadena de frío asegurada • Retiro autónomo en Palermo, Recoleta y Belgrano",
           bullets: [
-            "<strong>1️⃣ Recibí tu código:</strong> Apenas confirmada la transacción, el bot te enviará al chat de Telegram tu código QR secreto de retiro y la ubicación del quiosco.",
-            "<strong>2️⃣ Pasá a retirarlo:</strong> Acercate al quiosco 24/7 en cualquier momento, mostrás el QR desde la pantalla de tu celular y el personal te entrega tu barra helada.",
+            "<strong>1️⃣ Recibí tu código:</strong> Apenas confirmada la transacción, el bot te enviará al chat de Telegram tu código secreto de retiro y la ubicación exacta.",
+            "<strong>2️⃣ Retiro autónomo:</strong> Acercate al punto de retiro 24/7 en cualquier momento. Retirás de forma directa y autónoma por tu cuenta, sin esperas ni tener que interactuar con nadie.",
             "<strong>3️⃣ Puro disfrute:</strong> Chocolate artesanal belga con 20g de proteína pura y caramelo salado crocante sin culpa."
           ],
-          tip: "Soporte humano directo 24/7 en Telegram ante cualquier duda (@mr_key_ba1).",
+          tip: "Atención directa 24/7 por WhatsApp (+54 9 11 3012-7047) o Telegram (@mr_key_ba1).",
           actionTxt: "🍫 Pedir en el Bot de Telegram",
           actionUrl: "https://t.me/mrkey_ba_1_bot"
         }
@@ -2453,12 +2812,12 @@ const PORTAL_I18N = {
           tab: "4. Retiro 24/7",
           tag: "PASO 4 DE 4 • BELO APP",
           time: "⏱ ~2 min",
-          title: "4. Mostrá tu QR y retirá tu barra helada 24/7",
+          title: "4. Retirá tu pedido helado 24/7 de forma autónoma",
           pill: "🍫 Chocolate belga con 20g de proteína y 0 culpa",
           bullets: [
-            "<strong>1️⃣ Cupón de retiro:</strong> Al confirmarse el pago, el bot te enviará de inmediato un código QR de canje.",
-            "<strong>2️⃣ Retiro sin espera:</strong> Acercate al quiosco 24/7 de Palermo, Recoleta o Belgrano en el horario que prefieras.",
-            "<strong>3️⃣ Canje al instante:</strong> Mostrás el QR en tu pantalla y te entregan tu barra refrigerada lista para comer."
+            "<strong>1️⃣ Cupón de retiro:</strong> Al confirmarse el pago, el bot te enviará de inmediato tu código secreto y ubicación de retiro.",
+            "<strong>2️⃣ Retiro autónomo:</strong> Acercate al punto de retiro 24/7 de Palermo, Recoleta o Belgrano en el horario que prefieras.",
+            "<strong>3️⃣ Sin intermediarios:</strong> Retirás tu pedido de forma directa y autónoma sin filas ni tener que hablar con nadie."
           ],
           tip: "Garantía de calidad: si algo no te convence, tenés cambio o reembolso en 24h.",
           actionTxt: "🍫 Pedir en el Bot de Telegram",
@@ -2468,15 +2827,20 @@ const PORTAL_I18N = {
     }
   },
   ru: {
-    pageTitle: "Mr. Key — Авторский протеиновый шоколад | Буэнос-Айрес 24/7",
-    metaDesc: "Натуральные протеиновые батончики ручной работы без сахара в киосках Буэнос-Айреса (Палермо, Реколета, Бельграно). Оплата через Lemon или Belo по акции.",
-    status: "24/7 • Выдача в киосках онлайн",
-    brandPill: "MR. KEY • БУЭНОС-АЙРЕС 24/7",
+    pageTitle: "Mr. Key — Авторский протеиновый шоколад и цветы | Буэнос-Айрес 24/7",
+    metaDesc: "Автономный круглосуточный самовывоз 24/7 протеиновых батончиков и свежих цветов в Буэнос-Айресе (Палермо, Реколета, Бельграно). Заказ в Telegram и WhatsApp +54 9 11 3012-7047.",
+    status: "24/7 • Автономный самовывоз онлайн",
+    brandPill: "MR. KEY • ШОКОЛАД И ЦВЕТЫ 24/7",
     catchyTitle: 'Чистое бельгийское удовольствие. 20г протеина. <span class="gradient-shimmer">Ноль чувства вины.</span>',
-    catchySubtitle: "Первый авторский протеиновый шоколад в Буэнос-Айресе: хрустящий миндаль, солёная карамель и отборное тёмное какао. 100% натурально, без глютена. Заказ за минуту, выдача ледяным в киосках 24/7 за 2 минуты.",
+    catchySubtitle: "Первый авторский протеиновый шоколад в Буэнос-Айресе: хрустящий миндаль, солёная карамель и отборное тёмное какао. 100% натурально, без сахара. Заказ за минуту, быстрый самостоятельный забор 24/7 без очередей и посредников.",
     feat1: "Тёмное какао & карамель",
     feat2: "20г Чистого протеина",
     feat3: "0% Сахара • Без глютена",
+    feat4: "Свежие цветы 24/7",
+    flowersTitle: "Мы также продаем свежие цветы!",
+    flowersDesc: "Авторские букеты и свежие сезонные цветы — идеальный подарок или дополнение к нашему протеиновому шоколаду. Круглосуточный заказ, быстрый забор или доставка!",
+    flowersBtn: "Заказать цветы в WhatsApp ➔",
+    waLabel: "💬 Наш WhatsApp 24/7 (Заказы и вопросы)",
     hookBadge: "🔥 АКЦИЯ НА СТАРТЕ",
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
@@ -2487,7 +2851,7 @@ const PORTAL_I18N = {
     btnSupport: "💬 Поддержка и Опт (@mr_key_ba1)",
     desktopQrTitle: "📱 Заказ со смартфона",
     desktopQrDesc: "Наведи камеру для мгновенного перехода в Telegram-бот",
-    footer: "© 2026 Mr. Key • Буэнос-Айрес, Аргентина • Автономная система 24/7",
+    footer: "© 2026 Mr. Key • Буэнос-Айрес, Аргентина • Автономная система 24/7 • WhatsApp: +54 9 11 3012-7047",
     modalPretag: "⚡️ ПОШАГОВЫЙ ГИД В ПЕСО",
     modalTitle: "Как оплатить через Lemon Cash или Belo?",
     modalSub: "Простая пошаговая текстовая инструкция без лишних терминов",
@@ -2553,17 +2917,17 @@ const PORTAL_I18N = {
           actionUrl: "https://t.me/mrkey_ba_1_bot"
         },
         {
-          tab: "4. Выдача 24/7",
+          tab: "4. Самовывоз 24/7",
           tag: "ШАГ 4 ИЗ 4 • LEMON CASH",
           time: "⏱ ~2 мин",
-          title: "4. Заберите холодный батончик в киоске 24/7",
+          title: "4. Самостоятельный забор заказа 24/7",
           pill: "❄️ Идеальное охлаждение в Палермо, Реколете и Бельграно",
           bullets: [
-            "<strong>1️⃣ QR-код выдачи:</strong> После подтверждения оплаты бот моментально пришлет персональный QR-код и адрес киоска.",
-            "<strong>2️⃣ Круглосуточный забор:</strong> Подойдите к киоску в удобное время, покажите QR-код с экрана и заберите заказ из холодильника.",
+            "<strong>1️⃣ Секретный код:</strong> После подтверждения оплаты бот моментально пришлет персональный код и точную локацию выдачи.",
+            "<strong>2️⃣ Автономный самовывоз:</strong> Забирайте заказ самостоятельно в любое удобное время 24/7. Без очередей, без ожидания и без разговоров с персоналом.",
             "<strong>3️⃣ Наслаждайтесь вкусом:</strong> 20г белка, хрустящий миндаль, соленая карамель и бельгийское какао без сахара!"
           ],
-          tip: "Круглосуточная поддержка в Telegram по любым вопросам (@mr_key_ba1).",
+          tip: "Круглосуточная поддержка в WhatsApp (+54 9 11 3012-7047) и Telegram (@mr_key_ba1).",
           actionTxt: "🍫 Заказать батончики в боте",
           actionUrl: "https://t.me/mrkey_ba_1_bot"
         }
@@ -2615,15 +2979,15 @@ const PORTAL_I18N = {
           actionUrl: "https://t.me/mrkey_ba_1_bot"
         },
         {
-          tab: "4. Выдача 24/7",
+          tab: "4. Самовывоз 24/7",
           tag: "ШАГ 4 ИЗ 4 • BELO APP",
           time: "⏱ ~2 мин",
-          title: "4. Заберите свой крафтовый шоколад в киоске 24/7",
+          title: "4. Автономный забор крафтового шоколада 24/7",
           pill: "🍫 20г белка, хрустящий миндаль и 0 чувства вины",
           bullets: [
-            "<strong>1️⃣ QR-купон:</strong> Бот автоматически присылает QR-код для выдачи.",
-            "<strong>2️⃣ Выдача 24/7:</strong> Локации в Палермо, Реколете и Бельграно открыты круглосуточно.",
-            "<strong>3️⃣ Идеальная свежесть:</strong> Забирайте холодный батончик за 2 минуты без очередей."
+            "<strong>1️⃣ Код заказа:</strong> Бот автоматически присылает координаты и секретный код забора.",
+            "<strong>2️⃣ Круглосуточный забор:</strong> Точки в Палермо, Реколете и Бельграно открыты 24/7.",
+            "<strong>3️⃣ Полная автономность:</strong> Забирайте заказ самостоятельно за 2 минуты без очередей и персонала."
           ],
           tip: "Гарантия качества: замена или возврат в течение 24 часов.",
           actionTxt: "🍫 Заказать батончики в боте",
@@ -2633,15 +2997,20 @@ const PORTAL_I18N = {
     }
   },
   en: {
-    pageTitle: "Mr. Key — Artisanal Protein Chocolate | Buenos Aires 24/7",
-    metaDesc: "24/7 pickup of sugar-free artisanal protein bars in Buenos Aires kiosks (Palermo, Recoleta, Belgrano). Pay via Lemon or Belo with launch discount.",
-    status: "24/7 • Kiosk pickup online",
-    brandPill: "MR. KEY • BUENOS AIRES 24/7",
+    pageTitle: "Mr. Key — Artisanal Protein Chocolate & Fresh Flowers | Buenos Aires 24/7",
+    metaDesc: "24/7 autonomous self-pickup of artisanal protein bars and fresh flowers in Buenos Aires (Palermo, Recoleta, Belgrano). Order via Telegram & WhatsApp +54 9 11 3012-7047.",
+    status: "24/7 • Autonomous pickup online",
+    brandPill: "MR. KEY • CHOCOLATE & FLOWERS 24/7",
     catchyTitle: 'Belgian artisanal chocolate that breaks the rules: <span class="gradient-shimmer">20g protein & zero guilt</span>',
-    catchySubtitle: "The first craft protein chocolate in Buenos Aires with crunchy salted caramel and 100% natural Belgian dark cocoa, no added sugar. Order in 1 click and pick up ice-cold in 24/7 kiosks in 2 min.",
+    catchySubtitle: "The first craft protein chocolate in Buenos Aires with crunchy salted caramel and 100% natural Belgian dark cocoa, no added sugar. Order in 1 click and pick up 100% autonomously 24/7 in 2 min.",
     feat1: "Pure dark cocoa & caramel",
     feat2: "20g Clean protein",
     feat3: "0% Added sugar • Gluten-free",
+    feat4: "Fresh flowers 24/7",
+    flowersTitle: "Fresh Flowers Also Available!",
+    flowersDesc: "Artisanal bouquets & fresh seasonal flowers to surprise someone or pair with our craft chocolates. 24/7 autonomous pickup or direct delivery. Ask for availability & order now!",
+    flowersBtn: "Order flowers via WhatsApp ➔",
+    waLabel: "💬 Direct WhatsApp 24/7 (Orders & Inquiries)",
     hookBadge: "🔥 LAUNCH SPECIAL",
     hookNew: "$16.000 ARS",
     hookOld: "$22.000",
@@ -2652,7 +3021,7 @@ const PORTAL_I18N = {
     btnSupport: "💬 Support (@mr_key_ba1)",
     desktopQrTitle: "📱 Order with your phone",
     desktopQrDesc: "Scan with camera to open Telegram order bot",
-    footer: "© 2026 Mr. Key • Buenos Aires, Argentina • 24/7 Autonomous System",
+    footer: "© 2026 Mr. Key • Buenos Aires, Argentina • 24/7 Autonomous System • WhatsApp: +54 9 11 3012-7047",
     modalPretag: "⚡️ STEP-BY-STEP PESO GUIDE",
     modalTitle: "How to pay via Lemon Cash or Belo?",
     modalSub: "Guided text instructions • Zero technical jargon",
@@ -2721,14 +3090,14 @@ const PORTAL_I18N = {
           tab: "4. Pickup 24/7",
           tag: "STEP 4 OF 4 • LEMON CASH",
           time: "⏱ ~2 min",
-          title: "4. Pick up your cold protein bar at the 24/7 kiosk",
+          title: "4. Autonomous 24/7 self-pickup",
           pill: "❄️ Ice-cold sub-zero storage in Palermo, Recoleta & Belgrano",
           bullets: [
-            "<strong>1️⃣ Get Pickup Voucher:</strong> The bot automatically sends your secret QR voucher code and kiosk location.",
-            "<strong>2️⃣ Visit Anytime:</strong> Head to the 24/7 kiosk whenever you want, display the QR code and receive your bar.",
+            "<strong>1️⃣ Get Pickup Code:</strong> The bot automatically sends your secret code and exact pickup coordinates.",
+            "<strong>2️⃣ Autonomous 24/7 Pickup:</strong> Head to the pickup location whenever you want. Pick up your order directly and autonomously — zero waiting, zero staff interaction.",
             "<strong>3️⃣ Pure Taste:</strong> Belgian craft chocolate with 20g pure protein and salted caramel crunch."
           ],
-          tip: "Direct human Telegram support available 24/7 (@mr_key_ba1).",
+          tip: "Direct WhatsApp (+54 9 11 3012-7047) and Telegram support available 24/7 (@mr_key_ba1).",
           actionTxt: "🍫 Order bars in Telegram Bot",
           actionUrl: "https://t.me/mrkey_ba_1_bot"
         }
@@ -2784,12 +3153,12 @@ const PORTAL_I18N = {
           tab: "4. Pickup 24/7",
           tag: "STEP 4 OF 4 • BELO APP",
           time: "⏱ ~2 min",
-          title: "4. Show QR voucher & enjoy chilled artisan chocolate",
+          title: "4. Autonomous self-pickup & enjoy chilled artisan chocolate",
           pill: "🍫 20g clean protein, real dark chocolate & 0 guilt",
           bullets: [
-            "<strong>1️⃣ Digital Voucher:</strong> The bot issues your QR pickup pass right after confirmation.",
-            "<strong>2️⃣ 24/7 Pickup:</strong> Go to any affiliated kiosk in Palermo, Recoleta or Belgrano at your convenience.",
-            "<strong>3️⃣ Instant handoff:</strong> Show the QR voucher on your phone and receive your chilled bar."
+            "<strong>1️⃣ Digital Code:</strong> The bot issues your secret pickup code right after confirmation.",
+            "<strong>2️⃣ 24/7 Autonomous Pickup:</strong> Go to the designated pickup point in Palermo, Recoleta or Belgrano at your convenience.",
+            "<strong>3️⃣ Complete Autonomy:</strong> Collect your chilled order quickly on your own without waiting or talking to anyone."
           ],
           tip: "24-hour satisfaction replacement or refund guarantee.",
           actionTxt: "🍫 Order bars in Telegram Bot",
@@ -2826,6 +3195,12 @@ function setLang(lang) {
   setT('feat-1', data.feat1);
   setT('feat-2', data.feat2);
   setT('feat-3', data.feat3);
+  setT('feat-4', data.feat4);
+
+  setT('txt-flowers-title', data.flowersTitle);
+  setT('txt-flowers-desc', data.flowersDesc);
+  setT('txt-flowers-btn', data.flowersBtn);
+  setT('txt-wa-label', data.waLabel);
 
   setT('txt-hook-badge', data.hookBadge);
   setT('txt-hook-new', data.hookNew);
