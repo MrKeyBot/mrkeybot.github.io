@@ -709,9 +709,10 @@
     <div class="loc-card">
       <h3 id="loc-title">📍 Puntos de Retiro Autónomos 24/7</h3>
       <ul class="loc-list">
-        <li><div class="loc-dot"></div> <strong id="loc1">Palermo Hollywood</strong> &nbsp;(Humboldt y Gorriti)</li>
-        <li><div class="loc-dot"></div> <strong id="loc2">Recoleta</strong> &nbsp;(Av. Santa Fe y Callao)</li>
-        <li><div class="loc-dot"></div> <strong id="loc3">Belgrano</strong> &nbsp;(Av. Cabildo y Juramento)</li>
+        <li><div class="loc-dot"></div> <strong id="loc1">Palermo</strong></li>
+        <li><div class="loc-dot"></div> <strong id="loc2">Recoleta</strong></li>
+        <li><div class="loc-dot"></div> <strong id="loc3">Belgrano</strong></li>
+        <li><div class="loc-dot"></div> <strong id="loc4">San Telmo</strong></li>
       </ul>
     </div>
 
@@ -807,6 +808,10 @@
         step3Title: "3. Retirá en el locker 24/7",
         step3Desc: "Recibís foto, GPS y código secreto. Tu pedido te espera en el lugar acordado. Sin mensajeros.",
         locTitle: "📍 Puntos de Retiro Autónomos 24/7",
+        loc1: "Palermo",
+        loc2: "Recoleta",
+        loc3: "Belgrano",
+        loc4: "San Telmo",
         modalTitle: "Antes de continuar al Bot:",
         modalSubtitle: "Servicio 100% Autoservicio",
         modalP1: "<strong>Sin repartidor:</strong> No te encontrás con un mensajero ni te lo llevan a domicilio.",
@@ -844,6 +849,10 @@
         step3Title: "3. Заберите в локере 24/7",
         step3Desc: "Получите код и адрес. Заказ ждет вас в условленном месте. Никаких встреч с курьером.",
         locTitle: "📍 Точки Автономной Выдачи 24/7",
+        loc1: "Палермо (Palermo)",
+        loc2: "Реколета (Recoleta)",
+        loc3: "Бельграно (Belgrano)",
+        loc4: "Сан-Тельмо (San Telmo)",
         modalTitle: "Перед переходом в бот:",
         modalSubtitle: "Сервис 100% Самообслуживания",
         modalP1: "<strong>С курьером встречаться НЕ НАДО:</strong> Мы не привозим заказ лично и не передаем в руки.",
@@ -893,6 +902,10 @@
       document.getElementById('step3-title').textContent = d.step3Title;
       document.getElementById('step3-desc').textContent = d.step3Desc;
       document.getElementById('loc-title').textContent = d.locTitle;
+      document.getElementById('loc1').textContent = d.loc1;
+      document.getElementById('loc2').textContent = d.loc2;
+      document.getElementById('loc3').textContent = d.loc3;
+      document.getElementById('loc4').textContent = d.loc4;
 
       // Update Modal Texts
       document.getElementById('modal-title').textContent = d.modalTitle;
