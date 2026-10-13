@@ -1005,6 +1005,352 @@
       letter-spacing: -0.01em;
     }
 
+    /* ==========================================================================
+       ULTRA-PROMINENT ALIAS & PAYMENT HERO CARD (Vibrant Amber & Gold Neon)
+       ========================================================================== */
+    .alias-payment-card {
+      background: linear-gradient(135deg, rgba(28, 19, 12, 0.94) 0%, rgba(16, 11, 7, 0.97) 100%);
+      border: 2px solid #F59E0B;
+      border-radius: 22px;
+      padding: 18px 22px;
+      margin-bottom: 14px;
+      box-shadow: 
+        0 14px 45px rgba(0, 0, 0, 0.9),
+        0 0 35px rgba(245, 158, 11, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.25);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+      animation: aliasAmbientHalo 4.5s ease-in-out infinite;
+    }
+
+    @keyframes aliasAmbientHalo {
+      0%, 100% {
+        box-shadow: 0 14px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(245, 158, 11, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.25);
+        border-color: rgba(245, 158, 11, 0.85);
+      }
+      50% {
+        box-shadow: 0 18px 55px rgba(0, 0, 0, 0.95), 0 0 45px rgba(245, 158, 11, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+        border-color: #FCD34D;
+      }
+    }
+
+    .alias-payment-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 50px rgba(245, 158, 11, 0.6);
+      border-color: #FDE68A;
+    }
+
+    /* Ambient shine beam running diagonally across card */
+    .alias-payment-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(253, 230, 138, 0.12), transparent);
+      transform: rotate(35deg);
+      pointer-events: none;
+      animation: aliasShineBeam 6s infinite;
+    }
+
+    @keyframes aliasShineBeam {
+      0%, 70% { left: -60%; }
+      100% { left: 160%; }
+    }
+
+    /* Top Header Bar */
+    .alias-card-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .alias-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #000000;
+      background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%);
+      padding: 5px 11px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px rgba(245, 158, 11, 0.6);
+    }
+
+    .alias-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #34D399;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.2);
+    }
+
+    .pulse-green-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10B981;
+      animation: dotPulse 1.8s infinite;
+    }
+
+    @keyframes dotPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.3); }
+    }
+
+    /* Dual Price Comparison Row */
+    .alias-pricing-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .price-box-card {
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 14px;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .price-box-card.primary-ars {
+      border: 1.5px solid rgba(245, 158, 11, 0.5);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.14) 0%, rgba(0, 0, 0, 0.4) 100%);
+      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.12);
+    }
+
+    .price-box-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #A8A29E;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .price-box-card.primary-ars .price-box-label {
+      color: #FCD34D;
+    }
+
+    .price-digits-row {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      line-height: 1;
+      margin-bottom: 3px;
+    }
+
+    .price-giant-ars {
+      font-family: 'Outfit', sans-serif;
+      font-size: 27px;
+      font-weight: 950;
+      color: #FDE68A;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 14px rgba(245, 158, 11, 0.5);
+    }
+
+    .price-curr-ars {
+      font-size: 13px;
+      font-weight: 900;
+      color: #F59E0B;
+      letter-spacing: 0.04em;
+    }
+
+    .price-giant-usdt {
+      font-family: 'Outfit', sans-serif;
+      font-size: 27px;
+      font-weight: 950;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+    }
+
+    .price-curr-usdt {
+      font-size: 13px;
+      font-weight: 900;
+      color: #38BDF8;
+      letter-spacing: 0.04em;
+    }
+
+    .price-box-sub {
+      font-size: 10.5px;
+      color: #D6D3D1;
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    /* --- THE HERO ALIAS CAPSULE (Interactive 1-Click Copy Box) --- */
+    .alias-capsule-box {
+      background: linear-gradient(135deg, rgba(12, 9, 6, 0.9) 0%, rgba(20, 14, 9, 0.95) 100%);
+      border: 2px solid #F59E0B;
+      border-radius: 16px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 20px rgba(245, 158, 11, 0.2);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .alias-capsule-box:hover {
+      border-color: #FDE68A;
+      background: linear-gradient(135deg, rgba(22, 15, 10, 0.95) 0%, rgba(30, 20, 12, 0.98) 100%);
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.4);
+      transform: scale(1.01);
+    }
+
+    .alias-capsule-box.copied-pulse {
+      border-color: #10B981 !important;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 35px rgba(16, 185, 129, 0.6) !important;
+      background: linear-gradient(135deg, rgba(6, 26, 18, 0.95) 0%, rgba(10, 36, 24, 0.98) 100%) !important;
+    }
+
+    .alias-info-col {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .alias-sublabel {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #FCD34D;
+      margin-bottom: 2px;
+    }
+
+    .alias-hero-val {
+      font-family: 'Outfit', monospace, sans-serif;
+      font-size: 28px;
+      font-weight: 950;
+      color: #FFFDF5;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      text-shadow: 0 0 16px rgba(245, 158, 11, 0.75), 0 2px 6px rgba(0, 0, 0, 0.9);
+      user-select: all;
+    }
+
+    /* COPY BUTTON */
+    .btn-copy-alias {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      border: 1px solid #FCD34D;
+      border-radius: 12px;
+      padding: 11px 18px;
+      color: #000000;
+      font-size: 13.5px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.45);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      min-height: 44px;
+      flex-shrink: 0;
+    }
+
+    .btn-copy-alias:hover {
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 6px 22px rgba(245, 158, 11, 0.65);
+      filter: brightness(1.08);
+    }
+
+    .btn-copy-alias:active {
+      transform: translateY(1px) scale(0.98);
+    }
+
+    .btn-copy-alias.copied {
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+      border-color: #6EE7B7 !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.6) !important;
+    }
+
+    /* Trust / Fast Features List */
+    .alias-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+
+    .alias-feat-item {
+      font-size: 11.5px;
+      color: #E7E5E4;
+      line-height: 1.35;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+    }
+
+    .alias-feat-item strong {
+      color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .alias-feat-icon {
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Bottom Guide Modal Trigger Link */
+    .alias-guide-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #E7E5E4;
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .alias-guide-trigger:hover {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.35);
+      color: #FCD34D;
+      transform: translateY(-1px);
+    }
+
+    .alias-guide-trigger-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     /* --- SPECIAL OFFER HOOK BOX (Breathing Ambient Glow) --- */
     .offer-hook-card {
       background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.09) 100%);
@@ -2227,6 +2573,54 @@
       .feat-badge span.feat-text {
         font-size: 10.5px;
       }
+      .alias-payment-card {
+        padding: 14px 14px;
+        margin-bottom: 12px;
+      }
+      .alias-card-top-bar {
+        margin-bottom: 10px;
+      }
+      .alias-card-tag {
+        font-size: 9.5px;
+        padding: 4px 8px;
+      }
+      .alias-status-pill {
+        font-size: 9.5px;
+        padding: 3px 8px;
+      }
+      .alias-pricing-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        margin-bottom: 10px;
+      }
+      .price-box-card {
+        padding: 8px 10px;
+      }
+      .price-giant-ars, .price-giant-usdt {
+        font-size: 21px;
+      }
+      .price-box-sub {
+        font-size: 9.5px;
+      }
+      .alias-capsule-box {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+      .alias-hero-val {
+        font-size: 24px;
+      }
+      .btn-copy-alias {
+        padding: 9px 13px;
+        font-size: 12px;
+        min-height: 42px;
+      }
+      .alias-feat-item {
+        font-size: 11px;
+      }
+      .alias-guide-trigger {
+        font-size: 11.5px;
+        padding: 8px 12px;
+      }
       .offer-hook-card {
         padding: 12px;
       }
@@ -2418,24 +2812,78 @@
             </div>
           </div>
 
-          <!-- CLICKABLE SPECIAL OFFER HOOK CARD WITH VIBRANT GREEN BUTTON -->
-          <div class="offer-hook-card" onclick="openStepModal()">
-            <div class="offer-hook-top">
-              <span class="offer-badge-tag" id="txt-hook-badge">🔥 PRECIO LANZAMIENTO</span>
-              <div class="offer-price-group">
-                <span class="price-value-new" id="txt-hook-new">$16.000 ARS</span>
-                <span class="price-value-old" id="txt-hook-old">$22.000</span>
-                <span class="price-discount-pill" id="txt-hook-save">-27% OFF</span>
+          <!-- ULTRA-PROMINENT OFFICIAL PAYMENT & ALIAS CARD (ARS & USDT) -->
+          <div class="alias-payment-card" id="alias-payment-card">
+            <!-- Header bar with Argentine Flag Tag + 24/7 Live Status -->
+            <div class="alias-card-top-bar">
+              <div class="alias-card-tag">
+                <span id="txt-alias-tag">🇦🇷 PAGO EN PESOS (ARS) • ALIAS OFICIAL</span>
+              </div>
+              <div class="alias-status-pill">
+                <span class="pulse-green-dot"></span>
+                <span id="txt-alias-instant">⚡ Automático 24/7</span>
               </div>
             </div>
-            <div class="offer-hook-middle" id="txt-hook-middle">
-              ¿Querés pagar con <strong>$6.000 ARS de descuento</strong> con Lemon Cash o Belo?
+
+            <!-- Dual Pricing Comparison (ARS vs USDT) -->
+            <div class="alias-pricing-grid">
+              <div class="price-box-card primary-ars">
+                <div class="price-box-label">
+                  <span>🇦🇷</span>
+                  <span id="txt-alias-title-ars">Transferencia en Pesos</span>
+                </div>
+                <div class="price-digits-row">
+                  <span class="price-giant-ars" id="txt-alias-price-ars">$18.000</span>
+                  <span class="price-curr-ars" id="txt-alias-curr-ars">ARS</span>
+                </div>
+                <div class="price-box-sub" id="txt-alias-sub-ars">Mercado Pago, Fiwind o cualquier banco</div>
+              </div>
+              <div class="price-box-card">
+                <div class="price-box-label">
+                  <span>💎</span>
+                  <span id="txt-alias-title-usdt">Cripto Online</span>
+                </div>
+                <div class="price-digits-row">
+                  <span class="price-giant-usdt" id="txt-alias-price-usdt">10</span>
+                  <span class="price-curr-usdt" id="txt-alias-curr-usdt">USDT</span>
+                </div>
+                <div class="price-box-sub" id="txt-alias-sub-usdt">Lemon Cash, Belo o Web3</div>
+              </div>
             </div>
-            <!-- Action Button -->
-            <div class="offer-hook-btn-trigger">
-              <div class="btn-content-left">
-                <span class="pulse-icon">⚡️</span>
-                <span id="txt-hook-btn">Ver cómo pagar en Lemon y Belo paso a paso</span>
+
+            <!-- Interactive 1-Click Copy Alias Capsule -->
+            <div class="alias-capsule-box" id="alias-capsule-box" onclick="copyAliasCode(event)" title="Click para copiar Alias">
+              <div class="alias-info-col">
+                <span class="alias-sublabel" id="txt-alias-label">ALIAS OFICIAL (FIWIND):</span>
+                <span class="alias-hero-val" id="alias-code">mr.key</span>
+              </div>
+              <button type="button" class="btn-copy-alias" id="btn-copy-alias" onclick="copyAliasCode(event)" aria-label="Copiar Alias mr.key">
+                <span class="copy-icon">📋</span>
+                <span class="copy-text" id="txt-copy-alias">Copiar Alias</span>
+              </button>
+            </div>
+
+            <!-- Key Trust & Speed Bullets -->
+            <div class="alias-features-list">
+              <div class="alias-feat-item">
+                <span class="alias-feat-icon">⚡</span>
+                <span id="feat-alias-1"><strong>Acreditación en 2 seg:</strong> Confirmación automática por email las 24hs sin esperas.</span>
+              </div>
+              <div class="alias-feat-item">
+                <span class="alias-feat-icon">🏦</span>
+                <span id="feat-alias-2"><strong>Todos los bancos:</strong> Mercado Pago, Santander, Galicia, Brubank, Fiwind, etc.</span>
+              </div>
+              <div class="alias-feat-item">
+                <span class="alias-feat-icon">🍫</span>
+                <span id="feat-alias-3"><strong>Retiro 24/7 al instante:</strong> Recibís código secreto y ubicación en 1 segundo.</span>
+              </div>
+            </div>
+
+            <!-- Bottom Guided Walkthrough Trigger (Opens Modal) -->
+            <div class="alias-guide-trigger" onclick="openStepModal()" role="button" tabindex="0">
+              <div class="alias-guide-trigger-left">
+                <span class="pulse-icon">💡</span>
+                <span id="txt-alias-guide-link">¿Preferís pagar en USDT? Ver guía de Lemon y Belo paso a paso</span>
               </div>
               <div class="arrow-circle">➔</div>
             </div>
@@ -2670,12 +3118,29 @@ const PORTAL_I18N = {
     flowersDesc: "Ramos de autor y flores frescas de estación seleccionadas. Retiro autónomo 24/7 o envíos directos. Consultá modelos y encargá en 1 clic.",
     flowersBtn: "Pedir flores por WhatsApp ➔",
     waLabel: "💬 WhatsApp Directo 24/7 (Pedidos y Consultas)",
-    hookBadge: "🔥 PRECIO LANZAMIENTO",
-    hookNew: "$16.000 ARS",
+    hookBadge: "🔥 PRECIO OFICIAL",
+    hookNew: "$18.000 ARS",
     hookOld: "$22.000",
-    hookSave: "-27% OFF",
-    hookMiddle: "¿Querés pagar con <strong>$6.000 ARS de descuento</strong> con Lemon Cash o Belo?",
+    hookSave: "-18% OFF",
+    hookMiddle: "Pagá <strong>$18.000 ARS</strong> por transferencia o <strong>10 USDT</strong> en cripto",
     hookBtn: "Ver cómo pagar en Lemon y Belo paso a paso",
+    aliasTag: "🇦🇷 PAGO EN PESOS (ARS) • ALIAS OFICIAL",
+    aliasInstant: "⚡ Automático 24/7",
+    aliasTitleArs: "Transferencia en Pesos",
+    aliasPriceArs: "$18.000",
+    aliasCurrArs: "ARS",
+    aliasSubArs: "Mercado Pago, Fiwind o cualquier banco",
+    aliasTitleUsdt: "Cripto Online",
+    aliasPriceUsdt: "10",
+    aliasCurrUsdt: "USDT",
+    aliasSubUsdt: "Lemon Cash, Belo o Web3",
+    aliasLabel: "ALIAS OFICIAL (FIWIND):",
+    aliasCopyBtn: "Copiar Alias",
+    aliasCopiedBtn: "¡Alias Copiado!",
+    aliasFeat1: "<strong>Acreditación en 2 seg:</strong> Confirmación automática por email las 24hs sin esperas.",
+    aliasFeat2: "<strong>Todos los bancos:</strong> Mercado Pago, Santander, Galicia, Brubank, Fiwind, etc.",
+    aliasFeat3: "<strong>Retiro 24/7 al instante:</strong> Recibís código secreto y ubicación en 1 segundo.",
+    aliasGuideLink: "¿Preferís pagar en USDT? Ver guía de Lemon y Belo paso a paso",
     btnOrder: "🚀 Pedir directo en el Bot de Telegram",
     btnSupport: "💬 Soporte (@mr_key_ba1)",
     desktopQrTitle: "📱 Pedí con tu celular",
@@ -2841,12 +3306,29 @@ const PORTAL_I18N = {
     flowersDesc: "Авторские букеты и свежие сезонные цветы — идеальный подарок или дополнение к нашему протеиновому шоколаду. Круглосуточный заказ, быстрый забор или доставка!",
     flowersBtn: "Заказать цветы в WhatsApp ➔",
     waLabel: "💬 Наш WhatsApp 24/7 (Заказы и вопросы)",
-    hookBadge: "🔥 АКЦИЯ НА СТАРТЕ",
-    hookNew: "$16.000 ARS",
+    hookBadge: "🔥 ОФИЦИАЛЬНАЯ ЦЕНА",
+    hookNew: "$18.000 ARS",
     hookOld: "$22.000",
-    hookSave: "-27% ВЫГОДЫ",
-    hookMiddle: "Хочешь платить с <strong>выгодой $6.000 ARS</strong> через Lemon Cash или Belo?",
+    hookSave: "-18% ВЫГОДЫ",
+    hookMiddle: "Оплата <strong>$18.000 ARS</strong> переводом по Алиасу или <strong>10 USDT</strong> криптой",
     hookBtn: "Инструкция по оплате через Lemon и Belo по шагам",
+    aliasTag: "🇦🇷 ОПЛАТА В ПЕСО (ARS) • ОФИЦИАЛЬНЫЙ АЛИАС",
+    aliasInstant: "⚡ Автоматически 24/7",
+    aliasTitleArs: "Перевод в песо",
+    aliasPriceArs: "$18.000",
+    aliasCurrArs: "ARS",
+    aliasSubArs: "Mercado Pago, Fiwind или любой банк",
+    aliasTitleUsdt: "Крипто онлайн",
+    aliasPriceUsdt: "10",
+    aliasCurrUsdt: "USDT",
+    aliasSubUsdt: "Lemon Cash, Belo или Web3",
+    aliasLabel: "ОФИЦИАЛЬНЫЙ АЛИАС (FIWIND):",
+    aliasCopyBtn: "Скопировать",
+    aliasCopiedBtn: "Скопировано!",
+    aliasFeat1: "<strong>Зачисление за 2 сек:</strong> Автоматическое подтверждение 24/7 через email без ожидания.",
+    aliasFeat2: "<strong>Все банки:</strong> Mercado Pago, Santander, Galicia, Brubank, Fiwind, Belo, Lemon.",
+    aliasFeat3: "<strong>Мгновенный забор 24/7:</strong> Бот моментально выдает секретный код и координаты.",
+    aliasGuideLink: "Хотите оплатить в USDT? Пошаговый гид по Lemon и Belo",
     btnOrder: "🚀 Открыть меню в Telegram-боте",
     btnSupport: "💬 Поддержка и Опт (@mr_key_ba1)",
     desktopQrTitle: "📱 Заказ со смартфона",
@@ -3011,12 +3493,29 @@ const PORTAL_I18N = {
     flowersDesc: "Artisanal bouquets & fresh seasonal flowers to surprise someone or pair with our craft chocolates. 24/7 autonomous pickup or direct delivery. Ask for availability & order now!",
     flowersBtn: "Order flowers via WhatsApp ➔",
     waLabel: "💬 Direct WhatsApp 24/7 (Orders & Inquiries)",
-    hookBadge: "🔥 LAUNCH SPECIAL",
-    hookNew: "$16.000 ARS",
+    hookBadge: "🔥 OFFICIAL PRICE",
+    hookNew: "$18.000 ARS",
     hookOld: "$22.000",
-    hookSave: "-27% OFF",
-    hookMiddle: "Want to save <strong>$6.000 ARS per bar</strong> paying with Lemon Cash or Belo?",
+    hookSave: "-18% OFF",
+    hookMiddle: "Pay <strong>$18.000 ARS</strong> via Alias transfer or <strong>10 USDT</strong> in crypto",
     hookBtn: "See step-by-step guide for Lemon & Belo",
+    aliasTag: "🇦🇷 PESO PAYMENT (ARS) • OFFICIAL ALIAS",
+    aliasInstant: "⚡ 24/7 Auto-Credit",
+    aliasTitleArs: "Local Peso Transfer",
+    aliasPriceArs: "$18.000",
+    aliasCurrArs: "ARS",
+    aliasSubArs: "Mercado Pago, Fiwind or any bank",
+    aliasTitleUsdt: "Crypto Online",
+    aliasPriceUsdt: "10",
+    aliasCurrUsdt: "USDT",
+    aliasSubUsdt: "Lemon Cash, Belo or Web3",
+    aliasLabel: "OFFICIAL ALIAS (FIWIND):",
+    aliasCopyBtn: "Copy Alias",
+    aliasCopiedBtn: "Alias Copied!",
+    aliasFeat1: "<strong>2-Sec Auto-Credit:</strong> 24/7 instant email verification with zero waiting.",
+    aliasFeat2: "<strong>All Argentine Banks:</strong> Mercado Pago, Santander, Galicia, Brubank, Fiwind, etc.",
+    aliasFeat3: "<strong>Instant 24/7 Pickup:</strong> Secret locker code & coordinates delivered in 1 second.",
+    aliasGuideLink: "Prefer paying in USDT? See step-by-step Lemon & Belo guide",
     btnOrder: "🚀 Order directly in Telegram Bot",
     btnSupport: "💬 Support (@mr_key_ba1)",
     desktopQrTitle: "📱 Order with your phone",
@@ -3202,6 +3701,23 @@ function setLang(lang) {
   setT('txt-flowers-btn', data.flowersBtn);
   setT('txt-wa-label', data.waLabel);
 
+  setT('txt-alias-tag', data.aliasTag);
+  setT('txt-alias-instant', data.aliasInstant);
+  setT('txt-alias-title-ars', data.aliasTitleArs);
+  setT('txt-alias-price-ars', data.aliasPriceArs);
+  setT('txt-alias-curr-ars', data.aliasCurrArs);
+  setT('txt-alias-sub-ars', data.aliasSubArs);
+  setT('txt-alias-title-usdt', data.aliasTitleUsdt);
+  setT('txt-alias-price-usdt', data.aliasPriceUsdt);
+  setT('txt-alias-curr-usdt', data.aliasCurrUsdt);
+  setT('txt-alias-sub-usdt', data.aliasSubUsdt);
+  setT('txt-alias-label', data.aliasLabel);
+  setT('txt-copy-alias', data.aliasCopyBtn);
+  setH('feat-alias-1', data.aliasFeat1);
+  setH('feat-alias-2', data.aliasFeat2);
+  setH('feat-alias-3', data.aliasFeat3);
+  setT('txt-alias-guide-link', data.aliasGuideLink);
+
   setT('txt-hook-badge', data.hookBadge);
   setT('txt-hook-new', data.hookNew);
   setT('txt-hook-old', data.hookOld);
@@ -3259,6 +3775,44 @@ function closeStepModal() {
 
 function onModalOverlayClick(e) {
   closeStepModal();
+}
+
+function copyAliasCode(e) {
+  if (e) e.stopPropagation();
+  const alias = 'mr.key';
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(alias).catch(() => fallbackCopy(alias));
+  } else {
+    fallbackCopy(alias);
+  }
+  if (navigator.vibrate) {
+    try { navigator.vibrate(40); } catch (_) {}
+  }
+  const btn = document.getElementById('btn-copy-alias');
+  const txt = document.getElementById('txt-copy-alias');
+  const capsule = document.getElementById('alias-capsule-box');
+  const data = PORTAL_I18N[currentLang] || PORTAL_I18N.es;
+
+  if (btn) btn.classList.add('copied');
+  if (capsule) capsule.classList.add('copied-pulse');
+  if (txt) txt.textContent = data.aliasCopiedBtn || '¡Alias Copiado!';
+
+  setTimeout(() => {
+    if (btn) btn.classList.remove('copied');
+    if (capsule) capsule.classList.remove('copied-pulse');
+    if (txt) txt.textContent = data.aliasCopyBtn || 'Copiar Alias';
+  }, 2500);
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand('copy'); } catch (_) {}
+  document.body.removeChild(ta);
 }
 
 document.addEventListener('keydown', (e) => {
