@@ -578,6 +578,98 @@
       background: rgba(255, 255, 255, 0.05);
       color: #fff;
     }
+  
+    /* Referral Program Card */
+    .ref-card {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.09), rgba(0, 240, 255, 0.05));
+      border: 1.5px solid rgba(16, 185, 129, 0.4);
+      border-radius: 22px;
+      padding: 22px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(16, 185, 129, 0.12);
+    }
+    .ref-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .ref-badge {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.18);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .ref-header h3 {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .ref-header p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .ref-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 12px 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .ref-item-val {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .ref-item-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    .ref-item-sub {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      line-height: 1.2;
+    }
+    .ref-footer-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed rgba(16, 185, 129, 0.35);
+      line-height: 1.4;
+    }
+    .ref-footer-note code {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: #34d399;
+      font-weight: 700;
+    }
+
   </style>
 </head>
 <body>
@@ -673,6 +765,39 @@
       </div>
       <div class="price-note" id="price-ref-note">
         🎁 <strong>10% OFF</strong> en tu primer pedido si tenés código de amigo.
+      </div>
+    </div>
+
+    <!-- Referral Program Card -->
+    <div class="ref-card">
+      <div class="ref-header">
+        <span class="ref-badge" id="ref-badge">💰 HASTA 10% CASHBACK EN USDT</span>
+        <h3 id="ref-title">🤝 Ganá dinero recomendando amigos</h3>
+        <p id="ref-sub">Compartí tu enlace o código y recibí pagos automáticos en cripto.</p>
+      </div>
+
+      <div class="ref-grid">
+        <div class="ref-item">
+          <div class="ref-item-val" style="color: #22c55e;">10% OFF</div>
+          <div class="ref-item-label" id="ref-lbl-friend">Para tu amigo</div>
+          <div class="ref-item-sub" id="ref-sub-friend">En su primer pedido con tu código</div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-item-val" style="color: var(--accent-cyan);">7% USDT</div>
+          <div class="ref-item-label" id="ref-lbl-l1">Nivel 1 (Amigos)</div>
+          <div class="ref-item-sub" id="ref-sub-l1">Cashback de todas sus compras</div>
+        </div>
+
+        <div class="ref-item">
+          <div class="ref-item-val" style="color: #fbbf24;">3% USDT</div>
+          <div class="ref-item-label" id="ref-lbl-l2">Nivel 2 (Amigos)</div>
+          <div class="ref-item-sub" id="ref-sub-l2">Ingresos pasivos multinivel</div>
+        </div>
+      </div>
+
+      <div class="ref-footer-note" id="ref-footer-note">
+        ✨ <em>Tu código personal (ej: <code>REF1234</code>) se genera gratis en el menú del bot (Opción 4).</em>
       </div>
     </div>
 
@@ -807,6 +932,16 @@
         step2Desc: "El bot te da los datos exactos. En cripto (10 USDT) es la opción más económica.",
         step3Title: "3. Retirá en un lugar seguro 24/7",
         step3Desc: "Recibís foto, GPS y datos exactos. Tu pedido te espera en el lugar acordado. Sin mensajeros.",
+                refBadge: "💰 HASTA 10% CASHBACK EN USDT",
+        refTitle: "🤝 Ganá dinero recomendando amigos",
+        refSub: "Compartí tu enlace o código y recibí pagos automáticos en cripto.",
+        refLblFriend: "Para tu amigo",
+        refSubFriend: "10% OFF en su 1er pedido",
+        refLblL1: "Nivel 1 (Amigos)",
+        refSubL1: "7% cashback en USDT",
+        refLblL2: "Nivel 2 (Amigos)",
+        refSubL2: "3% cashback pasivo",
+        refFooterNote: "✨ <em>Tu código personal (ej: <code>REF1234</code>) se genera gratis en el menú del bot (Opción 4).</em>",
         locTitle: "📍 Puntos de Retiro Autónomos 24/7",
         loc1: "Palermo",
         loc2: "Recoleta",
@@ -848,6 +983,16 @@
         step2Desc: "Бот пришлет точные реквизиты. Оплата в крипте (10 USDT) — самая дешёвая.",
         step3Title: "3. Заберите в надежном месте 24/7",
         step3Desc: "Получите точные данные и фото. Заказ ждет вас в условленном месте. Никаких встреч с курьером.",
+                refBadge: "💰 ДО 10% ПАССИВНЫЙ ДОХОД В USDT",
+        refTitle: "🤝 Зарабатывайте, приглашая друзей",
+        refSub: "Делитесь вашей ссылкой и получайте выплаты в криптовалюте.",
+        refLblFriend: "Для вашего друга",
+        refSubFriend: "Скидка 10% на 1-й заказ",
+        refLblL1: "1-й уровень (Друзья)",
+        refSubL1: "7% кэшбэк в USDT со всех покупок",
+        refLblL2: "2-й уровень (Друзья)",
+        refSubL2: "3% пассивный доход в USDT",
+        refFooterNote: "✨ <em>Ваш личный код (например: <code>REF1234</code>) генерируется бесплатно в боте (Пункт 4).</em>",
         locTitle: "📍 Точки Автономной Выдачи 24/7",
         loc1: "Палермо (Palermo)",
         loc2: "Реколета (Recoleta)",
@@ -901,6 +1046,16 @@
       document.getElementById('step2-desc').textContent = d.step2Desc;
       document.getElementById('step3-title').textContent = d.step3Title;
       document.getElementById('step3-desc').textContent = d.step3Desc;
+            document.getElementById('ref-badge').textContent = d.refBadge;
+      document.getElementById('ref-title').textContent = d.refTitle;
+      document.getElementById('ref-sub').textContent = d.refSub;
+      document.getElementById('ref-lbl-friend').textContent = d.refLblFriend;
+      document.getElementById('ref-sub-friend').textContent = d.refSubFriend;
+      document.getElementById('ref-lbl-l1').textContent = d.refLblL1;
+      document.getElementById('ref-sub-l1').textContent = d.refSubL1;
+      document.getElementById('ref-lbl-l2').textContent = d.refLblL2;
+      document.getElementById('ref-sub-l2').textContent = d.refSubL2;
+      document.getElementById('ref-footer-note').innerHTML = d.refFooterNote;
       document.getElementById('loc-title').textContent = d.locTitle;
       document.getElementById('loc1').textContent = d.loc1;
       document.getElementById('loc2').textContent = d.loc2;
