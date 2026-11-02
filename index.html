@@ -3,1102 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title id="meta-title">Mr. Key — Barras Proteicas 24/7 • Retiro Autónomo</title>
+  <title id="meta-title">Mr. Key — Mantenimiento Técnico Programado</title>
   
-  <meta name="description" id="meta-desc" content="Servicio de autoservicio 100% en Buenos Aires 24/7. Pedí por WhatsApp o Telegram y retirá en un lugar seguro sin mensajeros.">
-  <meta name="theme-color" content="#07090e">
+  <meta name="description" id="meta-desc" content="Sitio en mantenimiento técnico programado. Estamos actualizando el sistema. Volvemos en breve.">
+  <meta name="theme-color" content="#090706">
   
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mrkeybot.github.io/">
-  <meta property="og:site_name" content="Mr. Key • Buenos Aires 24/7">
-  <meta property="og:title" content="Mr. Key — Barras Proteicas 24/7 • Retiro Autónomo">
-  <meta property="og:description" content="Servicio 100% autoservicio 24/7. Pedí por bot y retirá en un lugar seguro cuando quieras sin repartidor.">
-  <meta property="og:image" content="https://mrkeybot.github.io/og-preview.jpg">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #07090e;
-      --card-bg: rgba(15, 23, 42, 0.78);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --accent-cyan: #00f0ff;
-      --accent-green: #25d366;
-      --accent-blue: #229ed9;
-      --accent-amber: #f59e0b;
-      --accent-red: #ef4444;
-      --text: #ffffff;
-      --text-muted: #94a3b8;
+      --bg: #090706;
+      --card-bg: rgba(18, 13, 10, 0.72);
+      --card-border: rgba(245, 158, 11, 0.35);
+      --amber: #F59E0B;
+      --amber-light: #FCD34D;
+      --amber-dark: #D97706;
+      --text-main: #FFFFFF;
+      --text-muted: #A8A29E;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     body {
       background-color: var(--bg);
-      color: var(--text);
-      font-family: "Plus Jakarta Sans", -apple-system, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--text-main);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background gradient */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.16) 0%, rgba(217, 119, 6, 0.08) 40%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Subtle technical grid */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.14) 0%, transparent 60%),
-        radial-gradient(circle at 100% 40%, rgba(37, 211, 102, 0.09) 0%, transparent 50%),
-        radial-gradient(circle at 0% 70%, rgba(34, 158, 217, 0.09) 0%, transparent 50%);
-      background-attachment: fixed;
-      padding: 16px;
-      -webkit-font-smoothing: antialiased;
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .container {
+      position: relative;
+      z-index: 10;
       width: 100%;
       max-width: 480px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      padding-bottom: 40px;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 10px 0 2px;
-    }
-    .logo-box {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-img {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 14px rgba(0, 240, 255, 0.25);
-    }
-    .logo-title {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-    .logo-title span { color: var(--accent-cyan); }
-
-    /* Lang Selector */
-    .lang-btn {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #fff;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .lang-btn:hover, .lang-btn:active {
-      background: rgba(255, 255, 255, 0.18);
-      border-color: var(--accent-cyan);
-    }
-
-    /* Hero Card */
-    .hero-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 24px;
-      padding: 24px;
       text-align: center;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
-    .frost-badge {
+
+    /* Top Language Switcher */
+    .lang-bar {
       display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(0, 240, 255, 0.12);
-      border: 1px solid rgba(0, 240, 255, 0.35);
-      color: var(--accent-cyan);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-    }
-    .hero-title {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-    .hero-subtitle {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    /* CRITICAL WARNING CARD (NO COURIER / AUTOSERVICIO) */
-    .alert-card {
-      background: linear-gradient(135deg, rgba(239, 68, 68, 0.16), rgba(245, 158, 11, 0.16));
-      border: 1.5px solid rgba(245, 158, 11, 0.5);
-      border-radius: 20px;
-      padding: 18px 20px;
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.12);
-    }
-    .alert-icon {
-      font-size: 1.8rem;
-      line-height: 1;
-      flex-shrink: 0;
-      animation: pulse-warn 2s infinite ease-in-out;
-    }
-    @keyframes pulse-warn {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-    .alert-content h4 {
-      font-family: "Outfit", sans-serif;
-      color: #fbbf24;
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-      letter-spacing: -0.2px;
-    }
-    .alert-content p {
-      font-size: 0.88rem;
-      line-height: 1.48;
-      color: #f1f5f9;
-    }
-
-    /* ACTION BUTTONS (CLICK TO ORDER) */
-    .cta-section {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .cta-header {
-      text-align: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #cbd5e1;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-    .btn-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 20px;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      font-family: inherit;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      text-align: left;
-    }
-    .btn-cta:active {
-      transform: scale(0.98);
-    }
-    .btn-cta-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .btn-icon-wrap {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, 0.2);
-      flex-shrink: 0;
-    }
-    .btn-icon {
-      width: 26px;
-      height: 26px;
-    }
-    .btn-text-box h4 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.12rem;
-      font-weight: 800;
-      line-height: 1.2;
-    }
-    .btn-text-box span {
-      font-size: 0.78rem;
-      opacity: 0.9;
-      font-weight: 500;
-    }
-    .btn-arrow {
-      font-size: 1.4rem;
-      font-weight: 700;
-      opacity: 0.85;
-      margin-left: 6px;
-    }
-
-    .btn-wa {
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .btn-wa:hover {
-      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
-      filter: brightness(1.05);
-    }
-    .btn-tg {
-      background: linear-gradient(135deg, #229ed9, #1579a8);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .btn-tg:hover {
-      box-shadow: 0 12px 30px rgba(34, 158, 217, 0.45);
-      filter: brightness(1.05);
-    }
-
-    /* Pricing Card */
-    .price-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 22px;
-      padding: 22px;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    .price-card h3 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .price-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .price-item {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 14px 12px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .price-item.best {
-      background: linear-gradient(180deg, rgba(0, 240, 255, 0.12), rgba(0, 240, 255, 0.03));
-      border: 1.5px solid rgba(0, 240, 255, 0.45);
-      box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);
-    }
-    .badge-deal {
-      display: inline-block;
-      background: var(--accent-cyan);
-      color: #000;
-      font-size: 0.65rem;
-      font-weight: 900;
-      padding: 3px 8px;
-      border-radius: 8px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-      align-self: center;
-    }
-    .badge-normal {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      color: #e2e8f0;
-      font-size: 0.65rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 8px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      align-self: center;
-    }
-    .price-tag {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.45rem;
-      font-weight: 900;
-      color: #fff;
-    }
-    .price-item.best .price-tag { color: var(--accent-cyan); }
-    .price-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-      line-height: 1.3;
-    }
-    .price-note {
-      font-size: 0.8rem;
-      color: #cbd5e1;
-      margin-top: 14px;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 10px;
-      border-radius: 12px;
-      border: 1px dashed rgba(255, 255, 255, 0.15);
-    }
-
-    /* 3 Simple Steps */
-    .steps-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 22px;
-      padding: 22px;
-      backdrop-filter: blur(16px);
-    }
-    .steps-card h3 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.15rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-    .step-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 16px;
-    }
-    .step-item:last-child { margin-bottom: 0; }
-    .step-num {
-      width: 30px;
-      height: 30px;
-      background: rgba(0, 240, 255, 0.15);
-      border: 1.5px solid var(--accent-cyan);
-      color: var(--accent-cyan);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 0.88rem;
-      flex-shrink: 0;
-    }
-    .step-text h5 {
-      font-size: 0.96rem;
-      font-weight: 700;
-      margin-bottom: 3px;
-    }
-    .step-text p {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    /* Locations */
-    .loc-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 22px;
-      padding: 20px;
-      backdrop-filter: blur(16px);
-    }
-    .loc-card h3 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.08rem;
-      font-weight: 800;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .loc-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .loc-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-      color: #e2e8f0;
-    }
-    .loc-dot {
-      width: 9px;
-      height: 9px;
-      background: var(--accent-cyan);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-cyan);
-      flex-shrink: 0;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #64748b;
-      margin-top: 10px;
-      line-height: 1.5;
-    }
-
-    /* ========================================================
-       MODAL: EXPLICACIÓN DE AUTOSERVICIO ANTES DE ENTRAR AL BOT
-       ======================================================== */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.25s ease;
-    }
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-    .modal-window {
-      background: #0d1322;
-      border: 1.5px solid rgba(0, 240, 255, 0.3);
-      border-radius: 24px;
-      max-width: 440px;
-      width: 100%;
-      padding: 24px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.15);
-      transform: translateY(20px) scale(0.96);
-      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .modal-overlay.active .modal-window {
-      transform: translateY(0) scale(1);
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .modal-header-icon {
-      font-size: 2rem;
-      line-height: 1;
-    }
-    .modal-header h3 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #fbbf24;
-      line-height: 1.2;
-    }
-    
-    .modal-points {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 9999px;
+      padding: 3px;
+      gap: 2px;
       margin-bottom: 20px;
     }
-    .modal-point {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    .modal-point-icon {
-      font-size: 1.2rem;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .modal-point-text {
-      font-size: 0.88rem;
-      line-height: 1.45;
-      color: #e2e8f0;
-    }
-    .modal-point-text strong {
-      color: #fff;
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #A8A29E;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
-    .modal-actions {
+    .lang-btn:hover {
+      color: #FFFFFF;
+    }
+
+    .lang-btn.active {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      color: #000000;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+    }
+
+    /* Main Maintenance Card */
+    .card {
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.15);
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      align-items: center;
+      position: relative;
     }
-    .modal-btn-confirm {
+
+    /* Glowing Maintenance Icon */
+    .icon-box {
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(217, 119, 6, 0.08) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 16px;
-      border-radius: 16px;
-      border: none;
-      font-family: inherit;
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: #fff;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-      transition: all 0.2s;
-    }
-    .modal-btn-confirm:active {
-      transform: scale(0.98);
-    }
-    .modal-btn-cancel {
-      width: 100%;
-      padding: 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: transparent;
-      color: var(--text-muted);
-      font-family: inherit;
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .modal-btn-cancel:hover {
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-    }
-  
-    /* Referral Program Card */
-    .ref-card {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.09), rgba(0, 240, 255, 0.05));
-      border: 1.5px solid rgba(16, 185, 129, 0.4);
-      border-radius: 22px;
-      padding: 22px;
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(16, 185, 129, 0.12);
-    }
-    .ref-header {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    .ref-badge {
-      display: inline-block;
-      background: rgba(16, 185, 129, 0.18);
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      color: #34d399;
-      font-size: 0.7rem;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-    }
-    .ref-header h3 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      margin-bottom: 4px;
-      color: #fff;
-    }
-    .ref-header p {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-    .ref-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-    .ref-item {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 12px 6px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .ref-item-val {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.2rem;
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 4px;
-    }
-    .ref-item-label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #f1f5f9;
-      line-height: 1.2;
-      margin-bottom: 2px;
-    }
-    .ref-item-sub {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      line-height: 1.2;
-    }
-    .ref-footer-note {
-      text-align: center;
-      font-size: 0.78rem;
-      color: #cbd5e1;
-      background: rgba(0, 0, 0, 0.25);
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px dashed rgba(16, 185, 129, 0.35);
-      line-height: 1.4;
-    }
-    .ref-footer-note code {
-      background: rgba(255, 255, 255, 0.12);
-      padding: 2px 6px;
-      border-radius: 6px;
-      color: #34d399;
-      font-weight: 700;
+      font-size: 30px;
+      box-shadow: 0 0 24px rgba(245, 158, 11, 0.25);
+      margin-bottom: 20px;
+      animation: pulseGlow 3s ease-in-out infinite alternate;
     }
 
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 16px rgba(245, 158, 11, 0.2); transform: scale(1); }
+      100% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.45); transform: scale(1.03); }
+    }
+
+    /* Status Pill */
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: 9999px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #FCD34D;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .pulse-amber {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #F59E0B;
+      box-shadow: 0 0 8px #F59E0B;
+      animation: blinkDot 1.5s infinite ease-in-out;
+    }
+
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.85); }
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* Info Box */
+    .info-box {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 14px 16px;
+      margin-bottom: 0;
+      text-align: left;
+      font-size: 12px;
+      line-height: 1.55;
+      color: #D6D3D1;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .info-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 11px;
+      color: #78716C;
+      letter-spacing: 0.04em;
+    }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    
-    <!-- Top Bar -->
-    <header>
-      <div class="logo-box">
-        <img src="mrkey-logo.png" alt="Mr. Key" class="logo-img" onerror="this.style.display='none'">
-        <div class="logo-title">MR. KEY<span> 24/7</span></div>
-      </div>
-      <button class="lang-btn" id="lang-switch" onclick="toggleLang()">
-        🌐 <span id="lang-label">RU</span>
-      </button>
-    </header>
-
-    <!-- Hero Card -->
-    <div class="hero-card">
-      <div class="frost-badge" id="hero-badge">⚡ 100% AUTOSERVICIO • RETIRO 24/7</div>
-      <h1 class="hero-title" id="hero-title">Barras Proteicas sin Azúcar • Retiro 24/7</h1>
-      <p class="hero-subtitle" id="hero-sub">Hacé tu pedido por bot y retirá en minutos en el lugar acordado. Sin intermediarios.</p>
+  <main class="container">
+    <!-- Language Switcher -->
+    <div class="lang-bar">
+      <button type="button" class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button type="button" class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button type="button" class="lang-btn" onclick="setLang('en')">EN</button>
     </div>
 
-    <!-- Warning / Self Service Explainer (NO COURIER) -->
-    <div class="alert-card">
-      <div class="alert-icon">⚠️</div>
-      <div class="alert-content">
-        <h4 id="alert-title">¡IMPORTANTE: No hay repartidor!</h4>
-        <p id="alert-text">
-          Es un servicio <strong>100% autoservicio 24/7</strong>. Con el repartidor <strong>NO te encontrás</strong> y el dueño <strong>NO te lo lleva a tu casa</strong>. Tu pedido te estará esperando en un <strong>lugar seguro</strong> en el punto acordado. Al abonar en el bot recibís la ubicación exacta, foto e indicaciones para retirarlo vos mismo.
-        </p>
-      </div>
-    </div>
+    <!-- Card -->
+    <div class="card">
+      <div class="icon-box">🍫</div>
 
-    <!-- Big Action CTA Buttons -->
-    <div class="cta-section">
-      <div class="cta-header" id="cta-label">👇 TOCÁ AQUÍ PARA HACER TU PEDIDO:</div>
-
-      <!-- Button WhatsApp -->
-      <button class="btn-cta btn-wa" onclick="openServiceModal('wa')">
-        <div class="btn-cta-left">
-          <div class="btn-icon-wrap">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-          </div>
-          <div class="btn-text-box">
-            <h4 id="btn-wa-text">Para pedir por WhatsApp toque aquí</h4>
-            <span id="btn-wa-sub">Atención instantánea 24/7 en el bot</span>
-          </div>
-        </div>
-        <div class="btn-arrow">→</div>
-      </button>
-
-      <!-- Button Telegram -->
-      <button class="btn-cta btn-tg" onclick="openServiceModal('tg')">
-        <div class="btn-cta-left">
-          <div class="btn-icon-wrap">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.832.921z"/>
-            </svg>
-          </div>
-          <div class="btn-text-box">
-            <h4 id="btn-tg-text">Para pedir por Telegram toque aquí</h4>
-            <span id="btn-tg-sub">Bot oficial automatizado</span>
-          </div>
-        </div>
-        <div class="btn-arrow">→</div>
-      </button>
-
-    </div>
-
-    <!-- Pricing Card -->
-    <div class="price-card">
-      <h3 id="price-title">💎 Precios Transparentes</h3>
-      <div class="price-grid">
-        
-        <!-- Cripto (Más barata) -->
-        <div class="price-item best">
-          <div class="badge-deal" id="badge-deal">🔥 MÁS ECONÓMICO</div>
-          <div class="price-tag">10 USDT</div>
-          <div class="price-sub" id="price-crypto-sub">Cripto (TRC-20 / BSC / Polygon)</div>
-        </div>
-
-        <!-- Pesos -->
-        <div class="price-item">
-          <div class="badge-normal" id="badge-normal">PESOS</div>
-          <div class="price-tag">$18.000 ARS</div>
-          <div class="price-sub" id="price-ars-sub">Pesos (Mercado Pago / Banco)</div>
-        </div>
-
-      </div>
-      <div class="price-note" id="price-ref-note">
-        🎁 <strong>10% OFF</strong> en tu primer pedido si tenés código de amigo.
-      </div>
-    </div>
-
-    <!-- Referral Program Card -->
-    <div class="ref-card">
-      <div class="ref-header">
-        <span class="ref-badge" id="ref-badge">💰 HASTA 10% CASHBACK EN USDT</span>
-        <h3 id="ref-title">🤝 Ganá dinero recomendando amigos</h3>
-        <p id="ref-sub">Compartí tu enlace o código y recibí pagos automáticos en cripto.</p>
+      <div class="status-pill">
+        <span class="pulse-amber"></span>
+        <span id="txt-status">Sold Out • Agotado por hoy</span>
       </div>
 
-      <div class="ref-grid">
-        <div class="ref-item">
-          <div class="ref-item-val" style="color: #22c55e;">10% OFF</div>
-          <div class="ref-item-label" id="ref-lbl-friend">Para tu amigo</div>
-          <div class="ref-item-sub" id="ref-sub-friend">En su primer pedido con tu código</div>
+      <h1 class="title" id="txt-title">Barritas agotadas por hoy</h1>
+      <p class="description" id="txt-desc">
+        ¡Muchas gracias por su preferencia! Por el día de hoy se agotó todo nuestro stock. Ya estamos preparando una nueva tanda fresca — mañana a primera hora habrá reposición en todos los puntos 24/7.
+      </p>
+
+      <div class="info-box">
+        <div class="info-row">
+          <span>📦</span>
+          <span id="txt-info-1"><strong>Estado:</strong> Stock agotado por el día de hoy.</span>
         </div>
-
-        <div class="ref-item">
-          <div class="ref-item-val" style="color: var(--accent-cyan);">7% USDT</div>
-          <div class="ref-item-label" id="ref-lbl-l1">Nivel 1 (Amigos)</div>
-          <div class="ref-item-sub" id="ref-sub-l1">Cashback de todas sus compras</div>
-        </div>
-
-        <div class="ref-item">
-          <div class="ref-item-val" style="color: #fbbf24;">3% USDT</div>
-          <div class="ref-item-label" id="ref-lbl-l2">Nivel 2 (Amigos)</div>
-          <div class="ref-item-sub" id="ref-sub-l2">Ingresos pasivos multinivel</div>
-        </div>
-      </div>
-
-      <div class="ref-footer-note" id="ref-footer-note">
-        ✨ <em>Tu código personal (ej: <code>REF1234</code>) se genera gratis en el menú del bot (Opción 4).</em>
-      </div>
-    </div>
-
-    <!-- 3 Steps -->
-    <div class="steps-card">
-      <h3 id="steps-title">⚡ ¿Cómo funciona en 3 pasos?</h3>
-      
-      <div class="step-item">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          <h5 id="step1-title">Elegí tu bot</h5>
-          <p id="step1-desc">Tocá el botón de WhatsApp o Telegram arriba para abrir el catálogo de sabores.</p>
-        </div>
-      </div>
-
-      <div class="step-item">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <h5 id="step2-title">Elegí sabores y pagá en el bot</h5>
-          <p id="step2-desc">El bot te da los datos exactos. En cripto (10 USDT) es la opción más económica.</p>
-        </div>
-      </div>
-
-      <div class="step-item">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          <h5 id="step3-title">Retirá en un lugar seguro 24/7</h5>
-          <p id="step3-desc">Recibís foto, GPS y datos exactos. Tu pedido te espera en el lugar acordado. Sin mensajeros.</p>
+        <div class="info-row">
+          <span>⏰</span>
+          <span id="txt-info-2"><strong>Próxima reposición:</strong> Mañana por la mañana.</span>
         </div>
       </div>
     </div>
 
-    <!-- Locations -->
-    <div class="loc-card">
-      <h3 id="loc-title">📍 Puntos de Retiro Autónomos 24/7</h3>
-      <ul class="loc-list">
-        <li><div class="loc-dot"></div> <strong id="loc1">Palermo</strong></li>
-        <li><div class="loc-dot"></div> <strong id="loc2">Recoleta</strong></li>
-        <li><div class="loc-dot"></div> <strong id="loc3">Belgrano</strong></li>
-        <li><div class="loc-dot"></div> <strong id="loc4">San Telmo</strong></li>
-      </ul>
+    <div class="footer" id="txt-footer">
+      © 2026 Mr. Key • Buenos Aires • Reposición Mañana
     </div>
-
-    <footer>
-      <p>© 2026 Mr. Key • Buenos Aires, Argentina</p>
-      <p style="margin-top: 4px; color: #475569;">Retiro autónomo 24 horas • Sin intermediarios</p>
-    </footer>
-
-  </div>
-
-  <!-- ========================================================
-       MODAL DE CONFIRMACIÓN DE AUTOSERVICIO (ANTES DE IR AL BOT)
-       ======================================================== -->
-  <div class="modal-overlay" id="service-modal" onclick="if(event.target === this) closeServiceModal()">
-    <div class="modal-window">
-      
-      <div class="modal-header">
-        <div class="modal-header-icon">⚠️</div>
-        <div>
-          <h3 id="modal-title">Antes de continuar al Bot:</h3>
-          <p style="font-size: 0.78rem; color: #94a3b8;" id="modal-subtitle">Servicio 100% Autoservicio</p>
-        </div>
-      </div>
-
-      <div class="modal-points">
-        
-        <div class="modal-point">
-          <div class="modal-point-icon">🚫</div>
-          <div class="modal-point-text" id="modal-p1">
-            <strong>Sin repartidor:</strong> No te encontrás con un mensajero ni te lo llevan a domicilio.
-          </div>
-        </div>
-
-        <div class="modal-point">
-          <div class="modal-point-icon">📍</div>
-          <div class="modal-point-text" id="modal-p2">
-            <strong>En el lugar acordado:</strong> Tu pedido te estará esperando en un lugar seguro 24/7.
-          </div>
-        </div>
-
-        <div class="modal-point">
-          <div class="modal-point-icon">🔑</div>
-          <div class="modal-point-text" id="modal-p3">
-            <strong>Datos al pagar:</strong> Al abonar en el bot recibís la ubicación exacta, foto y código para retirarlo vos mismo.
-          </div>
-        </div>
-
-        <div class="modal-point">
-          <div class="modal-point-icon">💎</div>
-          <div class="modal-point-text" id="modal-p4">
-            <strong>Precios:</strong> Cripto <strong>10 USDT</strong> (más barato) | Pesos <strong>$18.000 ARS</strong>.
-          </div>
-        </div>
-
-      </div>
-
-      <div class="modal-actions">
-        <a href="#" id="modal-btn-go" class="modal-btn-confirm" target="_blank" rel="noopener noreferrer" onclick="closeServiceModal()">
-          <span id="modal-btn-go-text">Entendido, abrir Bot</span> →
-        </a>
-        <button class="modal-btn-cancel" id="modal-btn-back" onclick="closeServiceModal()">Volver atrás</button>
-      </div>
-
-    </div>
-  </div>
+  </main>
 
   <script>
-    const i18n = {
+    const I18N = {
       es: {
-        langBtn: "RU",
-        metaTitle: "Mr. Key — Barras Proteicas 24/7 • Retiro Autónomo",
-        heroBadge: "⚡ 100% AUTOSERVICIO • RETIRO 24/7",
-        heroTitle: "Barras Proteicas sin Azúcar • Retiro 24/7",
-        heroSub: "Hacé tu pedido por bot y retirá en minutos en el lugar acordado. Sin intermediarios.",
-        alertTitle: "¡IMPORTANTE: No hay repartidor!",
-        alertText: "Es un servicio <strong>100% autoservicio 24/7</strong>. Con el repartidor <strong>NO te encontrás</strong> y el dueño <strong>NO te lo lleva a tu casa</strong>. Tu pedido te estará esperando en un <strong>lugar seguro</strong> en el punto acordado. Al abonar en el bot recibís la ubicación exacta, foto e indicaciones para retirarlo vos mismo.",
-        ctaLabel: "👇 TOCÁ AQUÍ PARA HACER TU PEDIDO:",
-        btnWa: "Para pedir por WhatsApp toque aquí",
-        btnWaSub: "Atención instantánea 24/7 en el bot",
-        btnTg: "Para pedir por Telegram toque aquí",
-        btnTgSub: "Bot oficial automatizado",
-        priceTitle: "💎 Precios Transparentes",
-        badgeDeal: "🔥 MÁS ECONÓMICO",
-        badgeNormal: "PESOS",
-        priceCryptoSub: "Cripto (TRC-20 / BSC / Polygon)",
-        priceArsSub: "Pesos (Mercado Pago / Banco)",
-        priceRefNote: "🎁 <strong>10% OFF</strong> en tu primer pedido si tenés código de amigo.",
-        stepsTitle: "⚡ ¿Cómo funciona en 3 pasos?",
-        step1Title: "1. Elegí tu bot",
-        step1Desc: "Tocá el botón de WhatsApp o Telegram arriba para abrir el catálogo de sabores.",
-        step2Title: "2. Elegí sabores y pagá en el bot",
-        step2Desc: "El bot te da los datos exactos. En cripto (10 USDT) es la opción más económica.",
-        step3Title: "3. Retirá en un lugar seguro 24/7",
-        step3Desc: "Recibís foto, GPS y datos exactos. Tu pedido te espera en el lugar acordado. Sin mensajeros.",
-                refBadge: "💰 HASTA 10% CASHBACK EN USDT",
-        refTitle: "🤝 Ganá dinero recomendando amigos",
-        refSub: "Compartí tu enlace o código y recibí pagos automáticos en cripto.",
-        refLblFriend: "Para tu amigo",
-        refSubFriend: "10% OFF en su 1er pedido",
-        refLblL1: "Nivel 1 (Amigos)",
-        refSubL1: "7% cashback en USDT",
-        refLblL2: "Nivel 2 (Amigos)",
-        refSubL2: "3% cashback pasivo",
-        refFooterNote: "✨ <em>Tu código personal (ej: <code>REF1234</code>) se genera gratis en el menú del bot (Opción 4).</em>",
-        locTitle: "📍 Puntos de Retiro Autónomos 24/7",
-        loc1: "Palermo",
-        loc2: "Recoleta",
-        loc3: "Belgrano",
-        loc4: "San Telmo",
-        modalTitle: "Antes de continuar al Bot:",
-        modalSubtitle: "Servicio 100% Autoservicio",
-        modalP1: "<strong>Sin repartidor:</strong> No te encontrás con un mensajero ni te lo llevan a domicilio.",
-        modalP2: "<strong>En el lugar acordado:</strong> Tu pedido te estará esperando en un lugar seguro 24/7.",
-        modalP3: "<strong>Datos al pagar:</strong> Al abonar en el bot recibís la ubicación exacta, foto e indicaciones para retirarlo vos mismo.",
-        modalP4: "<strong>Precios:</strong> Cripto <strong>10 USDT</strong> (más barato) | Pesos <strong>$18.000 ARS</strong>.",
-        modalBtnGoWa: "Entendido, abrir WhatsApp",
-        modalBtnGoTg: "Entendido, abrir Telegram",
-        modalBtnBack: "Volver atrás"
+        pageTitle: "Mr. Key — Barritas agotadas por hoy (Sold Out)",
+        metaDesc: "Por hoy todas las barritas están agotadas. Mañana habrá reposición de producto fresco 24/7.",
+        status: "Sold Out • Agotado por hoy",
+        title: "Barritas agotadas por hoy",
+        desc: "¡Muchas gracias a todos por su preferencia! Por el día de hoy se agotó todo nuestro stock. Ya estamos produciendo una nueva tanda fresca — mañana a primera hora habrá reposición en todos los puntos 24/7 de Palermo, Belgrano y San Telmo.",
+        info1: "<strong>Estado:</strong> Stock agotado por el día de hoy.",
+        info2: "<strong>Próxima reposición:</strong> Mañana por la mañana.",
+        footer: "© 2026 Mr. Key • Buenos Aires • Reposición Mañana"
       },
       ru: {
-        langBtn: "ES",
-        metaTitle: "Mr. Key — Протеиновые Батончики 24/7 • Самовывоз",
-        heroBadge: "⚡ 100% САМООБСЛУЖИВАНИЕ • ВЫДАЧА 24/7",
-        heroTitle: "Протеиновые Батончики без Сахара • Выдача 24/7",
-        heroSub: "Оформите заказ в боте и заберите в условленном месте без ожидания и посредников.",
-        alertTitle: "ВАЖНО: С курьером встречаться НЕ НАДО!",
-        alertText: "Это <strong>сервис самообслуживания 24/7</strong>. С курьером встречаться <strong>НЕ НАДО</strong>, и лично в руки мы не привозим. Заказ будет ждать вас в <strong>надежном условленном месте</strong>. После оплаты в боте вы моментально получаете точный адрес, фото и инструкции, чтобы прийти и забрать заказ самостоятельно.",
-        ctaLabel: "👇 НАЖМИТЕ ЗДЕСЬ ДЛЯ ЗАКАЗА:",
-        btnWa: "Для заказа через WhatsApp нажмите сюда",
-        btnWaSub: "Мгновенный ответ 24/7 в боте",
-        btnTg: "Для заказа через Telegram нажмите сюда",
-        btnTgSub: "Официальный автоматический бот",
-        priceTitle: "💎 Прозрачные Цены",
-        badgeDeal: "🔥 САМАЯ ДЕШЁВАЯ ЦЕНА",
-        badgeNormal: "ПЕСО",
-        priceCryptoSub: "Крипта USDT (TRC-20 / BSC / Polygon)",
-        priceArsSub: "Песо ARS (Mercado Pago / Любой банк)",
-        priceRefNote: "🎁 <strong>Скидка 10%</strong> на 1-й заказ по рекомендации друга.",
-        stepsTitle: "⚡ Как это работает в 3 шага?",
-        step1Title: "1. Выберите мессенджер",
-        step1Desc: "Нажмите кнопку WhatsApp или Telegram выше для открытия каталога.",
-        step2Title: "2. Выберите вкус и оплатите в боте",
-        step2Desc: "Бот пришлет точные реквизиты. Оплата в крипте (10 USDT) — самая дешёвая.",
-        step3Title: "3. Заберите в надежном месте 24/7",
-        step3Desc: "Получите точные данные и фото. Заказ ждет вас в условленном месте. Никаких встреч с курьером.",
-                refBadge: "💰 ДО 10% ПАССИВНЫЙ ДОХОД В USDT",
-        refTitle: "🤝 Зарабатывайте, приглашая друзей",
-        refSub: "Делитесь вашей ссылкой и получайте выплаты в криптовалюте.",
-        refLblFriend: "Для вашего друга",
-        refSubFriend: "Скидка 10% на 1-й заказ",
-        refLblL1: "1-й уровень (Друзья)",
-        refSubL1: "7% кэшбэк в USDT со всех покупок",
-        refLblL2: "2-й уровень (Друзья)",
-        refSubL2: "3% пассивный доход в USDT",
-        refFooterNote: "✨ <em>Ваш личный код (например: <code>REF1234</code>) генерируется бесплатно в боте (Пункт 4).</em>",
-        locTitle: "📍 Точки Автономной Выдачи 24/7",
-        loc1: "Палермо (Palermo)",
-        loc2: "Реколета (Recoleta)",
-        loc3: "Бельграно (Belgrano)",
-        loc4: "Сан-Тельмо (San Telmo)",
-        modalTitle: "Перед переходом в бот:",
-        modalSubtitle: "Сервис 100% Самообслуживания",
-        modalP1: "<strong>С курьером встречаться НЕ НАДО:</strong> Мы не привозим заказ лично и не передаем в руки.",
-        modalP2: "<strong>В условленном месте:</strong> Заказ будет ждать вас в надежном месте 24/7.",
-        modalP3: "<strong>Данные после оплаты:</strong> После оплаты в боте вы получаете точный адрес, фото и данные, где забрать заказ, и приходите за ним самостоятельно.",
-        modalP4: "<strong>Цены:</strong> Криптовалюта (USDT) — <strong>10 USDT</strong> (самая дешёвая) | Песо — <strong>$18.000 ARS</strong>.",
-        modalBtnGoWa: "Понятно, открыть WhatsApp",
-        modalBtnGoTg: "Понятно, открыть Telegram",
-        modalBtnBack: "Назад"
+        pageTitle: "Mr. Key — На сегодня все батончики закончились (Sold Out)",
+        metaDesc: "На сегодня все батончики закончились. Завтра будет пополнение свежей партии 24/7.",
+        status: "Sold Out • Все батончики раскуплены",
+        title: "На сегодня все батончики закончились",
+        desc: "Огромное спасибо за такой спрос! На сегодня весь запас батончиков полностью раскуплен. Мы уже готовим новую партию свежих крафтовых батончиков — завтра с утра будет пополнение во всех точках 24/7 (Палермо, Бельграно, Сан-Тельмо).",
+        info1: "<strong>Статус:</strong> Все батончики на сегодня проданы.",
+        info2: "<strong>Пополнение:</strong> Завтра в первой половине дня.",
+        footer: "© 2026 Mr. Key • Буэнос-Айрес • Пополнение завтра"
+      },
+      en: {
+        pageTitle: "Mr. Key — Sold Out For Today",
+        metaDesc: "All protein bars are sold out for today. Fresh restock tomorrow 24/7.",
+        status: "Sold Out • Out of Stock Today",
+        title: "All Bars Sold Out For Today",
+        desc: "Thank you so much for your support! All our handcrafted protein bars are completely sold out for today. We are already preparing a fresh batch — restock tomorrow morning across all 24/7 spots in Palermo, Belgrano, and San Telmo.",
+        info1: "<strong>Status:</strong> Sold out for today.",
+        info2: "<strong>Restock:</strong> Tomorrow morning.",
+        footer: "© 2026 Mr. Key • Buenos Aires • Restock Tomorrow"
       }
     };
 
-    let currentLang = 'es';
-    let currentChannel = 'wa';
-
-    const WA_LINK_ES = 'https://wa.me/5491130127047?text=Hola%20MrKey%20quiero%20hacer%20un%20pedido';
-    const WA_LINK_RU = 'https://wa.me/5491130127047?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%20MrKey%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7';
-    const TG_LINK = 'https://t.me/mrkey_ba_1_bot';
-
-    function toggleLang() {
-      currentLang = currentLang === 'es' ? 'ru' : 'es';
-      const d = i18n[currentLang];
+    function setLang(lang) {
+      if (!I18N[lang]) lang = 'es';
+      localStorage.setItem('mrkey_maint_lang', lang);
+      document.documentElement.lang = lang;
       
-      document.getElementById('lang-label').textContent = d.langBtn;
-      document.title = d.metaTitle;
-      document.getElementById('hero-badge').innerHTML = d.heroBadge;
-      document.getElementById('hero-title').textContent = d.heroTitle;
-      document.getElementById('hero-sub').textContent = d.heroSub;
-      document.getElementById('alert-title').textContent = d.alertTitle;
-      document.getElementById('alert-text').innerHTML = d.alertText;
-      document.getElementById('cta-label').textContent = d.ctaLabel;
-      document.getElementById('btn-wa-text').textContent = d.btnWa;
-      document.getElementById('btn-wa-sub').textContent = d.btnWaSub;
-      document.getElementById('btn-tg-text').textContent = d.btnTg;
-      document.getElementById('btn-tg-sub').textContent = d.btnTgSub;
-      document.getElementById('price-title').textContent = d.priceTitle;
-      document.getElementById('badge-deal').textContent = d.badgeDeal;
-      document.getElementById('badge-normal').textContent = d.badgeNormal;
-      document.getElementById('price-crypto-sub').textContent = d.priceCryptoSub;
-      document.getElementById('price-ars-sub').textContent = d.priceArsSub;
-      document.getElementById('price-ref-note').innerHTML = d.priceRefNote;
-      document.getElementById('steps-title').textContent = d.stepsTitle;
-      document.getElementById('step1-title').textContent = d.step1Title;
-      document.getElementById('step1-desc').textContent = d.step1Desc;
-      document.getElementById('step2-title').textContent = d.step2Title;
-      document.getElementById('step2-desc').textContent = d.step2Desc;
-      document.getElementById('step3-title').textContent = d.step3Title;
-      document.getElementById('step3-desc').textContent = d.step3Desc;
-            document.getElementById('ref-badge').textContent = d.refBadge;
-      document.getElementById('ref-title').textContent = d.refTitle;
-      document.getElementById('ref-sub').textContent = d.refSub;
-      document.getElementById('ref-lbl-friend').textContent = d.refLblFriend;
-      document.getElementById('ref-sub-friend').textContent = d.refSubFriend;
-      document.getElementById('ref-lbl-l1').textContent = d.refLblL1;
-      document.getElementById('ref-sub-l1').textContent = d.refSubL1;
-      document.getElementById('ref-lbl-l2').textContent = d.refLblL2;
-      document.getElementById('ref-sub-l2').textContent = d.refSubL2;
-      document.getElementById('ref-footer-note').innerHTML = d.refFooterNote;
-      document.getElementById('loc-title').textContent = d.locTitle;
-      document.getElementById('loc1').textContent = d.loc1;
-      document.getElementById('loc2').textContent = d.loc2;
-      document.getElementById('loc3').textContent = d.loc3;
-      document.getElementById('loc4').textContent = d.loc4;
+      const data = I18N[lang];
+      document.title = data.pageTitle;
+      document.getElementById('meta-desc').content = data.metaDesc;
+      document.getElementById('txt-status').innerText = data.status;
+      document.getElementById('txt-title').innerText = data.title;
+      document.getElementById('txt-desc').innerText = data.desc;
+      document.getElementById('txt-info-1').innerHTML = data.info1;
+      document.getElementById('txt-info-2').innerHTML = data.info2;
+      document.getElementById('txt-footer').innerText = data.footer;
 
-      // Update Modal Texts
-      document.getElementById('modal-title').textContent = d.modalTitle;
-      document.getElementById('modal-subtitle').textContent = d.modalSubtitle;
-      document.getElementById('modal-p1').innerHTML = d.modalP1;
-      document.getElementById('modal-p2').innerHTML = d.modalP2;
-      document.getElementById('modal-p3').innerHTML = d.modalP3;
-      document.getElementById('modal-p4').innerHTML = d.modalP4;
-      document.getElementById('modal-btn-back').textContent = d.modalBtnBack;
-      
-      updateModalButton();
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${lang}'`));
+      });
     }
 
-    function openServiceModal(channel) {
-      currentChannel = channel;
-      updateModalButton();
-      document.getElementById('service-modal').classList.add('active');
-    }
-
-    function closeServiceModal() {
-      document.getElementById('service-modal').classList.remove('active');
-    }
-
-    function updateModalButton() {
-      const d = i18n[currentLang];
-      const btnGo = document.getElementById('modal-btn-go');
-      const btnGoText = document.getElementById('modal-btn-go-text');
-
-      if (currentChannel === 'wa') {
-        btnGo.href = currentLang === 'ru' ? WA_LINK_RU : WA_LINK_ES;
-        btnGoText.textContent = d.modalBtnGoWa;
-        btnGo.style.background = 'linear-gradient(135deg, #25d366, #128c7e)';
+    // Auto-detect browser language or saved preference
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('mrkey_maint_lang');
+      if (saved) {
+        setLang(saved);
       } else {
-        btnGo.href = TG_LINK;
-        btnGoText.textContent = d.modalBtnGoTg;
-        btnGo.style.background = 'linear-gradient(135deg, #229ed9, #1579a8)';
+        const navLang = (navigator.language || '').toLowerCase();
+        if (navLang.startsWith('ru')) setLang('ru');
+        else if (navLang.startsWith('en')) setLang('en');
+        else setLang('es');
       }
-    }
+    });
   </script>
 </body>
 </html>
